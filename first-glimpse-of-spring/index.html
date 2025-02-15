@@ -134,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#finances" class="md-skip">
+        <a href="#digital-music" class="md-skip">
           Skip to content
         </a>
       
@@ -894,6 +894,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#digital-music" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Music
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finances" class="md-nav__link">
     <span class="md-ellipsis">
       Finances
@@ -1020,7 +1029,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              5 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -1089,6 +1098,27 @@
 <p><a class="glightbox" href="https://c02.purpledshub.com/uploads/sites/39/2019/05/DSC_6888-2827ed4-e1568023172553.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ribble Endurance SL Disc road bicycle" loading="lazy" src="https://c02.purpledshub.com/uploads/sites/39/2019/05/DSC_6888-2827ed4-e1568023172553.jpg" /></a></p>
 <!-- more -->
 
+<h2 id="digital-music">Digital Music<a class="headerlink" href="#digital-music" title="Permanent link">λ︎</a></h2>
+<p>ffmpeg is a versatile tool for converting audio and video formats and has a huge amount of options that I dont really want to keep looking up for common tasks.</p>
+<p>Using <code>*.{wav,flac,mp3,opus}</code> in the <code>for</code> expression will fail as it expects to find at least 1 file for each of the file name extensions listed in the collection, e.g. if none of the files end in <code>.wav</code> then the <code>for</code> expression will fail even if there are files with one of the other file name extensions.</p>
+<p><code>*.(wav|flac|mp3|ogg)</code> uses the <code>Or</code> pattern (<code>|</code>) so will suceed if there is at least one file that contains one of the file name extensions, e.g. if there is a <code>.wav</code> file then the script succeeds even if the directory does not contain any of the other file name extensions.</p>
+<div class="admonition example">
+<p class="admonition-title">Convert music file to Opus format</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/zsh</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Convert audio files (.wav, .flac, .mp3) in current directory to Opus format</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># zsh specific parsing of current directory</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># `*.(wav|flac|mp3)` matches file name with any of the wav, flac or mp3 file extensions</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">#</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># libopus uses variable bit rate by default - https://ffmpeg.org/ffmpeg-codecs.html#libopus-1</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 96 to 128k bit rate recommended for Music</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># 128k variable bit rate encoding provides near transparent encoding</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">for</span><span class="w"> </span>x<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.<span class="o">(</span>wav<span class="p">|</span>flac<span class="p">|</span>mp3<span class="p">|</span>ogg<span class="o">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$x</span><span class="s2">&quot;</span><span class="w"> </span>-b:a<span class="w"> </span>96k<span class="w"> </span>-c:a<span class="w"> </span>libopus<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">x</span><span class="p">:</span><span class="nv">r</span><span class="si">}</span><span class="s2">&quot;</span>.opus
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">done</span>
+</code></pre></div>
+</div>
 <h2 id="finances">Finances<a class="headerlink" href="#finances" title="Permanent link">λ︎</a></h2>
 <p>Its that time of the year to review my tax position for the 2024-25 tax year.  I earned sufficient to pay tax in the highest band, so I am reviewing if I need to increase my personal pension contributions to offset the tax paid for the year.</p>
 <p>I should review the performance of the respective pension pots to see which have performed well.  I have several pensions which have sustainable investment portfolios.</p>
