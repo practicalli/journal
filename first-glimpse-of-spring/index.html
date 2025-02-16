@@ -1092,7 +1092,7 @@
 
   <h1>First glimpse of Spring</h1>
 
-<p>A sunny day at the end of the week inspired me to get out on my road bike, doing some <a href="#cycling">important bike maintenance</a></p>
+<p>A sunny day at the end of the week inspired me to get out on my road bike, once essential <a href="#cycling">bike maintenance</a> was completed.</p>
 <p>Saturday Park Run was the first in over a year and it was very challenging.  My time was 39 minutes and 25 seconds, around 9 minutes slower than my personal best so there is a long road ahead to a reasonable fitness.</p>
 <p>April is the start of a new tax year in the UK so time for a <a href="#finances">personal financial review</a>.</p>
 <p>This weeks digital music organisation included <a href="https://en.wikipedia.org/wiki/The_Cranberries">The Cranberries</a>, an excellent Irish rock band. <a href="https://en.wikipedia.org/wiki/The_Mission_(band)">The Mission</a> and <a href="https://en.wikipedia.org/wiki/Fields_of_the_Nephilim">Fields Of The Nephilim</a> unleashed my inner Goth.</p>
@@ -1102,7 +1102,7 @@
 <h2 id="digital-music">Digital Music<a class="headerlink" href="#digital-music" title="Permanent link">λ︎</a></h2>
 <p>ffmpeg is a versatile tool for converting audio and video formats and has a huge amount of options that I dont really want to keep looking up for common tasks.</p>
 <p>Using <code>*.{wav,flac,mp3,opus}</code> in the <code>for</code> expression will fail as it expects to find at least 1 file for each of the file name extensions listed in the collection, e.g. if none of the files end in <code>.wav</code> then the <code>for</code> expression will fail even if there are files with one of the other file name extensions.</p>
-<p><code>*.(wav|flac|mp3|ogg)</code> uses the <code>Or</code> pattern (<code>|</code>) so will suceed if there is at least one file that contains one of the file name extensions, e.g. if there is a <code>.wav</code> file then the script succeeds even if the directory does not contain any of the other file name extensions.</p>
+<p><code>*.(wav|flac|mp3|ogg)</code> uses the <code>Or</code> pattern (<code>|</code>) so will succeed if there is at least one file that contains one of the file name extensions, e.g. if there is a <code>.wav</code> file then the script succeeds even if the directory does not contain any of the other file name extensions.</p>
 <div class="admonition example">
 <p class="admonition-title">Convert music file to Opus format</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/zsh</span>
