@@ -134,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nas-repair" class="md-skip">
+        <a href="#strava-login-failure" class="md-skip">
           Skip to content
         </a>
       
@@ -894,6 +894,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#strava-login-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strava login failure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nas-repair" class="md-nav__link">
     <span class="md-ellipsis">
       NAS repair
@@ -1065,7 +1074,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              12 min read
+                              13 min read
                             
                           </span>
                         </div>
@@ -1123,6 +1132,24 @@
 <p>There is also a <a href="https://future.forem.com/futureteam/announcing-our-very-first-writing-challenge-how-is-technology-changing-things-143o?bb=213752">writing challenge about the future of software</a></p>
 <!-- more -->
 
+<h2 id="strava-login-failure">Strava login failure<a class="headerlink" href="#strava-login-failure" title="Permanent link">λ︎</a></h2>
+<p>I wanted to review the details of a ride I did last summer which is much easier to do on the Strava website than on the Strava App.</p>
+<p>Visiting the Strava.com login page (using Firefox version 128.7.0esr) and entering my email address returned an unhelpful error message: "An unexpected error occurred. Please try again."</p>
+<p>Unsurprisingly when I tried again the same thing happened over and over again.</p>
+<p>Looking at the Strava Support pages showed nothing of relevance, so with trepidation I tried the chatbot (in summary it failed to help and was annoying to interact with).</p>
+<p>The chatbot failed in several ways</p>
+<ul>
+<li>referred me to an article that was not relevant (specifically about iOS and several years old)</li>
+<li>gave irrelevant advice (suggested resetting password even though it was the email that was failing and not the password)</li>
+<li>suggested I raise a ticket, which is not possible unless you can login to Strava (A feeling of <a href="https://en.wikipedia.org/wiki/Catch-22">Catch 22</a>)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Catch 22 definition</p>
+<p>A problem for which the only solution is denied by a circumstance inherent in the problem (or by a rule).</p>
+</div>
+<p>In the Strava app on Android I was logged in, so tried to raise a ticket there.  Selecting "Create a ticket", I was redirected by the Strava app to the browser on the Mobile phone.  This time I was able to login and create the ticket.</p>
+<p>My assumption: the error is related to the new passcode feature during the login process when using an email address.  The passcode feature allows login with email and a 4 digit passcode, rather than email and password.  I declined to set that up as it seemed less secure than using email and a password managed by a password manager (i.e. Nordpass, 1Password, etc).</p>
+<p>I also tried Chrome browser which did not have an issue login in.</p>
 <h2 id="nas-repair">NAS repair<a class="headerlink" href="#nas-repair" title="Permanent link">λ︎</a></h2>
 <p>I have a RAID array in my QNap NAS device that is not co-operating.</p>
 <p>One of the drives failed when rebuilding the RAID after adding two replacement drives.  Even though the failed hard drive seems to be okay (I think it overheated during the RAID rebuild), the RAID is not accessible</p>
@@ -1437,6 +1464,7 @@
 <p>On Friday I did the <a href="https://www.strava.com/activities/13816959392">longest walk for a very long time</a>.  My medical test results from blood tests a few weeks ago very concerning, but that is helping motivate me to do far more exercise in the coming weeks.</p>
 <p>Survived the <a href="https://www.strava.com/activities/13797784574">longest ride of 2025 so far</a> at 61.36 km with 888 meters of elevation.  The pace was a relatively slow 19.1 km/hour average compared to 23-24 km/hour rides from 2024 (and very slow compared to 2019 when I cycles across England, Wales and Scotland).  Ascents were climbed without too much pain, although I was very slow and steady rhythm.  On the flat and downhill segments the bike was very fast, thanks to a good clean and a new chain.</p>
 <p>The increased exercise has led to fatigue naturally, but there is also a element of long covid which is manifesting as headaches and greatly increased coughing.</p>
+<p>I found a recording of a <a href="https://www.strava.com/activities/11995220647">long road trip to Lenham (and back)</a> that I will start editing.</p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1464,7 +1492,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 7, 2025 21:19:13">March 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 9, 2025 13:08:59">March 9, 2025</span>
   </span>
 
     
