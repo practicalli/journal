@@ -134,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github-actions-security" class="md-skip">
+        <a href="#termux-neovim" class="md-skip">
           Skip to content
         </a>
       
@@ -894,9 +894,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#github-actions-security" class="md-nav__link">
+  <a href="#termux-neovim" class="md-nav__link">
     <span class="md-ellipsis">
-      GitHub actions security
+      Termux &amp; Neovim
     </span>
   </a>
   
@@ -912,9 +912,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#termux-neovim" class="md-nav__link">
+  <a href="#github-actions-security" class="md-nav__link">
     <span class="md-ellipsis">
-      Termux &amp; Neovim
+      GitHub actions security
     </span>
   </a>
   
@@ -1065,7 +1065,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              20 min read
+                              21 min read
                             
                           </span>
                         </div>
@@ -1116,63 +1116,73 @@
 
   <h1>Updating Neovim on Termux</h1>
 
-<p>After a lovely sunny weekend its back to grey and chilly outside.</p>
+<p>After a lovely sunny weekend its back to grey and chilly outside. Later in the week it was sunny but really cold (freezing overnight).</p>
+<p>Lots of updating software and tools this week, including</p>
+<ul>
+<li><a href="#termux-neovim">Termux and Neovim</a> to migrate to the changed packaging of Treesitter.</li>
+<li><a href="#hyprland-arch-linux">Hyperland &amp; Arch Linux</a></li>
+</ul>
+<p>Backup continues for the Lenovo X1 Extreme laptop which is running an old Ubuntu and will have Debian Linux soon.</p>
+<p>In the Clojurians Slack community, a post in news-and- channel highlighted a security risk to the tj-actions GitHub action.  I dont use this GitHub action, but as a measure of caution I <a href="#github-actions-security">configured a more restrictive policy for running GitHub actions in the Practicalli Org</a>.</p>
 <!-- more -->
 
-<h2 id="github-actions-security">GitHub actions security<a class="headerlink" href="#github-actions-security" title="Permanent link">λ︎</a></h2>
-<p>tj-actions GitHub action is reported as compromised.</p>
-<p>A quick <a href="https://github.com/search?q=org%3Apracticalli+uses%3E+tj-actions%2F&amp;type=code">search across the Practicalli Org repositories</a> confirms tj-actions is not used.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/search?q=org%3Apracticalli+uses%3E+tj-actions%2F&amp;type=code
-</code></pre></div>
-<p><a class="glightbox" href="https://photos.app.goo.gl/2xYiYtHEchWsdq4w7" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Search results across Practicalli GitHub Org" src="https://photos.app.goo.gl/2xYiYtHEchWsdq4w7" /></a></p>
-<h2 id="hyprland-arch-linux">Hyprland &amp; Arch Linux<a class="headerlink" href="#hyprland-arch-linux" title="Permanent link">λ︎</a></h2>
-<p>I continue to run Hyprland on a spare laptop and am getting comfortable in maintaining Arch Linux.</p>
-<p>Update the packages in Arch Linux</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
-</code></pre></div>
-<blockquote>
-<p>I still find the pacman options very cryptic. Its not as simple as remembering <code>apt update &amp;&amp; apt upgrade</code> for Debian (and Termux).</p>
-</blockquote>
-<p>Update the Hyprland config using HyDE.  Previously HyDE suggested <code>Hyde update</code> command.  Now the readme suggests using <code>-r</code> with the install script</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>pull<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>./Scripts/install<span class="w"> </span>-r
-</code></pre></div>
-<p>HyDE recommends rebooting the system to ensure all the new config is loaded.</p>
 <h2 id="termux-neovim">Termux &amp; Neovim<a class="headerlink" href="#termux-neovim" title="Permanent link">λ︎</a></h2>
 <p>A <code>dist-upgrade</code> was required to upgrade Neovim and Emacs on Termux (Android 11)</p>
 <p>The <code>libtreesitter</code> package has been superceeded and additional pacjages created <code>tree-sitter</code>,<code>tree-sitter-c</code>, <code>tree-sitter-nvim</code> and <code>tree-sitter-parsers</code> packages</p>
 <details class="info">
 <summary>Treesitter package versions</summary>
 <p>The <code>tree-sitter</code> packages are newer than the <code>libtreesitter</code> package.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>→<span class="w"> </span>apt<span class="w"> </span>show<span class="w"> </span>libtreesitter
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Package:<span class="w"> </span>libtreesitter
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Version:<span class="w"> </span><span class="m">0</span>.22.6-1
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Maintainer:<span class="w"> </span>Joshua<span class="w"> </span>Kahn<span class="w"> </span>@TomJo2000
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Installed-Size:<span class="w"> </span><span class="m">13</span>.0<span class="w"> </span>MB
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Homepage:<span class="w"> </span>https://github.com/tree-sitter/tree-sitter
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Download-Size:<span class="w"> </span><span class="m">1662</span><span class="w"> </span>kB
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>APT-Sources:<span class="w"> </span>https://mirror.accum.se/mirror/termux.dev/termux-main<span class="w"> </span>stable/main<span class="w"> </span>aarch64<span class="w"> </span>Packages
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Description:<span class="w"> </span>An<span class="w"> </span>incremental<span class="w"> </span>parsing<span class="w"> </span>system<span class="w"> </span><span class="k">for</span><span class="w"> </span>programming<span class="w"> </span>tools
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>→<span class="w"> </span>apt<span class="w"> </span>show<span class="w"> </span>tree-sitter
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Package:<span class="w"> </span>tree-sitter
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Version:<span class="w"> </span><span class="m">0</span>.25.3
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Maintainer:<span class="w"> </span>Joshua<span class="w"> </span>Kahn<span class="w"> </span>@TomJo2000
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Installed-Size:<span class="w"> </span><span class="m">8049</span><span class="w"> </span>kB
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Breaks:<span class="w"> </span>libtreesitter
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Replaces:<span class="w"> </span>libtreesitter
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>Homepage:<span class="w"> </span>https://github.com/tree-sitter/tree-sitter
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Download-Size:<span class="w"> </span><span class="m">2008</span><span class="w"> </span>kB
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>APT-Manual-Installed:<span class="w"> </span>no
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>APT-Sources:<span class="w"> </span>https://mirror.accum.se/mirror/termux.dev/termux-main<span class="w"> </span>stable/main<span class="w"> </span>aarch64<span class="w"> </span>Packages
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>Description:<span class="w"> </span>An<span class="w"> </span>incremental<span class="w"> </span>parsing<span class="w"> </span>system<span class="w"> </span><span class="k">for</span><span class="w"> </span>programming<span class="w"> </span>tools
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>→<span class="w"> </span>apt<span class="w"> </span>show<span class="w"> </span>libtreesitter
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Package:<span class="w"> </span>libtreesitter
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Version:<span class="w"> </span><span class="m">0</span>.22.6-1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Maintainer:<span class="w"> </span>Joshua<span class="w"> </span>Kahn<span class="w"> </span>@TomJo2000
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Installed-Size:<span class="w"> </span><span class="m">13</span>.0<span class="w"> </span>MB
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Homepage:<span class="w"> </span>https://github.com/tree-sitter/tree-sitter
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Download-Size:<span class="w"> </span><span class="m">1662</span><span class="w"> </span>kB
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>APT-Sources:<span class="w"> </span>https://mirror.accum.se/mirror/termux.dev/termux-main<span class="w"> </span>stable/main<span class="w"> </span>aarch64<span class="w"> </span>Packages
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Description:<span class="w"> </span>An<span class="w"> </span>incremental<span class="w"> </span>parsing<span class="w"> </span>system<span class="w"> </span><span class="k">for</span><span class="w"> </span>programming<span class="w"> </span>tools
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>→<span class="w"> </span>apt<span class="w"> </span>show<span class="w"> </span>tree-sitter
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Package:<span class="w"> </span>tree-sitter
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Version:<span class="w"> </span><span class="m">0</span>.25.3
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Maintainer:<span class="w"> </span>Joshua<span class="w"> </span>Kahn<span class="w"> </span>@TomJo2000
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Installed-Size:<span class="w"> </span><span class="m">8049</span><span class="w"> </span>kB
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Breaks:<span class="w"> </span>libtreesitter
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>Replaces:<span class="w"> </span>libtreesitter
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>Homepage:<span class="w"> </span>https://github.com/tree-sitter/tree-sitter
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>Download-Size:<span class="w"> </span><span class="m">2008</span><span class="w"> </span>kB
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>APT-Manual-Installed:<span class="w"> </span>no
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>APT-Sources:<span class="w"> </span>https://mirror.accum.se/mirror/termux.dev/termux-main<span class="w"> </span>stable/main<span class="w"> </span>aarch64<span class="w"> </span>Packages
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>Description:<span class="w"> </span>An<span class="w"> </span>incremental<span class="w"> </span>parsing<span class="w"> </span>system<span class="w"> </span><span class="k">for</span><span class="w"> </span>programming<span class="w"> </span>tools
 </code></pre></div></p>
 </details>
 <div class="admonition note">
 <p class="admonition-title">better-escape.nvim rewrite suggests config change</p>
 <p>The following notificayion shows when starting <code>astro</code> on Termux.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">[</span>better-escape.nvim<span class="o">]</span>:<span class="w"> </span>Rewrite!<span class="w"> </span>Check:<span class="w"> </span>https://github.com/max397574/better-escape.nvim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">[</span>better-escape.nvim<span class="o">]</span>:<span class="w"> </span>Rewrite!<span class="w"> </span>Check:<span class="w"> </span>https://github.com/max397574/better-escape.nvim
 </code></pre></div></p>
 </div>
+<h2 id="hyprland-arch-linux">Hyprland &amp; Arch Linux<a class="headerlink" href="#hyprland-arch-linux" title="Permanent link">λ︎</a></h2>
+<p>I continue to run Hyprland on a spare laptop and am getting comfortable in maintaining Arch Linux.</p>
+<p>Update the packages in Arch Linux</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
+</code></pre></div>
+<blockquote>
+<p>I still find the pacman options very cryptic. Its not as simple as remembering <code>apt update &amp;&amp; apt upgrade</code> for Debian (and Termux).</p>
+</blockquote>
+<p>Update the Hyprland config using HyDE.  Previously HyDE suggested <code>Hyde update</code> command.  Now the readme suggests using <code>-r</code> with the install script</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>pull<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>./Scripts/install<span class="w"> </span>-r
+</code></pre></div>
+<p>HyDE recommends rebooting the system to ensure all the new config is loaded.</p>
+<h2 id="github-actions-security">GitHub actions security<a class="headerlink" href="#github-actions-security" title="Permanent link">λ︎</a></h2>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/github/github-search-org-results-no-match.jpg?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Search results across Practicalli GitHub Org" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/github/github-search-org-results-no-match.jpg?raw=true" style="width:240px" /></a></p>
+<p>tj-actions GitHub action is reported as compromised.</p>
+<p>A quick <a href="https://github.com/search?q=org%3Apracticalli+uses%3E+tj-actions%2F&amp;type=code">search across the Practicalli Org repositories</a> confirms tj-actions is not used.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://github.com/search?q=org%3Apracticalli+uses%3E+tj-actions%2F&amp;type=code
+</code></pre></div>
+<p>GitHub can be configured to <a href="https://docs.github.com/en/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization">disable or limiting GitHub Actions for an Org</a>.</p>
+<p>In the Practicalli Org &gt; Settings &gt; Actions &gt; Policies I have restricted Actions to those owned by GitHub itself and verified creators.</p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/github/github-actions-settings-policies-restrict-to-github-and-marketplace.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="GitHub Practicalli Org - Restrict Actions to GitHub owned and marketplace certified creators" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/github/github-actions-settings-policies-restrict-to-github-and-marketplace.png?raw=true" /></a></p>
 <h2 id="nas-recovery">NAS recovery<a class="headerlink" href="#nas-recovery" title="Permanent link">λ︎</a></h2>
 <p>Continuing my journey to recover the RAID array in my Qnap NAS device.</p>
 <p>The failed drive in bay 2 was removed and bad block checks were successfully run last week.</p>
@@ -1906,7 +1916,7 @@ bind = $mainMod, M, exec, $scrPath/sysmonlaunch.sh # launch system monitor (htop
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 15, 2025 11:32:42">March 15, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 15, 2025 16:57:11">March 15, 2025</span>
   </span>
 
     
