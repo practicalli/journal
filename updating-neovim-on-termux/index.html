@@ -962,6 +962,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hyprland" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyprland
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1047,7 +1056,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              19 min read
+                              20 min read
                             
                           </span>
                         </div>
@@ -1778,6 +1787,78 @@
 <blockquote>
 <p>Note: Although these actions started the QNAP Nas doing something (red and amber lights flashing), the <code>mdadm --details /dev/md0</code> command did not update the status of the raid array to <code>rebuilding</code> and the web admin console (raid management tab) also did not update to show the raid array being rebuilt.  Will look again at these two statuses once the QNap NAS lights stop flashing.</p>
 </blockquote>
+<h2 id="hyprland">Hyprland<a class="headerlink" href="#hyprland" title="Permanent link">λ︎</a></h2>
+<p>Added a Hardware input configs added to <code>~/.config/hypr/userprefs.conf</code> to preserve my personal settings after an HyDE update</p>
+<div class="admonition example">
+<p class="admonition-title">Touchpad, mouse and keyboard settings</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a># // █ █▄░█ █▀█ █░█ ▀█▀
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a># // █ █░▀█ █▀▀ █▄█ ░█░
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a># See https://wiki.hyprland.org/Configuring/Variables/
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>input {
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    kb_layout = us
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    follow_mouse = 1
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    # https://wiki.hyprland.org/Configuring/Variables/#touchpad
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>    touchpad {
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>        disable_while_typing = true  # default true
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>        natural_scroll = true        # default false
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>        scroll_factor = 1.0          # default 1.0
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>    }
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    sensitivity = 0
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    # force_no_accel = 1  # Reduce scroll_factor to 0.4 if set to true
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>    numlock_by_default = true
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>}
+</code></pre></div>
+</div>
+<p>Tweaked some of the key bindings in <code>~/.config/hypr/keybindings.conf</code></p>
+<p>Also set <code>editor</code> to by astro (neovim) although I think this needs something else to get the key binding to work.</p>
+<p>Configured <code>file</code> as nautilus, the gnome file manager - which supports browsing over an SFTP connection.</p>
+<div class="admonition example">
+<p class="admonition-title">Keybinding Preferences</p>
+</div>
+<p>```config
+    # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
+    # █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█</p>
+<div class="highlight"><pre><span></span><code># See https://wiki.hyprland.org/Configuring/Keywords/
+#  &amp;  https://wiki.hyprland.org/Configuring/Binds/
+
+# Main modifier
+$mainMod = Super # super / meta / windows key
+
+# Assign apps
+$term = kitty
+# $editor = code
+$editor = astro
+# $file = dolphin
+$file = nautilus
+$browser = firefox
+
+# Window/Session actions
+bindd = $mainMod+Shift, P,Color Picker , exec, hyprpicker -a # Pick color (Hex) &gt;&gt; clipboard#
+bind = $mainMod, Q, exec, $scrPath/dontkillsteam.sh # close focused window
+bind = Alt, F4, exec, $scrPath/dontkillsteam.sh # close focused window
+bind = $mainMod, Delete, exit, # kill hyprland session
+bind = $mainMod, W, togglefloating, # toggle the window between focus and float
+bind = $mainMod, G, togglegroup, # toggle the window between focus and group
+bind = Alt, Return, fullscreen, # toggle the window between focus and fullscreen
+bind = $mainMod, L, exec, swaylock # launch lock screen
+bind = $mainMod+Shift, F, exec, $scrPath/windowpin.sh # toggle pin on focused window
+bind = $mainMod, Backspace, exec, $scrPath/logoutlaunch.sh # launch logout menu
+bind = Ctrl+Alt, W, exec, killall waybar || (env reload_flag=1 $scrPath/wbarconfgen.sh) # toggle waybar and reload config
+#bind = Ctrl+Alt, W, exec, killall waybar || waybar # toggle waybar without reloading, this is faster
+
+# Application shortcuts
+bind = $mainMod, return, exec, $term # launch terminal emulator
+bind = $mainMod, E, exec, $file # launch file manager
+bind = $mainMod, C, exec, $editor # launch text editor
+bind = $mainMod, B, exec, $browser # launch web browser
+# bind = Ctrl+Shift, Escape, exec, $scrPath/sysmonlaunch.sh # launch system monitor (htop/btop or fallback to top)
+bind = $mainMod, M, exec, $scrPath/sysmonlaunch.sh # launch system monitor (htop/btop or fallback to top)
+```
+</code></pre></div>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1805,7 +1886,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 00:25:28">March 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 15, 2025 00:05:48">March 15, 2025</span>
   </span>
 
     
