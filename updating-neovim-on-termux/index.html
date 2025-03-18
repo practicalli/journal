@@ -134,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#termux-neovim" class="md-skip">
+        <a href="#practicalli" class="md-skip">
           Skip to content
         </a>
       
@@ -894,6 +894,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#practicalli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practicalli
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practicalli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-projects-wip-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Projects WIP limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-projects-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Projects Iterations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#termux-neovim" class="md-nav__link">
     <span class="md-ellipsis">
       Termux &amp; Neovim
@@ -1065,7 +1098,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              21 min read
+                              23 min read
                             
                           </span>
                         </div>
@@ -1126,6 +1159,38 @@
 <p>In the Clojurians Slack community, a post in news-and- channel highlighted a security risk to the tj-actions GitHub action.  I dont use this GitHub action, but as a measure of caution I <a href="#github-actions-security">configured a more restrictive policy for running GitHub actions in the Practicalli Org</a>.</p>
 <!-- more -->
 
+<h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
+<p>Applied for Clojurists Together funding for 2025</p>
+<ul>
+<li>Clojure Stacks - an experimental project, to create the initial prototype</li>
+<li>Practical.li - update videos and practicalli books</li>
+</ul>
+<p>Created a GitHub Project to capture tickets for the potential Clourists Together sponsorship</p>
+<h3 id="github-projects-wip-limits">GitHub Projects WIP limits<a class="headerlink" href="#github-projects-wip-limits" title="Permanent link">λ︎</a></h3>
+<p>GitHub projects now includes work in progress (WIP) limit indicators on each column.  Each column has a pretty good default value (although maybe a little high in places).</p>
+<p>WIP limits for the default project columns</p>
+<ul>
+<li>No Status: ticket count only, no WIP limit (effectively this is a backlog anyway)</li>
+<li>Todo: 5   (a good number to keep focus)</li>
+<li>In Progress: 5  (3 would give even more focus and help ensure things are getting done)</li>
+<li>Done: ticket count only</li>
+</ul>
+<p>When a limit has been exceeded, the WIP limit and ticket count is shown in Red (when using GitHub with a dark theme)</p>
+<p>Clicking on the <code>...</code> menu on a column allows setting the WIP limit (<strong>Set limit</strong>)</p>
+<h2 id="github-projects-iterations">GitHub Projects Iterations<a class="headerlink" href="#github-projects-iterations" title="Permanent link">λ︎</a></h2>
+<p>A new GitHub project will include an Iteration view, showing the status of work for the time-boxed period of time.</p>
+<p>The iteration default is two weeks.  If possible I will change this to 1 week, as I prefer all tickets to be smaller pieces of work that can be completed within a week.</p>
+<p>Having a short iteration focuses the mind on a single task, giving a greater probability that the task will be completed.</p>
+<p>Avoiding tickets dragging on week after week really helps with mental health and enables people to easily switch off outside of work.</p>
+<p>I prefer to spend a little time thinking about a task up front and ensuring the ticket has all the information I need to complete the task.  If the ticket is too big then I will either set it aside or break it down into specific definitions of DONE.</p>
+<blockquote>
+<p>NOTE: Given I should create a monthly report for Clojurists Together, then a 4 week iteration would provide a way to capture all the activity in a month.  However this doesnt feel like I would have as much focus as I like.  I will run with the default 2 week iteration, which will also encourage me to keep the report updated :laughing_manically:.</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Configure Iterations in GitHub Project Settings</p>
+<p>In the GitHub project Settings &gt; Iteration page, the list of Iterations created is shown.  Each iteration can be deleted and the Name of the Iteration changed.</p>
+<p>Add an Iteration, changing the options if a different period should be used (2 weeks is defailt).  An interation can be defined in days or weeks.</p>
+</div>
 <h2 id="termux-neovim">Termux &amp; Neovim<a class="headerlink" href="#termux-neovim" title="Permanent link">λ︎</a></h2>
 <p>A <code>dist-upgrade</code> was required to upgrade Neovim and Emacs on Termux (Android 11)</p>
 <p>The <code>libtreesitter</code> package has been superseded and split into several packages, <code>tree-sitter</code>,<code>tree-sitter-c</code>, <code>tree-sitter-nvim</code> and <code>tree-sitter-parsers</code>.</p>
@@ -1917,7 +1982,7 @@ bind = $mainMod, M, exec, $scrPath/sysmonlaunch.sh # launch system monitor (htop
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 15, 2025 20:37:07">March 15, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 18, 2025 15:59:44">March 18, 2025</span>
   </span>
 
     
