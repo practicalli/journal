@@ -978,12 +978,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#github-projects-iterations" class="md-nav__link">
     <span class="md-ellipsis">
       GitHub Projects Iterations
@@ -991,11 +986,25 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#github-actions-security" class="md-nav__link">
     <span class="md-ellipsis">
       GitHub actions security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emacs-on-arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emacs on Arch Linux
     </span>
   </a>
   
@@ -1086,7 +1095,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              6 min read
+                              7 min read
                             
                           </span>
                         </div>
@@ -1127,6 +1136,12 @@
       <span class="md-tag">github-projects</span>
     
   
+    
+    
+    
+      <span class="md-tag">practicalli</span>
+    
+  
 </nav>
 
 
@@ -1149,7 +1164,12 @@
 
   <h1>Practicalli rising</h1>
 
-<p>Really getting ito the swing of working full time on Practicalli educational content again.</p>
+<p>Really getting into the swing of working full time on Practicalli educational content again.</p>
+<p><a href="#clojurists-together">Applied for funding from Clojurists Together</a> for a new Clojure Stacks project and for updating Practical.li content. I've been tidying up the very many tickets across the project issues across the Practicalli GitHub Org.</p>
+<p>I created a new GitHub project for Clojurists Together Funding and discovered interesting <a href="#github-projects">new features of GitHub projects</a>.</p>
+<p>After a report on a compromised GitHub action, I <a href="#gitHub-actions-security">restricted the GitHub action policy</a> for the Practicalli GitHub Org.  Unfortunately the liquidz/antq-runner GitHub action is not by a certified Organisation, so is blocked from running unless I add an explicit exception.</p>
+<p>reClojure 2025 has been announced for 26th May 2025, this time an in-person event.  Strangely this is a Bank Holiday in the UK, so travelling could be 'interesting'.</p>
+<p>Unlike previous reClojure conferences, this is a paid event costing 75 GBP. With the event being on a Bank Holiday I am unlikely to attend as I'll be riding with the local cycling club or other long distance event.</p>
 <!-- more -->
 
 <h2 id="clojurists-together">Clojurists Together<a class="headerlink" href="#clojurists-together" title="Permanent link">λ︎</a></h2>
@@ -1225,7 +1245,7 @@ Clojurists together require a monthly report, so monthly milestones would help f
 </ul>
 <p>When a limit has been exceeded, the WIP limit and ticket count is shown in Red (when using GitHub with a dark theme)</p>
 <p>Clicking on the <code>...</code> menu on a column allows setting the WIP limit (<strong>Set limit</strong>)</p>
-<h2 id="github-projects-iterations">GitHub Projects Iterations<a class="headerlink" href="#github-projects-iterations" title="Permanent link">λ︎</a></h2>
+<h3 id="github-projects-iterations">GitHub Projects Iterations<a class="headerlink" href="#github-projects-iterations" title="Permanent link">λ︎</a></h3>
 <p>A new GitHub project will include an Iteration view, showing the status of work for the time-boxed period of time.</p>
 <p>The iteration default is two weeks.  If possible I will change this to 1 week, as I prefer all tickets to be smaller pieces of work that can be completed within a week.</p>
 <p>Having a short iteration focuses the mind on a single task, giving a greater probability that the task will be completed.</p>
@@ -1248,6 +1268,12 @@ Clojurists together require a monthly report, so monthly milestones would help f
 <p>GitHub can be configured to <a href="https://docs.github.com/en/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization">disable or limiting GitHub Actions for an Org</a>.</p>
 <p>In the Practicalli Org &gt; Settings &gt; Actions &gt; Policies I have restricted Actions to those owned by GitHub itself and verified creators.</p>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/github/github-actions-settings-policies-restrict-to-github-and-marketplace.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="GitHub Practicalli Org - Restrict Actions to GitHub owned and marketplace certified creators" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/github/github-actions-settings-policies-restrict-to-github-and-marketplace.png?raw=true" /></a></p>
+<h2 id="emacs-on-arch-linux">Emacs on Arch Linux<a class="headerlink" href="#emacs-on-arch-linux" title="Permanent link">λ︎</a></h2>
+<p>As I am using the wayland compositor hyprland (rather than X11) then the Emacs Wayland package is the most appropriate choice.</p>
+<p>Emacs Wayland uses Pure GTK (PGTK) which reduces latency where drawing application doesn't go via a central place (ie xfree/xorg), improved support for hardware like HiDPI over multiple screens and an enhanced security model.</p>
+<p>Wayland and Pure GTK is considered the 'future' for the Linux desktop, so improvements in the graphic stack is happening in Wayland.</p>
+<p>The Emacs package for Xorg is still available for Arch Linux.</p>
+<p><a class="md-button" href="https://archlinux.org/packages/extra/x86_64/emacs-wayland/" target="_blank">Emacs Wayland - Arch Linux</a></p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1275,7 +1301,7 @@ Clojurists together require a monthly report, so monthly milestones would help f
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 20, 2025 20:22:00">March 20, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 23, 2025 02:23:39">March 23, 2025</span>
   </span>
 
     
