@@ -903,6 +903,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#career" class="md-nav__link">
     <span class="md-ellipsis">
       Career
@@ -1014,7 +1023,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              15 min read
+                              16 min read
                             
                           </span>
                         </div>
@@ -1581,6 +1590,16 @@
 <a id="__codelineno-0-488" name="__codelineno-0-488" href="#__codelineno-0-488"></a>-<span class="w"> </span>OK<span class="w"> </span>No<span class="w"> </span>duplicate<span class="w"> </span>mappings<span class="w"> </span>found
 </code></pre></div>
 </details>
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">λ︎</a></h2>
+<p>I have used Ubuntu for the last 15 years (possibly a bit more) and it has been an excellent desktop operating system, especially for software development.</p>
+<p>Recently there has been a trend to ship software as snaps by default, rather than the excellent Debian package format (*.deb files).  Web browser software is only offered as snaps from the Ubuntu repositories.</p>
+<p>Whist snaps provide convienience to packaging certain apps for the maintainers, it doesnt provide a good experience for the users of Ubuntu.  </p>
+<p>A notable example was when Firefox started shipping as a snap so that Mozilla could push security updates, specifically for libraries that Firefox used.  The snap is self-contained so all the code and libraries are in one package, rather than sharing libraries via their debian package.</p>
+<p>The experience using Firefox as a snap has greatly improved, although startup time was a major concern initially.</p>
+<p>The problem remains that snaps are a very inefficient use of filespace (which admittedly is relatively cheap today).  Snaps also keep the previous version when updating (so they can quickly be rolled back) and its not possible to configure Snaps to only install one version.  I havent found a nice tool to remove older snaps either, so a manual delete is sometimes required.</p>
+<p>However, when backing up an older Ubuntu system I discovered that snap was using atleast 16 Gb of storage.  3 Gb in the user directory and 13 Gb in the <code>/var/lib</code> directory.</p>
+<p>This use of filespace is ludicrus when comparing to the 235 Mb Firefox Debian package.</p>
+<p>Ubuntu maintainers announced they are going to include many more snaps by default, so its another reason I am happy to be moving back to Debian.</p>
 <h2 id="career">Career<a class="headerlink" href="#career" title="Permanent link">λ︎</a></h2>
 <p>I have been casually looking for a new role, although with a focus to consider how to prepare for a really good interview (especially if I go for another engineering manager or head of engineering role).</p>
 <p>Some enhancements have been made to the Experiences section on <a href="https://www.linkedin.com/in/jr0cket/">my LinkedIn profile</a>, providing a greater insight into my very wide experiences over the last few decades.</p>
