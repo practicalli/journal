@@ -16,6 +16,7 @@
 - dev: megalinter api reporter enabled & env vars
 - dev: megalinter 8 - no documentation flavor
 - dev: exclude practicalli.grafana.net from lychee URL check (requires authentication)
+- dev: scheduled stale issue and pull request ci workflow
 
 ## Changed
 - post: updated naming scheme and corrected date
