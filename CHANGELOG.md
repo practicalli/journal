@@ -25,3 +25,4 @@
 - dev: update mkdocs targets to use python virtual environment
 - dev: update github workflows to use ubuntu-24.04
 - dev: update Makefile with standard Practicalli tasks
+- dev: ci scheduled stale issue & pr check (monthly)
