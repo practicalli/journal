@@ -1159,8 +1159,12 @@
 <p><a class="md-button" href="" target="_blank">Practicalli Nvim-Astro5 planning board</a></p>
 <p><a class="md-button" href="https://github.com/practicalli/nvim-astro5" target="_blank">Practicalli nvim-astro5</a></p>
 <h3 id="babashka-support">Babashka support<a class="headerlink" href="#babashka-support" title="Permanent link">λ︎</a></h3>
-<p>After posting an update on the new Practicalli Astro5</p>
-<p>Opening a babashka file, with <code>.bb</code> file name extension, sets the filetype to bitbake rather than Clojure.</p>
+<p>After posting an update on the new Practicalli Astro5 I had a suggestion to add Babashka file support.</p>
+<p>Neovim detects Babashka <code>*.bb</code> files as BitBake files by default, so Babashka files do not get any of the tools available for a Clojure file.</p>
+<p>After <a href="https://github.com/practicalli/nvim-astro5/issues/49">🎫 lots of different experiments</a> with lua I discovered Neovim had a way to set the filetype for a filename extension, by defining a <code>ftdetect/bb.vim</code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Filetype was previous approach although was replaced by a more scalable approach</p>
+</div>
 <p><a class="md-button" href="https://github.com/neovim/neovim/blob/master/runtime/lua/vim/filetype.lua#L260" target="_blank">Neovim filetypes - clojure</a></p>
 <div class="admonition example">
 <p class="admonition-title">Manually set the filetype for the buffer</p>
@@ -1224,6 +1228,10 @@
 </div>
 <p>Use the <code>:source</code> command to run lua script from the Neovim UI.</p>
 <p>The script will need to be updated to show the result within neovim, e.g. in a notification.</p>
+<div class="admonition tip">
+<p class="admonition-title">Run Neovim with a specific configuration file</p>
+<p>Neovim can use the <code>-U</code> flag to <a href="https://practical.li/neovim/install/troubleshoot/">run with a minimal configuration</a>, e.g. when troubleshooting configuration and plugins</p>
+</div>
 <h2 id="redit">Redit<a class="headerlink" href="#redit" title="Permanent link">λ︎</a></h2>
 <p>I finally bit the bullet and signed up to Reddit.  It can be useful to see new things that arent mentioned in the Clojurians Slack.</p>
 <p>I do take a lot of comments and some posts with a bit pinch of salt (pragmatic scepticism)</p>
@@ -1271,7 +1279,7 @@ Clojure functions, vars and namespaces all have doc-strings that explain why the
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 24, 2025 09:39:41">April 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 5, 2025 21:29:57">May 5, 2025</span>
   </span>
 
     
