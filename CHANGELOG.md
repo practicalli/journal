@@ -17,6 +17,7 @@
 - dev: megalinter 8 - no documentation flavor
 - dev: exclude practicalli.grafana.net from lychee URL check (requires authentication)
 - dev: scheduled stale issue and pull request ci workflow
+- dev: mkdocs serve verbose output to help debug issues
 
 ## Changed
 - post: updated naming scheme and corrected date
