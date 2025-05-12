@@ -48,6 +48,12 @@ theme:
 extra_css:
   - assets/stylesheets/extra.css
 
+validation:
+  omitted_files: warn
+  absolute_links: relative_to_docs
+  unrecognized_links: warn
+  anchors: warn  # New in MkDocs 1.6
+
 ## Additional styling
 markdown_extensions:
   - admonition

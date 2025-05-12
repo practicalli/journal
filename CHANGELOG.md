@@ -18,6 +18,7 @@
 - dev: exclude practicalli.grafana.net from lychee URL check (requires authentication)
 - dev: scheduled stale issue and pull request ci workflow
 - dev: mkdocs serve verbose output to help debug issues
+- mkdocs: add verification options for mkdocs 1.6
 
 ## Changed
 - post: updated naming scheme and corrected date
