@@ -949,6 +949,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Starship command prompt theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customise-catppuccin-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customise catppuccin theme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1069,7 +1084,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              16 min read
+                              18 min read
                             
                           </span>
                         </div>
@@ -1127,28 +1142,44 @@
 
   <h1>Volunteering at Devoxx</h1>
 
-<p>This week I have been volunteering at <a href="#devoxx-uk">Devoxx UK in London</a>. Tuesday was setting up activates for the event, such as building video game cabinets. Wednesday and Thursday was room monitor, ensuring the speakers and attendees are taken care of.  The room monitor also captures feedback about the event back to the conference organisers (so they can continue optimising the conference for next year).</p>
+<p>Updated the command line prompt to <a href="#starship-command-prompt-theme"><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> Starship.rs</a> due to an <a href="#linux-shell-hanging"><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> issue with Powerline10k</a>.</p>
+<p>Starship works very well and is fairly simple to configure using a <code>~/.config/starship.toml</code> file.  There is a <a href="https://starship.rs/presets/catppuccin-powerline"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Catppuccin Powerline Preset</a> (theme) that <a href="https://github.com/practicalli/dotfiles/blob/main/starship.toml"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span> was customised</a> to move some information onto the right-hand side of the prompt and tweaked some of the default Catppuccin Mocha colors.</p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/os/command-line/starship-cli-preset-catppuccin-custom.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Customisation of catppuccin-powerline preset" src="https://github.com/practicalli/graphic-design/blob/live/os/command-line/starship-cli-preset-catppuccin-custom.png?raw=true" /></a></p>
+<p>This week I have been volunteering at <a href="#devoxx-uk"><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> Devoxx UK in London</a>. Tuesday was setting up activates for the event, such as building video game cabinets. Wednesday and Thursday was room monitor, ensuring the speakers and attendees are taken care of.  The room monitor also captures feedback about the event back to the conference organisers (so they can continue optimising the conference for next year).</p>
 <!-- more -->
 
 <h2 id="linux-shell-hanging">Linux shell hanging<a class="headerlink" href="#linux-shell-hanging" title="Permanent link">λ︎</a></h2>
 <p>After a package upgrade on Debian Linux today the shell was hanging when running both Gnome terminal and Kitty terminal.</p>
 <p>A little searching and thinking the root cause was the <code>nordvpn</code> package conflicting with the Powerline10k shell prompt theme.</p>
-<p>Removing the <code>~/.zshrc</code> symbolic link removed the conflict as it was no longer loading the Powerline10k theme.  Unfortunately that also stopped all the other Zsh features I used from <a href="https://github.com/sorin-ionescu/prezto">Prezto</a></p>
-<p>The <a href="https://github.com/romkatv/powerlevel10k/issues/2860">issue was reported via the Powerline10k repository</a>.</p>
+<p>Removing the <code>~/.zshrc</code> symbolic link removed the conflict as it was no longer loading the Powerline10k theme.  Unfortunately that also stopped all the other Zsh features I used from <a href="https://github.com/sorin-ionescu/prezto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span> Prezto</a></p>
+<p>The <a href="https://github.com/romkatv/powerlevel10k/issues/2860"><img alt="🎫" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ab.svg" title=":ticket:" /> issue was reported via the Powerline10k repository</a>.</p>
 <p>As I no longer use NordVPN service, I removed the <code>nordvpn</code> package.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>apt<span class="w"> </span>remove<span class="w"> </span>--purge<span class="w"> </span>nordvpn
 </code></pre></div>
 <h2 id="starship-command-prompt-theme">Starship command prompt theme<a class="headerlink" href="#starship-command-prompt-theme" title="Permanent link">λ︎</a></h2>
-<p>A notice was added to the <a href="">Powerline10k repository</a> saying that the project is no longer actively maintained.  As there is also an issue with NordVPN, then its time to try another theme.</p>
-<p>A good friend suggested <a href="https://starship.rs/">Starship</a> as an alternative.</p>
-<p>The default theme was a little simplistic for me although there are several alternative 'presets'.  As I am now using the Catppuccin theme for the Kitty terminal and was using Powerline10k as the command prompt, then <a href="https://starship.rs/presets/catppuccin-powerline">Catppuccin Powerline Preset</a> seems to be the ideal choice.</p>
-<p>Starship is available as a Debian Linux package:</p>
+<p>A notice was added to the <a href="https://github.com/romkatv/powerlevel10k"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span> Powerline10k repository</a> saying that the project is no longer actively maintained.  As there is also an issue with NordVPN, then its time to try another theme.</p>
+<p>A good friend suggested <a href="https://starship.rs/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Starship</a> as an alternative.</p>
+<p>The default theme was a little simplistic for me although there are several alternative 'presets'.  As I am now using the Catppuccin theme for the Kitty terminal and was using Powerline10k as the command prompt, then <a href="https://starship.rs/presets/catppuccin-powerline"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Catppuccin Powerline Preset</a> seems to be the ideal choice.</p>
+<div class="admonition note">
+<p class="admonition-title">Starship Debian Linux package install</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apt<span class="w"> </span>install<span class="w"> </span>starship
 </code></pre></div>
-<p>The powerline10k theme was removed from the Prezto configuration used for Zsh (otherwise starship does not show).</p>
+</div>
+<p>The powerline10k theme was removed from the Prezto configuration, not setting any theme (otherwise starship does not show).</p>
+<p>Add the starship init script at the end of the <code>.zshrc</code> file</p>
+<div class="admonition note">
+<p class="admonition-title">Starship init script for zsh</p>
+<p><code>shell title=`~/.zshrc`
+eval "$(starship init zsh)"</code></p>
+</div>
 <p>There is a configuration to generate the <code>.toml</code> configuration file for the catppuccin-powerline preset, but this didnt not find the theme (perhaps the Debian Linux package is not new enough).</p>
+<div class="admonition note">
+<p class="admonition-title">Generate Starship config file using catppuccin-powerline preset</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>starship<span class="w"> </span>preset<span class="w"> </span>catppuccin-powerline<span class="w"> </span>-o<span class="w"> </span>~/.config/starship.toml
 </code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Output: generate starship config file</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">❯ starship preset catppuccin-powerline -o ~/.config/starship.toml</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">error: invalid value &#39;catppuccin-powerline&#39; for &#39;[NAME]&#39;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">  [possible values: bracketed-segments, gruvbox-rainbow, jetpack, nerd-font-symbols, no-empty-icons, no-nerd-font, no-runtime-versions, pastel-powerline, plain-text-symbols, pure-preset, tokyo-night]</span>
@@ -1158,252 +1189,312 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="go">NOTE:</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">    passed arguments: [&quot;preset&quot;, &quot;catppuccin-powerline&quot;, &quot;-o&quot;, &quot;/home/practicalli/.config/starship.toml&quot;]</span>
 </code></pre></div>
+</div>
 <p>The web page has a link to the <code>.toml</code> file for the catppuccin-powerline preset, but the link is broken 🔗</p>
 <p>A search on the GitHub repo found the <a href="https://github.com/starship/starship/blob/master/docs/public/presets/toml/catppuccin-powerline.toml"><code>catppuccin-powerline.toml</code> file</a>.  This was copied to <code>~/.config/starship.toml</code> file.</p>
 <p>Opening a new terminal session in Kitty used the catppuccin-powerline preset and it looks quite nice.</p>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/os/command-line/kitty/kitty-starship-prompt-catppuccin-powerline-preset.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Starship command line theme with catppuccin-powerline preset" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/os/command-line/kitty/kitty-starship-prompt-catppuccin-powerline-preset.png?raw=true" /></a></p>
+<h3 id="customise-catppuccin-theme">Customise catppuccin theme<a class="headerlink" href="#customise-catppuccin-theme" title="Permanent link">λ︎</a></h3>
+<p>Unlike powerline10k which splits less important information to the right-hand side of the prompt, Starship has all the elements from the left-hand side.  This makes for potentially quite long prompt.</p>
+<p><code>format</code> controls the layout of the prompt.  <code>right_format</code> was added, moving the command duration, time, username and operating system details here from the left-hand side.</p>
+<details class="example">
+<summary>Custom Command Line prompt layout</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="s2">&quot;$schema&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://starship.rs/config-schema.json&#39;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="s2">[](peach)</span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s2">$directory</span><span class="se">\</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s2">[](bg:yellow fg:peach)</span><span class="se">\</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s2">$git_branch</span><span class="se">\</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s2">$git_status</span><span class="se">\</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="s2">[](fg:yellow bg:green)</span><span class="se">\</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s2">$c</span><span class="se">\</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s2">$haskell</span><span class="se">\</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s2">$java</span><span class="se">\</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="s2">$kotlin</span><span class="se">\</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="s2">$nodejs</span><span class="se">\</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="s2">$python</span><span class="se">\</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="s2">$rust</span><span class="se">\</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="s2">[ ](fg:green)</span><span class="se">\</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="s2">$line_break</span><span class="se">\</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="s2">$character&quot;&quot;&quot;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="n">right_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="s2">$cmd_duration</span><span class="se">\</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="s2">[](white)</span><span class="se">\</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="s2">$time</span><span class="se">\</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="s2">[](fg:white bg:mauve )</span><span class="se">\</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="s2">$username</span><span class="se">\</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="s2">[](fg:mauve bg:mauve )</span><span class="se">\</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="s2">$os</span><span class="se">\</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="s2">[ ](mauve)&quot;&quot;&quot;</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="n">continuation_prompt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;▶▶ &#39;</span>
+</code></pre></div>
+</details>
+<p>Component styles had the colors tweaked using the existing definitions in <code>[palettes.catppuccin_mocha]</code></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/os/command-line/starship-cli-preset-catppuccin-custom.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Customisation of catppuccin-powerline preset" src="https://github.com/practicalli/graphic-design/blob/live/os/command-line/starship-cli-preset-catppuccin-custom.png?raw=true" /></a></p>
+<details class="example">
+<summary>Update os and username colors</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[os]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">disabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bg:mauve fg:crust&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">[username]</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">show_always</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">style_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bg:mauve fg:crust&quot;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">style_root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bg:mauve fg:crust&quot;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;[ $user]($style)&#39;</span>
+</code></pre></div>
+</details>
+<p><a class="md-button" href="https://github.com/practicalli/dotfiles/blob/main/starship.toml" target="_blank">Practicalli Custom Starship theme</a></p>
 <h2 id="mkdocs-issues">MkDocs issues<a class="headerlink" href="#mkdocs-issues" title="Permanent link">λ︎</a></h2>
 <p>After a package update <code>apt update &amp;&amp; apt upgrade</code> I have some issues when running a local server for this journal, created with Material for MkDocs.</p>
 <p>The same issue occurred once during the Continuous Integration workflow to build the site.</p>
 <p>The issue seems to be intermittent and could be a simple issue of the local server being hammered too much.</p>
 <p>I will keep testing to see if this is a short-term blip or a more serious issue.  I didn't see relative issues or pull requests on the <a href="https://github.com/squidfunk/mkdocs-material">mkdocs-material repository</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">❯ make docs</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">-- MkDocs Local Server -------------------</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">. ~/.local/venv/bin/activate; mkdocs serve --dev-addr localhost:7777</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">INFO    -  Building documentation...</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="go">INFO    -  Cleaning site directory</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="go">             - assets/images/social/README.md</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="go">           as is.</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="go">           is.</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="go">           it was left as is.</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="go">INFO    -  Doc file &#39;posts/2025/april/07.md&#39; contains an unrecognized relative link &#39;Neovim Book Staging site&#39;, it was left as is.</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/07.md has not been recognized.</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/21.md has not been recognized.</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/28.md has not been recognized.</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/03.md has not been recognized.</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/10.md has not been recognized.</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/17.md has not been recognized.</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="go">INFO    -  Doc file &#39;posts/2025/february/24.md&#39; contains an unrecognized relative link &#39;%practicalli&#39;, it was left as is.</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/24.md has not been recognized.</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/20.md has not been recognized.</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/27.md has not been recognized.</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/03.md has not been recognized.</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/10.md has not been recognized.</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/17.md has not been recognized.</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/24.md has not been recognized.</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/31.md has not been recognized.</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="go">INFO    -  Doc file &#39;posts/2025/january/27.md&#39; contains a link &#39;#hyprland&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/03.md&#39; contains a link &#39;#my-health&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/10.md&#39; contains a link &#39;#github-actions-security&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/17.md&#39; contains a link &#39;#gitHub-actions-security&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="go">INFO    -  Documentation built in 14.62 seconds</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="go">INFO    -  [01:25:03] Watching paths for changes: &#39;docs&#39;, &#39;mkdocs.yml&#39;</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="go">INFO    -  [01:25:03] Serving on http://localhost:7777/journal/</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="go">INFO    -  [01:25:46] Detected file changes</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="go">INFO    -  Building documentation...</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="go">             - assets/images/social/README.md</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="go">           as is.</span>
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="go">           is.</span>
-<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
-<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
-<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="go">           it was left as is.</span>
-<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="go">ERROR   -  Error reading page &#39;posts/100-days-of-code/day-098.md&#39;: HTTP Error 429: Too Many Requests</span>
-<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="go">Traceback (most recent call last):</span>
-<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/livereload/__init__.py&quot;, line 211, in _build_loop</span>
-<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="go">    self.builder()</span>
-<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="go">    ~~~~~~~~~~~~^^</span>
-<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/serve.py&quot;, line 67, in builder</span>
-<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="go">    build(config, serve_url=None if is_clean else serve_url, dirty=is_dirty)</span>
-<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="go">    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 310, in build</span>
-<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="go">    _populate_page(file.page, config, files, dirty)</span>
-<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="go">    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 167, in _populate_page</span>
-<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="go">    page.render(config, files)</span>
-<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="go">    ~~~~~~~~~~~^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/structure/pages.py&quot;, line 285, in render</span>
-<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="go">    self.content = md.convert(self.markdown)</span>
-<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="go">                   ~~~~~~~~~~^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/markdown/core.py&quot;, line 354, in convert</span>
-<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a><span class="go">    self.lines = prep.run(self.lines)</span>
-<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="go">                 ~~~~~~~~^^^^^^^^^^^^</span>
-<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 403, in run</span>
-<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a><span class="go">    return self.parse_snippets(lines)</span>
-<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a><span class="go">           ~~~~~~~~~~~~~~~~~~~^^^^^^^</span>
-<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 357, in parse_snippets</span>
-<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a><span class="go">    s_lines = self.download(snippet)</span>
-<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 195, in download</span>
-<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a><span class="go">    with urllib.request.urlopen(http_request, timeout=timeout) as response:</span>
-<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a><span class="go">         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 189, in urlopen</span>
-<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a><span class="go">    return opener.open(url, data, timeout)</span>
-<a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a><span class="go">           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 495, in open</span>
-<a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a><span class="go">    response = meth(req, response)</span>
-<a id="__codelineno-4-86" name="__codelineno-4-86" href="#__codelineno-4-86"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 604, in http_response</span>
-<a id="__codelineno-4-87" name="__codelineno-4-87" href="#__codelineno-4-87"></a><span class="go">    response = self.parent.error(</span>
-<a id="__codelineno-4-88" name="__codelineno-4-88" href="#__codelineno-4-88"></a><span class="go">        &#39;http&#39;, request, response, code, msg, hdrs)</span>
-<a id="__codelineno-4-89" name="__codelineno-4-89" href="#__codelineno-4-89"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 533, in error</span>
-<a id="__codelineno-4-90" name="__codelineno-4-90" href="#__codelineno-4-90"></a><span class="go">    return self._call_chain(*args)</span>
-<a id="__codelineno-4-91" name="__codelineno-4-91" href="#__codelineno-4-91"></a><span class="go">           ~~~~~~~~~~~~~~~~^^^^^^^</span>
-<a id="__codelineno-4-92" name="__codelineno-4-92" href="#__codelineno-4-92"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 466, in _call_chain</span>
-<a id="__codelineno-4-93" name="__codelineno-4-93" href="#__codelineno-4-93"></a><span class="go">    result = func(*args)</span>
-<a id="__codelineno-4-94" name="__codelineno-4-94" href="#__codelineno-4-94"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 613, in http_error_default</span>
-<a id="__codelineno-4-95" name="__codelineno-4-95" href="#__codelineno-4-95"></a><span class="go">    raise HTTPError(req.full_url, code, msg, hdrs, fp)</span>
-<a id="__codelineno-4-96" name="__codelineno-4-96" href="#__codelineno-4-96"></a><span class="go">urllib.error.HTTPError: HTTP Error 429: Too Many Requests</span>
-<a id="__codelineno-4-97" name="__codelineno-4-97" href="#__codelineno-4-97"></a><span class="go">ERROR   -  [01:25:49] An error happened during the rebuild. The server will appear stuck until build errors are resolved.</span>
-<a id="__codelineno-4-98" name="__codelineno-4-98" href="#__codelineno-4-98"></a><span class="go">WARNING -  [01:29:19] &quot;GET / HTTP/1.1&quot; code 302</span>
-<a id="__codelineno-4-99" name="__codelineno-4-99" href="#__codelineno-4-99"></a><span class="go">^CINFO    -  Shutting down...</span>
+<div class="admonition info">
+<p class="admonition-title">Update on Error 429</p>
+<p>Several embedded files were causing errors in the Journal website when using <code>mkdocs serve</code>.  This is happening on other computers so the actual cause is not that easy to track.</p>
+<p>The short-team solution is to replace any of those embedded file code blocks with the actual content of the files.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">❯ make docs</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">-- MkDocs Local Server -------------------</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">. ~/.local/venv/bin/activate; mkdocs serve --dev-addr localhost:7777</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">INFO    -  Building documentation...</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="go">INFO    -  Cleaning site directory</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">             - assets/images/social/README.md</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="go">           as is.</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="go">           is.</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="go">           it was left as is.</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="go">INFO    -  Doc file &#39;posts/2025/april/07.md&#39; contains an unrecognized relative link &#39;Neovim Book Staging site&#39;, it was left as is.</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/07.md has not been recognized.</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/21.md has not been recognized.</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/28.md has not been recognized.</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/03.md has not been recognized.</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/10.md has not been recognized.</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/17.md has not been recognized.</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="go">INFO    -  Doc file &#39;posts/2025/february/24.md&#39; contains an unrecognized relative link &#39;%practicalli&#39;, it was left as is.</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/24.md has not been recognized.</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/20.md has not been recognized.</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/27.md has not been recognized.</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/03.md has not been recognized.</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/10.md has not been recognized.</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/17.md has not been recognized.</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/24.md has not been recognized.</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/31.md has not been recognized.</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="go">INFO    -  Doc file &#39;posts/2025/january/27.md&#39; contains a link &#39;#hyprland&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/03.md&#39; contains a link &#39;#my-health&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/10.md&#39; contains a link &#39;#github-actions-security&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/17.md&#39; contains a link &#39;#gitHub-actions-security&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="go">INFO    -  Documentation built in 14.62 seconds</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="go">INFO    -  [01:25:03] Watching paths for changes: &#39;docs&#39;, &#39;mkdocs.yml&#39;</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="go">INFO    -  [01:25:03] Serving on http://localhost:7777/journal/</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="go">INFO    -  [01:25:46] Detected file changes</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="go">INFO    -  Building documentation...</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a><span class="go">             - assets/images/social/README.md</span>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a><span class="go">           as is.</span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a><span class="go">           is.</span>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="go">           it was left as is.</span>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="go">ERROR   -  Error reading page &#39;posts/100-days-of-code/day-098.md&#39;: HTTP Error 429: Too Many Requests</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a><span class="go">Traceback (most recent call last):</span>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/livereload/__init__.py&quot;, line 211, in _build_loop</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a><span class="go">    self.builder()</span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a><span class="go">    ~~~~~~~~~~~~^^</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/serve.py&quot;, line 67, in builder</span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="go">    build(config, serve_url=None if is_clean else serve_url, dirty=is_dirty)</span>
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a><span class="go">    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 310, in build</span>
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a><span class="go">    _populate_page(file.page, config, files, dirty)</span>
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a><span class="go">    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 167, in _populate_page</span>
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a><span class="go">    page.render(config, files)</span>
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a><span class="go">    ~~~~~~~~~~~^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/structure/pages.py&quot;, line 285, in render</span>
+<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a><span class="go">    self.content = md.convert(self.markdown)</span>
+<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a><span class="go">                   ~~~~~~~~~~^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/markdown/core.py&quot;, line 354, in convert</span>
+<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a><span class="go">    self.lines = prep.run(self.lines)</span>
+<a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a><span class="go">                 ~~~~~~~~^^^^^^^^^^^^</span>
+<a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 403, in run</span>
+<a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a><span class="go">    return self.parse_snippets(lines)</span>
+<a id="__codelineno-6-75" name="__codelineno-6-75" href="#__codelineno-6-75"></a><span class="go">           ~~~~~~~~~~~~~~~~~~~^^^^^^^</span>
+<a id="__codelineno-6-76" name="__codelineno-6-76" href="#__codelineno-6-76"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 357, in parse_snippets</span>
+<a id="__codelineno-6-77" name="__codelineno-6-77" href="#__codelineno-6-77"></a><span class="go">    s_lines = self.download(snippet)</span>
+<a id="__codelineno-6-78" name="__codelineno-6-78" href="#__codelineno-6-78"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 195, in download</span>
+<a id="__codelineno-6-79" name="__codelineno-6-79" href="#__codelineno-6-79"></a><span class="go">    with urllib.request.urlopen(http_request, timeout=timeout) as response:</span>
+<a id="__codelineno-6-80" name="__codelineno-6-80" href="#__codelineno-6-80"></a><span class="go">         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-6-81" name="__codelineno-6-81" href="#__codelineno-6-81"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 189, in urlopen</span>
+<a id="__codelineno-6-82" name="__codelineno-6-82" href="#__codelineno-6-82"></a><span class="go">    return opener.open(url, data, timeout)</span>
+<a id="__codelineno-6-83" name="__codelineno-6-83" href="#__codelineno-6-83"></a><span class="go">           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-6-84" name="__codelineno-6-84" href="#__codelineno-6-84"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 495, in open</span>
+<a id="__codelineno-6-85" name="__codelineno-6-85" href="#__codelineno-6-85"></a><span class="go">    response = meth(req, response)</span>
+<a id="__codelineno-6-86" name="__codelineno-6-86" href="#__codelineno-6-86"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 604, in http_response</span>
+<a id="__codelineno-6-87" name="__codelineno-6-87" href="#__codelineno-6-87"></a><span class="go">    response = self.parent.error(</span>
+<a id="__codelineno-6-88" name="__codelineno-6-88" href="#__codelineno-6-88"></a><span class="go">        &#39;http&#39;, request, response, code, msg, hdrs)</span>
+<a id="__codelineno-6-89" name="__codelineno-6-89" href="#__codelineno-6-89"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 533, in error</span>
+<a id="__codelineno-6-90" name="__codelineno-6-90" href="#__codelineno-6-90"></a><span class="go">    return self._call_chain(*args)</span>
+<a id="__codelineno-6-91" name="__codelineno-6-91" href="#__codelineno-6-91"></a><span class="go">           ~~~~~~~~~~~~~~~~^^^^^^^</span>
+<a id="__codelineno-6-92" name="__codelineno-6-92" href="#__codelineno-6-92"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 466, in _call_chain</span>
+<a id="__codelineno-6-93" name="__codelineno-6-93" href="#__codelineno-6-93"></a><span class="go">    result = func(*args)</span>
+<a id="__codelineno-6-94" name="__codelineno-6-94" href="#__codelineno-6-94"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 613, in http_error_default</span>
+<a id="__codelineno-6-95" name="__codelineno-6-95" href="#__codelineno-6-95"></a><span class="go">    raise HTTPError(req.full_url, code, msg, hdrs, fp)</span>
+<a id="__codelineno-6-96" name="__codelineno-6-96" href="#__codelineno-6-96"></a><span class="go">urllib.error.HTTPError: HTTP Error 429: Too Many Requests</span>
+<a id="__codelineno-6-97" name="__codelineno-6-97" href="#__codelineno-6-97"></a><span class="go">ERROR   -  [01:25:49] An error happened during the rebuild. The server will appear stuck until build errors are resolved.</span>
+<a id="__codelineno-6-98" name="__codelineno-6-98" href="#__codelineno-6-98"></a><span class="go">WARNING -  [01:29:19] &quot;GET / HTTP/1.1&quot; code 302</span>
+<a id="__codelineno-6-99" name="__codelineno-6-99" href="#__codelineno-6-99"></a><span class="go">^CINFO    -  Shutting down...</span>
 </code></pre></div>
 <p>I updated Material for MkDocs using pip (and python virtual environment), but the error was still there.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>~/.local/venv/bin/pip3<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>~/.local/venv/bin/pip3<span class="w"> </span>install<span class="w"> </span>mkdocs-material
 </code></pre></div>
 <p>Shell output</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">❯ ~/.local/venv/bin/pip3 install mkdocs-material</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">Requirement already satisfied: mkdocs-material in /home/practicalli/.local/venv/lib/python3.13/site-packages (9.6.6)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">Requirement already satisfied: babel~=2.10 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (2.17.0)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">Requirement already satisfied: backrefs~=5.7.post1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (5.8)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">Requirement already satisfied: colorama~=0.4 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (0.4.6)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="go">Requirement already satisfied: jinja2~=3.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (3.1.5)</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="go">Requirement already satisfied: markdown~=3.2 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (3.7)</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">Requirement already satisfied: mkdocs-material-extensions~=1.3 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (1.3.1)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="go">Requirement already satisfied: mkdocs~=1.6 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (1.6.1)</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="go">Requirement already satisfied: paginate~=0.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (0.5.7)</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="go">Requirement already satisfied: pygments~=2.16 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (2.19.1)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="go">Requirement already satisfied: pymdown-extensions~=10.2 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (10.14.3)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="go">Requirement already satisfied: requests~=2.26 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (2.32.3)</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="go">Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from jinja2~=3.0-&gt;mkdocs-material) (3.0.2)</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="go">Requirement already satisfied: click&gt;=7.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (8.1.8)</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="go">Requirement already satisfied: ghp-import&gt;=1.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (2.1.0)</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="go">Requirement already satisfied: mergedeep&gt;=1.3.4 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (1.3.4)</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="go">Requirement already satisfied: mkdocs-get-deps&gt;=0.2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (0.2.0)</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="go">Requirement already satisfied: packaging&gt;=20.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (24.2)</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="go">Requirement already satisfied: pathspec&gt;=0.11.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (0.12.1)</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="go">Requirement already satisfied: pyyaml-env-tag&gt;=0.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (0.1)</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="go">Requirement already satisfied: pyyaml&gt;=5.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (6.0.2)</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="go">Requirement already satisfied: watchdog&gt;=2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (6.0.0)</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="go">Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (3.4.1)</span>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="go">Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (3.10)</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="go">Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (2.3.0)</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="go">Requirement already satisfied: certifi&gt;=2017.4.17 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (2025.1.31)</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="go">Requirement already satisfied: python-dateutil&gt;=2.8.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material) (2.9.0.post0)</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="go">Requirement already satisfied: platformdirs&gt;=2.2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-get-deps&gt;=0.2.0-&gt;mkdocs~=1.6-&gt;mkdocs-material) (4.3.6)</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="go">Requirement already satisfied: six&gt;=1.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from python-dateutil&gt;=2.8.1-&gt;ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material) (1.17.0)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">❯ ~/.local/venv/bin/pip3 install mkdocs-material</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">Requirement already satisfied: mkdocs-material in /home/practicalli/.local/venv/lib/python3.13/site-packages (9.6.6)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">Requirement already satisfied: babel~=2.10 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (2.17.0)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">Requirement already satisfied: backrefs~=5.7.post1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (5.8)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">Requirement already satisfied: colorama~=0.4 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (0.4.6)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="go">Requirement already satisfied: jinja2~=3.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (3.1.5)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="go">Requirement already satisfied: markdown~=3.2 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (3.7)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="go">Requirement already satisfied: mkdocs-material-extensions~=1.3 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (1.3.1)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="go">Requirement already satisfied: mkdocs~=1.6 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (1.6.1)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="go">Requirement already satisfied: paginate~=0.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (0.5.7)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="go">Requirement already satisfied: pygments~=2.16 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (2.19.1)</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="go">Requirement already satisfied: pymdown-extensions~=10.2 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (10.14.3)</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="go">Requirement already satisfied: requests~=2.26 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-material) (2.32.3)</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="go">Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from jinja2~=3.0-&gt;mkdocs-material) (3.0.2)</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="go">Requirement already satisfied: click&gt;=7.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (8.1.8)</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="go">Requirement already satisfied: ghp-import&gt;=1.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (2.1.0)</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="go">Requirement already satisfied: mergedeep&gt;=1.3.4 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (1.3.4)</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="go">Requirement already satisfied: mkdocs-get-deps&gt;=0.2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (0.2.0)</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="go">Requirement already satisfied: packaging&gt;=20.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (24.2)</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="go">Requirement already satisfied: pathspec&gt;=0.11.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (0.12.1)</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="go">Requirement already satisfied: pyyaml-env-tag&gt;=0.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (0.1)</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="go">Requirement already satisfied: pyyaml&gt;=5.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (6.0.2)</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="go">Requirement already satisfied: watchdog&gt;=2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs~=1.6-&gt;mkdocs-material) (6.0.0)</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="go">Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (3.4.1)</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="go">Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (3.10)</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="go">Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (2.3.0)</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="go">Requirement already satisfied: certifi&gt;=2017.4.17 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from requests~=2.26-&gt;mkdocs-material) (2025.1.31)</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="go">Requirement already satisfied: python-dateutil&gt;=2.8.1 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material) (2.9.0.post0)</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="go">Requirement already satisfied: platformdirs&gt;=2.2.0 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from mkdocs-get-deps&gt;=0.2.0-&gt;mkdocs~=1.6-&gt;mkdocs-material) (4.3.6)</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="go">Requirement already satisfied: six&gt;=1.5 in /home/practicalli/.local/venv/lib/python3.13/site-packages (from python-dateutil&gt;=2.8.1-&gt;ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material) (1.17.0)</span>
 </code></pre></div>
 <p>Updating the footer in 3rd Feb post fixed that issue.  Updating <code>%practicalli</code> to <code>#practicalli</code> fixed the link.</p>
 <p>I assume that MkDocs local server is better and finding issues in the text now and picking up on issues that I have not noticed previously.</p>
 <p>After fixing those issues, I experienced a further issue</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">❯ make docs</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">-- MkDocs Local Server -------------------</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">. ~/.local/venv/bin/activate; mkdocs serve --dev-addr localhost:7777</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">INFO    -  Building documentation...</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="go">INFO    -  Cleaning site directory</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="go">             - assets/images/social/README.md</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="go">           as is.</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="go">           is.</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="go">           it was left as is.</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="go">INFO    -  Doc file &#39;posts/2025/april/07.md&#39; contains an unrecognized relative link &#39;Neovim Book Staging site&#39;, it was left as is.</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/07.md has not been recognized.</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/21.md has not been recognized.</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/28.md has not been recognized.</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/03.md has not been recognized.</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/10.md has not been recognized.</span>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/17.md has not been recognized.</span>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="go">INFO    -  Doc file &#39;posts/2025/february/24.md&#39; contains an unrecognized relative link &#39;%practicalli&#39;, it was left as is.</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/24.md has not been recognized.</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/20.md has not been recognized.</span>
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/27.md has not been recognized.</span>
-<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/03.md has not been recognized.</span>
-<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/10.md has not been recognized.</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/17.md has not been recognized.</span>
-<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/24.md has not been recognized.</span>
-<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/31.md has not been recognized.</span>
-<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="go">INFO    -  Doc file &#39;posts/2025/january/27.md&#39; contains a link &#39;#hyprland&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/03.md&#39; contains a link &#39;#my-health&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/10.md&#39; contains a link &#39;#github-actions-security&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/17.md&#39; contains a link &#39;#gitHub-actions-security&#39;, but there is no such anchor on this page.</span>
-<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="go">INFO    -  Documentation built in 14.62 seconds</span>
-<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="go">INFO    -  [01:25:03] Watching paths for changes: &#39;docs&#39;, &#39;mkdocs.yml&#39;</span>
-<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="go">INFO    -  [01:25:03] Serving on http://localhost:7777/journal/</span>
-<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="go">INFO    -  [01:25:46] Detected file changes</span>
-<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="go">INFO    -  Building documentation...</span>
-<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
-<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
-<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="go">             - assets/images/social/README.md</span>
-<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
-<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
-<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="go">           as is.</span>
-<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
-<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="go">           is.</span>
-<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
-<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
-<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="go">           it was left as is.</span>
-<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="go">ERROR   -  Error reading page &#39;posts/100-days-of-code/day-098.md&#39;: HTTP Error 429: Too Many Requests</span>
-<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="go">Traceback (most recent call last):</span>
-<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/livereload/__init__.py&quot;, line 211, in _build_loop</span>
-<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="go">    self.builder()</span>
-<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="go">    ~~~~~~~~~~~~^^</span>
-<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/serve.py&quot;, line 67, in builder</span>
-<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="go">    build(config, serve_url=None if is_clean else serve_url, dirty=is_dirty)</span>
-<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="go">    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 310, in build</span>
-<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="go">    _populate_page(file.page, config, files, dirty)</span>
-<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="go">    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 167, in _populate_page</span>
-<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="go">    page.render(config, files)</span>
-<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="go">    ~~~~~~~~~~~^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/structure/pages.py&quot;, line 285, in render</span>
-<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a><span class="go">    self.content = md.convert(self.markdown)</span>
-<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a><span class="go">                   ~~~~~~~~~~^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/markdown/core.py&quot;, line 354, in convert</span>
-<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a><span class="go">    self.lines = prep.run(self.lines)</span>
-<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a><span class="go">                 ~~~~~~~~^^^^^^^^^^^^</span>
-<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 403, in run</span>
-<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a><span class="go">    return self.parse_snippets(lines)</span>
-<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a><span class="go">           ~~~~~~~~~~~~~~~~~~~^^^^^^^</span>
-<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 357, in parse_snippets</span>
-<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a><span class="go">    s_lines = self.download(snippet)</span>
-<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 195, in download</span>
-<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a><span class="go">    with urllib.request.urlopen(http_request, timeout=timeout) as response:</span>
-<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a><span class="go">         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 189, in urlopen</span>
-<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a><span class="go">    return opener.open(url, data, timeout)</span>
-<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a><span class="go">           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^</span>
-<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 495, in open</span>
-<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a><span class="go">    response = meth(req, response)</span>
-<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 604, in http_response</span>
-<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a><span class="go">    response = self.parent.error(</span>
-<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a><span class="go">        &#39;http&#39;, request, response, code, msg, hdrs)</span>
-<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 533, in error</span>
-<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a><span class="go">    return self._call_chain(*args)</span>
-<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a><span class="go">           ~~~~~~~~~~~~~~~~^^^^^^^</span>
-<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 466, in _call_chain</span>
-<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a><span class="go">    result = func(*args)</span>
-<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 613, in http_error_default</span>
-<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a><span class="go">    raise HTTPError(req.full_url, code, msg, hdrs, fp)</span>
-<a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a><span class="go">urllib.error.HTTPError: HTTP Error 429: Too Many Requests</span>
-<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a><span class="go">ERROR   -  [01:25:49] An error happened during the rebuild. The server will appear stuck until build errors are resolved.</span>
-<a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a><span class="go">WARNING -  [01:29:19] &quot;GET / HTTP/1.1&quot; code 302</span>
-<a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a><span class="go">^CINFO    -  Shutting down...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">❯ make docs</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">-- MkDocs Local Server -------------------</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">. ~/.local/venv/bin/activate; mkdocs serve --dev-addr localhost:7777</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">INFO    -  Building documentation...</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="go">INFO    -  Cleaning site directory</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="go">             - assets/images/social/README.md</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="go">           as is.</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="go">           is.</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="go">           it was left as is.</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="go">INFO    -  Doc file &#39;posts/2025/april/07.md&#39; contains an unrecognized relative link &#39;Neovim Book Staging site&#39;, it was left as is.</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/07.md has not been recognized.</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/21.md has not been recognized.</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/april/28.md has not been recognized.</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/03.md has not been recognized.</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/10.md has not been recognized.</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/17.md has not been recognized.</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="go">INFO    -  Doc file &#39;posts/2025/february/24.md&#39; contains an unrecognized relative link &#39;%practicalli&#39;, it was left as is.</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/february/24.md has not been recognized.</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/20.md has not been recognized.</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/january/27.md has not been recognized.</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/03.md has not been recognized.</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/10.md has not been recognized.</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/17.md has not been recognized.</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/24.md has not been recognized.</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="go">INFO    -  [RSS-plugin]: Creation date of /home/practicalli/projects/practicalli/journal/docs/posts/2025/march/31.md has not been recognized.</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="go">INFO    -  Doc file &#39;posts/2025/january/27.md&#39; contains a link &#39;#hyprland&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/03.md&#39; contains a link &#39;#my-health&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/10.md&#39; contains a link &#39;#github-actions-security&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="go">INFO    -  Doc file &#39;posts/2025/march/17.md&#39; contains a link &#39;#gitHub-actions-security&#39;, but there is no such anchor on this page.</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="go">INFO    -  Documentation built in 14.62 seconds</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="go">INFO    -  [01:25:03] Watching paths for changes: &#39;docs&#39;, &#39;mkdocs.yml&#39;</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="go">INFO    -  [01:25:03] Serving on http://localhost:7777/journal/</span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="go">INFO    -  [01:25:46] Detected file changes</span>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="go">INFO    -  Building documentation...</span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="go">WARNING -  Config value &#39;site_org&#39;: Unrecognised configuration name: site_org</span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="go">INFO    -  The following pages exist in the docs directory, but are not included in the &quot;nav&quot; configuration:</span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="go">             - assets/images/social/README.md</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="go">WARNING -  A reference to &#39;feed_rss_created.xml&#39; is included in the &#39;nav&#39; configuration, which is not found in the documentation files.</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-090.md&#39; contains an unrecognized relative link &#39;4Clojure Challenge #11 - conj with maps&#39;, it was left</span>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a><span class="go">           as is.</span>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-091.md&#39; contains an unrecognized relative link &#39;4Clojure challenge #16 Hello World&#39;, it was left as</span>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a><span class="go">           is.</span>
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-092.md&#39; contains an unrecognized relative link &#39;CIDER logo in Clojure SVG syntax&#39;, it was left as is.</span>
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a><span class="go">INFO    -  Doc file &#39;posts/100-days-of-code/day-093.md&#39; contains an unrecognized relative link &#39;Simple ClojureScript front end website with reagent&#39;,</span>
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a><span class="go">           it was left as is.</span>
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a><span class="go">ERROR   -  Error reading page &#39;posts/100-days-of-code/day-098.md&#39;: HTTP Error 429: Too Many Requests</span>
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a><span class="go">Traceback (most recent call last):</span>
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/livereload/__init__.py&quot;, line 211, in _build_loop</span>
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a><span class="go">    self.builder()</span>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a><span class="go">    ~~~~~~~~~~~~^^</span>
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/serve.py&quot;, line 67, in builder</span>
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a><span class="go">    build(config, serve_url=None if is_clean else serve_url, dirty=is_dirty)</span>
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a><span class="go">    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 310, in build</span>
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a><span class="go">    _populate_page(file.page, config, files, dirty)</span>
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a><span class="go">    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/commands/build.py&quot;, line 167, in _populate_page</span>
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a><span class="go">    page.render(config, files)</span>
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a><span class="go">    ~~~~~~~~~~~^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/mkdocs/structure/pages.py&quot;, line 285, in render</span>
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a><span class="go">    self.content = md.convert(self.markdown)</span>
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a><span class="go">                   ~~~~~~~~~~^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/markdown/core.py&quot;, line 354, in convert</span>
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a><span class="go">    self.lines = prep.run(self.lines)</span>
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a><span class="go">                 ~~~~~~~~^^^^^^^^^^^^</span>
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 403, in run</span>
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a><span class="go">    return self.parse_snippets(lines)</span>
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a><span class="go">           ~~~~~~~~~~~~~~~~~~~^^^^^^^</span>
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 357, in parse_snippets</span>
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a><span class="go">    s_lines = self.download(snippet)</span>
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a><span class="go">  File &quot;/home/practicalli/.local/venv/lib/python3.13/site-packages/pymdownx/snippets.py&quot;, line 195, in download</span>
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a><span class="go">    with urllib.request.urlopen(http_request, timeout=timeout) as response:</span>
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a><span class="go">         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 189, in urlopen</span>
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a><span class="go">    return opener.open(url, data, timeout)</span>
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a><span class="go">           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^</span>
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 495, in open</span>
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a><span class="go">    response = meth(req, response)</span>
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 604, in http_response</span>
+<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a><span class="go">    response = self.parent.error(</span>
+<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a><span class="go">        &#39;http&#39;, request, response, code, msg, hdrs)</span>
+<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 533, in error</span>
+<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a><span class="go">    return self._call_chain(*args)</span>
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a><span class="go">           ~~~~~~~~~~~~~~~~^^^^^^^</span>
+<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 466, in _call_chain</span>
+<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a><span class="go">    result = func(*args)</span>
+<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a><span class="go">  File &quot;/usr/lib/python3.13/urllib/request.py&quot;, line 613, in http_error_default</span>
+<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a><span class="go">    raise HTTPError(req.full_url, code, msg, hdrs, fp)</span>
+<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a><span class="go">urllib.error.HTTPError: HTTP Error 429: Too Many Requests</span>
+<a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a><span class="go">ERROR   -  [01:25:49] An error happened during the rebuild. The server will appear stuck until build errors are resolved.</span>
+<a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a><span class="go">WARNING -  [01:29:19] &quot;GET / HTTP/1.1&quot; code 302</span>
+<a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a><span class="go">^CINFO    -  Shutting down...</span>
 </code></pre></div>
 <h2 id="devoxx-uk">Devoxx UK<a class="headerlink" href="#devoxx-uk" title="Permanent link">λ︎</a></h2>
 <p>It was very rewarding and enjoyable to volunteer for Devoxx UK this year.  It has been many years since I was involved due to my health challenges, but it felt very natural and familiar.</p>
@@ -1451,7 +1542,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 21:00:10">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 12, 2025 14:04:08">May 12, 2025</span>
   </span>
 
     
