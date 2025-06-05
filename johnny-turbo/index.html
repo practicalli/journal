@@ -1070,6 +1070,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#personal-experiences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal experiences
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1160,7 +1169,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              8 min read
+                              10 min read
                             
                           </span>
                         </div>
@@ -1214,7 +1223,7 @@
 
 <p>Started the week with a much stronger ride than I have been able to do this year.  I had the energy and motivation to push myself, especially on ascents.</p>
 <p>Finally finished backing up the Lenovo Extreme laptop.  Tried out <a href="">Garuda Linux Hyprland version</a> which was nicely organised with lots of neat desktop tools.</p>
-<p>Installed Debian Linux as Garuda Linux had issues installing on the Software RAID partitions that the laptop had (two 512 GB drives in RAID 0).  I recreated the Software RAID with the Debian installer anyway, so maybe Garuda Linux would install on the recreated array.  I am not ready to switch to Wayland yet as there are a few key applications that are not yet supported.</p>
+<p><a href="#debian-linux">Installed Debian Linux</a> as Garuda Linux had issues installing on the Software RAID partitions that the laptop had (two 512 GB drives in RAID 0).  I recreated the Software RAID with the Debian installer anyway, so maybe Garuda Linux would install on the recreated array.  I am not ready to switch to Wayland yet as there are a few key applications that are not yet supported.</p>
 <!-- more -->
 
 <h2 id="cycling-day-trip">Cycling day trip<a class="headerlink" href="#cycling-day-trip" title="Permanent link">λ︎</a></h2>
@@ -1223,39 +1232,51 @@
 <p>Monday was sunny but not too hot, so I went for a quick 60km cycle ride.  I was feeling a bit tired before I started, but once I was going then I was surprised how much energy I had.  I was able to push on hill climbs much more than usual, more than other rides this year.</p>
 <p>Another blood test this month and another nice long walk to the medical centre.  It was 13.21km round trip, including a little walk around Waitrose on the way back.  More stretching of my legs is definitely required.</p>
 <h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
-<p>Setup a Lenovo Extreme laptop with Debian Linux</p>
+<p>I had been running Ubuntu for a long time on my Lenovo Extreme laptop.  After a few weeks of backing files up and committing all my code experiements and configs to GitHub, it was finally time to do a complete clean install.</p>
+<p>I have switch to Debian Linux as my operating system of choice.  Ubuntu is great but started introducing a lot of packages using the Snap approach rather than the original deb package format.  Snaps havent always been a great experience, in terms of access and performance, although it has improved.  I find snaps to be very inefficient use of the filespace and they package their own copy of libraries rather than using shared libraries.</p>
+<p>Whist snaps can make some packaging a bit easier, it is at the expense of the user experience.</p>
+<p>Everything you can do with Ubuntu, you can do in Debian (and you can only do those things on Ubuntu because Debian existed in the first place).</p>
 <h3 id="install-from-usb">Install from USB<a class="headerlink" href="#install-from-usb" title="Permanent link">λ︎</a></h3>
-<p>Update to testing release (usually quite stable - but minimise system upgrates until something is needed or fixed).  Updating indivudual packages safter.  Only doing an update when I have spare time to fix things.</p>
+<p>Downloaded the Debian Linux install <code>.iso</code> file from <a href="https://debian.org">Debiain.org</a>.</p>
+<p>Copied the <code>.iso</code> file to a 4Gb USB memory stick</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cp debian.iso /dev/sda
+</code></pre></div>
+<p>Inserted the USB into the laptop and switched on.  The <code>Enter</code> key brings up a menu</p>
+<p>Set the language to British English and the Keyboard to US English (for the Keyboard.io Model01 keyboard)</p>
+<p>The laptop has two Solid State drives (SSD) which I've used in a RAID 0 array for performance in writing.  I haven't had any issues with this approach, so I continued to use it.</p>
+<p>Recreated the Raid array from scratch. I deleted the existing RAID array the older partitions completely and recreating then.</p>
+<p>Used the <code>Tasksel</code> wizard at the end of the install to include OpenSSH server (as well as the default Debian &amp; Gnome Desktop tasks)</p>
+<p>Update to testing release (usually quite stable - but minimise system upgrades until something is needed or fixed).  Updating individual packages safer.  Only doing an update when I have spare time to fix things.</p>
 <p><a href="https://wiki.debian.org/DebianTesting">https://wiki.debian.org/DebianTesting</a></p>
 <p>Edit the apt configuration and use trixie (the name for the next release and currently pointed to by testing)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#deb cdrom:[Debian GNU/Linux 12.11.0 _Bookworm_ - Official amd64 NETINST with firmware 20250517-09:51]/ bookworm contrib main non-free-firmware
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># deb http://deb.debian.org/debian/ bookworm main non-free-firmware
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># deb-src http://deb.debian.org/debian/ bookworm main non-free-firmware
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a># deb http://security.debian.org/debian-security bookworm-security main non-free-firmware
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># deb-src http://security.debian.org/debian-security bookworm-security main non-free-firmware
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a># bookworm-updates, to get updates before a point release is made;
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a># see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a># deb http://deb.debian.org/debian/ bookworm-updates main non-free-firmware
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a># deb-src http://deb.debian.org/debian/ bookworm-updates main non-free-firmware
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a># This system was installed using small removable media
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a># (e.g. netinst, live or single CD). The matching &quot;deb cdrom&quot;
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a># entries were disabled at the end of the installation process.
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a># For information about how to configure apt package sources,
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a># see the sources.list(5) manual.
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a># ----------
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a># Testing - trixie
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>deb http://deb.debian.org/debian/ trixie main non-free-firmware
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>deb-src http://deb.debian.org/debian/ trixie main non-free-firmware
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>deb http://security.debian.org/debian-security trixie-security main non-free-firmware
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>deb-src http://security.debian.org/debian-security trixie-security main non-free-firmware
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>#deb cdrom:[Debian GNU/Linux 12.11.0 _Bookworm_ - Official amd64 NETINST with firmware 20250517-09:51]/ bookworm contrib main non-free-firmware
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a># deb http://deb.debian.org/debian/ bookworm main non-free-firmware
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a># deb-src http://deb.debian.org/debian/ bookworm main non-free-firmware
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a># deb http://security.debian.org/debian-security bookworm-security main non-free-firmware
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a># deb-src http://security.debian.org/debian-security bookworm-security main non-free-firmware
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a># bookworm-updates, to get updates before a point release is made;
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a># see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a># deb http://deb.debian.org/debian/ bookworm-updates main non-free-firmware
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a># deb-src http://deb.debian.org/debian/ bookworm-updates main non-free-firmware
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a># This system was installed using small removable media
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a># (e.g. netinst, live or single CD). The matching &quot;deb cdrom&quot;
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a># entries were disabled at the end of the installation process.
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a># For information about how to configure apt package sources,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a># see the sources.list(5) manual.
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a># ----------
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a># Testing - trixie
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>deb http://deb.debian.org/debian/ trixie main non-free-firmware
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>deb-src http://deb.debian.org/debian/ trixie main non-free-firmware
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>deb http://security.debian.org/debian-security trixie-security main non-free-firmware
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>deb-src http://security.debian.org/debian-security trixie-security main non-free-firmware
 </code></pre></div>
 <blockquote>
 <p>NOTE: I havent updated this to the new form for apt packages, although the regolith-desktop entries are updated to the new form.</p>
@@ -1265,19 +1286,19 @@
 <p>X11 config has changed recently (jan/feb 2025) which breaks the Debian install for Regoligh desktop, but there is an updated packages in the regolith-desktop unstable repository with the fix (and it works very nicely).</p>
 <div class="admonition example">
 <p class="admonition-title">Regolith Desktop Apt repositories - testing and unstable</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/debian/testing testing main
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/debian/unstable testing main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/debian/testing testing main
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/debian/unstable testing main
 </code></pre></div>
 </div>
 <h3 id="chrome-browser">Chrome Browser<a class="headerlink" href="#chrome-browser" title="Permanent link">λ︎</a></h3>
 <p>I use Firefox ESR to browse the world wide web by default.  A few websites dont work so well, so I also install Chrome.</p>
 <p>Downloaded the <code>.deb</code> file from the <a href="">Chrome Browser website</a></p>
 <p>Installed as root (<code>su -</code>) with apt</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apt<span class="w"> </span>install<span class="w"> </span>/home/practicalli/Downloads/google-chrome-stable_current_amd64.deb
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apt<span class="w"> </span>install<span class="w"> </span>/home/practicalli/Downloads/google-chrome-stable_current_amd64.deb
 </code></pre></div>
 <h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">λ︎</a></h3>
 <p>Installed Git via Debian package manager</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apt install git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>apt install git
 </code></pre></div>
 <p>Download practicalli/dotfiles for ssh keys and config and git config</p>
 <p>Created symbolic link to dotfiles/git in .config</p>
@@ -1286,16 +1307,16 @@
 <p>Neovim 0.10.x is the latest packaged version for Debian.</p>
 <p>Downloaded the 0.11.2 release (May 30 2025) from the <a href="https://github.com/neovim/neovim/releases">Neovim GitHub releases page</a></p>
 <p>Moved the appimage to <code>/usr/local/bin/</code> and renamed the file to include its version number.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>/home/practicalli/Downloads/nvim-linux-x86_64.appimage<span class="w"> </span>/usr/local/bin/nvim-0.11.2-linux-x86_64.appimage
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>/home/practicalli/Downloads/nvim-linux-x86_64.appimage<span class="w"> </span>/usr/local/bin/nvim-0.11.2-linux-x86_64.appimage
 </code></pre></div>
 <p>Created a symbolic link to start neovim with the <code>nvim</code> command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/usr/local/bin/nvim-0.11.2-linux-x86_64.appimage<span class="w"> </span>/usr/local/bin/nvim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/usr/local/bin/nvim-0.11.2-linux-x86_64.appimage<span class="w"> </span>/usr/local/bin/nvim
 </code></pre></div>
 <p>Cloned Practicalli Astro5</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>e:nvim-astro5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>e:nvim-astro5
 </code></pre></div>
 <p>Created symbolic link in the .config directory</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>~/projects/practicalli/nvim-astro5<span class="w"> </span>~/.config/nvim-astro5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>~/projects/practicalli/nvim-astro5<span class="w"> </span>~/.config/nvim-astro5
 </code></pre></div>
 <p>Sourced the aliases in <code>.config/shell-aliases</code> to ensure they are loaded.</p>
 <h3 id="zsh">Zsh<a class="headerlink" href="#zsh" title="Permanent link">λ︎</a></h3>
@@ -1313,7 +1334,7 @@
 <!--- TODO: change to Prezto configuration for Zsh --->
 
 <p>Change the user account default shell to zsh.  Use <code>which zsh</code> to find the location on the OS for the zsh binary.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Logout to update user shell</p>
@@ -1323,10 +1344,10 @@
 <p><a href="https://starship.rs/">Starship</a> is packaged for Debian Linux testing but is one minor version behind.</p>
 <p>Used the starship install script which adds <code>starship</code> to the <code>/usr/local/bin/</code> directory.</p>
 <p>As root:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl<span class="w"> </span>-sS<span class="w"> </span>https://starship.rs/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>curl<span class="w"> </span>-sS<span class="w"> </span>https://starship.rs/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
 <p>Edited <code>~/.zshrc</code> and added the starship lauch code for Zsh</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>starship<span class="w"> </span>init<span class="w"> </span>zsh<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>starship<span class="w"> </span>init<span class="w"> </span>zsh<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 <h2 id="article-using-raid-as-a-back-up">Article - Using RAID as a back up<a class="headerlink" href="#article-using-raid-as-a-back-up" title="Permanent link">λ︎</a></h2>
 <p>RAID isnt a backup, dont pretend it is if you have valuable and irreplaceable data.</p>
@@ -1394,8 +1415,14 @@
 <ul>
 <li>Implementing AI in your products</li>
 </ul>
+<h3 id="personal-experiences">Personal experiences<a class="headerlink" href="#personal-experiences" title="Permanent link">λ︎</a></h3>
 <p>Back in 1997 I was considering a PhD at Newcastle University.  One of the topics that seemed interesting was agents (and all the challenges of using software agents).  I was fascinated by the subject but there didn't seem much of a practical application for these concepts at that time.</p>
 <p>Now there is a lot of discussion about Agentic AI, which is a fancy word for software agents that</p>
+<p>Whilst thinking abut malicious agents I remembered the Matrix movies and Agent smith as a metaphor.</p>
+<p>Agent smith was a disillusioned piece of software in the matrix who had come to despise the humans, possibly due to the fact he was in charge of managing their erratic behaviour.  At the end of the first movie, Agent Smith is destroyed by Neo from the inside out.</p>
+<p>In the second movie Agent smith actually survived the experience and enhanced his abilities, so Smith could invade other software agents and any other software in the matrix. Smith would convert each person to a clone of himself.</p>
+<p>By the third movie, Smith was taking over almost all the Matix.  Only Neo was left to try and stop Smith.</p>
+<p>I find this a cautionary tail for an autonomous AI agent that goes rogue, taking over and controlling other agents.</p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1423,7 +1450,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 5, 2025 10:50:06 UTC">June 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 5, 2025 14:35:40 UTC">June 5, 2025</span>
   </span>
 
     
