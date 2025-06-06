@@ -1084,6 +1084,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why rust
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why rust">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immutability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immutability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1169,7 +1229,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              10 min read
+                              15 min read
                             
                           </span>
                         </div>
@@ -1423,6 +1483,216 @@
 <p>In the second movie Agent smith actually survived the experience and enhanced his abilities, so Smith could invade other software agents and any other software in the matrix. Smith would convert each person to a clone of himself.</p>
 <p>By the third movie, Smith was taking over almost all the Matix.  Only Neo was left to try and stop Smith.</p>
 <p>I find this a cautionary tail for an autonomous AI agent that goes rogue, taking over and controlling other agents.</p>
+<h2 id="why-rust">Why rust<a class="headerlink" href="#why-rust" title="Permanent link">λ︎</a></h2>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">λ︎</a></h3>
+<p>Runtime performance as fast (or faster) than C / C++</p>
+<p>Safety</p>
+<p>Fullstack (backend and web development, WASM)</p>
+<p>Multi-core support</p>
+<p>Expressive compiler - really good feedback</p>
+<p>Appreciated by the community</p>
+<p>Consistency - strict coding standards</p>
+<p>Negatives</p>
+<ul>
+<li>learning curve quite steep (Milford video series helps) - more support in 2025</li>
+<li>rust is maturing (although is this still the case?) - how mature are the libraries in 2025</li>
+<li>learning the rust concepts</li>
+</ul>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">λ︎</a></h2>
+<p>The following is used in Milford videos</p>
+<p>VS Code
+- add the C/C++ extension to support debugging
+- Rust (rls) extension
+  - RLS popup installs the server when opening your first Rust project
+- rustup</p>
+<p>Test in the VS Code terminal using the commands</p>
+<ul>
+<li>rustc --version</li>
+<li>cargo --version</li>
+<li>rustup --version</li>
+</ul>
+<h2 id="compiler">Compiler<a class="headerlink" href="#compiler" title="Permanent link">λ︎</a></h2>
+<p>The compiler versions are organised by editions, e.g. "2018".  The edition of the compiler is defined in the <code>Cargo.toml</code> project configuration file.</p>
+<h2 id="immutability">Immutability<a class="headerlink" href="#immutability" title="Permanent link">λ︎</a></h2>
+<p>Most things are immutable by default (not sure about String objects)</p>
+<p>Use <code>mut</code> to define something as mutable</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">change_me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">λ︎</a></h2>
+<p>On Debian Linux there is a <code>rust-all</code> package that seems to do everything...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Package: rust-all
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Version: 1.85.0+dfsg3-1
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Priority: optional
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Section: devel
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Source: rustc
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Maintainer: Debian Rust Maintainers &lt;pkg-rust-maintainers@alioth-lists.debian.net&gt;
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Installed-Size: 366 kB
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>Depends: rustc (&gt;= 1.85.0+dfsg3-1), rustfmt (&gt;= 1.85.0+dfsg3-1), rust-analyzer (&gt;= 1.85.0+dfsg3-1), rust-clippy (&gt;= 1.85.0+dfsg3-1), rust-gdb (&gt;= 1.85.0+dfsg3-1) | rust-lldb (&gt;= 1.85.0+dfsg3-1), rust-llvm (&gt;= 1.85.0+dfsg3-1), cargo
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>Recommends: cargo (= 1.85.0+dfsg3-1)
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>Suggests: rust-doc (&gt;= 1.85.0+dfsg3-1), rust-src (&gt;= 1.85.0+dfsg3-1), libstd-rust-dev-wasm32 (&gt;= 1.85.0+dfsg3-1)
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Homepage: http://www.rust-lang.org/
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>Download-Size: 243 kB
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>APT-Sources: http://deb.debian.org/debian trixie/main amd64 Packages
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>Description: Rust systems programming language - all developer tools
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a> Rust is a curly-brace, block-structured expression language.  It
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a> visually resembles the C language family, but differs significantly
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a> in syntactic and semantic details.  Its design is oriented toward
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a> concerns of &quot;programming in the large&quot;, that is, of creating and
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a> maintaining boundaries - both abstract and operational - that
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a> preserve large-system integrity, availability and concurrency.
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a> .
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a> It supports a mixture of imperative procedural, concurrent actor,
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a> object-oriented and pure functional styles.  Rust also supports
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a> generic programming and meta-programming, in both static and dynamic
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a> styles.
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a> .
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a> This package is an empty metapackage that depends on all developer tools
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a> in the standard rustc distribution that have been packaged for Debian.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>apt install rust-all
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Installing:
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  rust-all
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>Installing dependencies:
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  cargo           gdb           libbabeltrace1          libclang-cpp19      libdebuginfod-common  libhttp-parser2.9  libobjc4                    libsource-highlight4t64  libstdc++-14-dev  lld-19       llvm-19-linker-tools  python3-pygments  rust-clippy  rustc
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  clang-19        lib32gcc-s1   libc6-i386              libclang-rt-19-dev  libdebuginfod1t64     libipt2            libpfm4                     libstd-rust-1.85         libxml2-dev       llvm-19      llvm-19-runtime       python3-yaml      rust-gdb     rustfmt
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  clang-tools-19  lib32stdc++6  libclang-common-19-dev  libclang1-19        libgit2-1.9           libobjc-14-dev     libsource-highlight-common  libstd-rust-dev          libz3-dev         llvm-19-dev  llvm-19-tools         rust-analyzer     rust-llvm
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>Suggested packages:
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  cargo-doc  clang-19-doc  wasi-libc  gdb-doc  gdbserver  libc-dbg  libstdc++-14-doc  llvm-19-doc  python-pygments-doc  rust-doc  rust-src  libstd-rust-dev-wasm32
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>Summary:
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>  Upgrading: 0, Installing: 42, Removing: 0, Not Upgrading: 12
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>  Download size: 196 MB
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  Space needed: 1,100 MB / 942 GB available
+</code></pre></div>
+<p>Hold on... Rust recommends <code>rustup</code> but its not part of rust-all.</p>
+<p>Installing rustup removes some of the rust-all packages and rust-all meta-package...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a> ~ apt install rustup rust-src
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Solving dependencies... Error!
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Some packages could not be installed. This may mean that you have
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>requested an impossible situation or if you are using the unstable
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>distribution that some required packages have not yet been created
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>or been moved out of Incoming.
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>The following information may help to resolve the situation:
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Unsatisfied dependencies:
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a> rust-src : Conflicts: rustup but 1.27.1-3+b1 is to be installed
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>Error: Unable to correct problems, you have held broken packages.
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>Error: The following information from --solver 3.0 may provide additional context:
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>   Unable to satisfy dependencies. Reached two conflicting decisions:
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>   1. rustup:amd64=1.27.1-3+b1 is selected for install
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>   2. rustup:amd64=1.27.1-3+b1 is not selected for install because:
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>      1. rust-src:amd64=1.85.0+dfsg3-1 is selected for install
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>      2. rust-src:amd64 Conflicts rustup
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>➜  ~ apt install rustup
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>The following packages were automatically installed and are no longer required:
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>  libgit2-1.9  libhttp-parser2.9  lld-19  rust-llvm
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>Use &#39;apt autoremove&#39; to remove them.
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>Installing:
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>  rustup
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>REMOVING:
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>  cargo  libstd-rust-1.85  libstd-rust-dev  rust-all  rust-analyzer  rust-clippy  rust-gdb  rustc  rustfmt
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>Summary:
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>  Upgrading: 0, Installing: 1, Removing: 9, Not Upgrading: 12
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>  Download size: 2,158 kB
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>  Freed space: 355 MB
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>Continue? [Y/n] y
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 rustup amd64 1.27.1-3+b1 [2,158 kB]
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>Fetched 2,158 kB in 0s (6,803 kB/s)
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>(Reading database ... 292033 files and directories currently installed.)
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>Removing rust-all (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>Removing cargo (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>Removing rustc (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>Removing libstd-rust-dev:amd64 (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>Removing rustfmt (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>Removing rust-analyzer (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>Removing rust-clippy (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>Removing rust-gdb (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>Removing libstd-rust-1.85:amd64 (1.85.0+dfsg3-1) ...
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>Selecting previously unselected package rustup.
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>(Reading database ... 291892 files and directories currently installed.)
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>Preparing to unpack .../rustup_1.27.1-3+b1_amd64.deb ...
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>Unpacking rustup (1.27.1-3+b1) ...
+<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>Setting up rustup (1.27.1-3+b1) ...
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>Processing triggers for man-db (2.13.1-1) ...
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>Processing triggers for libc-bin (2.41-8) ...
+</code></pre></div>
+<p>Oh dear, it seems the Debian package of <code>rustup</code> is from May 2024, so over a year ago.  There has been a major (1.28.0) and two minor <a href="https://github.com/rust-lang/rustup/tags">releases (tags)</a> since then.</p>
+<p>Uninstall what I have just installed...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apt<span class="w"> </span>remove<span class="w"> </span>--purge<span class="w"> </span>rustup<span class="w"> </span>cargo<span class="w"> </span>rust-clippy<span class="w">  </span>rustc<span class="w"> </span>llvm-19<span class="w"> </span>llvm-19-runtime<span class="w">  </span>python3-yaml<span class="w"> </span>rust-gdb<span class="w"> </span>rustfmt<span class="w"> </span>clang-tools-19<span class="w">  </span>lib32stdc++6<span class="w"> </span>libclang-common-19-dev<span class="w">  </span>libclang1-19<span class="w"> </span>libgit2-1.9<span class="w"> </span>libobjc-14-dev<span class="w"> </span>libsource-highlight-common<span class="w">  </span>libstd-rust-dev<span class="w"> </span>libz3-dev<span class="w">  </span>llvm-19-dev<span class="w">  </span>llvm-19-tools<span class="w"> </span>rust-analyzer<span class="w"> </span>rust-llvm
+</code></pre></div>
+<p>Now install via the script on the rust-up site</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">&#39;=https&#39;</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span>https://sh.rustup.rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+<p>This script does print out what its going to do before doing it (at least an overview)</p>
+<p>I ran this as root thinking it would try install something globally, but this is not the case.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>➜  ~ curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>info: downloading installer
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Welcome to Rust!
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>This will download and install the official compiler for the Rust
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>programming language, and its package manager, Cargo.
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>Rustup metadata and toolchains will be installed into the Rustup
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>home directory, located at:
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>  /root/.rustup
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>This can be modified with the RUSTUP_HOME environment variable.
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>The Cargo home directory is located at:
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>  /root/.cargo
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>This can be modified with the CARGO_HOME environment variable.
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>The cargo, rustc, rustup and other commands will be added to
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>Cargo&#39;s bin directory, located at:
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>  /root/.cargo/bin
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>This path will then be added to your PATH environment variable by
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>modifying the profile files located at:
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>  /root/.profile
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>  /root/.bashrc
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>  /root/.zshenv
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>You can uninstall at any time with rustup self uninstall and
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>these changes will be reverted.
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>Current installation options:
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>   default host triple: x86_64-unknown-linux-gnu
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>     default toolchain: stable (default)
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>               profile: default
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>  modify PATH variable: yes
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>1) Proceed with standard installation (default - just press enter)
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>2) Customize installation
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>3) Cancel installation
+</code></pre></div>
+<p>So cancel this install and run as Practicalli, my usual account name.</p>
+<p>Also want to change the location of the Rustup home directory with <code>RUSTUP_HOME</code> and the cargo home via <code>CARGO_HOME</code></p>
+<p>I use the XFreeDesktop configs, so I can either use that variable in the name or use .config.  I'll try first with the XFreeDesktop variable</p>
+<p>I also want to group all the rust configs into a single directory so I know they all relate to rust (rather than being spread around the .config directory).  I'll create a <code>$XDG_CONFIG_HOME/rust</code> directory</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>mkdir<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/rust
+</code></pre></div>
+<p>Define rust related variables relative to the XFreeDesktop variables, adding these to <code>~/.zshenv</code> file</p>
+<div class="highlight"><span class="filename">~/.zshrc</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a># Rust Lang Development tools
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>export RUSTUP_HOME=&quot;${RUSTUP_HOME:=$HOME/.config/rust/rustup/}&quot;
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>export CARGO_HOME=&quot;${RUSTUP_HOME:=$HOME/.config/rust/cargo/}&quot;
+</code></pre></div>
+<p>NOTE: apparently <code>.zshenv</code> file is sourced every time a new zsh session is started.  So one-off exports like these are better suited to the <code>.zprofile</code> file</p>
+<p>Lets test that theory...</p>
+<p>Yes this is the case.  Opening a new tab in kitty starts a new Zsh session and it did have the <code>RUSTUP_HOME</code> variable, <code>echo $RUSTUP_HOME</code>.  Switching to an existing kitty tab, the <code>RUSTUP_HOME</code> variable did not exist.</p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1450,7 +1720,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 5, 2025 14:35:40 UTC">June 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 6, 2025 22:03:54 UTC">June 6, 2025</span>
   </span>
 
     
