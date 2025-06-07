@@ -1,0 +1,144 @@
+site_name: Practicalli Personal Journal
+site_url: https://practical.li/journal
+site_description: Daily journal of thoughts and experiences
+site_author: Practicalli
+site_org: https://practical.li
+copyright: Copyright &copy 2024 Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+repo_url: https://github.com/practicalli/journal/
+edit_uri: https://github.com/practicalli/journal/edit/main/docs/
+
+# Theme and styling
+theme:
+  name: material
+  logo: assets/images/practicalli-logo.png
+  favicon: assets/favicon.svg
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - navigation.footer
+    - navigation.indexes # Nav sections can have files
+    - navigation.instant # Avoid page reloading for internal links
+    - navigation.top
+    - navigation.tracking # Update URL with sub-heading anchor names
+    - navigation.sections
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  # Override theme
+  custom_dir: overrides
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+validation:
+  omitted_files: warn
+  absolute_links: relative_to_docs
+  unrecognized_links: warn
+  anchors: warn  # New in MkDocs 1.6
+
+## Additional styling
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html # Grids
+  - footnotes # footnotes and abbreviations
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      url_download: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys # keyboard keys
+  - pymdownx.magiclink
+  - def_list # lists
+  - pymdownx.tasklist:
+      custom_checkbox: true # checkboxes
+  - toc:
+      permalink: λ︎
+
+## Plugins
+plugins:
+  - blog:
+      blog_dir: .
+      post_url_format: "{slug}"
+      draft: false
+      draft_on_serve: true
+      draft_if_future_date: true
+  - rss:
+      image: https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true
+      enabled: true
+      # How many articles to include (Default 20)
+      length: 50
+      # enabled: !ENV [CI, false]
+      match_path: posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+  - search
+  - callouts
+  - glightbox # Image aligning
+  - git-revision-date-localized: # Update and Creation date of each page
+      # enable_creation_date: true
+      fallback_to_build_date: true
+
+  # Generate Social Cards via CI only
+  # in assets/images/social
+  - social:
+      cards: !ENV [MKDOCS_SOCIAL_CARDS_GENERATE, true]
+  - tags
+
+# Footer / Social Media
+extra:
+  analytics:
+    provider: google
+    property: G-7WHCX3FBZ7
+  social:
+    - icon: material/web
+      link: https://practical.li/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jr0cket/
+    - icon: fontawesome/brands/slack
+      link: https://clojurians.slack.com/messages/practicalli
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/practical_li
+    - icon: fontawesome/brands/github
+      link: https://github.com/practicalli
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/practicalli
+
+# Navigation
+nav:
+  - index.md
+  - practicalli-team.md
+  - RSS feed: feed_rss_created.xml
