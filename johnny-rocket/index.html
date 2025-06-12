@@ -948,6 +948,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firefox-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firefox extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-linux-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debian Linux install
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1159,9 +1183,10 @@
   <h1>Johnny Rocket</h1>
 
 <p>I had an interview for a new role last week and it seems a very interesting company. The seem very organised and clear in their communication and I am on to the next step <img alt="😺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f63a.svg" title=":smiley_cat:" /></p>
-<p>Putting the finishing touches to the <a href="#debian-linux">Debian Linux install on the Lenovo Extreme laptop</a>.  Reviewed the <a href="http://deb.debian.org/">Debian Linux mirrors</a> work as its been a while.  <code>deb.debian.org</code> contains the SRV records in DNS that manages the routing to the most appropriate package archive, so I dont need to do anything to have the best mirror.</p>
+<p>Putting the finishing touches to the <a href="#debian-linux">Debian Linux install on the Lenovo Extreme laptop</a>.  Reviewed the <a href="http://deb.debian.org/" target="_blank">Debian Linux mirrors</a> work as its been a while.  <code>deb.debian.org</code> contains the SRV records in DNS that manages the routing to the most appropriate package archive, so I dont need to do anything to have the best mirror.</p>
 <p>I found a <a href="#configure-dark-theme-in-gtk4-apps">solution to GTK4 apps not using the dark theme</a> in i3 (Regoligth), so the world is a happy place again <img alt="🙄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f644.svg" title=":face_with_rolling_eyes:" /></p>
 <p>Testing out 1Password password manager as a replacement for NordPass which was used for the last couple of years. :crossed_fingers:</p>
+<p>Update: 1Password is so much nicer experience getting setup so I will definately switch.  An interesting thing I saw when signing up for an account was that 1Password first did a credit card check by trying to take 1 USD from my account.  As the account was empty then my bank refused the withdrawl.  So 1Password asked for $0 dollars instead, which my bank app prompted me to accept.  I have 7 days trial to change my mind before they take the anual payment (32 Euros).</p>
 <!-- more -->
 
 <h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
@@ -1179,7 +1204,12 @@
 <p>I have been using NordPass password manger for the last 2 years and its has been okay.  I got this as a very cost effective bundle with NordVPN.  I used the VPN quite a lot initially, but now a lot of things I wanted it for block access from a VPN service.</p>
 <p>NordPass by itself is a little cheaper than other password managers, but the lack of a Debian Linux package is not a good experience.  The NordPass desktop app is available as a Snap, but the use of Snaps is why I moved away from Ubuntu back to Debian Linux.</p>
 <p>There is a good Firefox browser extension for Nordpass and the password vault can be accessed via a web page too.</p>
-<p>Its time to test drive 1Password. Every company I've worked for over the last few years is using 1Password and there is a <code>.deb</code> file to download as well a guide to adding the 1Password Personal Package Archive (PPA).</p>
+<p>Its time to test drive 1Password. Every company I've worked for over the last few years is using 1Password</p>
+<h4 id="firefox-extension">Firefox extension<a class="headerlink" href="#firefox-extension" title="Permanent link">λ︎</a></h4>
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/1password-x-password-manager/">1Password firefox extension</a> link was presented when I selected the basic plan. A very nice touch.</p>
+<h4 id="debian-linux-install">Debian Linux install<a class="headerlink" href="#debian-linux-install" title="Permanent link">λ︎</a></h4>
+<p>More important to me is the availability of <a href="https://1password.com/downloads/linux" target="_blank">a <code>.deb</code> file to download</a> as well a guide to adding the <a href="https://support.1password.com/install-linux/#debian-or-ubuntu" target="_blank">1Password Personal Package Archive (PPA)</a>.</p>
+<p>There is also a guide to <a href="https://support.1password.com/install-linux/#arch-linux" target="_blank">installing 1Password via an Arch User Repository (AUR) package</a>.</p>
 <p>Installation of the <code>.deb</code> package was smooth</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>❯ sudo apt install ./1password-latest.deb
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>[sudo] password for practicalli:
@@ -1260,7 +1290,7 @@
 </code></pre></div>
 <p>No difference but maybe a logout or reboot is required.</p>
 <h4 id="configure-dark-theme-for-gtk4-apps">Configure dark theme for GTK4 apps<a class="headerlink" href="#configure-dark-theme-for-gtk4-apps" title="Permanent link">λ︎</a></h4>
-<p>The i3 GitHub discussion <a href="https://github.com/i3/i3/discussions/5896#discussioncomment-8556941">GTK4 apps dont respect dark theme in i3</a> provides a simple configuration solution to setting a dark theme.</p>
+<p>The i3 GitHub discussion <a href="https://github.com/i3/i3/discussions/5896#discussioncomment-8556941" target="_blank">GTK4 apps dont respect dark theme in i3</a> provides a simple configuration solution to setting a dark theme.</p>
 <p>Create (or edit) the config file <code>$HOME/.config/xdg-desktop-portal/portals.conf</code></p>
 <div class="admonition info">
 <p class="admonition-title">Solution: xdg-desktop-portal configuration</p>
@@ -1272,7 +1302,7 @@
 <h2 id="nvidia-graphics-drivers">nvidia graphics drivers<a class="headerlink" href="#nvidia-graphics-drivers" title="Permanent link">λ︎</a></h2>
 <p>The new install on the Lenovo Extreme laptop is working well, except video playback is not always completely smooth.</p>
 <p>The laptop has nvidia hardware and Debian Linux doesnt prompt to install closed source drivers for nvidia video cards by default.</p>
-<p>There an extensive <a href="https://wiki.debian.org/NvidiaGraphicsDrivers">guide to nvidia hardware on Debian Linux Wiki</a>.</p>
+<p>There an extensive <a href="https://wiki.debian.org/NvidiaGraphicsDrivers" target="_blank">guide to nvidia hardware on Debian Linux Wiki</a>.</p>
 <p>Update the Apt sources.list file to include <code>contrib</code> and <code>non-free</code> sections of the archive to make use of the proprietary nvidia driver software.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># ----------
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># Testing - trixie
@@ -1446,13 +1476,13 @@
 <h2 id="sound-recording">Sound recording<a class="headerlink" href="#sound-recording" title="Permanent link">λ︎</a></h2>
 <p>Debian Linux enabled the microphone by default with the maximum volume (unless I pressed some buttons without realising it).</p>
 <p>When recording my desktop this leads to unexpected background noise at least and more likely quite noticeable sound feedback.</p>
-<p>Muting the microphone ensured that sound recording would not be affected (until I actually need to use a microphone of course).</p>
+<p>Muting the microphone ensured that sound recording would not be affected (until I actually need to use a microphone).</p>
 <h2 id="bike-maintenance">Bike maintenance<a class="headerlink" href="#bike-maintenance" title="Permanent link">λ︎</a></h2>
 <p>The current saddle on the Ribble SL Disc bike has alloy rails, measuring 7x7 mm.  The new 3D printed bike from AliExpress has carbon rails which are taller than the alloy rails, 7x9 mm, and do not fit the adaptor that came with the Ribble bike.</p>
-<p>The <a href="https://www.ribblecycles.co.uk/ribble-seat-clamp-for-carbon-rails-7mm-x-9mm/">Ribble carbon rail saddle clamp assembly</a> seems to be the accessory I would need to fit the new saddle.  Current costs are 15 GBP with an additional 5 GBP for delivery.</p>
+<p>The <a href="https://www.ribblecycles.co.uk/ribble-seat-clamp-for-carbon-rails-7mm-x-9mm/" target="_blank">Ribble carbon rail saddle clamp assembly</a> seems to be the accessory I would need to fit the new saddle.  Current costs are 15 GBP with an additional 5 GBP for delivery.</p>
 <p>There are a few scratches on the Ribble, so I could also order some touch up paint.  This wouldnt add to the delivery cost, but the paint isn't exactly cheap at 19.99 GBP for a 25ml bottle <img alt="🤣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f923.svg" title=":rolling_on_the_floor_laughing:" />  They do also include a 25ml bottle of clear coat lacquer and 2 touch-up brushes.</p>
 <p>I will try fit the new saddle to another bike and see if I find it comfortable to ride on.  If not, I will send it back and stick with my current saddle.</p>
-<p>I do find the ribble clamp assembly very fiddly to fit, it comes apart very easily.  There is <a href="https://helpcentre.ribblecycles.co.uk/support/solutions/articles/22000289310-sl-seatpost-saddle-clamp-assembly-instructions">a very specific way to fit the assembly</a> which requires most of it to be assembled first and attached to the saddle rails, then carefully tightened onto the top of the seat post.</p>
+<p>I do find the ribble clamp assembly very fiddly to fit as it comes apart if not careful.  There is <a href="https://helpcentre.ribblecycles.co.uk/support/solutions/articles/22000289310-sl-seatpost-saddle-clamp-assembly-instructions" target="_blank">a specific way to fit the assembly</a> which requires most of it to be assembled first and attached to the saddle rails, then carefully tightened onto the top of the seat post.</p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1480,7 +1510,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 12, 2025 14:42:45 UTC">June 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 12, 2025 16:27:38 UTC">June 12, 2025</span>
   </span>
 
     
