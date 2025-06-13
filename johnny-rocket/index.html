@@ -1045,6 +1045,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neovim
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1130,7 +1139,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              13 min read
+                              17 min read
                             
                           </span>
                         </div>
@@ -1187,6 +1196,7 @@
 <p>I found a <a href="#configure-dark-theme-in-gtk4-apps">solution to GTK4 apps not using the dark theme</a> in i3 (Regoligth), so the world is a happy place again <img alt="🙄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f644.svg" title=":face_with_rolling_eyes:" /></p>
 <p>Testing out 1Password password manager as a replacement for NordPass which was used for the last couple of years. :crossed_fingers:</p>
 <p>Update: 1Password is so much nicer experience getting setup so I will definately switch.  An interesting thing I saw when signing up for an account was that 1Password first did a credit card check by trying to take 1 USD from my account.  As the account was empty then my bank refused the withdrawl.  So 1Password asked for $0 dollars instead, which my bank app prompted me to accept.  I have 7 days trial to change my mind before they take the anual payment (32 Euros).</p>
+<p>Started the <a href="https://practical.li/rust">Practicalli Rust book</a> although this is only the structure of the book and the CI publishing workflow for the moment.  It does provide a central place to capture all my experiences with Rust and hopefully it will become useful to others in the near future.</p>
 <!-- more -->
 
 <h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
@@ -1483,6 +1493,111 @@
 <p>There are a few scratches on the Ribble, so I could also order some touch up paint.  This wouldnt add to the delivery cost, but the paint isn't exactly cheap at 19.99 GBP for a 25ml bottle <img alt="🤣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f923.svg" title=":rolling_on_the_floor_laughing:" />  They do also include a 25ml bottle of clear coat lacquer and 2 touch-up brushes.</p>
 <p>I will try fit the new saddle to another bike and see if I find it comfortable to ride on.  If not, I will send it back and stick with my current saddle.</p>
 <p>I do find the ribble clamp assembly very fiddly to fit as it comes apart if not careful.  There is <a href="https://helpcentre.ribblecycles.co.uk/support/solutions/articles/22000289310-sl-seatpost-saddle-clamp-assembly-instructions" target="_blank">a specific way to fit the assembly</a> which requires most of it to be assembled first and attached to the saddle rails, then carefully tightened onto the top of the seat post.</p>
+<h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
+<p>Astro5 package updates</p>
+<p>Interesting update for the Octo plugin which seems to provide basic support for issue types</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>        ○ octo.nvim  Octo
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>            06f2c37 feat: open release from notification (#1096) (23 hours ago)
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>            11b2ab6 add basic support for types (#1095) (23 hours ago)
+</code></pre></div>
+<details class="example">
+<summary>Lazy package manager updates on Friday 13 June</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>  Updated (12)
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    ● astrocommunity 0.17ms  start
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        9b7d85c revert(catppuccin): cleaned up catppuccin pack (#1541) (2 days ago)
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        3c74e80 fix(catppuccin): cleaned up catppuccin pack  (#1513) (3 days ago)
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        67a2188 fix(kulala-nvim): fix keymaps config (#1539) (5 days ago)
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        9e5d5d3 fix(nvim-treesitter-context): fix outdated commands (#1538) (7 days ago)
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>        67b3d09 chore: configure lua language server to disable formatting (7 days ago)
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        80b9c58 fix(avante-nvim): Check for nil value in opts table for markview.nvim dependency (#1537) (10 days ago)
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        8ae3804 feat(pack): add eslint (#1503) (11 days ago)
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>        2f550c0 docs(harper): Link to correct configuration doc (#1536) (11 days ago)
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        2c879c0 feat(pack): add spring-boot pack (#1534) (11 days ago)
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    ● catppuccin 3.87ms colorscheme catppuccin-mocha  astrocore
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>        fa42eb5 feat(blink-cmp): add `style` option (#867) (7 days ago)
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>    ○ conjure  scheme  guile  julia  lisp  rust  sql  python  lua  clojure  janet  fennel  racket  hy
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>        8edc78f Should support 0.9.5 now too, yuck! (2 days ago)
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>        d506198 Update aniseed nvim.lua, mostly formatting but replace tbl_flatten (2 days ago)
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>        cb65153 Comment out nightly in tests for now (5 days ago)
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>        348697c Sync sponsors (5 days ago)
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    ○ grug-far.nvim  GrugFar  GrugFarWithin
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>        1a85fba Default backspaceEol to true (3 days ago)
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>        0ddb123 Only setup autocommand once (3 days ago)
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>        5d58d1e Fix bug where pressing del at end of multiline would spill (3 days ago)
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>        c34ef1f Setup backspace in an autocommand (3 days ago)
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>        487941f Add tests (3 days ago)
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>        59f626e Move remapping to savvy input handling (3 days ago)
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>        d30034c Reuse inputs.getInputAtRow (3 days ago)
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>        78495c9 Make deletion key API more functional (3 days ago)
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>        4b956c5 Style fix (3 days ago)
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>        55f2ebd Fix backspace wrapping text over EOL (3 days ago)
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>        cc44e17 slight optimization of getInputAtRow (3 days ago)
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>        e152f6f Clarify docs (4 days ago)
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>        fc75d93 Remove unneeded type (4 days ago)
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>        ac069b2 Add backspaceEol option to allow deleting eols in search box (4 days ago)
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>        c36f5f9 adding hl of GrugFarWithin range (9 days ago)
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>    ○ kulala.nvim  http  rest
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>        b176ecb docs: Auto-generate vimdocs + vimtags (#582) (5 days ago)
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>        93c9fba feat(scripts): resolve NODE_PATH to nearest node_modules, add  node_path_resolver to options (#577) (5 days ago)
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>    ● mason-tool-installer.nvim 3.76ms  Lazy load
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>        93a9ff9 Merge pull request #81 from carloscalla/udpate-go-condition-example (2 weeks ago)
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>        9c950da doc: improve go example condition (2 weeks ago)
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>    ○ neoconf.nvim  nvim-lspconfig
+<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a>        5ebd6c2 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
+<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a>        7db59f8 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
+<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>
+<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>    ○ neogit  Neogit  User AstroGitFile
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a>        1b4f443 Abstract process result success/failures with method (11 hours ago)
+<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a>        4681357 Add zO, zc, zC mappings. (13 hours ago)
+<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a>        d63c814 setup super diff properly (13 hours ago)
+<a id="__codelineno-18-55" name="__codelineno-18-55" href="#__codelineno-18-55"></a>        cb055dd Merge pull request #1766 from NeogitOrg/support-native-folds-better (13 hours ago)
+<a id="__codelineno-18-56" name="__codelineno-18-56" href="#__codelineno-18-56"></a>        b3d69c2 Allow keys that would act on folds (za, zc, zo) to work with lazy loaded folds. (26 hours ago)
+<a id="__codelineno-18-57" name="__codelineno-18-57" href="#__codelineno-18-57"></a>        7fb9188 Prepopulate existing stash message in input when a user renames a stash. (2 days ago)
+<a id="__codelineno-18-58" name="__codelineno-18-58" href="#__codelineno-18-58"></a>        8345f8c Deduplicate destinations (2 days ago)
+<a id="__codelineno-18-59" name="__codelineno-18-59" href="#__codelineno-18-59"></a>        5c98ee1 Simplify how we get branches/heads in push_other action (2 days ago)
+<a id="__codelineno-18-60" name="__codelineno-18-60" href="#__codelineno-18-60"></a>        07ab294 Fix types (2 days ago)
+<a id="__codelineno-18-61" name="__codelineno-18-61" href="#__codelineno-18-61"></a>        d0c773d Migrate remaining events to use event lib (2 days ago)
+<a id="__codelineno-18-62" name="__codelineno-18-62" href="#__codelineno-18-62"></a>        1025b33 Merge pull request #1763 from NeogitOrg/fix-stash-diff (2 days ago)
+<a id="__codelineno-18-63" name="__codelineno-18-63" href="#__codelineno-18-63"></a>        63f95f2 Fix when trying to use &quot;diff this&quot; from status buffer. Stash was being passed as a SHA instead of stash{n} format, leading to a nil concat error. (2 days ago)
+<a id="__codelineno-18-64" name="__codelineno-18-64" href="#__codelineno-18-64"></a>        dbbbfe6 Notify user when checking out a local branch that tracks an upstream branch fails. (2 days ago)
+<a id="__codelineno-18-65" name="__codelineno-18-65" href="#__codelineno-18-65"></a>        1df653c update docs: editor buffer filetypes (2 days ago)
+<a id="__codelineno-18-66" name="__codelineno-18-66" href="#__codelineno-18-66"></a>        cc0dd57 add annotation (2 days ago)
+<a id="__codelineno-18-67" name="__codelineno-18-67" href="#__codelineno-18-67"></a>        3852b59 Merge pull request #1743 from ericdachen/master (3 days ago)
+<a id="__codelineno-18-68" name="__codelineno-18-68" href="#__codelineno-18-68"></a>        89a2df9 Add autocmd to refresh open buffers after making changes in neogit. (9 days ago)
+<a id="__codelineno-18-69" name="__codelineno-18-69" href="#__codelineno-18-69"></a>        00038cc prevent error when canceling out of options choice fuzzy finder (10 days ago)
+<a id="__codelineno-18-70" name="__codelineno-18-70" href="#__codelineno-18-70"></a>        0583348 tweak behaviour of options - when they are set, the trigger key will first unset them, before letting you set them again. (10 days ago)
+<a id="__codelineno-18-71" name="__codelineno-18-71" href="#__codelineno-18-71"></a>        fbea356 Update README.md (3 weeks ago)
+<a id="__codelineno-18-72" name="__codelineno-18-72" href="#__codelineno-18-72"></a>        18fd199 Warp open source support (3 weeks ago)
+<a id="__codelineno-18-73" name="__codelineno-18-73" href="#__codelineno-18-73"></a>
+<a id="__codelineno-18-74" name="__codelineno-18-74" href="#__codelineno-18-74"></a>    ○ octo.nvim  Octo
+<a id="__codelineno-18-75" name="__codelineno-18-75" href="#__codelineno-18-75"></a>        06f2c37 feat: open release from notification (#1096) (23 hours ago)
+<a id="__codelineno-18-76" name="__codelineno-18-76" href="#__codelineno-18-76"></a>        11b2ab6 add basic support for types (#1095) (23 hours ago)
+<a id="__codelineno-18-77" name="__codelineno-18-77" href="#__codelineno-18-77"></a>        3ee802c fix(pull request): do not show comment code block when empty (#1091) (4 days ago)
+<a id="__codelineno-18-78" name="__codelineno-18-78" href="#__codelineno-18-78"></a>        ef7ece5 feat: render release (#1086) (10 days ago)
+<a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a>
+<a id="__codelineno-18-80" name="__codelineno-18-80" href="#__codelineno-18-80"></a>    ○ rest.nvim  Rest  http
+<a id="__codelineno-18-81" name="__codelineno-18-81" href="#__codelineno-18-81"></a>        de9726a chore(main): release 3.13.0 (2 days ago)
+<a id="__codelineno-18-82" name="__codelineno-18-82" href="#__codelineno-18-82"></a>        5e7cc25 feat: remove $dotenv tags from variables (#546) (2 days ago)
+<a id="__codelineno-18-83" name="__codelineno-18-83" href="#__codelineno-18-83"></a>
+<a id="__codelineno-18-84" name="__codelineno-18-84" href="#__codelineno-18-84"></a>    ○ SchemaStore.nvim
+<a id="__codelineno-18-85" name="__codelineno-18-85" href="#__codelineno-18-85"></a>        60aa5b6 Update SchemaStore catalog (2 days ago)
+<a id="__codelineno-18-86" name="__codelineno-18-86" href="#__codelineno-18-86"></a>        9854326 Update SchemaStore catalog (4 days ago)
+<a id="__codelineno-18-87" name="__codelineno-18-87" href="#__codelineno-18-87"></a>        e702367 Update SchemaStore catalog (8 days ago)
+<a id="__codelineno-18-88" name="__codelineno-18-88" href="#__codelineno-18-88"></a>        307a332 Update SchemaStore catalog (8 days ago)
+<a id="__codelineno-18-89" name="__codelineno-18-89" href="#__codelineno-18-89"></a>        8563ed7 Update SchemaStore catalog (9 days ago)
+<a id="__codelineno-18-90" name="__codelineno-18-90" href="#__codelineno-18-90"></a>        9c4dbc3 Update SchemaStore catalog (10 days ago)
+<a id="__codelineno-18-91" name="__codelineno-18-91" href="#__codelineno-18-91"></a>
+<a id="__codelineno-18-92" name="__codelineno-18-92" href="#__codelineno-18-92"></a>    ● tiny-inline-diagnostic.nvim 7.98ms  VeryLazy
+<a id="__codelineno-18-93" name="__codelineno-18-93" href="#__codelineno-18-93"></a>        cac1059 chore(build): auto-generate vimdoc (9 days ago)
+<a id="__codelineno-18-94" name="__codelineno-18-94" href="#__codelineno-18-94"></a>        7016082 fix: handle nil diagnostics table in update cache. Fixes #120 (9 days ago)
+</code></pre></div>
+</details>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1510,7 +1625,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 12, 2025 16:27:38 UTC">June 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 13, 2025 23:28:24 UTC">June 13, 2025</span>
   </span>
 
     
