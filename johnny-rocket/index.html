@@ -975,6 +975,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#github-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dark-theme-for-gtk" class="md-nav__link">
     <span class="md-ellipsis">
       Dark theme for GTK
@@ -1046,9 +1055,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#neovim" class="md-nav__link">
+  <a href="#octo-and-github-cli" class="md-nav__link">
     <span class="md-ellipsis">
-      Neovim
+      Octo and GitHub CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astro5-package-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Astro5 Package updates
     </span>
   </a>
   
@@ -1117,7 +1135,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2025-06-12 00:00:00+00:00" class="md-ellipsis">June 12, 2025</time>
+                          <time datetime="2025-06-14 00:00:00+00:00" class="md-ellipsis">June 14, 2025</time>
                         </div>
                       </li>
                     
@@ -1139,7 +1157,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              17 min read
+                              18 min read
                             
                           </span>
                         </div>
@@ -1264,39 +1282,47 @@
 <a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>Notice: Download is performed unsandboxed as root as file &#39;/home/practicalli/Downloads/1password-latest.deb&#39; couldn&#39;t be accessed by user &#39;_apt&#39;. - pkgAcquire::Run (13: Permission denied)
 </code></pre></div>
 <p>The notice on the final line occurs when installing a package via sudo from a non-root user.  It doesnt seem to have affected other packages in the past.</p>
+<h3 id="github-cli">GitHub CLI<a class="headerlink" href="#github-cli" title="Permanent link">λ︎</a></h3>
+<p>Debian Linux Trixie has the <code>gh</code> package although it is a little behind the releases.</p>
+<p>The GitHub CLI repository releases includes a debian package which can be downloaded and installed for the latest version.</p>
+<div class="admonition note">
+<p class="admonition-title">Install latest GitHub CLI release</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./gh_2.74.1_linux_amd64.deb
+</code></pre></div>
 <h3 id="dark-theme-for-gtk">Dark theme for GTK<a class="headerlink" href="#dark-theme-for-gtk" title="Permanent link">λ︎</a></h3>
 <p>Regolith Desktop themes work well but they do not cover Gnome apps.</p>
 <p>Although Dark is selected in the Gnome desktop settings &gt; Appearance, some applications still show as a light theme.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>astro<span class="w"> </span>~/.config/gtk-4.0/settings.ini
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>astro<span class="w"> </span>~/.config/gtk-4.0/settings.ini
 </code></pre></div>
 <p>Update this file to have dark set to true (1).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gtk-application-prefer-dark-theme=1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gtk-application-prefer-dark-theme=1
 </code></pre></div>
 <p>Not changing the appearance after closing and re-opening nautilus.  Perhaps a logout / login is required (or maybe this isnt the right setting)</p>
 <p>Also tried for gtk-3.0 and rebooting the operating system with no difference to nautilus.</p>
 <p>Installing catppuccin-gtk</p>
 <p>❯ gsettings set org.gnome.desktop.interface color-scheme prefer-dark</p>
 <p>❯ curl -LsSO "<a href="https://raw.githubusercontent.com/catppuccin/gtk/v1.0.3/install.py">https://raw.githubusercontent.com/catppuccin/gtk/v1.0.3/install.py</a>"</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>~  v3.13.3 ❯ python3 install.py mocha purple
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>usage: install.py [-h] [--from-artifact FROM_ARTIFACT] [--dest DEST] [--link | --no-link]
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                  {mocha,frappe,macchiato,latte} {rosewater,flamingo,pink,mauve,red,maroon,peach,yellow,green,teal,sky,sapphire,blue,lavender}
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>install.py: error: argument accent: invalid choice: &#39;purple&#39; (choose from rosewater, flamingo, pink, mauve, red, maroon, peach, yellow, green, teal, sky, sapphire, blue, lavender)
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>~  v3.13.3 ❯ python3 install.py mocha maroon
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>[catppuccin-gtk] [INFO] - Installation info:
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        flavor:     mocha
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        accent:     maroon
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        dest:       /home/practicalli/.local/share/themes
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        link:       False
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>remote_url: https://github.com/catppuccin/gtk/releases/download/v1.0.3/catppuccin-mocha-maroon-standard+default.zip
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>[catppuccin-gtk] [INFO] - Starting download...
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>[catppuccin-gtk] [INFO] - Response status: 200
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>[catppuccin-gtk] [INFO] - Download finished, zip is valid
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>[catppuccin-gtk] [INFO] - Verifying download..
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>[catppuccin-gtk] [INFO] - Download verified
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>[catppuccin-gtk] [INFO] - Extracting...
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>[catppuccin-gtk] [INFO] - Extraction complete
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>[catppuccin-gtk] [INFO] - Theme installation complete!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>~  v3.13.3 ❯ python3 install.py mocha purple
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>usage: install.py [-h] [--from-artifact FROM_ARTIFACT] [--dest DEST] [--link | --no-link]
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                  {mocha,frappe,macchiato,latte} {rosewater,flamingo,pink,mauve,red,maroon,peach,yellow,green,teal,sky,sapphire,blue,lavender}
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>install.py: error: argument accent: invalid choice: &#39;purple&#39; (choose from rosewater, flamingo, pink, mauve, red, maroon, peach, yellow, green, teal, sky, sapphire, blue, lavender)
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>~  v3.13.3 ❯ python3 install.py mocha maroon
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>[catppuccin-gtk] [INFO] - Installation info:
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        flavor:     mocha
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        accent:     maroon
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        dest:       /home/practicalli/.local/share/themes
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        link:       False
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>remote_url: https://github.com/catppuccin/gtk/releases/download/v1.0.3/catppuccin-mocha-maroon-standard+default.zip
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>[catppuccin-gtk] [INFO] - Starting download...
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>[catppuccin-gtk] [INFO] - Response status: 200
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>[catppuccin-gtk] [INFO] - Download finished, zip is valid
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>[catppuccin-gtk] [INFO] - Verifying download..
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>[catppuccin-gtk] [INFO] - Download verified
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>[catppuccin-gtk] [INFO] - Extracting...
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>[catppuccin-gtk] [INFO] - Extraction complete
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>[catppuccin-gtk] [INFO] - Theme installation complete!
 </code></pre></div>
 <p>No difference but maybe a logout or reboot is required.</p>
 <h4 id="configure-dark-theme-for-gtk4-apps">Configure dark theme for GTK4 apps<a class="headerlink" href="#configure-dark-theme-for-gtk4-apps" title="Permanent link">λ︎</a></h4>
@@ -1305,8 +1331,8 @@
 <div class="admonition info">
 <p class="admonition-title">Solution: xdg-desktop-portal configuration</p>
 <p>Create / edit the $HOME/.config/xdg-desktop-portal/portals.config file to have the following default
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[preferred]
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>default=gtk;wlr
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[preferred]
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>default=gtk;wlr
 </code></pre></div></p>
 </div>
 <h2 id="nvidia-graphics-drivers">nvidia graphics drivers<a class="headerlink" href="#nvidia-graphics-drivers" title="Permanent link">λ︎</a></h2>
@@ -1314,36 +1340,36 @@
 <p>The laptop has nvidia hardware and Debian Linux doesnt prompt to install closed source drivers for nvidia video cards by default.</p>
 <p>There an extensive <a href="https://wiki.debian.org/NvidiaGraphicsDrivers" target="_blank">guide to nvidia hardware on Debian Linux Wiki</a>.</p>
 <p>Update the Apt sources.list file to include <code>contrib</code> and <code>non-free</code> sections of the archive to make use of the proprietary nvidia driver software.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># ----------
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># Testing - trixie
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a># Includes contrib &amp; non-free packages and sources for nvidia video card support
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>deb http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>deb-src http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>deb http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>deb-src http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a># ----------
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># ----------
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a># Testing - trixie
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a># Includes contrib &amp; non-free packages and sources for nvidia video card support
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>deb http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>deb-src http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>deb http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>deb-src http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a># ----------
 </code></pre></div>
 <p>Install <code>nvidia-detect</code> to determine which nvidia driver should be installed (hopefully it should be the universal <code>nvidia-driver</code> although some graphics hardware may required an earlier driver package).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>apt<span class="w"> </span>install<span class="w"> </span>nvidia-detect
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apt<span class="w"> </span>install<span class="w"> </span>nvidia-detect
 </code></pre></div>
 <p>Run the script</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nvidia-detect
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nvidia-detect
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>➜  ~ nvidia-detect
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Detected NVIDIA GPUs:
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] [10de:1f91] (rev a1)
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Checking card:  NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] (rev a1)
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Your card is supported by all driver versions.
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Your card is also supported by the Tesla 535 drivers series.
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>It is recommended to install the
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    nvidia-driver
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>package.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>➜  ~ nvidia-detect
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Detected NVIDIA GPUs:
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] [10de:1f91] (rev a1)
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Checking card:  NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] (rev a1)
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Your card is supported by all driver versions.
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Your card is also supported by the Tesla 535 drivers series.
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>It is recommended to install the
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    nvidia-driver
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>package.
 </code></pre></div>
 <p>Running the <code>nvidia-detect</code> script on the Leonovo Extreme laptop recommended installing the <code>nvidia-driver</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>apt<span class="w"> </span>install<span class="w"> </span>nvidia-driver
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>apt<span class="w"> </span>install<span class="w"> </span>nvidia-driver
 </code></pre></div>
 <p>Reboot the machine for the nvidia drivers to be loaded.</p>
 <blockquote>
@@ -1351,7 +1377,7 @@
 </blockquote>
 <p>Several errors were shown when booting Debian Linux (these errors did not appear in <code>dmesg</code> output though)</p>
 <p>Reading the wiki again, the prerequisites state installing kernel headers so the kernel can load the nvidia drivers</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>apt<span class="w"> </span>install<span class="w"> </span>linux-headers-amd64
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apt<span class="w"> </span>install<span class="w"> </span>linux-headers-amd64
 </code></pre></div>
 <p>Once the linux header package was installed and the computer rebooted, then nvidia driver worked without error.</p>
 <p>Another reboot of the laptop and <code>Enter</code> &gt; <code>F1</code> into the bios to set the Display to use <em>Discrete Graphics</em>, the nvidia graphics hardware.</p>
@@ -1361,127 +1387,127 @@
 <!--- TODO: add steps to Practicalli Engineering Playbook --->
 
 <p>Install python3 virtual environment package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apt<span class="w"> </span>install<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>apt<span class="w"> </span>install<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>~ apt install python3-pip python3-venv
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>The following package was automatically installed and is no longer required:
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  linux-image-6.1.0-37-amd64
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Use &#39;apt autoremove&#39; to remove it.
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Installing:
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  python3-pip  python3-venv
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>Installing dependencies:
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  libexpat1-dev  libpython3-dev  libpython3.13-dev  python3-dev  python3-pip-whl  python3-setuptools-whl  python3-wheel  python3.13-dev  python3.13-venv
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>Suggested packages:
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>  python3-setuptools
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>Summary:
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  Upgrading: 0, Installing: 11, Removing: 0, Not Upgrading: 51
-<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>  Download size: 9,981 kB
-<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>  Space needed: 41.4 MB / 556 GB available
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>~ apt install python3-pip python3-venv
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>The following package was automatically installed and is no longer required:
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>  linux-image-6.1.0-37-amd64
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Use &#39;apt autoremove&#39; to remove it.
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Installing:
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  python3-pip  python3-venv
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Installing dependencies:
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>  libexpat1-dev  libpython3-dev  libpython3.13-dev  python3-dev  python3-pip-whl  python3-setuptools-whl  python3-wheel  python3.13-dev  python3.13-venv
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>Suggested packages:
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>  python3-setuptools
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>Summary:
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>  Upgrading: 0, Installing: 11, Removing: 0, Not Upgrading: 51
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>  Download size: 9,981 kB
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>  Space needed: 41.4 MB / 556 GB available
 </code></pre></div>
 <p>Activate the python3 virtual environment and install Material for MkDocs</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.local/venv/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.local/venv/bin/activate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.local/venv/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.local/venv/bin/activate
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>…/engineering-playbook  main ✘!? ❯ python3 -m venv ~/.local/venv/ &amp;&amp; source ~/.local/venv/bin/activate
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>…/engineering-playbook  v3.13.3(#venv)  main ✘!? ❯ pip install mkdocs-material==&quot;9.*&quot;
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Collecting mkdocs-material==9.*
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>  Downloading mkdocs_material-9.6.14-py3-none-any.whl.metadata (18 kB)
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Collecting babel~=2.10 (from mkdocs-material==9.*)
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  Downloading babel-2.17.0-py3-none-any.whl.metadata (2.0 kB)
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>Collecting backrefs~=5.7.post1 (from mkdocs-material==9.*)
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>  Downloading backrefs-5.8-py313-none-any.whl.metadata (3.3 kB)
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>Collecting colorama~=0.4 (from mkdocs-material==9.*)
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>Collecting jinja2~=3.1 (from mkdocs-material==9.*)
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>Collecting markdown~=3.2 (from mkdocs-material==9.*)
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>  Downloading markdown-3.8-py3-none-any.whl.metadata (5.1 kB)
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>Collecting mkdocs-material-extensions~=1.3 (from mkdocs-material==9.*)
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>  Downloading mkdocs_material_extensions-1.3.1-py3-none-any.whl.metadata (6.9 kB)
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>Collecting mkdocs~=1.6 (from mkdocs-material==9.*)
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>  Downloading mkdocs-1.6.1-py3-none-any.whl.metadata (6.0 kB)
-<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>Collecting paginate~=0.5 (from mkdocs-material==9.*)
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>  Downloading paginate-0.5.7-py2.py3-none-any.whl.metadata (11 kB)
-<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>Collecting pygments~=2.16 (from mkdocs-material==9.*)
-<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>  Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
-<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>Collecting pymdown-extensions~=10.2 (from mkdocs-material==9.*)
-<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>  Downloading pymdown_extensions-10.15-py3-none-any.whl.metadata (3.0 kB)
-<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>Collecting requests~=2.26 (from mkdocs-material==9.*)
-<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
-<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>Collecting MarkupSafe&gt;=2.0 (from jinja2~=3.1-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>  Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
-<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>Collecting click&gt;=7.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
-<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>Collecting ghp-import&gt;=1.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>  Downloading ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
-<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>Collecting mergedeep&gt;=1.3.4 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>  Downloading mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
-<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>Collecting mkdocs-get-deps&gt;=0.2.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>  Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl.metadata (4.0 kB)
-<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>Collecting packaging&gt;=20.5 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
-<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>Collecting pathspec&gt;=0.11.1 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>  Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
-<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>Collecting pyyaml-env-tag&gt;=0.1 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>  Downloading pyyaml_env_tag-1.1-py3-none-any.whl.metadata (5.5 kB)
-<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>Collecting pyyaml&gt;=5.1 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>  Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
-<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>Collecting watchdog&gt;=2.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a>  Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
-<a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a>Collecting charset_normalizer&lt;4,&gt;=2 (from requests~=2.26-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a>  Downloading charset_normalizer-3.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
-<a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a>Collecting idna&lt;4,&gt;=2.5 (from requests~=2.26-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a>  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
-<a id="__codelineno-16-52" name="__codelineno-16-52" href="#__codelineno-16-52"></a>Collecting urllib3&lt;3,&gt;=1.21.1 (from requests~=2.26-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-53" name="__codelineno-16-53" href="#__codelineno-16-53"></a>  Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
-<a id="__codelineno-16-54" name="__codelineno-16-54" href="#__codelineno-16-54"></a>Collecting certifi&gt;=2017.4.17 (from requests~=2.26-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-55" name="__codelineno-16-55" href="#__codelineno-16-55"></a>  Downloading certifi-2025.4.26-py3-none-any.whl.metadata (2.5 kB)
-<a id="__codelineno-16-56" name="__codelineno-16-56" href="#__codelineno-16-56"></a>Collecting python-dateutil&gt;=2.8.1 (from ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-57" name="__codelineno-16-57" href="#__codelineno-16-57"></a>  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
-<a id="__codelineno-16-58" name="__codelineno-16-58" href="#__codelineno-16-58"></a>Collecting platformdirs&gt;=2.2.0 (from mkdocs-get-deps&gt;=0.2.0-&gt;mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-59" name="__codelineno-16-59" href="#__codelineno-16-59"></a>  Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
-<a id="__codelineno-16-60" name="__codelineno-16-60" href="#__codelineno-16-60"></a>Collecting six&gt;=1.5 (from python-dateutil&gt;=2.8.1-&gt;ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material==9.*)
-<a id="__codelineno-16-61" name="__codelineno-16-61" href="#__codelineno-16-61"></a>  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-<a id="__codelineno-16-62" name="__codelineno-16-62" href="#__codelineno-16-62"></a>Downloading mkdocs_material-9.6.14-py3-none-any.whl (8.7 MB)
-<a id="__codelineno-16-63" name="__codelineno-16-63" href="#__codelineno-16-63"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 16.1 MB/s eta 0:00:00
-<a id="__codelineno-16-64" name="__codelineno-16-64" href="#__codelineno-16-64"></a>Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
-<a id="__codelineno-16-65" name="__codelineno-16-65" href="#__codelineno-16-65"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 15.9 MB/s eta 0:00:00
-<a id="__codelineno-16-66" name="__codelineno-16-66" href="#__codelineno-16-66"></a>Downloading backrefs-5.8-py313-none-any.whl (399 kB)
-<a id="__codelineno-16-67" name="__codelineno-16-67" href="#__codelineno-16-67"></a>Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
-<a id="__codelineno-16-68" name="__codelineno-16-68" href="#__codelineno-16-68"></a>Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-<a id="__codelineno-16-69" name="__codelineno-16-69" href="#__codelineno-16-69"></a>Downloading markdown-3.8-py3-none-any.whl (106 kB)
-<a id="__codelineno-16-70" name="__codelineno-16-70" href="#__codelineno-16-70"></a>Downloading mkdocs-1.6.1-py3-none-any.whl (3.9 MB)
-<a id="__codelineno-16-71" name="__codelineno-16-71" href="#__codelineno-16-71"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 15.2 MB/s eta 0:00:00
-<a id="__codelineno-16-72" name="__codelineno-16-72" href="#__codelineno-16-72"></a>Downloading mkdocs_material_extensions-1.3.1-py3-none-any.whl (8.7 kB)
-<a id="__codelineno-16-73" name="__codelineno-16-73" href="#__codelineno-16-73"></a>Downloading paginate-0.5.7-py2.py3-none-any.whl (13 kB)
-<a id="__codelineno-16-74" name="__codelineno-16-74" href="#__codelineno-16-74"></a>Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
-<a id="__codelineno-16-75" name="__codelineno-16-75" href="#__codelineno-16-75"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 13.8 MB/s eta 0:00:00
-<a id="__codelineno-16-76" name="__codelineno-16-76" href="#__codelineno-16-76"></a>Downloading pymdown_extensions-10.15-py3-none-any.whl (265 kB)
-<a id="__codelineno-16-77" name="__codelineno-16-77" href="#__codelineno-16-77"></a>Downloading requests-2.32.4-py3-none-any.whl (64 kB)
-<a id="__codelineno-16-78" name="__codelineno-16-78" href="#__codelineno-16-78"></a>Downloading charset_normalizer-3.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
-<a id="__codelineno-16-79" name="__codelineno-16-79" href="#__codelineno-16-79"></a>Downloading idna-3.10-py3-none-any.whl (70 kB)
-<a id="__codelineno-16-80" name="__codelineno-16-80" href="#__codelineno-16-80"></a>Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
-<a id="__codelineno-16-81" name="__codelineno-16-81" href="#__codelineno-16-81"></a>Downloading certifi-2025.4.26-py3-none-any.whl (159 kB)
-<a id="__codelineno-16-82" name="__codelineno-16-82" href="#__codelineno-16-82"></a>Downloading click-8.2.1-py3-none-any.whl (102 kB)
-<a id="__codelineno-16-83" name="__codelineno-16-83" href="#__codelineno-16-83"></a>Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
-<a id="__codelineno-16-84" name="__codelineno-16-84" href="#__codelineno-16-84"></a>Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
-<a id="__codelineno-16-85" name="__codelineno-16-85" href="#__codelineno-16-85"></a>Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
-<a id="__codelineno-16-86" name="__codelineno-16-86" href="#__codelineno-16-86"></a>Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl (9.5 kB)
-<a id="__codelineno-16-87" name="__codelineno-16-87" href="#__codelineno-16-87"></a>Downloading packaging-25.0-py3-none-any.whl (66 kB)
-<a id="__codelineno-16-88" name="__codelineno-16-88" href="#__codelineno-16-88"></a>Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
-<a id="__codelineno-16-89" name="__codelineno-16-89" href="#__codelineno-16-89"></a>Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
-<a id="__codelineno-16-90" name="__codelineno-16-90" href="#__codelineno-16-90"></a>Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-<a id="__codelineno-16-91" name="__codelineno-16-91" href="#__codelineno-16-91"></a>Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
-<a id="__codelineno-16-92" name="__codelineno-16-92" href="#__codelineno-16-92"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 9.9 MB/s eta 0:00:00
-<a id="__codelineno-16-93" name="__codelineno-16-93" href="#__codelineno-16-93"></a>Downloading pyyaml_env_tag-1.1-py3-none-any.whl (4.7 kB)
-<a id="__codelineno-16-94" name="__codelineno-16-94" href="#__codelineno-16-94"></a>Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-<a id="__codelineno-16-95" name="__codelineno-16-95" href="#__codelineno-16-95"></a>Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
-<a id="__codelineno-16-96" name="__codelineno-16-96" href="#__codelineno-16-96"></a>Installing collected packages: paginate, watchdog, urllib3, six, pyyaml, pygments, platformdirs, pathspec, packaging, mkdocs-material-extensions, mergedeep, MarkupSafe, markdown, idna, colorama, click, charset_normalizer, certifi, backrefs, babel, requests, pyyaml-env-tag, python-dateutil, pymdown-extensions, mkdocs-get-deps, jinja2, ghp-import, mkdocs, mkdocs-material
-<a id="__codelineno-16-97" name="__codelineno-16-97" href="#__codelineno-16-97"></a>Successfully installed MarkupSafe-3.0.2 babel-2.17.0 backrefs-5.8 certifi-2025.4.26 charset_normalizer-3.4.2 click-8.2.1 colorama-0.4.6 ghp-import-2.1.0 idna-3.10 jinja2-3.1.6 markdown-3.8 mergedeep-1.3.4 mkdocs-1.6.1 mkdocs-get-deps-0.2.0 mkdocs-material-9.6.14 mkdocs-material-extensions-1.3.1 packaging-25.0 paginate-0.5.7 pathspec-0.12.1 platformdirs-4.3.8 pygments-2.19.1 pymdown-extensions-10.15 python-dateutil-2.9.0.post0 pyyaml-6.0.2 pyyaml-env-tag-1.1 requests-2.32.4 six-1.17.0 urllib3-2.4.0 watchdog-6.0.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>…/engineering-playbook  main ✘!? ❯ python3 -m venv ~/.local/venv/ &amp;&amp; source ~/.local/venv/bin/activate
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>…/engineering-playbook  v3.13.3(#venv)  main ✘!? ❯ pip install mkdocs-material==&quot;9.*&quot;
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>Collecting mkdocs-material==9.*
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>  Downloading mkdocs_material-9.6.14-py3-none-any.whl.metadata (18 kB)
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>Collecting babel~=2.10 (from mkdocs-material==9.*)
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>  Downloading babel-2.17.0-py3-none-any.whl.metadata (2.0 kB)
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>Collecting backrefs~=5.7.post1 (from mkdocs-material==9.*)
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>  Downloading backrefs-5.8-py313-none-any.whl.metadata (3.3 kB)
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>Collecting colorama~=0.4 (from mkdocs-material==9.*)
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>Collecting jinja2~=3.1 (from mkdocs-material==9.*)
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>Collecting markdown~=3.2 (from mkdocs-material==9.*)
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>  Downloading markdown-3.8-py3-none-any.whl.metadata (5.1 kB)
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>Collecting mkdocs-material-extensions~=1.3 (from mkdocs-material==9.*)
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>  Downloading mkdocs_material_extensions-1.3.1-py3-none-any.whl.metadata (6.9 kB)
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>Collecting mkdocs~=1.6 (from mkdocs-material==9.*)
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>  Downloading mkdocs-1.6.1-py3-none-any.whl.metadata (6.0 kB)
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>Collecting paginate~=0.5 (from mkdocs-material==9.*)
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>  Downloading paginate-0.5.7-py2.py3-none-any.whl.metadata (11 kB)
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>Collecting pygments~=2.16 (from mkdocs-material==9.*)
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>  Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>Collecting pymdown-extensions~=10.2 (from mkdocs-material==9.*)
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>  Downloading pymdown_extensions-10.15-py3-none-any.whl.metadata (3.0 kB)
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>Collecting requests~=2.26 (from mkdocs-material==9.*)
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>Collecting MarkupSafe&gt;=2.0 (from jinja2~=3.1-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>  Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>Collecting click&gt;=7.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>Collecting ghp-import&gt;=1.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>  Downloading ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>Collecting mergedeep&gt;=1.3.4 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>  Downloading mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a>Collecting mkdocs-get-deps&gt;=0.2.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>  Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl.metadata (4.0 kB)
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>Collecting packaging&gt;=20.5 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>Collecting pathspec&gt;=0.11.1 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a>  Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a>Collecting pyyaml-env-tag&gt;=0.1 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>  Downloading pyyaml_env_tag-1.1-py3-none-any.whl.metadata (5.5 kB)
+<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>Collecting pyyaml&gt;=5.1 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a>  Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a>Collecting watchdog&gt;=2.0 (from mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a>  Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>Collecting charset_normalizer&lt;4,&gt;=2 (from requests~=2.26-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a>  Downloading charset_normalizer-3.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+<a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a>Collecting idna&lt;4,&gt;=2.5 (from requests~=2.26-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a>  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+<a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a>Collecting urllib3&lt;3,&gt;=1.21.1 (from requests~=2.26-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a>  Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+<a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a>Collecting certifi&gt;=2017.4.17 (from requests~=2.26-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a>  Downloading certifi-2025.4.26-py3-none-any.whl.metadata (2.5 kB)
+<a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a>Collecting python-dateutil&gt;=2.8.1 (from ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a>  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+<a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a>Collecting platformdirs&gt;=2.2.0 (from mkdocs-get-deps&gt;=0.2.0-&gt;mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a>  Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a>Collecting six&gt;=1.5 (from python-dateutil&gt;=2.8.1-&gt;ghp-import&gt;=1.0-&gt;mkdocs~=1.6-&gt;mkdocs-material==9.*)
+<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>Downloading mkdocs_material-9.6.14-py3-none-any.whl (8.7 MB)
+<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 16.1 MB/s eta 0:00:00
+<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a>Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
+<a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 15.9 MB/s eta 0:00:00
+<a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a>Downloading backrefs-5.8-py313-none-any.whl (399 kB)
+<a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a>Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+<a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a>Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+<a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a>Downloading markdown-3.8-py3-none-any.whl (106 kB)
+<a id="__codelineno-17-70" name="__codelineno-17-70" href="#__codelineno-17-70"></a>Downloading mkdocs-1.6.1-py3-none-any.whl (3.9 MB)
+<a id="__codelineno-17-71" name="__codelineno-17-71" href="#__codelineno-17-71"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 15.2 MB/s eta 0:00:00
+<a id="__codelineno-17-72" name="__codelineno-17-72" href="#__codelineno-17-72"></a>Downloading mkdocs_material_extensions-1.3.1-py3-none-any.whl (8.7 kB)
+<a id="__codelineno-17-73" name="__codelineno-17-73" href="#__codelineno-17-73"></a>Downloading paginate-0.5.7-py2.py3-none-any.whl (13 kB)
+<a id="__codelineno-17-74" name="__codelineno-17-74" href="#__codelineno-17-74"></a>Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+<a id="__codelineno-17-75" name="__codelineno-17-75" href="#__codelineno-17-75"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 13.8 MB/s eta 0:00:00
+<a id="__codelineno-17-76" name="__codelineno-17-76" href="#__codelineno-17-76"></a>Downloading pymdown_extensions-10.15-py3-none-any.whl (265 kB)
+<a id="__codelineno-17-77" name="__codelineno-17-77" href="#__codelineno-17-77"></a>Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+<a id="__codelineno-17-78" name="__codelineno-17-78" href="#__codelineno-17-78"></a>Downloading charset_normalizer-3.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+<a id="__codelineno-17-79" name="__codelineno-17-79" href="#__codelineno-17-79"></a>Downloading idna-3.10-py3-none-any.whl (70 kB)
+<a id="__codelineno-17-80" name="__codelineno-17-80" href="#__codelineno-17-80"></a>Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
+<a id="__codelineno-17-81" name="__codelineno-17-81" href="#__codelineno-17-81"></a>Downloading certifi-2025.4.26-py3-none-any.whl (159 kB)
+<a id="__codelineno-17-82" name="__codelineno-17-82" href="#__codelineno-17-82"></a>Downloading click-8.2.1-py3-none-any.whl (102 kB)
+<a id="__codelineno-17-83" name="__codelineno-17-83" href="#__codelineno-17-83"></a>Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+<a id="__codelineno-17-84" name="__codelineno-17-84" href="#__codelineno-17-84"></a>Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+<a id="__codelineno-17-85" name="__codelineno-17-85" href="#__codelineno-17-85"></a>Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+<a id="__codelineno-17-86" name="__codelineno-17-86" href="#__codelineno-17-86"></a>Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl (9.5 kB)
+<a id="__codelineno-17-87" name="__codelineno-17-87" href="#__codelineno-17-87"></a>Downloading packaging-25.0-py3-none-any.whl (66 kB)
+<a id="__codelineno-17-88" name="__codelineno-17-88" href="#__codelineno-17-88"></a>Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+<a id="__codelineno-17-89" name="__codelineno-17-89" href="#__codelineno-17-89"></a>Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+<a id="__codelineno-17-90" name="__codelineno-17-90" href="#__codelineno-17-90"></a>Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+<a id="__codelineno-17-91" name="__codelineno-17-91" href="#__codelineno-17-91"></a>Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+<a id="__codelineno-17-92" name="__codelineno-17-92" href="#__codelineno-17-92"></a>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 9.9 MB/s eta 0:00:00
+<a id="__codelineno-17-93" name="__codelineno-17-93" href="#__codelineno-17-93"></a>Downloading pyyaml_env_tag-1.1-py3-none-any.whl (4.7 kB)
+<a id="__codelineno-17-94" name="__codelineno-17-94" href="#__codelineno-17-94"></a>Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+<a id="__codelineno-17-95" name="__codelineno-17-95" href="#__codelineno-17-95"></a>Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+<a id="__codelineno-17-96" name="__codelineno-17-96" href="#__codelineno-17-96"></a>Installing collected packages: paginate, watchdog, urllib3, six, pyyaml, pygments, platformdirs, pathspec, packaging, mkdocs-material-extensions, mergedeep, MarkupSafe, markdown, idna, colorama, click, charset_normalizer, certifi, backrefs, babel, requests, pyyaml-env-tag, python-dateutil, pymdown-extensions, mkdocs-get-deps, jinja2, ghp-import, mkdocs, mkdocs-material
+<a id="__codelineno-17-97" name="__codelineno-17-97" href="#__codelineno-17-97"></a>Successfully installed MarkupSafe-3.0.2 babel-2.17.0 backrefs-5.8 certifi-2025.4.26 charset_normalizer-3.4.2 click-8.2.1 colorama-0.4.6 ghp-import-2.1.0 idna-3.10 jinja2-3.1.6 markdown-3.8 mergedeep-1.3.4 mkdocs-1.6.1 mkdocs-get-deps-0.2.0 mkdocs-material-9.6.14 mkdocs-material-extensions-1.3.1 packaging-25.0 paginate-0.5.7 pathspec-0.12.1 platformdirs-4.3.8 pygments-2.19.1 pymdown-extensions-10.15 python-dateutil-2.9.0.post0 pyyaml-6.0.2 pyyaml-env-tag-1.1 requests-2.32.4 six-1.17.0 urllib3-2.4.0 watchdog-6.0.0
 </code></pre></div>
 <h2 id="sound-recording">Sound recording<a class="headerlink" href="#sound-recording" title="Permanent link">λ︎</a></h2>
 <p>Debian Linux enabled the microphone by default with the maximum volume (unless I pressed some buttons without realising it).</p>
@@ -1493,109 +1519,138 @@
 <p>There are a few scratches on the Ribble, so I could also order some touch up paint.  This wouldnt add to the delivery cost, but the paint isn't exactly cheap at 19.99 GBP for a 25ml bottle <img alt="🤣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f923.svg" title=":rolling_on_the_floor_laughing:" />  They do also include a 25ml bottle of clear coat lacquer and 2 touch-up brushes.</p>
 <p>I will try fit the new saddle to another bike and see if I find it comfortable to ride on.  If not, I will send it back and stick with my current saddle.</p>
 <p>I do find the ribble clamp assembly very fiddly to fit as it comes apart if not careful.  There is <a href="https://helpcentre.ribblecycles.co.uk/support/solutions/articles/22000289310-sl-seatpost-saddle-clamp-assembly-instructions" target="_blank">a specific way to fit the assembly</a> which requires most of it to be assembled first and attached to the saddle rails, then carefully tightened onto the top of the seat post.</p>
-<h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
-<p>Astro5 package updates</p>
-<p>Interesting update for the Octo plugin which seems to provide basic support for issue types</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>        ○ octo.nvim  Octo
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>            06f2c37 feat: open release from notification (#1096) (23 hours ago)
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>            11b2ab6 add basic support for types (#1095) (23 hours ago)
+<h2 id="octo-and-github-cli">Octo and GitHub CLI<a class="headerlink" href="#octo-and-github-cli" title="Permanent link">λ︎</a></h2>
+<p>Octo is a Neovim plugin that uses the GitHub CLI to manage images and pull reuests from inside Neovim.</p>
+<p>I am still figuring out how to make the most of it, as there are some limitations and a few of the features havent been implemented yet.</p>
+<p>Creating an issue is via the Neovim command prompt as Octo plugin does not provide a key mapping.</p>
+<p>The command required specification of the repository when the alias other than <code>origin</code> is used for the remote repository.</p>
+<blockquote>
+<p>NOTE: Practicalli uses specific alias names to clarify which account the remote repository is under, e.g. <code>practicalli</code> for the org and <code>practicalli-johnny</code> for the user account.</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Create a new issue for the specified repository</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>:Octo<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>practicalli/rust
+</code></pre></div>
+</div>
+<p>For commands that are not supported in Octo yet, then a terminal window or tab can be used to run GitHub CLI <code>gh</code> commands</p>
+<div class="admonition note"></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gh<span class="w"> </span>issue<span class="w"> </span>edit<span class="w"> </span>&lt;issue-number&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Add assignee to issue</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>gh<span class="w"> </span>issue<span class="w"> </span>edit<span class="w"> </span>&lt;issue-number&gt;<span class="w"> </span>--add-assignee<span class="w"> </span>&lt;github-account-name&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Add an issue to a GitHub project</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>gh<span class="w"> </span>issue<span class="w"> </span>edit<span class="w"> </span>&lt;issue-number&gt;<span class="w"> </span>--add-project<span class="w"> </span>&lt;github-project-name&gt;
+</code></pre></div>
+<p>Adding an issue to a GitHub project fails with a rather unhelpful message.</p>
+<p>A project needs to be added to the GitHub authorisation before adding the project to an issue.</p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/github/github-cli-issue-project-auth-add-to-issue.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="GitHub CLI add project to authorization scope" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/github/github-cli-issue-project-auth-add-to-issue.png?raw=true" /></a></p>
+<h2 id="astro5-package-updates">Astro5 Package updates<a class="headerlink" href="#astro5-package-updates" title="Permanent link">λ︎</a></h2>
+<p>Interesting update for the Octo plugin which seems to provide basic support for issue types (although I couldnt when looking at the key maps and opening an issue with Octo).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>        ○ octo.nvim  Octo
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>            06f2c37 feat: open release from notification (#1096) (23 hours ago)
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>            11b2ab6 add basic support for types (#1095) (23 hours ago)
 </code></pre></div>
 <details class="example">
 <summary>Lazy package manager updates on Friday 13 June</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>  Updated (12)
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    ● astrocommunity 0.17ms  start
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        9b7d85c revert(catppuccin): cleaned up catppuccin pack (#1541) (2 days ago)
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        3c74e80 fix(catppuccin): cleaned up catppuccin pack  (#1513) (3 days ago)
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        67a2188 fix(kulala-nvim): fix keymaps config (#1539) (5 days ago)
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        9e5d5d3 fix(nvim-treesitter-context): fix outdated commands (#1538) (7 days ago)
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>        67b3d09 chore: configure lua language server to disable formatting (7 days ago)
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        80b9c58 fix(avante-nvim): Check for nil value in opts table for markview.nvim dependency (#1537) (10 days ago)
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        8ae3804 feat(pack): add eslint (#1503) (11 days ago)
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>        2f550c0 docs(harper): Link to correct configuration doc (#1536) (11 days ago)
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        2c879c0 feat(pack): add spring-boot pack (#1534) (11 days ago)
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    ● catppuccin 3.87ms colorscheme catppuccin-mocha  astrocore
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>        fa42eb5 feat(blink-cmp): add `style` option (#867) (7 days ago)
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>    ○ conjure  scheme  guile  julia  lisp  rust  sql  python  lua  clojure  janet  fennel  racket  hy
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>        8edc78f Should support 0.9.5 now too, yuck! (2 days ago)
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>        d506198 Update aniseed nvim.lua, mostly formatting but replace tbl_flatten (2 days ago)
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>        cb65153 Comment out nightly in tests for now (5 days ago)
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>        348697c Sync sponsors (5 days ago)
-<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>
-<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    ○ grug-far.nvim  GrugFar  GrugFarWithin
-<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>        1a85fba Default backspaceEol to true (3 days ago)
-<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>        0ddb123 Only setup autocommand once (3 days ago)
-<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>        5d58d1e Fix bug where pressing del at end of multiline would spill (3 days ago)
-<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>        c34ef1f Setup backspace in an autocommand (3 days ago)
-<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>        487941f Add tests (3 days ago)
-<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>        59f626e Move remapping to savvy input handling (3 days ago)
-<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>        d30034c Reuse inputs.getInputAtRow (3 days ago)
-<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>        78495c9 Make deletion key API more functional (3 days ago)
-<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>        4b956c5 Style fix (3 days ago)
-<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>        55f2ebd Fix backspace wrapping text over EOL (3 days ago)
-<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>        cc44e17 slight optimization of getInputAtRow (3 days ago)
-<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>        e152f6f Clarify docs (4 days ago)
-<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>        fc75d93 Remove unneeded type (4 days ago)
-<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>        ac069b2 Add backspaceEol option to allow deleting eols in search box (4 days ago)
-<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>        c36f5f9 adding hl of GrugFarWithin range (9 days ago)
-<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>
-<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>    ○ kulala.nvim  http  rest
-<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>        b176ecb docs: Auto-generate vimdocs + vimtags (#582) (5 days ago)
-<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>        93c9fba feat(scripts): resolve NODE_PATH to nearest node_modules, add  node_path_resolver to options (#577) (5 days ago)
-<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>
-<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>    ● mason-tool-installer.nvim 3.76ms  Lazy load
-<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>        93a9ff9 Merge pull request #81 from carloscalla/udpate-go-condition-example (2 weeks ago)
-<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>        9c950da doc: improve go example condition (2 weeks ago)
-<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>
-<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>    ○ neoconf.nvim  nvim-lspconfig
-<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a>        5ebd6c2 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
-<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a>        7db59f8 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
-<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>
-<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>    ○ neogit  Neogit  User AstroGitFile
-<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a>        1b4f443 Abstract process result success/failures with method (11 hours ago)
-<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a>        4681357 Add zO, zc, zC mappings. (13 hours ago)
-<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a>        d63c814 setup super diff properly (13 hours ago)
-<a id="__codelineno-18-55" name="__codelineno-18-55" href="#__codelineno-18-55"></a>        cb055dd Merge pull request #1766 from NeogitOrg/support-native-folds-better (13 hours ago)
-<a id="__codelineno-18-56" name="__codelineno-18-56" href="#__codelineno-18-56"></a>        b3d69c2 Allow keys that would act on folds (za, zc, zo) to work with lazy loaded folds. (26 hours ago)
-<a id="__codelineno-18-57" name="__codelineno-18-57" href="#__codelineno-18-57"></a>        7fb9188 Prepopulate existing stash message in input when a user renames a stash. (2 days ago)
-<a id="__codelineno-18-58" name="__codelineno-18-58" href="#__codelineno-18-58"></a>        8345f8c Deduplicate destinations (2 days ago)
-<a id="__codelineno-18-59" name="__codelineno-18-59" href="#__codelineno-18-59"></a>        5c98ee1 Simplify how we get branches/heads in push_other action (2 days ago)
-<a id="__codelineno-18-60" name="__codelineno-18-60" href="#__codelineno-18-60"></a>        07ab294 Fix types (2 days ago)
-<a id="__codelineno-18-61" name="__codelineno-18-61" href="#__codelineno-18-61"></a>        d0c773d Migrate remaining events to use event lib (2 days ago)
-<a id="__codelineno-18-62" name="__codelineno-18-62" href="#__codelineno-18-62"></a>        1025b33 Merge pull request #1763 from NeogitOrg/fix-stash-diff (2 days ago)
-<a id="__codelineno-18-63" name="__codelineno-18-63" href="#__codelineno-18-63"></a>        63f95f2 Fix when trying to use &quot;diff this&quot; from status buffer. Stash was being passed as a SHA instead of stash{n} format, leading to a nil concat error. (2 days ago)
-<a id="__codelineno-18-64" name="__codelineno-18-64" href="#__codelineno-18-64"></a>        dbbbfe6 Notify user when checking out a local branch that tracks an upstream branch fails. (2 days ago)
-<a id="__codelineno-18-65" name="__codelineno-18-65" href="#__codelineno-18-65"></a>        1df653c update docs: editor buffer filetypes (2 days ago)
-<a id="__codelineno-18-66" name="__codelineno-18-66" href="#__codelineno-18-66"></a>        cc0dd57 add annotation (2 days ago)
-<a id="__codelineno-18-67" name="__codelineno-18-67" href="#__codelineno-18-67"></a>        3852b59 Merge pull request #1743 from ericdachen/master (3 days ago)
-<a id="__codelineno-18-68" name="__codelineno-18-68" href="#__codelineno-18-68"></a>        89a2df9 Add autocmd to refresh open buffers after making changes in neogit. (9 days ago)
-<a id="__codelineno-18-69" name="__codelineno-18-69" href="#__codelineno-18-69"></a>        00038cc prevent error when canceling out of options choice fuzzy finder (10 days ago)
-<a id="__codelineno-18-70" name="__codelineno-18-70" href="#__codelineno-18-70"></a>        0583348 tweak behaviour of options - when they are set, the trigger key will first unset them, before letting you set them again. (10 days ago)
-<a id="__codelineno-18-71" name="__codelineno-18-71" href="#__codelineno-18-71"></a>        fbea356 Update README.md (3 weeks ago)
-<a id="__codelineno-18-72" name="__codelineno-18-72" href="#__codelineno-18-72"></a>        18fd199 Warp open source support (3 weeks ago)
-<a id="__codelineno-18-73" name="__codelineno-18-73" href="#__codelineno-18-73"></a>
-<a id="__codelineno-18-74" name="__codelineno-18-74" href="#__codelineno-18-74"></a>    ○ octo.nvim  Octo
-<a id="__codelineno-18-75" name="__codelineno-18-75" href="#__codelineno-18-75"></a>        06f2c37 feat: open release from notification (#1096) (23 hours ago)
-<a id="__codelineno-18-76" name="__codelineno-18-76" href="#__codelineno-18-76"></a>        11b2ab6 add basic support for types (#1095) (23 hours ago)
-<a id="__codelineno-18-77" name="__codelineno-18-77" href="#__codelineno-18-77"></a>        3ee802c fix(pull request): do not show comment code block when empty (#1091) (4 days ago)
-<a id="__codelineno-18-78" name="__codelineno-18-78" href="#__codelineno-18-78"></a>        ef7ece5 feat: render release (#1086) (10 days ago)
-<a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a>
-<a id="__codelineno-18-80" name="__codelineno-18-80" href="#__codelineno-18-80"></a>    ○ rest.nvim  Rest  http
-<a id="__codelineno-18-81" name="__codelineno-18-81" href="#__codelineno-18-81"></a>        de9726a chore(main): release 3.13.0 (2 days ago)
-<a id="__codelineno-18-82" name="__codelineno-18-82" href="#__codelineno-18-82"></a>        5e7cc25 feat: remove $dotenv tags from variables (#546) (2 days ago)
-<a id="__codelineno-18-83" name="__codelineno-18-83" href="#__codelineno-18-83"></a>
-<a id="__codelineno-18-84" name="__codelineno-18-84" href="#__codelineno-18-84"></a>    ○ SchemaStore.nvim
-<a id="__codelineno-18-85" name="__codelineno-18-85" href="#__codelineno-18-85"></a>        60aa5b6 Update SchemaStore catalog (2 days ago)
-<a id="__codelineno-18-86" name="__codelineno-18-86" href="#__codelineno-18-86"></a>        9854326 Update SchemaStore catalog (4 days ago)
-<a id="__codelineno-18-87" name="__codelineno-18-87" href="#__codelineno-18-87"></a>        e702367 Update SchemaStore catalog (8 days ago)
-<a id="__codelineno-18-88" name="__codelineno-18-88" href="#__codelineno-18-88"></a>        307a332 Update SchemaStore catalog (8 days ago)
-<a id="__codelineno-18-89" name="__codelineno-18-89" href="#__codelineno-18-89"></a>        8563ed7 Update SchemaStore catalog (9 days ago)
-<a id="__codelineno-18-90" name="__codelineno-18-90" href="#__codelineno-18-90"></a>        9c4dbc3 Update SchemaStore catalog (10 days ago)
-<a id="__codelineno-18-91" name="__codelineno-18-91" href="#__codelineno-18-91"></a>
-<a id="__codelineno-18-92" name="__codelineno-18-92" href="#__codelineno-18-92"></a>    ● tiny-inline-diagnostic.nvim 7.98ms  VeryLazy
-<a id="__codelineno-18-93" name="__codelineno-18-93" href="#__codelineno-18-93"></a>        cac1059 chore(build): auto-generate vimdoc (9 days ago)
-<a id="__codelineno-18-94" name="__codelineno-18-94" href="#__codelineno-18-94"></a>        7016082 fix: handle nil diagnostics table in update cache. Fixes #120 (9 days ago)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>  Updated (12)
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    ● astrocommunity 0.17ms  start
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>        9b7d85c revert(catppuccin): cleaned up catppuccin pack (#1541) (2 days ago)
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>        3c74e80 fix(catppuccin): cleaned up catppuccin pack  (#1513) (3 days ago)
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>        67a2188 fix(kulala-nvim): fix keymaps config (#1539) (5 days ago)
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>        9e5d5d3 fix(nvim-treesitter-context): fix outdated commands (#1538) (7 days ago)
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>        67b3d09 chore: configure lua language server to disable formatting (7 days ago)
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        80b9c58 fix(avante-nvim): Check for nil value in opts table for markview.nvim dependency (#1537) (10 days ago)
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>        8ae3804 feat(pack): add eslint (#1503) (11 days ago)
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>        2f550c0 docs(harper): Link to correct configuration doc (#1536) (11 days ago)
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>        2c879c0 feat(pack): add spring-boot pack (#1534) (11 days ago)
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>    ● catppuccin 3.87ms colorscheme catppuccin-mocha  astrocore
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>        fa42eb5 feat(blink-cmp): add `style` option (#867) (7 days ago)
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>    ○ conjure  scheme  guile  julia  lisp  rust  sql  python  lua  clojure  janet  fennel  racket  hy
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>        8edc78f Should support 0.9.5 now too, yuck! (2 days ago)
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>        d506198 Update aniseed nvim.lua, mostly formatting but replace tbl_flatten (2 days ago)
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>        cb65153 Comment out nightly in tests for now (5 days ago)
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>        348697c Sync sponsors (5 days ago)
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>    ○ grug-far.nvim  GrugFar  GrugFarWithin
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>        1a85fba Default backspaceEol to true (3 days ago)
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>        0ddb123 Only setup autocommand once (3 days ago)
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>        5d58d1e Fix bug where pressing del at end of multiline would spill (3 days ago)
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>        c34ef1f Setup backspace in an autocommand (3 days ago)
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>        487941f Add tests (3 days ago)
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>        59f626e Move remapping to savvy input handling (3 days ago)
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>        d30034c Reuse inputs.getInputAtRow (3 days ago)
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>        78495c9 Make deletion key API more functional (3 days ago)
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>        4b956c5 Style fix (3 days ago)
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>        55f2ebd Fix backspace wrapping text over EOL (3 days ago)
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>        cc44e17 slight optimization of getInputAtRow (3 days ago)
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>        e152f6f Clarify docs (4 days ago)
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>        fc75d93 Remove unneeded type (4 days ago)
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>        ac069b2 Add backspaceEol option to allow deleting eols in search box (4 days ago)
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>        c36f5f9 adding hl of GrugFarWithin range (9 days ago)
+<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>
+<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>    ○ kulala.nvim  http  rest
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>        b176ecb docs: Auto-generate vimdocs + vimtags (#582) (5 days ago)
+<a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a>        93c9fba feat(scripts): resolve NODE_PATH to nearest node_modules, add  node_path_resolver to options (#577) (5 days ago)
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a>
+<a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a>    ● mason-tool-installer.nvim 3.76ms  Lazy load
+<a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a>        93a9ff9 Merge pull request #81 from carloscalla/udpate-go-condition-example (2 weeks ago)
+<a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a>        9c950da doc: improve go example condition (2 weeks ago)
+<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a>
+<a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a>    ○ neoconf.nvim  nvim-lspconfig
+<a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a>        5ebd6c2 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
+<a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a>        7db59f8 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
+<a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a>
+<a id="__codelineno-23-51" name="__codelineno-23-51" href="#__codelineno-23-51"></a>    ○ neogit  Neogit  User AstroGitFile
+<a id="__codelineno-23-52" name="__codelineno-23-52" href="#__codelineno-23-52"></a>        1b4f443 Abstract process result success/failures with method (11 hours ago)
+<a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a>        4681357 Add zO, zc, zC mappings. (13 hours ago)
+<a id="__codelineno-23-54" name="__codelineno-23-54" href="#__codelineno-23-54"></a>        d63c814 setup super diff properly (13 hours ago)
+<a id="__codelineno-23-55" name="__codelineno-23-55" href="#__codelineno-23-55"></a>        cb055dd Merge pull request #1766 from NeogitOrg/support-native-folds-better (13 hours ago)
+<a id="__codelineno-23-56" name="__codelineno-23-56" href="#__codelineno-23-56"></a>        b3d69c2 Allow keys that would act on folds (za, zc, zo) to work with lazy loaded folds. (26 hours ago)
+<a id="__codelineno-23-57" name="__codelineno-23-57" href="#__codelineno-23-57"></a>        7fb9188 Prepopulate existing stash message in input when a user renames a stash. (2 days ago)
+<a id="__codelineno-23-58" name="__codelineno-23-58" href="#__codelineno-23-58"></a>        8345f8c Deduplicate destinations (2 days ago)
+<a id="__codelineno-23-59" name="__codelineno-23-59" href="#__codelineno-23-59"></a>        5c98ee1 Simplify how we get branches/heads in push_other action (2 days ago)
+<a id="__codelineno-23-60" name="__codelineno-23-60" href="#__codelineno-23-60"></a>        07ab294 Fix types (2 days ago)
+<a id="__codelineno-23-61" name="__codelineno-23-61" href="#__codelineno-23-61"></a>        d0c773d Migrate remaining events to use event lib (2 days ago)
+<a id="__codelineno-23-62" name="__codelineno-23-62" href="#__codelineno-23-62"></a>        1025b33 Merge pull request #1763 from NeogitOrg/fix-stash-diff (2 days ago)
+<a id="__codelineno-23-63" name="__codelineno-23-63" href="#__codelineno-23-63"></a>        63f95f2 Fix when trying to use &quot;diff this&quot; from status buffer. Stash was being passed as a SHA instead of stash{n} format, leading to a nil concat error. (2 days ago)
+<a id="__codelineno-23-64" name="__codelineno-23-64" href="#__codelineno-23-64"></a>        dbbbfe6 Notify user when checking out a local branch that tracks an upstream branch fails. (2 days ago)
+<a id="__codelineno-23-65" name="__codelineno-23-65" href="#__codelineno-23-65"></a>        1df653c update docs: editor buffer filetypes (2 days ago)
+<a id="__codelineno-23-66" name="__codelineno-23-66" href="#__codelineno-23-66"></a>        cc0dd57 add annotation (2 days ago)
+<a id="__codelineno-23-67" name="__codelineno-23-67" href="#__codelineno-23-67"></a>        3852b59 Merge pull request #1743 from ericdachen/master (3 days ago)
+<a id="__codelineno-23-68" name="__codelineno-23-68" href="#__codelineno-23-68"></a>        89a2df9 Add autocmd to refresh open buffers after making changes in neogit. (9 days ago)
+<a id="__codelineno-23-69" name="__codelineno-23-69" href="#__codelineno-23-69"></a>        00038cc prevent error when canceling out of options choice fuzzy finder (10 days ago)
+<a id="__codelineno-23-70" name="__codelineno-23-70" href="#__codelineno-23-70"></a>        0583348 tweak behaviour of options - when they are set, the trigger key will first unset them, before letting you set them again. (10 days ago)
+<a id="__codelineno-23-71" name="__codelineno-23-71" href="#__codelineno-23-71"></a>        fbea356 Update README.md (3 weeks ago)
+<a id="__codelineno-23-72" name="__codelineno-23-72" href="#__codelineno-23-72"></a>        18fd199 Warp open source support (3 weeks ago)
+<a id="__codelineno-23-73" name="__codelineno-23-73" href="#__codelineno-23-73"></a>
+<a id="__codelineno-23-74" name="__codelineno-23-74" href="#__codelineno-23-74"></a>    ○ octo.nvim  Octo
+<a id="__codelineno-23-75" name="__codelineno-23-75" href="#__codelineno-23-75"></a>        06f2c37 feat: open release from notification (#1096) (23 hours ago)
+<a id="__codelineno-23-76" name="__codelineno-23-76" href="#__codelineno-23-76"></a>        11b2ab6 add basic support for types (#1095) (23 hours ago)
+<a id="__codelineno-23-77" name="__codelineno-23-77" href="#__codelineno-23-77"></a>        3ee802c fix(pull request): do not show comment code block when empty (#1091) (4 days ago)
+<a id="__codelineno-23-78" name="__codelineno-23-78" href="#__codelineno-23-78"></a>        ef7ece5 feat: render release (#1086) (10 days ago)
+<a id="__codelineno-23-79" name="__codelineno-23-79" href="#__codelineno-23-79"></a>
+<a id="__codelineno-23-80" name="__codelineno-23-80" href="#__codelineno-23-80"></a>    ○ rest.nvim  Rest  http
+<a id="__codelineno-23-81" name="__codelineno-23-81" href="#__codelineno-23-81"></a>        de9726a chore(main): release 3.13.0 (2 days ago)
+<a id="__codelineno-23-82" name="__codelineno-23-82" href="#__codelineno-23-82"></a>        5e7cc25 feat: remove $dotenv tags from variables (#546) (2 days ago)
+<a id="__codelineno-23-83" name="__codelineno-23-83" href="#__codelineno-23-83"></a>
+<a id="__codelineno-23-84" name="__codelineno-23-84" href="#__codelineno-23-84"></a>    ○ SchemaStore.nvim
+<a id="__codelineno-23-85" name="__codelineno-23-85" href="#__codelineno-23-85"></a>        60aa5b6 Update SchemaStore catalog (2 days ago)
+<a id="__codelineno-23-86" name="__codelineno-23-86" href="#__codelineno-23-86"></a>        9854326 Update SchemaStore catalog (4 days ago)
+<a id="__codelineno-23-87" name="__codelineno-23-87" href="#__codelineno-23-87"></a>        e702367 Update SchemaStore catalog (8 days ago)
+<a id="__codelineno-23-88" name="__codelineno-23-88" href="#__codelineno-23-88"></a>        307a332 Update SchemaStore catalog (8 days ago)
+<a id="__codelineno-23-89" name="__codelineno-23-89" href="#__codelineno-23-89"></a>        8563ed7 Update SchemaStore catalog (9 days ago)
+<a id="__codelineno-23-90" name="__codelineno-23-90" href="#__codelineno-23-90"></a>        9c4dbc3 Update SchemaStore catalog (10 days ago)
+<a id="__codelineno-23-91" name="__codelineno-23-91" href="#__codelineno-23-91"></a>
+<a id="__codelineno-23-92" name="__codelineno-23-92" href="#__codelineno-23-92"></a>    ● tiny-inline-diagnostic.nvim 7.98ms  VeryLazy
+<a id="__codelineno-23-93" name="__codelineno-23-93" href="#__codelineno-23-93"></a>        cac1059 chore(build): auto-generate vimdoc (9 days ago)
+<a id="__codelineno-23-94" name="__codelineno-23-94" href="#__codelineno-23-94"></a>        7016082 fix: handle nil diagnostics table in update cache. Fixes #120 (9 days ago)
 </code></pre></div>
 </details>
 <hr />
@@ -1625,7 +1680,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 13, 2025 23:28:24 UTC">June 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 14, 2025 22:27:14 UTC">June 14, 2025</span>
   </span>
 
     
