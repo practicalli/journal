@@ -991,6 +991,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rust-course-oreilly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust course Oreilly
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rust course Oreilly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#language-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packaging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immutable-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immutable by default
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1076,7 +1127,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -1148,7 +1199,7 @@
 <!-- more -->
 
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
-<p>With the rear gear cable and thumbwheel replaced during the Isle of Wight trip, there are only the pedals and chain to replace 😆</p>
+<p>With the rear gear cable and thumb-wheel replaced during the Isle of Wight trip, there are only the pedals and chain to replace 😆</p>
 <p>I ordered the <a href="https://www.amazon.co.uk/dp/B071D75MTY">Look Keo Classic 3 pedals</a> which are only a few grams heavier than the Look Keo Carbon Max 2 (Chrome Mobideum Steel axle's).</p>
 <p>I'll probably get the <a href="https://www.amazon.co.uk/dp/B01BZBSSQA">Sram PC 1110 chain</a> again (last fitted in February).  It seems to do about 75% of the distance the Shimano chain can do, but is at least half the price.  Replacing the chains is a relatively simple task that I can do that myself, thanks to the chain having quick links.</p>
 <p>Recovery ride on Wednesday, a little damp but still a nice ride.</p>
@@ -1306,6 +1357,109 @@
 <a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>source $&quot;($nu.home-path)/.cargo/env.nu&quot;  # For nushell
 </code></pre></div>
 </details>
+<h2 id="rust-course-oreilly">Rust course Oreilly<a class="headerlink" href="#rust-course-oreilly" title="Permanent link">λ︎</a></h2>
+<p>What is rust
+- flexible and fast programming language
+- combines power/speed with rigour/safety
+- inherently safer code</p>
+<p>Use rust to create many kinds of apps
+- low-level systems (device drivers, etc)
+- business focused applications
+- tooling and toolsets, windows kernel writtein in rust)
+- products (much of firefox is written in rust)</p>
+<p>Install via the rustup script on rust-lang.org/tools/install</p>
+<p>Check the install</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>❯ rustc --version
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>rustc 1.88.0 (6b00bc388 2025-06-23)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>❯ cargo --version
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>cargo 1.88.0 (873a06493 2025-05-10)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>❯ rustup --version
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>rustup 1.28.2 (e4f3ad6f8 2025-04-28)
+</code></pre></div>
+<p>Docs not immediately intuitive, only understand the docs once you have a better understanding of all the terminology used.</p>
+<p>Macros are a way to extend the Rust language.</p>
+<p>There are many built in macros  (referred to as closures)</p>
+<p>You can write your own macros (if you want to take responsiblity for them - a macro is for life, the life of the project and everyone who has to manage the project)</p>
+<p><a class="md-button" href="https://doc.rust-lang.org/rust-by-example/macros.html" target="_blank">macro_rules! - rust-lang.org</a></p>
+<p><code>cargo build</code> included debug information, placed in <code>target/debug</code></p>
+<details class="example">
+<summary>Rust project - contents of target directory after first build</summary>
+</details>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>├── CACHEDIR.TAG
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>└── debug
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    ├── build
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    ├── deps
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    │   ├── rust_course_oreilly-3f09f31358bb937c
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    │   └── rust_course_oreilly-3f09f31358bb937c.d
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    ├── examples
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    ├── incremental
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    │   └── rust_course_oreilly-0cmy9owcq5u86
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    │       ├── s-h8vctyuied-125eqxx-8na9u08luwce795ao45zbbxrn
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    │       │   ├── 2ga4xgz86cyjn7wdvju8ooq62.o
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    │       │   ├── 895q7782bxetjuxc8lg7n8wwu.o
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    │       │   ├── 96mmcrvo3hbw6ficz7ztq5tqa.o
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    │       │   ├── 9afiqj64yzqqd2c8m5py3ayc5.o
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    │       │   ├── 9r57n2pupszf4v57aqd41k03u.o
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    │       │   ├── aok4y9obdca4fb52msvqhltam.o
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    │       │   ├── dep-graph.bin
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    │       │   ├── query-cache.bin
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    │       │   └── work-products.bin
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    │       └── s-h8vctyuied-125eqxx.lock
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    ├── rust-course-oreilly
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    └── rust-course-oreilly.d
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>8 directories, 15 files
+</code></pre></div>
+<p><code>cargo build --release</code> creates an optomised build in <code>target/release</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯ tree release
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>release
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── build
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>├── deps
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>│   ├── rust_course_oreilly-89e671dbf764e006
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>│   └── rust_course_oreilly-89e671dbf764e006.d
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>├── examples
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>├── incremental
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>├── rust-course-oreilly
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>└── rust-course-oreilly.d
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>5 directories, 4 files
+</code></pre></div>
+<p>build with debug and run</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cargo<span class="w"> </span>run
+</code></pre></div>
+<p>build a release and run</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cargo<span class="w"> </span>run
+</code></pre></div>
+<p>Run code through the compiler without building an executable</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cargo<span class="w"> </span>check
+</code></pre></div>
+<h3 id="language-features">Language features<a class="headerlink" href="#language-features" title="Permanent link">λ︎</a></h3>
+<ul>
+<li>Integers, floating points,</li>
+</ul>
+<p>isize, usize - use if speed is important</p>
+<p>Use specific integer types (i8, i16, etc.) to optomise memory use (assuming you know how much memory it will always use)</p>
+<h3 id="packaging">Packaging<a class="headerlink" href="#packaging" title="Permanent link">λ︎</a></h3>
+<p>module // rust equivalent of namespace or package</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">crate_name</span>::<span class="n">module_name</span>::<span class="n">function</span>::<span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+</code></pre></div>
+<p>Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">std</span>::<span class="n">mem</span>::<span class="n">size_of</span>::<span class="o">&lt;</span><span class="kt">isize</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="immutable-by-default">Immutable by default<a class="headerlink" href="#immutable-by-default" title="Permanent link">λ︎</a></h3>
+<p>All variables are immutable by default.</p>
+<p><code>mut</code> is required to mutate the value</p>
+<p>Rust compiler will suggest adding <code>mut</code> if code in a project tries to change an immutable value.</p>
+<p>Longer standing languages are typically opt-in to immutability</p>
+<ul>
+<li>C requires a <code>CONST</code></li>
+<li>Java required <code>final</code></li>
+</ul>
+<h3 id="casting">Casting<a class="headerlink" href="#casting" title="Permanent link">λ︎</a></h3>
+<p>The compiler does not automatically convert between types</p>
+<p>Need to use the <code>as</code> keyword to convert between types</p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1333,7 +1487,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 2, 2025 21:34:13 UTC">July 2, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 3, 2025 15:47:47 UTC">July 3, 2025</span>
   </span>
 
     
