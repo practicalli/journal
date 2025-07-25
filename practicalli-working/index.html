@@ -1009,6 +1009,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neovim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Neovim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-format-linters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Format &amp; Linters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#astronvim-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      AstroNvim update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1094,7 +1127,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -1147,18 +1180,20 @@
   <h1>Practicalli working</h1>
 
 <p>Much cooler week and my ankle is feeling sore, so more focus on work this week.</p>
-<p>Aims:
-- update Practicalli Clojure hot loading examples
-- continue eval of shuttle and rust experiments
-- new cleats for black Lake shoes</p>
+<p>Aims:</p>
+<ul>
+<li>update Practicalli Clojure hot loading examples</li>
+<li>continue eval of shuttle and rust experiments</li>
+<li>new cleats for the black &amp; red Lake shoes</li>
+</ul>
 <!-- more -->
 
 <h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
 <p>Lenovo Extreme X1 latest bios version: 1.50 released 2025/07/03</p>
-<p>An ISO image has been downloaded to write to a USB memory stick, enabling the Lenovo Bios updater to run.</p>
+<p>An ISO image has been downloaded to write to a USB memory stick, enabling the Lenovo Bios updater to run.  blah.</p>
 <h3 id="video-playback">Video playback<a class="headerlink" href="#video-playback" title="Permanent link">λ︎</a></h3>
 <p>On the Lenovo X1 Extreme laptop I experience some very intermittent playback latency (choppyness) on playback from streaming services, e.g. Amazon Prime.</p>
-<p>A web search resulted in a <a href="">stack overflow question about choppy youtube playback</a> which referred to <a href="https://wiki.debian.org/Firefox#Hardware_Video_Acceleration">Debian Wiki Firefox page, hardware video accelleration</a> and <a href="https://wiki.debian.org/HardwareVideoAcceleration">Debian Hardware Video Acceleration</a></p>
+<p>A web search resulted in a <a href="https://unix.stackexchange.com/questions/723814/how-to-fix-choppy-youtube-video-playback-enable-webrender">stack overflow question about choppy youtube playback</a> which referred to <a href="https://wiki.debian.org/Firefox#Hardware_Video_Acceleration">Debian Wiki Firefox page, hardware video accelleration</a> and <a href="https://wiki.debian.org/HardwareVideoAcceleration">Debian Hardware Video Acceleration</a></p>
 <p>I added the Nvidia VAAPI driver and tweaked a configuration in Firefox.</p>
 <p>In tests I am unsure if hardware video acceleration made any significant difference, although I will continue to use this setup.  I think other processes were actually consuming significant resources</p>
 <details class="example">
@@ -1246,10 +1281,101 @@
 </code></pre></div>
 </details>
 <h3 id="suspend">Suspend<a class="headerlink" href="#suspend" title="Permanent link">λ︎</a></h3>
-<p>The Extreme laptop wasnt always recovering from suspended state.</p>
+<p>The Extreme laptop wasn't always recovering from suspended state.</p>
 <p>Suspend issues are often related to older firmware and kernel versions.</p>
 <p>Ensure a recent kernel (&gt;= 6.1) is used.</p>
 <p>In the Bios, set sleep state as "Windows and Linux" or "Linux S3". Disable Thunderbolt 4 in the BIOS for older setups.</p>
+<h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
+<p>Updated AstroNvim plugins.</p>
+<p>Testing out adding configuration files for Markdown lint tool.</p>
+<p>Does Marksman replace the need for MarkdownLint?  I does not seem so.</p>
+<p>Reviewed <a href="https://github.com/artempyanykh/marksman/blob/main/Tests/default.marksman.toml">configuration for Marksman</a> and there seemed no reason to change the defaults.</p>
+<!-- TODO: Review configuration for Alex -->
+
+<h3 id="configure-format-linters">Configure Format &amp; Linters<a class="headerlink" href="#configure-format-linters" title="Permanent link">λ︎</a></h3>
+<p>Copied the Markdown-lint configuration file used for the Practicalli books to <code>~/.config/markdown-lint.jsonc</code> so that it is in a known place for any other tools.</p>
+<p>Used config from AstroNvim Discord community</p>
+<p>Tweaked the location of the file, otherwise its the same code.</p>
+<h3 id="astronvim-update">AstroNvim update<a class="headerlink" href="#astronvim-update" title="Permanent link">λ︎</a></h3>
+<details class="example">
+<summary>AstroNvim update - SPC p a</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  Updated (9)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    ● astrocommunity 0.1ms  start
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        d451f1d fix(vimtex): add two missing `which-key` descriptions (#1576) (5 days ago)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        2521d25 feat(vscode): add &quot;Close all tabs except current&quot; mapping (#1579) (5 days ago)
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        36577ef fix(jj): properly handle cases where `neo-tree` and `telescope` are not available (#1580) (6 days ago)
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    ● AstroNvim 0.34ms  start
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        4a27d42 chore(main): release 5.3.5 (30 hours ago)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        2d687bd chore(snapshot): update `lazy_snapshot` (2 days ago)
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        e72c9a0 fix(snacks): Fix Snacks notifier icons (3 days ago)
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        047c941 fix(astrocore): fix incorrect which-key mapping label to indicate buffer local mapping (8 days ago)
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    ● astroui 104.03ms  astrocore
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        4943abb chore(main): release 3.1.5 (5 hours ago)
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        82ce741 chore(build): auto-generate vimdoc (5 hours ago)
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        5447ea0 perf(lazygit): optimize lazygit setting (5 hours ago)
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    ● catppuccin 5.48ms colorscheme catppuccin-mocha  astrocore
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        e762a47 docs: auto generate vimdoc (7 hours ago)
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        aac17a6 feat: make bg of `FloatBorder` same as `NormalFloat` (#877) (7 hours ago)
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        82f3dce feat(buffon): add to auto integration list (#878) (32 hours ago)
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        44bd5ea feat: automatic integration detection (#871) (34 hours ago)
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        c6f2e83 docs: auto generate vimdoc (34 hours ago)
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        ae1bac4 feat(buffon): add buffon.nvim integration (#855) (34 hours ago)
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        784e529 fix(octo): clear OctoFilePanelFileName hl group (#875) (34 hours ago)
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        49de2b7 chore(deps): update stefanzweifel/git-auto-commit-action action to v6 (#868) (34 hours ago)
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    ● conjure 20.72ms  lua
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>        0ac12d4 Merge pull request #688 from seamusriordan/stop-guile-repl-completions-when-pending-eval (4 days ago)
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>        deb3273 Prevent Guile REPL completions when eval is pending (8 days ago)
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    ● neogit 48.66ms  User AstroGitFile
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        5541018 Merge pull request #1764 from phanen/fix-tabonly (2 days ago)
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        6f12b8e fix: handle when there&#39;s only one tabpage (5 days ago)
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        62136c6 Bugfix: When staging/unstaging a new file with the cursor over the _hunk_, an error was raised. This now stages/unstages the entire file. (5 days ago)
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>    ○ nvim-paredit  clojure  scheme  fennel  commonlisp
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>        86ef02e Merge pull request #101 from freightheave/master (2 days ago)
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>        5294e29 remove extraneous api fn (3 days ago)
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>        cd234f2 Add move to top level form head (10 days ago)
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>    ○ octo.nvim  Octo
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>        17331ce Merge pull request #1122 from storopoli/review_commits-file_panel-review_diff (33 hours ago)
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>        8de795d Merge pull request #1133 from storopoli/snacks/assignees (33 hours ago)
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>        ecdf11a Merge pull request #1143 from pwntester/copy-sha (33 hours ago)
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>        7e3f79d Merge pull request #1119 from storopoli/snacks/commits (2 days ago)
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>        f152cea Merge branch &#39;master&#39; into snacks/commits (2 days ago)
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>        658d5fb Merge pull request #1138 from pwntester/merge-method (2 days ago)
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>        1d53433 Merge pull request #1125 from storopoli/feat/comment-reply (2 days ago)
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>        9118b71 Merge branch &#39;master&#39; into feat/comment-reply (2 days ago)
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>        f5c11bf Merge pull request #1131 from jcarlos7121/master (2 days ago)
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>        3308aeb Merge branch &#39;master&#39; into master (2 days ago)
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>        6845ab4 Merge pull request #1132 from storopoli/fix/remove_assignee (2 days ago)
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>        92b7f89 Merge branch &#39;master&#39; into merge-method (2 days ago)
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>        f9a8d45 rename type (2 days ago)
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>        d1730e8 copy sha bug (2 days ago)
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>        97e0019 typehint merge method (7 days ago)
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>        fa44c79 Merge branch &#39;master&#39; into snacks/assignees (7 days ago)
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>        af71e4b fix: add proper empty lines after the quoted body (9 days ago)
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>        ae6e238 feat: comment reply (9 days ago)
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>        aa0ac68 feat: add review_commits to file_panel and review_diff (9 days ago)
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>        75c2e65 fix: remove_assignee not implemented (9 days ago)
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>        69e5437 feat(snacks): `assignee` picker (9 days ago)
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>        57d14c1 feat(snacks): add review_commits picker (9 days ago)
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>        52522da feat(snacks): add commits picker (9 days ago)
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>        2609630 Improve wording for merge queue commands on README (9 days ago)
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>    ● rainbow-delimiters.nvim 1.59ms  User AstroFile
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>  Updates (5)
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>    ● mason.nvim 12.04ms  Lazy load  nvim-treesitter
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>    ● neoconf.nvim 7.11ms  nvim-lspconfig
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>    ● none-ls.nvim 31.42ms  User AstroFile
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>    ○ nvim-dap  mason-nvim-dap.nvim
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>    ○ nvim-dap-ui  nvim-dap
+</code></pre></div>
+</details>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1277,7 +1403,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 21, 2025 21:18:20 UTC">July 21, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 23, 2025 19:23:40 UTC">July 23, 2025</span>
   </span>
 
     
