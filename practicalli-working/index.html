@@ -134,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#debian-linux" class="md-skip">
+        <a href="#garuda-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -959,6 +959,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#garuda-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Garuda Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Garuda Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-install-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post install tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-agent-with-fish-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh-agent with fish shell
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debian-linux" class="md-nav__link">
     <span class="md-ellipsis">
       Debian Linux
@@ -1127,7 +1160,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              6 min read
+                              7 min read
                             
                           </span>
                         </div>
@@ -1197,9 +1230,54 @@
 <li>update Practicalli Clojure hot loading examples</li>
 <li>continue eval of shuttle and rust experiments - on hold due to service outages</li>
 <li>new cleats for the black &amp; red Lake shoes</li>
+<li><a href="#garuda-linux">upgrade OS on rangerone</a> (Garuda Linux Hyprland flavor)</li>
 </ul>
 <!-- more -->
 
+<h2 id="garuda-linux">Garuda Linux<a class="headerlink" href="#garuda-linux" title="Permanent link">λ︎</a></h2>
+<p>Trying out Garuda Linux on the Lenovo Thinkpad P14s (rangerone), using the hyprland flavour.</p>
+<p>Created a USB memory stick</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>garuda-linux-hyprland.iso<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sda<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
+</code></pre></div>
+<p>Booted on the USB stick by selecting Enter on the bios prompt, then F12 to select boot device - USB Generic disk</p>
+<p>The Live image ran and the Hyprland 'desktop' and a quick test of the essentials was run (ethernet, bluetooth mouse, external keyboard, browser &amp; 1password extension).</p>
+<p>The live image has a launcher for the Calamaris install tool (the installer fails if arch packages were updated before running the install).</p>
+<h3 id="post-install-tasks">Post install tasks<a class="headerlink" href="#post-install-tasks" title="Permanent link">λ︎</a></h3>
+<ul>
+<li>
+<p>comment kitty as float in hyprland config</p>
+</li>
+<li>
+<p>add Practicalli Kitty configuration (in Practicalli dotfiles)</p>
+</li>
+<li>
+<p>add Practicalli Starship configuration (in Practicalli dotfiles)</p>
+</li>
+<li>
+<p>add Practicalli shell-aliases configuration (in Practicalli dotfiles)</p>
+</li>
+<li>
+<p>install github-cli package to use .ssh keys effectively without keyring (and without having to mess around with ssh-agent, which needs a different command for the fish shell)</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-Sy<span class="w"> </span>github-cli
+</code></pre></div>
+<h3 id="ssh-agent-with-fish-shell">ssh-agent with fish shell<a class="headerlink" href="#ssh-agent-with-fish-shell" title="Permanent link">λ︎</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>λ eval (ssh-agent -c)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Agent pid 79802
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>λ ssh-add ~/.ssh/engineering.pub    ## added wrong key
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Permissions 0644 for &#39;/home/practicalli/.ssh/engineering.pub&#39; are too open.
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>It is required that your private key files are NOT accessible by others.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>This private key will be ignored.
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>λ ssh-add ~/.ssh/engineering
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Enter passphrase for /home/practicalli/.ssh/engineering:
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Identity added: /home/practicalli/.ssh/engineering (engineering@practical.li)
+</code></pre></div>
 <h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
 <p>Lenovo Extreme X1 latest bios version: 1.50 released 2025/07/03</p>
 <p>An ISO image has been downloaded to write to a USB memory stick, enabling the Lenovo Bios updater to run.  blah.</p>
@@ -1211,27 +1289,27 @@
 <p>In tests I am unsure if hardware video acceleration made any significant difference, although I will continue to use this setup.  I think other processes were actually consuming significant resources</p>
 <details class="example">
 <summary>Install nvidia-vaapi-driver</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>❯ sudo apt install nvidia-vaapi-driver
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>The following packages were automatically installed and are no longer required:
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  linux-image-6.12.27-amd64  python3-mutagen  python3-pycryptodome  python3-websockets
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Use &#39;sudo apt autoremove&#39; to remove them.
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Installing:
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  nvidia-vaapi-driver
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Summary:
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 121
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  Download size: 35.8 kB
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  Space needed: 105 kB / 70.9 GB available
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 nvidia-vaapi-driver amd64 0.0.13-1 [35.8 kB]
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Fetched 35.8 kB in 0s (447 kB/s)
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>Selecting previously unselected package nvidia-vaapi-driver:amd64.
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>(Reading database ... 334793 files and directories currently installed.)
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>Preparing to unpack .../nvidia-vaapi-driver_0.0.13-1_amd64.deb ...
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>Unpacking nvidia-vaapi-driver:amd64 (0.0.13-1) ...
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>Setting up nvidia-vaapi-driver:amd64 (0.0.13-1) ...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>❯ sudo apt install nvidia-vaapi-driver
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>The following packages were automatically installed and are no longer required:
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  linux-image-6.12.27-amd64  python3-mutagen  python3-pycryptodome  python3-websockets
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Use &#39;sudo apt autoremove&#39; to remove them.
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Installing:
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  nvidia-vaapi-driver
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Summary:
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 121
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  Download size: 35.8 kB
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  Space needed: 105 kB / 70.9 GB available
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 nvidia-vaapi-driver amd64 0.0.13-1 [35.8 kB]
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Fetched 35.8 kB in 0s (447 kB/s)
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Selecting previously unselected package nvidia-vaapi-driver:amd64.
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>(Reading database ... 334793 files and directories currently installed.)
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Preparing to unpack .../nvidia-vaapi-driver_0.0.13-1_amd64.deb ...
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Unpacking nvidia-vaapi-driver:amd64 (0.0.13-1) ...
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>Setting up nvidia-vaapi-driver:amd64 (0.0.13-1) ...
 </code></pre></div>
 </details>
 <p>To use the hardware acceleration, Firefox should have one of the following environment variables set</p>
@@ -1241,7 +1319,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Running X11</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">Exec</span><span class="o">=</span>env<span class="w"> </span><span class="nv">MOZ_X11_EGL</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>/usr/bin/firefox-esr
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">Exec</span><span class="o">=</span>env<span class="w"> </span><span class="nv">MOZ_X11_EGL</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>/usr/bin/firefox-esr
 </code></pre></div>
 </div>
 <!-- TODO:
@@ -1252,12 +1330,12 @@
 <p>The <code>firefox</code> command is a script that launches <code>firefox-esr</code>.</p>
 <details class="example">
 <summary>Firefox script to launch Firefox ESR</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/bin/sh</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">FIREFOX</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>firefox<span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="o">[</span><span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FIREFOX</span><span class="s2">.real&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FIREFOX</span><span class="s2">.real&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">exec</span><span class="w"> </span>firefox-esr<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nv">FIREFOX</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>firefox<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="o">[</span><span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FIREFOX</span><span class="s2">.real&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FIREFOX</span><span class="s2">.real&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">exec</span><span class="w"> </span>firefox-esr<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
 </code></pre></div>
 </details>
 <h3 id="performance-management">Performance management<a class="headerlink" href="#performance-management" title="Permanent link">λ︎</a></h3>
@@ -1266,31 +1344,31 @@
 <p>Dynamic Platform and Thermal Framework implementation was introduced in Linux kernel 5.12 which is use by thermald to manage thermal and power policies. Linux Kernel 6.1 onward is highly recommended.</p>
 <details class="example">
 <summary>Install Thermal daemon</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>❯ sudo apt install thermald
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>The following packages were automatically installed and are no longer required:
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  linux-image-6.12.27-amd64  python3-mutagen  python3-pycryptodome  python3-websockets
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Use &#39;sudo apt autoremove&#39; to remove them.
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Installing:
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  thermald
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Summary:
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 121
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  Download size: 246 kB
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  Space needed: 720 kB / 69.8 GB available
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 thermald amd64 2.5.9-1 [246 kB]
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Fetched 246 kB in 0s (1,153 kB/s)
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Selecting previously unselected package thermald.
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>(Reading database ... 334797 files and directories currently installed.)
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Preparing to unpack .../thermald_2.5.9-1_amd64.deb ...
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Unpacking thermald (2.5.9-1) ...
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>Setting up thermald (2.5.9-1) ...
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>Created symlink &#39;/etc/systemd/system/dbus-org.freedesktop.thermald.service&#39; → &#39;/usr/lib/systemd/system/thermald.service&#39;.
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>Created symlink &#39;/etc/systemd/system/multi-user.target.wants/thermald.service&#39; → &#39;/usr/lib/systemd/system/thermald.service&#39;.
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>Processing triggers for dbus (1.16.2-2) ...
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>Processing triggers for man-db (2.13.1-1) ...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>❯ sudo apt install thermald
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>The following packages were automatically installed and are no longer required:
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  linux-image-6.12.27-amd64  python3-mutagen  python3-pycryptodome  python3-websockets
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Use &#39;sudo apt autoremove&#39; to remove them.
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Installing:
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  thermald
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Summary:
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 121
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  Download size: 246 kB
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>  Space needed: 720 kB / 69.8 GB available
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 thermald amd64 2.5.9-1 [246 kB]
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Fetched 246 kB in 0s (1,153 kB/s)
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>Selecting previously unselected package thermald.
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>(Reading database ... 334797 files and directories currently installed.)
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>Preparing to unpack .../thermald_2.5.9-1_amd64.deb ...
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>Unpacking thermald (2.5.9-1) ...
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Setting up thermald (2.5.9-1) ...
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>Created symlink &#39;/etc/systemd/system/dbus-org.freedesktop.thermald.service&#39; → &#39;/usr/lib/systemd/system/thermald.service&#39;.
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>Created symlink &#39;/etc/systemd/system/multi-user.target.wants/thermald.service&#39; → &#39;/usr/lib/systemd/system/thermald.service&#39;.
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>Processing triggers for dbus (1.16.2-2) ...
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>Processing triggers for man-db (2.13.1-1) ...
 </code></pre></div>
 </details>
 <h3 id="suspend">Suspend<a class="headerlink" href="#suspend" title="Permanent link">λ︎</a></h3>
@@ -1312,81 +1390,81 @@
 <h3 id="astronvim-update">AstroNvim update<a class="headerlink" href="#astronvim-update" title="Permanent link">λ︎</a></h3>
 <details class="example">
 <summary>AstroNvim update - SPC p a</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  Updated (9)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    ● astrocommunity 0.1ms  start
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        d451f1d fix(vimtex): add two missing `which-key` descriptions (#1576) (5 days ago)
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        2521d25 feat(vscode): add &quot;Close all tabs except current&quot; mapping (#1579) (5 days ago)
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        36577ef fix(jj): properly handle cases where `neo-tree` and `telescope` are not available (#1580) (6 days ago)
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    ● AstroNvim 0.34ms  start
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        4a27d42 chore(main): release 5.3.5 (30 hours ago)
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        2d687bd chore(snapshot): update `lazy_snapshot` (2 days ago)
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        e72c9a0 fix(snacks): Fix Snacks notifier icons (3 days ago)
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        047c941 fix(astrocore): fix incorrect which-key mapping label to indicate buffer local mapping (8 days ago)
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    ● astroui 104.03ms  astrocore
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        4943abb chore(main): release 3.1.5 (5 hours ago)
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        82ce741 chore(build): auto-generate vimdoc (5 hours ago)
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        5447ea0 perf(lazygit): optimize lazygit setting (5 hours ago)
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    ● catppuccin 5.48ms colorscheme catppuccin-mocha  astrocore
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        e762a47 docs: auto generate vimdoc (7 hours ago)
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        aac17a6 feat: make bg of `FloatBorder` same as `NormalFloat` (#877) (7 hours ago)
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        82f3dce feat(buffon): add to auto integration list (#878) (32 hours ago)
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        44bd5ea feat: automatic integration detection (#871) (34 hours ago)
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        c6f2e83 docs: auto generate vimdoc (34 hours ago)
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        ae1bac4 feat(buffon): add buffon.nvim integration (#855) (34 hours ago)
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        784e529 fix(octo): clear OctoFilePanelFileName hl group (#875) (34 hours ago)
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        49de2b7 chore(deps): update stefanzweifel/git-auto-commit-action action to v6 (#868) (34 hours ago)
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    ● conjure 20.72ms  lua
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>        0ac12d4 Merge pull request #688 from seamusriordan/stop-guile-repl-completions-when-pending-eval (4 days ago)
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>        deb3273 Prevent Guile REPL completions when eval is pending (8 days ago)
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    ● neogit 48.66ms  User AstroGitFile
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        5541018 Merge pull request #1764 from phanen/fix-tabonly (2 days ago)
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        6f12b8e fix: handle when there&#39;s only one tabpage (5 days ago)
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        62136c6 Bugfix: When staging/unstaging a new file with the cursor over the _hunk_, an error was raised. This now stages/unstages the entire file. (5 days ago)
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>    ○ nvim-paredit  clojure  scheme  fennel  commonlisp
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>        86ef02e Merge pull request #101 from freightheave/master (2 days ago)
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>        5294e29 remove extraneous api fn (3 days ago)
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>        cd234f2 Add move to top level form head (10 days ago)
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>    ○ octo.nvim  Octo
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>        17331ce Merge pull request #1122 from storopoli/review_commits-file_panel-review_diff (33 hours ago)
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>        8de795d Merge pull request #1133 from storopoli/snacks/assignees (33 hours ago)
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>        ecdf11a Merge pull request #1143 from pwntester/copy-sha (33 hours ago)
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>        7e3f79d Merge pull request #1119 from storopoli/snacks/commits (2 days ago)
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>        f152cea Merge branch &#39;master&#39; into snacks/commits (2 days ago)
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>        658d5fb Merge pull request #1138 from pwntester/merge-method (2 days ago)
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>        1d53433 Merge pull request #1125 from storopoli/feat/comment-reply (2 days ago)
-<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>        9118b71 Merge branch &#39;master&#39; into feat/comment-reply (2 days ago)
-<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>        f5c11bf Merge pull request #1131 from jcarlos7121/master (2 days ago)
-<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>        3308aeb Merge branch &#39;master&#39; into master (2 days ago)
-<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>        6845ab4 Merge pull request #1132 from storopoli/fix/remove_assignee (2 days ago)
-<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>        92b7f89 Merge branch &#39;master&#39; into merge-method (2 days ago)
-<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>        f9a8d45 rename type (2 days ago)
-<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>        d1730e8 copy sha bug (2 days ago)
-<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>        97e0019 typehint merge method (7 days ago)
-<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>        fa44c79 Merge branch &#39;master&#39; into snacks/assignees (7 days ago)
-<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>        af71e4b fix: add proper empty lines after the quoted body (9 days ago)
-<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>        ae6e238 feat: comment reply (9 days ago)
-<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>        aa0ac68 feat: add review_commits to file_panel and review_diff (9 days ago)
-<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>        75c2e65 fix: remove_assignee not implemented (9 days ago)
-<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>        69e5437 feat(snacks): `assignee` picker (9 days ago)
-<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>        57d14c1 feat(snacks): add review_commits picker (9 days ago)
-<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>        52522da feat(snacks): add commits picker (9 days ago)
-<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>        2609630 Improve wording for merge queue commands on README (9 days ago)
-<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>
-<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>    ● rainbow-delimiters.nvim 1.59ms  User AstroFile
-<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>
-<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>  Updates (5)
-<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>    ● mason.nvim 12.04ms  Lazy load  nvim-treesitter
-<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>    ● neoconf.nvim 7.11ms  nvim-lspconfig
-<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>    ● none-ls.nvim 31.42ms  User AstroFile
-<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>    ○ nvim-dap  mason-nvim-dap.nvim
-<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>    ○ nvim-dap-ui  nvim-dap
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>  Updated (9)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    ● astrocommunity 0.1ms  start
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        d451f1d fix(vimtex): add two missing `which-key` descriptions (#1576) (5 days ago)
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        2521d25 feat(vscode): add &quot;Close all tabs except current&quot; mapping (#1579) (5 days ago)
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        36577ef fix(jj): properly handle cases where `neo-tree` and `telescope` are not available (#1580) (6 days ago)
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    ● AstroNvim 0.34ms  start
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        4a27d42 chore(main): release 5.3.5 (30 hours ago)
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        2d687bd chore(snapshot): update `lazy_snapshot` (2 days ago)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        e72c9a0 fix(snacks): Fix Snacks notifier icons (3 days ago)
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        047c941 fix(astrocore): fix incorrect which-key mapping label to indicate buffer local mapping (8 days ago)
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    ● astroui 104.03ms  astrocore
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        4943abb chore(main): release 3.1.5 (5 hours ago)
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        82ce741 chore(build): auto-generate vimdoc (5 hours ago)
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        5447ea0 perf(lazygit): optimize lazygit setting (5 hours ago)
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    ● catppuccin 5.48ms colorscheme catppuccin-mocha  astrocore
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        e762a47 docs: auto generate vimdoc (7 hours ago)
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        aac17a6 feat: make bg of `FloatBorder` same as `NormalFloat` (#877) (7 hours ago)
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        82f3dce feat(buffon): add to auto integration list (#878) (32 hours ago)
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        44bd5ea feat: automatic integration detection (#871) (34 hours ago)
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        c6f2e83 docs: auto generate vimdoc (34 hours ago)
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>        ae1bac4 feat(buffon): add buffon.nvim integration (#855) (34 hours ago)
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        784e529 fix(octo): clear OctoFilePanelFileName hl group (#875) (34 hours ago)
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>        49de2b7 chore(deps): update stefanzweifel/git-auto-commit-action action to v6 (#868) (34 hours ago)
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>    ● conjure 20.72ms  lua
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        0ac12d4 Merge pull request #688 from seamusriordan/stop-guile-repl-completions-when-pending-eval (4 days ago)
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>        deb3273 Prevent Guile REPL completions when eval is pending (8 days ago)
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>    ● neogit 48.66ms  User AstroGitFile
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>        5541018 Merge pull request #1764 from phanen/fix-tabonly (2 days ago)
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>        6f12b8e fix: handle when there&#39;s only one tabpage (5 days ago)
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>        62136c6 Bugfix: When staging/unstaging a new file with the cursor over the _hunk_, an error was raised. This now stages/unstages the entire file. (5 days ago)
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>    ○ nvim-paredit  clojure  scheme  fennel  commonlisp
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>        86ef02e Merge pull request #101 from freightheave/master (2 days ago)
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>        5294e29 remove extraneous api fn (3 days ago)
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>        cd234f2 Add move to top level form head (10 days ago)
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>    ○ octo.nvim  Octo
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>        17331ce Merge pull request #1122 from storopoli/review_commits-file_panel-review_diff (33 hours ago)
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>        8de795d Merge pull request #1133 from storopoli/snacks/assignees (33 hours ago)
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>        ecdf11a Merge pull request #1143 from pwntester/copy-sha (33 hours ago)
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>        7e3f79d Merge pull request #1119 from storopoli/snacks/commits (2 days ago)
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>        f152cea Merge branch &#39;master&#39; into snacks/commits (2 days ago)
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>        658d5fb Merge pull request #1138 from pwntester/merge-method (2 days ago)
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>        1d53433 Merge pull request #1125 from storopoli/feat/comment-reply (2 days ago)
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>        9118b71 Merge branch &#39;master&#39; into feat/comment-reply (2 days ago)
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>        f5c11bf Merge pull request #1131 from jcarlos7121/master (2 days ago)
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>        3308aeb Merge branch &#39;master&#39; into master (2 days ago)
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>        6845ab4 Merge pull request #1132 from storopoli/fix/remove_assignee (2 days ago)
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>        92b7f89 Merge branch &#39;master&#39; into merge-method (2 days ago)
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>        f9a8d45 rename type (2 days ago)
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>        d1730e8 copy sha bug (2 days ago)
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>        97e0019 typehint merge method (7 days ago)
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>        fa44c79 Merge branch &#39;master&#39; into snacks/assignees (7 days ago)
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>        af71e4b fix: add proper empty lines after the quoted body (9 days ago)
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>        ae6e238 feat: comment reply (9 days ago)
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>        aa0ac68 feat: add review_commits to file_panel and review_diff (9 days ago)
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>        75c2e65 fix: remove_assignee not implemented (9 days ago)
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>        69e5437 feat(snacks): `assignee` picker (9 days ago)
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>        57d14c1 feat(snacks): add review_commits picker (9 days ago)
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>        52522da feat(snacks): add commits picker (9 days ago)
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>        2609630 Improve wording for merge queue commands on README (9 days ago)
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>    ● rainbow-delimiters.nvim 1.59ms  User AstroFile
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>  Updates (5)
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>    ● mason.nvim 12.04ms  Lazy load  nvim-treesitter
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>    ● neoconf.nvim 7.11ms  nvim-lspconfig
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>    ● none-ls.nvim 31.42ms  User AstroFile
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>    ○ nvim-dap  mason-nvim-dap.nvim
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>    ○ nvim-dap-ui  nvim-dap
 </code></pre></div>
 </details>
 <hr />
@@ -1416,7 +1494,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 26, 2025 22:00:11 UTC">July 26, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 29, 2025 19:30:25 UTC">July 29, 2025</span>
   </span>
 
     
