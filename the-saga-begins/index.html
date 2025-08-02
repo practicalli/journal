@@ -1103,7 +1103,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -1223,6 +1223,19 @@
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Enter passphrase for /home/practicalli/.ssh/engineering:
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Identity added: /home/practicalli/.ssh/engineering (engineering@practical.li)
 </code></pre></div>
+<p>This approach is only valid for a specific terminal session.</p>
+<p>Ideally there would be a key ring option I could use with Hyprland, which would unlock my SSH keys automatically when I successfully login.</p>
+<p>Another approach to try is to  in the shell resource file, i.e. <code>.zshrc</code> <code>.bashrc</code> (not sure about fish shell yet).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>export SSH_AUTH_SOCK=&quot;$XDG_RUNTIME_DIR/ssh-agent.socket&quot;
+</code></pre></div>
+<p>Ensure <code>ssh-agent</code> package installed and enabled.</p>
+<p>Use <code>ssh-add</code> to add an SSH key, specifying the duration for the key to remain available, e.g. use SSH key for 24 hours without requiring the password.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh-add<span class="w"> </span>-t<span class="w"> </span>24h<span class="w"> </span>~/.ssh/engineering
+</code></pre></div>
+<p>Or <a href="blog post to add ssh-agent as a systemd process: https://www.lorenzobettini.it/2023/09/hyprland-and-ssh-agent/" target="_blank">set <code>ssh-agent</code> as a systemd process</a> or see the <a href="https://wiki.archlinux.org/title/SSH_keys#Start_ssh-agent_with_systemd_user" target="_blank">Arch Linux article on starting ssh-agent with systemd user</a></p>
+<p>Or <a href="https://developers.yubico.com/SSH/Securing_SSH_with_FIDO2.html" target="_blank">generate and add an SSH Key to a Yubikey hardware security device</a>.  This should allow you to tap the Yubikey when signing a commit (or tag) and pushing commit(s) to a remove service.</p>
+<p>A PIN must be set on the Yubikey to add the SSH Key, although this greatly simplifies using the key on any other machine (as the Yubikey contains the private key and can generate a suitable link on a new computer).</p>
+<p>Or <a href="https://wiki.archlinux.org/title/SSH_keys#Keychain" target="_blank">keychain</a> to only need to enter the SSH key passphrase when starting/rebooting the operating system.</p>
 <h3 id="github-cli">GitHub CLI<a class="headerlink" href="#github-cli" title="Permanent link">λ︎</a></h3>
 <p>In theory I should be able to use the GitHub CLI as a way to authenticate with GitHub using my existing SSH keys.</p>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
@@ -1265,7 +1278,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 1, 2025 23:49:44 UTC">August 1, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 2, 2025 00:31:57 UTC">August 2, 2025</span>
   </span>
 
     
