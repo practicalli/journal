@@ -978,6 +978,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#recovering-garuda-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recovering Garuda Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#playing-videos" class="md-nav__link">
     <span class="md-ellipsis">
       Playing videos
@@ -1127,7 +1136,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              7 min read
+                              8 min read
                             
                           </span>
                         </div>
@@ -1208,8 +1217,20 @@
 </li>
 </ul>
 <h2 id="hyprland">Hyprland<a class="headerlink" href="#hyprland" title="Permanent link">λ︎</a></h2>
-<p>More adventures in Hyprland this week.</p>
+<p>More adventures in Hyprland this week with the Garuda Linux distribution that claims to make using Arch Linux more reliable.</p>
+<p>After a <code>sudo garuda-update</code> this week the Hyprland desktop failed to load, showing only a blank screen after entering my username and password at the ssdm prompt.</p>
+<p>This was an opportunity to understand how Garuda Linux uses the Btfs file system to create snapshots, making it simpler to role back to a good state.</p>
 <p>It would be far easier to use Gnome or KDE desktop than Hyprland, but I do feel productive when using a tilling window manager.</p>
+<h3 id="recovering-garuda-linux">Recovering Garuda Linux<a class="headerlink" href="#recovering-garuda-linux" title="Permanent link">λ︎</a></h3>
+<p>Garuda Linux creates a snapshot each time there is a system update, e.g. <code>sudo garuda-update</code> or installing a package <code>sudo pacman -Sy package-name</code></p>
+<p>It seems this is very useful when using a rolling distribution like Arch Linux, especially when using Hyprland which is prone to breaking changes as it and the projects are using are evolving quickly.</p>
+<p>When the operating system or desktop is not running correctly, a snapshot can be chosen from the Grub boot menu.</p>
+<p>This is the approach required to fix the issue I was experiencing, where the screen went blank after login via SSDM greeter screen.</p>
+<p>I went through several snapshots before finding one that would load the desktop.  Garuda Linux prompted me to restore the snapshot, so I accepted.</p>
+<p>It took about a minute to restore and then prompted to reboot the system.  Everything was back to normal after the reboot.</p>
+<p>I was impressed with the simplicity of selecting snapshots and using them to recover to a previous state.  The hardest part was figuring out which snapshot to restore.  To minimise impact of restoring, start from the latest snapshot and then go backwards through the snapshot history, until a working snapshot is found.</p>
+<p>The <code>snapper</code> desktop tool shows the snapshot history and also allows a specific snapshot to be restored or deleted if no longer needed.</p>
+<p>TODO: gain an understating of how much space each snapshot is taking up.</p>
 <h3 id="playing-videos">Playing videos<a class="headerlink" href="#playing-videos" title="Permanent link">λ︎</a></h3>
 <p>I use <a href="https://www.videolan.org/vlc/">vlc</a> to play music and videos across all my computers and mobile devices (tablets &amp; smartphones).</p>
 <p>I prefer using the following digital formats:</p>
@@ -1416,7 +1437,7 @@ NOTE: Previously I used Vorbis codec but files were replace using the Opus codec
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 13, 2025 18:54:21 UTC">August 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 13, 2025 21:53:41 UTC">August 13, 2025</span>
   </span>
 
     
