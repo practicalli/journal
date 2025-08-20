@@ -991,6 +991,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#garuda-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Garuda Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Garuda Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thunar-file-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thunar file manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claude-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Claude AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency maps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which AI Services
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1076,7 +1133,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -1215,6 +1272,165 @@
 <a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>       For information on the configuration file format, see kanshi(5).``shell-output
 </code></pre></div>
 </div>
+<h2 id="garuda-linux">Garuda Linux<a class="headerlink" href="#garuda-linux" title="Permanent link">λ︎</a></h2>
+<p>I was trying to connect to Garuda Linux using the sftp protocol, used by Nautilus and other file managers to 'mount' a remote file system for reading and writing files.</p>
+<p>The connection was refused by host initially, so it seems although openssh package was installed, the service was not running locally (or was being blocked by the firewall).</p>
+<p>The sshd service needs to be started to be able to access the Arch Linux system using sftp.</p>
+<div class="admonition note">
+<p class="admonition-title">Start the OpenSSH service</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
+</code></pre></div>
+</div>
+<p>This is strange as I didnt seem to need this when using scp (maybe I was using that from the Arch Linux system).</p>
+<p>I also added ssh to the firewall rules, but not sure if that was neccessary</p>
+<div class="admonition note">
+<p class="admonition-title">Enable ssh in the ufw firewall</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>ssh
+</code></pre></div>
+</div>
+<p>If an "unknown host" message is shown, there is likely an older identity in the <code>.ssh/known_hosts</code> file.  Move or delete the known_hosts file and the sftp connection will prompt if the new host identity should be accepted.</p>
+<blockquote>
+<p>NOTE: If the remote server has not changed, then make sure the connection is going to the correct computer (the identities in the known_hosts file blocks if the identity it knows is different).</p>
+</blockquote>
+<h3 id="thunar-file-manager">Thunar file manager<a class="headerlink" href="#thunar-file-manager" title="Permanent link">λ︎</a></h3>
+<p>The thunar file manager is the default in Garuda Linux.  It has all the features I used from Nautilus more or less, including a network section where I can use sftp to copy or move files between computers on my local network.</p>
+<p>The thunar preferences do not have a way to configure the font size.  I assume thunar is using the default font (which may be Fira Code 10 according to some gkt-3.0 settings I saw).</p>
+<p>In Garuda Linux the font is too small to comfortably read the text, especially on the laptop display.</p>
+<p>Scaling the list or icon view in thunar only scales the graphics and not the text (something that Nautilus does very well).</p>
+<p>A specific font size can be set through a GTK-3.0 stylesheet (which didnt previously exist).  At the time of writing the CSS configuration should be done in GTK-3 and not GTK-4.</p>
+<div class="admonition note">
+<p class="admonition-title">Set Thunar specific font size</p>
+<div class="highlight"><span class="filename">~/.config/gtk-3.0/gtk.css</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">/* Set font size for thunar file manager */</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">.</span><span class="nc">thunar</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">pt</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">gtk-3</span><span class="p">.</span><span class="nc">0</span><span class="o">/</span><span class="nt">gtk</span><span class="p">.</span><span class="nc">css</span><span class="w"> </span><span class="o">(</span><span class="nt">END</span><span class="o">)</span>
+</code></pre></div>
+</div>
+<p>Select 'Close all Windows' from the Thunar file manager app, or use the <code>-q</code> flag to quit all instances.</p>
+<div class="admonition note">
+<p class="admonition-title">Close and restart thunar file manager</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>thunar<span class="w"> </span>-q<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>thunar
+</code></pre></div>
+</div>
+<p>Now thunar should show in the font size of your choice.</p>
+<h2 id="claude-ai">Claude AI<a class="headerlink" href="#claude-ai" title="Permanent link">λ︎</a></h2>
+<p>Experiments with Claude AI, initially via the web site.</p>
+<p>Claude has a free plan and paid plans.  The free plan only allows use via the Claude AI website or apps on Android/iOS.</p>
+<p>The free plan does not allow use of an API key, which requires a $5 payment or a 13GBP / $20 dollar 'pro' subscription.</p>
+<p><img alt="Anthropic Claude AI plans comparison" loading="lazy" src="" /></p>
+<p>TODO: define the limits of the free plan, can it be used for ECA / clojure-mcp</p>
+<div class="admonition example">
+<p class="admonition-title">Initial Claude Welcome</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Hey there, I’m Claude.
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>I’m your AI assistant for brainstorming, creating, and learning together.
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Here’s a few things you should know about me:
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Curious? Just ask
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>Chat with me about anything from simple asks to complex ideas! I’m always ready to help (literally).
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>I’m built to help, never harm
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>Automated safeguards protect our conversations from creating violent, abusive, or deceptive content.
+</code></pre></div>
+</div>
+<p>Claude personalises the experience by asking 'what should I call you?'</p>
+<p>The next part is where I get stuck.  What do I actually want to do with this AI?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>All set! Here are a few ideas just for you.
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Where should we start?
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>- Create a coding Easter egg that would make my team smile
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>- Build an app based on my idea
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>- Create dependency maps
+</code></pre></div>
+<p>I can also select to have my own topic.</p>
+<h3 id="dependency-maps">Dependency maps<a class="headerlink" href="#dependency-maps" title="Permanent link">λ︎</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Hi Claude! Could you create dependency maps? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>I&#39;d be happy to help you create dependency maps! To make sure I build exactly what you need, I have a couple of key questions:
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    What type of dependencies are you mapping? (e.g., software components, project tasks, business processes, organizational teams, or something else?)
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    What&#39;s the scope and complexity? (e.g., a small project with 5-10 items, or a large system with dozens of interconnected elements?)
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>Based on your answers, I can create an interactive visual dependency map as an artifact that will let you add, edit, and rearrange dependencies with drag-and-drop functionality.
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>If you have any existing documentation, lists, or files that outline the components and their relationships, feel free to upload them - that would definitely help me create a more accurate starting map for you!
+</code></pre></div>
+<h2 id="which-ai-services">Which AI Services<a class="headerlink" href="#which-ai-services" title="Permanent link">λ︎</a></h2>
+<p>I asked Google.com "what AI services can I use without a subscription?"</p>
+<div class="admonition example">
+<p class="admonition-title">What AI services can I use without a subscription?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>August 19, 2025
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>what AI services can I use without a subscription?
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>It appears you&#39;re interested in exploring AI services without needing a subscription. Here&#39;s a breakdown of some great options available for free:
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Free AI Services for Various Needs
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    Writing &amp; Content Creation:
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        ChatGPT: Provides a free tier utilizing GPT-4o mini, supporting text generation, brainstorming, code assistance, and web browsing with usage limits.
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        Grammarly: Offers free AI rewrite suggestions, tone adjustments, and assistance in improving writing clarity and engagement.
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        Copy.ai: Offers free access to copywriting tools and templates for various formats, such as social media posts, emails, and product descriptions, with a monthly word limit and single-user access.
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        HubSpot AI Writer: Integrated with the HubSpot CRM, it uses real-time data to personalize content, generate blog outlines, update posts for SEO, and create newsletters, with a free plan.
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        Notion AI: Integrated within Notion, it allows for document summaries, meeting note generation, and content drafting, providing a free and customizable AI assistant within the workspace.
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        Rytr: Provides a free plan with a monthly character limit for drafting emails, ideas, and short posts using GPT-3 technology.
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    Image &amp; Design:
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>        DALL-E: Accessible through the free ChatGPT tier, it transforms text prompts into images, suitable for illustrations, concept art, and blog visuals.
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>        Canva AI: Provides AI-powered design features like Magic Design, which creates designs from text prompts, access to a vast library of templates and stock photos, along with tools for customization and resizing visuals.
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        Playground AI: Offers a free plan for generating and editing images from text prompts, allowing the blending of real and AI-generated elements, and supporting integrations with e-commerce platforms.
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        Illusion Diffusion: Uses AI to create optical illusions from photos, with customization options and access to various settings, available through the Hugging Face Community.
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        Krea.ai: A platform for generating visuals from text inputs, suitable for marketing and design tasks, with free access to essential features.
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        Deep Dream Generator: Transforms text prompts into images, assisting with marketing campaigns, social media visuals, and blog posts.
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        Designify: Generates images on autopilot, allowing exploration of various creative directions by generating variations from a single concept.
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        Adobe Firefly: Offers image generation with Generative Fill and Expand features and integrates with the Adobe suite, available for free on the web or through Adobe Express.
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        Pixlr: A modular online photo editor with AI features like Cutout and Backdrop, allowing for retouching, cropping, and enhancing images with a free tier.
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    Video Creation &amp; Editing:
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        Synthesia: Offers a free plan for generating AI videos with stock avatars and voices in multiple languages, including features like adding avatars, instant voiceovers, and video editing with templates.
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        Invideo: Integrates AI models to simplify video creation.
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        Runway ML: Provides a free plan with credits for generating short videos and images using AI, including features like image-to-video conversion and text-to-image with reference support.
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        Descript: A tool that simplifies audio and video editing by allowing users to edit transcripts, remove filler words, and enhance audio with AI.
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>        Lumen5: Transforms long-form text into videos with automatically selected visuals and captions, with a free account allowing for the creation of a limited number of videos per month.
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>        Pictory: Converts long-form text into shareable videos with automatically selected visuals and captions, offering a fast way to repurpose written content.
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>    Research &amp; Productivity:
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>        Perplexity AI: Provides structured answers to natural language questions with clickable source citations, useful for researching and summarizing information.
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>        Google AI Studio: A web-based tool for prototyping and experimenting with the Gemini Developer API, offering free tiers across the family of multimodal generative AI models.
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        Google Gemini: Free to use for individuals with a personal Google Account, it assists with understanding and finding big ideas and information.
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        Otter.ai: Provides real-time transcription and note-taking for meetings on platforms like Zoom, Microsoft Teams, and Google Meet, along with summaries and action item generation.
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        Fireflies.ai: Records and analyzes conversations during meetings, identifies key action items, and integrates with platforms like Zoom and Google Meet.
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>        Zapier: Connects various apps through automated workflows (&quot;Zaps&quot;) and includes AI features for building chatbots, organizing data, and creating custom interfaces, with a free plan for basic automations.
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>        Reclaim.ai: An AI scheduling tool that helps manage calendars and find time to complete tasks.
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>        Hive: AI project management software that creates projects from a prompt, allowing for task breakdown, time tracking, and collaboration.
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>        Slidesgo AI Presentation Maker: Generates presentations from a title, tone, and theme, with customization and editing tools, available for free.
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        Be My Eyes: An AI-driven app assisting visually impaired individuals with real-time video calls with sighted volunteers or AI assistants.
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>        Snopes Factbot: An AI-powered chatbot specializing in fact-checking news, rumors, and conspiracy theories.
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>        AutoGen: An open-source framework from Microsoft for building multi-agent systems based on Large Language Models (LLMs).
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>        Small SEO Tools – Reverse Image Search: An advanced AI solution for searching by images, finding copyright-free ideas, and detecting duplication.
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    Other Specialized Tools:
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>        Beatoven AI: An AI-powered platform for music production and audio editing, offering generative AI tools to create and manipulate audio files with a free version allowing limited audio creation.
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>        Codeium AI: A software development assistant that uses AI to generate code, automate tasks, and assist with data analysis, available for free.
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>        Documator: Offers a free AI-powered PDF summarizer (for files up to 10MB) and a cloud-based document automation platform.
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>        Lalal.ai: An AI audio stem splitter that isolates and removes specific tracks from audio files, with 10 minutes of free use available.
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>Limitations of Free AI Tools
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>Free AI tools often have limitations compared to paid services, including:
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>    Limited output quality: Many free platforms restrict exports to lower resolutions and may have limitations on visual fidelity or the presence of watermarks.
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>    Limited features: Free versions may not include advanced customization options, integrations, or access to premium features.
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>    Usage restrictions: There may be limitations on the number of uses, file sizes, or time constraints.
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>    Lower rendering speeds: Free users may experience slower processing times, especially during peak hours.
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>    Potential privacy and data security risks: Free tools might collect and share user data more extensively than paid services, and may lack robust security measures.
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>    Limited commercial usage rights: Some free tools may restrict the use of generated content for commercial purposes without an upgrade.
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>    Lack of customer support: Free users typically receive minimal or no direct assistance.
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>Important Note: It&#39;s always a good idea to check the specific terms and conditions of any free AI tool before relying on it for crucial tasks, especially those involving sensitive information or commercial use.
+</code></pre></div>
+</div>
+<p>AI responses may include mistakes. <a href="https://support.google.com/websearch?p=aimode">Learn more</a></p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a></p>
@@ -1242,7 +1458,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 19, 2025 00:03:55 UTC">August 19, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 20, 2025 22:52:43 UTC">August 20, 2025</span>
   </span>
 
     
