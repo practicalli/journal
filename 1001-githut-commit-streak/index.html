@@ -986,20 +986,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#garuda-linux" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#visual-tool-to-configure-display" class="md-nav__link">
     <span class="md-ellipsis">
-      Garuda Linux
+      Visual tool to configure display
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Garuda Linux">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp-connection-for-file-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      sftp connection for file sharing
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#thunar-file-manager" class="md-nav__link">
@@ -1133,7 +1136,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              11 min read
+                              12 min read
                             
                           </span>
                         </div>
@@ -1160,7 +1163,31 @@
       
       
       
+        <span class="md-tag">ai-tools</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">arch-linux</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">garuda-linux</span>
+      
+    
+      
+      
+      
         <span class="md-tag">github</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">hyprland</span>
       
     
       
@@ -1199,6 +1226,10 @@
 
 <p>On Sunday 17th August 2025 I completed 1,001 days of successive commits in GitHub (without cheating).</p>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/github/github-profile-practicalli-johnny-1000-streak.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Johnny profile - GitHub activity statistics - 1000 day streak" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/github/github-profile-practicalli-johnny-1000-streak.png?raw=true" /></a></p>
+<p>Some job hunting during the week included being contacted by a recruiter from Docker regarding an engineering manager role (security division).  The recruiter that helped get me a position at Citi also got in touch for a healthcare engineering manager role.</p>
+<p>Planned a longer cycling route to the Isle of Grain, one of the more remote parts of Kent.  Grain village is right by the sea and there is a long sandy beach there.  As its a remote location, there are very few people around usually.</p>
+<p>I've taken several trips to Grain with my friend Gaiville who I trained and cycled with from Lands End to John O'Groats in 2019.</p>
+<p>I've altered the start of the route previously used to accommodate people from the local cycling club.</p>
 <p>Movies to see</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Project_Hail_Mary_(film)">Project Hail Mary</a> from the <a href="https://en.wikipedia.org/wiki/Project_Hail_Mary">Project Hail Mary book</a></li>
@@ -1206,6 +1237,10 @@
 <li><a href="https://en.wikipedia.org/wiki/Xeno_(film)">Xeno</a></li>
 <li><a href="https://www.rottentomatoes.com/m/watch_the_skies">Watch The Skies</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Daniela_Forever">Daniela Forever</a></li>
+</ul>
+<p>Movies watched</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/September_5_(film)">September 5</a> covers the terrorist attach at the 1972 Summer Olympics in Munich, told from the perspective of the people working at the ABC sports division who were able to broadcast live much of the tragedy.</li>
 </ul>
 <!-- more -->
 
@@ -1223,16 +1258,38 @@
 </div>
 <h2 id="hyprland">Hyprland<a class="headerlink" href="#hyprland" title="Permanent link">λ︎</a></h2>
 <p>G-Hyprland is a Garuda Linux tool to help configure Hyprland and related tools.</p>
-<div class="admonition info">
-<p class="admonition-title">Install?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>upd
+<p>G-Hyprland is optional so must first be installed with ++Mod+"i"++ key binding (Garuda hyprland config).</p>
+<p>Installing G-Hyprland rearranges the configuration into separate files and seems to override any existing hypr config.  There may be a backup by I havent found it yet, so I had to manually setup my monitor config again.</p>
+<p>The G-Hyprland configure tool did not pick up the fact I had two monitors, one on the laptop and one external.  I could only choose one resolution which was used for both monitors.  I assume I need to define my own monitor config for G-Hyprland to pick up, adding a practicalli.conf to the <code>~/.config/hypr/brain/config/monitor/</code> directory?</p>
+<p>++Mod+Shift+"g" supposedly enables/disables G-Hyprland but I dont see anything that indicates the state.</p>
+<p>++Mod+"S" is supposed to start the configuration tool for G-Hyprland (which seems to overrite any changes made manually)</p>
+<blockquote>
+<p>NOTE: G-Hyprland is working and as well as chainging all the config has introducted the nwg-bar, a sidebar that shows open desktop apps.</p>
+</blockquote>
+<h3 id="monitor-configuration">Monitor configuration<a class="headerlink" href="#monitor-configuration" title="Permanent link">λ︎</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Manual monitor settings</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#!▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># ╔╦╗┌─┐┌┐┌┬┌┬┐┌─┐┬─┐   ┬   ╔╦╗┬┌─┐┌─┐┬  ┌─┐┬ ┬
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># ║║║│ │││││ │ │ │├┬┘  ┌┼─   ║║│└─┐├─┘│  ├─┤└┬┘
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># ╩ ╩└─┘┘└┘┴ ┴ └─┘┴└─  └┘   ═╩╝┴└─┘┴  ┴─┘┴ ┴ ┴
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># Defined in ~/.config/grain/config/monitor/practicalli.conf
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a># See https://wiki.hyprland.org/Configuring/Monitors/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a># External Dell Monitor
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a># DP-2 - Dell Monitor 5k2k via DisplayLink
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>monitor= DP-2, 5120x2160, 0x0, 1
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a># Laptop Monitor
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>monitor= eDP-1, 1920x1080@60.02000, 2810x2160, 1.00
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>#!▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄
 </code></pre></div>
 </div>
-<blockquote>
-<p>NOTE: is this a shortcut for garuda-update ?</p>
-</blockquote>
-<p>++Mod+Shift+"g"""</p>
-<h3 id="monitor-configuration">Monitor configuration<a class="headerlink" href="#monitor-configuration" title="Permanent link">λ︎</a></h3>
+<h3 id="visual-tool-to-configure-display">Visual tool to configure display<a class="headerlink" href="#visual-tool-to-configure-display" title="Permanent link">λ︎</a></h3>
 <p>What is kanshi ?  It that the tool that runs when calling 'Display' from the Hyprland desktop menu (Super + Space)</p>
 <p>It seems to be an automatic (re)load tool for configurations based on a profile.</p>
 <div class="admonition example">
@@ -1272,7 +1329,7 @@
 <a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>       For information on the configuration file format, see kanshi(5).``shell-output
 </code></pre></div>
 </div>
-<h2 id="garuda-linux">Garuda Linux<a class="headerlink" href="#garuda-linux" title="Permanent link">λ︎</a></h2>
+<h3 id="sftp-connection-for-file-sharing">sftp connection for file sharing<a class="headerlink" href="#sftp-connection-for-file-sharing" title="Permanent link">λ︎</a></h3>
 <p>I was trying to connect to Garuda Linux using the sftp protocol, used by Nautilus and other file managers to 'mount' a remote file system for reading and writing files.</p>
 <p>The connection was refused by host initially, so it seems although openssh package was installed, the service was not running locally (or was being blocked by the firewall).</p>
 <p>The sshd service needs to be started to be able to access the Arch Linux system using sftp.</p>
@@ -1458,7 +1515,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 20, 2025 22:52:43 UTC">August 20, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 21, 2025 23:47:23 UTC">August 21, 2025</span>
   </span>
 
     
