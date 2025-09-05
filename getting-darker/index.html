@@ -943,6 +943,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#keybindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keybindings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#themes" class="md-nav__link">
     <span class="md-ellipsis">
       Themes
@@ -1185,7 +1194,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              24 min read
+                              25 min read
                             
                           </span>
                         </div>
@@ -1288,13 +1297,25 @@
 <p>OBS Studio is used to capture screencasts and custom resolutions can configured per collection, e.g. widescreen, 1920x960 (often used for tv series), etc.</p>
 <p>The codecs used for the output are a little limited, so perhaps there are plugins I can used to extend the codecs used in capture.</p>
 <p>In the recording section, I can specify Opus as the audio, but I can only set a specific bitrate in the streaming section, which only supports AAC codec for audio.</p>
+<h3 id="keybindings">Keybindings<a class="headerlink" href="#keybindings" title="Permanent link">λ︎</a></h3>
+<p>I created my own keybindings configuration to tweak hyprland to be very close to the i3 Window Manager setup in Regolith Desktop.</p>
+<p>I source this keyboard config in the <code>~/.config/hypr/hyprland.conf</code> file as the last entry.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># Practicalli
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a># Preferred key bindings
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>source = ~/.config/hypr/practicalli/keybindings.conf
+</code></pre></div>
+<p>Notable changes</p>
+<ul>
+<li>MainMod + Space for Wofi menu launcher (Garuda uses Wofi, not rofi), comment MainMod binding for Wofi menu.</li>
+<li>MainMod + Alt + [1..0] moves a window and focus to the desktop number. MainMod + Shift + [1..0] still moves just the window, keeping the focus on the current desktop.</li>
+</ul>
 <h3 id="themes">Themes<a class="headerlink" href="#themes" title="Permanent link">λ︎</a></h3>
 <p>Garuda Linux installs custom themes in <code>/usr/share/wallpapers/garuda-wallpapers/</code>.  While these are interesting I prefer the hyprland wallpapers.</p>
 <p>G-Hyprland includes scripts to set the path for custom scripts.  It uses the directory <code>~/custom_wallpapers/photos/</code> when selecting custom path in the G-Hyprland backgrounds menu.  This seems a very weird choice, given there a Pictures directory is created for each user account when they first login.</p>
 <p>I updated the custom path in the <code>~/.config/hypr/brain/config/background/scripts/slideshow_custom.conf</code> file.  It is not possible to specify the path when selecting the custom path option in G-Hyprland menu.</p>
-<div class="highlight"><span class="filename">~/.config/hypr/brain/config/background/scripts/slideshow_custom.conf</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[default]
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>path = "~/Pictures/wallpaper/hyprland/"
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>transition-time = 600
+<div class="highlight"><span class="filename">~/.config/hypr/brain/config/background/scripts/slideshow_custom.conf</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[default]
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>path = "~/Pictures/wallpaper/hyprland/"
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>transition-time = 600
 </code></pre></div>
 <p>After a restart of the wpaperd tool, <span class="keys"><kbd>MainMod</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd>C</kbd></span>, hyprland wallpapers are cycled through every 5 minutes.</p>
 <p>I will add further awesome wallpapers from the NWG-Shell install on the other laptop I have that runs Hyprland.</p>
@@ -1310,254 +1331,254 @@
 <p>Updated on Garuda linux as part of an overall package update, i.e. <code>sudo garuda-update</code>.</p>
 <details class="exmaple">
 <summary>Garuda Linux update 2025-09-04</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> sudo garuda-update
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>:: Synchronising package databases...
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a> garuda is up to date
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a> core is up to date
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a> extra                                                                               7.9 MiB  8.03 MiB/s 00:01 [------------------------------------------------------------------] 100%
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a> multilib is up to date
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a> chaotic-aur is up to date
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>--&gt; Refreshing mirrorlists using rate-mirrors, please be patient..🍵
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>:: Synchronising package databases...
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a> garuda downloading...
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a> core downloading...
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a> extra downloading...
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a> multilib downloading...
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a> chaotic-aur downloading...
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>spawn pacman -Su
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>:: Starting full system upgrade...
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>warning: snapper-tools: local (1.3.1-1.6) is newer than chaotic-aur (1.3.1-1)
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>resolving dependencies...
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>looking for conflicting packages...
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>warning: dependency cycle detected:
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>warning: qt6-multimedia-ffmpeg will be installed before its qt6-multimedia dependency
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>Package (119)                              Old Version         New Version          Net Change  Download Size
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>extra/alembic                              1.8.8-2             1.8.8-3                0.00 MiB       0.82 MiB
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>extra/aom                                  3.12.1-1            3.13.0-1               0.53 MiB       2.91 MiB
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>extra/aquamarine                           0.9.3-1             0.9.4-1                0.00 MiB       0.36 MiB
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>extra/blender                              17:4.5.2-1          17:4.5.2-2            -0.76 MiB     151.36 MiB
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>extra/bolt                                 0.9.9-1             0.9.10-1               0.00 MiB       0.15 MiB
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>extra/calibre                              8.7.0-1             8.7.0-2                1.28 MiB      34.68 MiB
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>extra/chmlib                               0.40-8              0.40-9                 0.00 MiB       0.02 MiB
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>extra/chromaprint                          1.5.1-10            1.6.0-1                0.01 MiB       0.05 MiB
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>extra/chromium                             139.0.7258.138-1    139.0.7258.154-1      29.15 MiB     115.34 MiB
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>extra/clojure                              1.12.1.1561-2       1.12.2.1565-1          0.11 MiB      14.28 MiB
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>chaotic-aur/downgrade                      11.5.2-1            11.5.4-1               0.00 MiB       0.03 MiB
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>extra/exiv2                                0.28.5-1            0.28.7-1               0.27 MiB       2.86 MiB
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>extra/eza                                  0.23.0-1            0.23.1-1               0.01 MiB       0.58 MiB
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>extra/fastfetch                            2.50.2-1            2.51.1-1               0.01 MiB       0.49 MiB
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>garuda/firedragon                          1:11.30.0_1-2       1:12.2.1-1            -1.57 MiB     113.28 MiB
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>extra/firefox                              142.0-1             142.0.1-1              0.08 MiB      76.67 MiB
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>extra/fluidsynth                           2.4.7-1             2.4.8-1                0.00 MiB       0.25 MiB
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>extra/fwupd                                2.0.13-1            2.0.14-1               0.08 MiB       5.17 MiB
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>extra/fzf                                  0.65.1-1            0.65.2-1               0.00 MiB       1.51 MiB
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>garuda/garuda-hardware-tool                0.2.1-6             0.2.2-1                0.00 MiB       0.00 MiB
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>garuda/garuda-health                       1.7.3-1             1.7.4-1                0.00 MiB       0.01 MiB
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>garuda/garuda-setup-assistant              4.2.0-1             4.2.0-1.4              0.00 MiB       0.05 MiB
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>garuda/garuda-system-maintenance           3.0.2-1             3.0.2-1.1              0.00 MiB       0.06 MiB
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>extra/gegl                                 0.4.62-1            0.4.62-2               0.04 MiB       4.09 MiB
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>extra/gimp                                 3.0.4-3             3.0.4-4                0.04 MiB      22.01 MiB
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>extra/gnu-netcat                           0.7.1-11            0.7.1-12               0.00 MiB       0.03 MiB
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>extra/gperftools                           2.17-1              2.17.2-1               0.01 MiB       0.49 MiB
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>extra/gst-libav                            1.26.5-1            1.26.5-2               0.00 MiB       0.10 MiB
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>extra/gst-plugins-bad                      1.26.5-1            1.26.5-2               0.00 MiB       1.12 MiB
-<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>extra/gst-plugins-bad-libs                 1.26.5-1            1.26.5-2               0.00 MiB       2.86 MiB
-<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>extra/gst-plugins-base                     1.26.5-1            1.26.5-2               0.00 MiB       0.21 MiB
-<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>extra/gst-plugins-base-libs                1.26.5-1            1.26.5-2               0.00 MiB       2.35 MiB
-<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>extra/gst-plugins-good                     1.26.5-1            1.26.5-2               0.00 MiB       2.21 MiB
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>extra/gst-plugins-ugly                     1.26.5-1            1.26.5-2               0.00 MiB       0.17 MiB
-<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>extra/gstreamer                            1.26.5-1            1.26.5-2               0.02 MiB       2.02 MiB
-<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>extra/gstreamer-vaapi                      1.26.5-1            1.26.5-2               0.00 MiB       0.31 MiB
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>extra/harfbuzz                             11.4.4-1            11.4.5-1               0.00 MiB       1.11 MiB
-<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>extra/harfbuzz-icu                         11.4.4-1            11.4.5-1               0.00 MiB       0.01 MiB
-<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>extra/hypridle                             0.1.6-6             0.1.7-1                0.01 MiB       0.10 MiB
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>extra/hyprutils                            0.8.3-1             0.8.4-1                0.00 MiB       0.11 MiB
-<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>extra/imagemagick                          7.1.2.2-1           7.1.2.3-1              0.00 MiB       8.66 MiB
-<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>extra/imath                                3.1.12-4            3.2.1-1                0.20 MiB       3.91 MiB
-<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>extra/inxi                                 3.3.38.1-1          3.3.39.1-1             0.01 MiB       0.35 MiB
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>extra/kdenlive                             25.08.0-1           25.08.0-2              0.00 MiB      19.44 MiB
-<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>extra/lame                                 3.100-5             3.100-6                0.03 MiB       0.33 MiB
-<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>multilib/lib32-harfbuzz                    11.4.4-1            11.4.5-1               0.00 MiB       0.92 MiB
-<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>multilib/lib32-libtirpc                    1.3.6-2             1.3.7-1                0.00 MiB       0.07 MiB
-<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>multilib/lib32-mesa                        1:25.2.1-1          1:25.2.1-5             2.78 MiB      11.28 MiB
-<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>multilib/lib32-pcre2                       10.45-1             10.46-1               -0.01 MiB       0.49 MiB
-<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>multilib/lib32-vulkan-intel                1:25.2.1-1          1:25.2.1-5             0.00 MiB       4.35 MiB
-<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>multilib/lib32-vulkan-mesa-layers          1:25.2.1-1          1:25.2.1-5             0.00 MiB       0.44 MiB
-<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>multilib/lib32-vulkan-radeon               1:25.2.1-1          1:25.2.1-5             0.00 MiB       3.00 MiB
-<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>extra/libei                                1.4.1-1             1.5.0-1                0.00 MiB       0.10 MiB
-<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>extra/libiec61883                          1.2.0-8             1.2.0-9                0.01 MiB       0.03 MiB
-<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a>extra/libinput                             1.29.0-1            1.29.1-1               0.00 MiB       0.33 MiB
-<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a>extra/libsysprof-capture                   48.0-7              48.1-2                 0.00 MiB       0.05 MiB
-<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>core/libtirpc                              1.3.6-2             1.3.7-1                0.00 MiB       0.17 MiB
-<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>extra/liburing                             2.11-1              2.12-1                 0.01 MiB       0.20 MiB
-<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a>extra/libwireplumber                       0.5.10-1            0.5.11-1               0.01 MiB       0.27 MiB
-<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>extra/libxfixes                            6.0.1-2             6.0.2-1                0.00 MiB       0.01 MiB
-<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a>core/linux-api-headers                     6.16-1              6.16-2                 0.83 MiB       1.45 MiB
-<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a>extra/linux-zen                            6.16.3.zen1-1       6.16.4.zen1-1         -0.03 MiB     147.55 MiB
-<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a>extra/linux-zen-headers                    6.16.3.zen1-1       6.16.4.zen1-1          0.00 MiB      53.45 MiB
-<a id="__codelineno-3-91" name="__codelineno-3-91" href="#__codelineno-3-91"></a>extra/mathjax                              3.2.2-2             4.0.0-1               -4.47 MiB       1.20 MiB
-<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a>extra/mesa                                 1:25.2.1-2          1:25.2.1-5             2.89 MiB      11.21 MiB
-<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a>extra/neovim                               0.11.3-1            0.11.4-1               0.05 MiB       6.83 MiB
-<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a>extra/nftables                             1:1.1.4-2           1:1.1.5-1              0.00 MiB       0.42 MiB
-<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a>extra/nodejs                               24.6.0-1            24.7.0-1               0.11 MiB      16.69 MiB
-<a id="__codelineno-3-96" name="__codelineno-3-96" href="#__codelineno-3-96"></a>extra/noto-fonts                           1:2025.08.01-1      1:2025.09.01-1         0.00 MiB      27.16 MiB
-<a id="__codelineno-3-97" name="__codelineno-3-97" href="#__codelineno-3-97"></a>extra/npm                                  11.5.2-1            11.6.0-1               0.00 MiB       1.55 MiB
-<a id="__codelineno-3-98" name="__codelineno-3-98" href="#__codelineno-3-98"></a>extra/opencolorio                          2.4.2-1             2.4.2-2                0.86 MiB       2.41 MiB
-<a id="__codelineno-3-99" name="__codelineno-3-99" href="#__codelineno-3-99"></a>extra/opencv                               4.12.0-3            4.12.0-4               0.00 MiB      28.71 MiB
-<a id="__codelineno-3-100" name="__codelineno-3-100" href="#__codelineno-3-100"></a>extra/openexr                              3.3.5-1             3.3.5-2                0.00 MiB       0.95 MiB
-<a id="__codelineno-3-101" name="__codelineno-3-101" href="#__codelineno-3-101"></a>extra/openimageio                          3.0.9.1-1           3.0.9.1-2              0.04 MiB       4.19 MiB
-<a id="__codelineno-3-102" name="__codelineno-3-102" href="#__codelineno-3-102"></a>extra/openshadinglanguage                  1.14.7.0-1          1.14.7.0-2             0.01 MiB       2.10 MiB
-<a id="__codelineno-3-103" name="__codelineno-3-103" href="#__codelineno-3-103"></a>extra/opentimelineio                       0.17.0-2            0.17.0-3               0.06 MiB       0.87 MiB
-<a id="__codelineno-3-104" name="__codelineno-3-104" href="#__codelineno-3-104"></a>extra/openvdb                              12.1.0-1            12.1.0-2               0.00 MiB      11.04 MiB
-<a id="__codelineno-3-105" name="__codelineno-3-105" href="#__codelineno-3-105"></a>core/pcre2                                 10.45-1             10.46-1               -0.01 MiB       1.57 MiB
-<a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a>chaotic-aur/plasma5-themes-sweet-full-git  r426.43d600b-1      r428.54fed24-1         0.00 MiB       2.98 MiB
-<a id="__codelineno-3-107" name="__codelineno-3-107" href="#__codelineno-3-107"></a>extra/pyside6                              6.9.1-2             6.9.2-1                0.01 MiB       8.92 MiB
-<a id="__codelineno-3-108" name="__codelineno-3-108" href="#__codelineno-3-108"></a>extra/python-more-itertools                10.7.0-1            10.8.0-1               0.04 MiB       0.12 MiB
-<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a>extra/python-pyqt6                         6.9.1-1             6.9.1-2                0.03 MiB       3.87 MiB
-<a id="__codelineno-3-110" name="__codelineno-3-110" href="#__codelineno-3-110"></a>extra/python-soupsieve                     2.7-1               2.8-1                  0.00 MiB       0.08 MiB
-<a id="__codelineno-3-111" name="__codelineno-3-111" href="#__codelineno-3-111"></a>extra/qt6-5compat                          6.9.1-1             6.9.2-1                0.00 MiB       0.46 MiB
-<a id="__codelineno-3-112" name="__codelineno-3-112" href="#__codelineno-3-112"></a>extra/qt6-base                             6.9.1-5             6.9.2-1                0.10 MiB      14.35 MiB
-<a id="__codelineno-3-113" name="__codelineno-3-113" href="#__codelineno-3-113"></a>extra/qt6-declarative                      6.9.1-3             6.9.2-1                0.01 MiB      15.38 MiB
-<a id="__codelineno-3-114" name="__codelineno-3-114" href="#__codelineno-3-114"></a>extra/qt6-imageformats                     6.9.1-1             6.9.2-1                0.00 MiB       0.07 MiB
-<a id="__codelineno-3-115" name="__codelineno-3-115" href="#__codelineno-3-115"></a>extra/qt6-multimedia                       6.9.1-1             6.9.2-3                0.05 MiB       1.15 MiB
-<a id="__codelineno-3-116" name="__codelineno-3-116" href="#__codelineno-3-116"></a>extra/qt6-multimedia-ffmpeg                6.9.1-1             6.9.2-3                0.04 MiB       0.53 MiB
-<a id="__codelineno-3-117" name="__codelineno-3-117" href="#__codelineno-3-117"></a>extra/qt6-networkauth                      6.9.1-1             6.9.2-1                0.00 MiB       0.12 MiB
-<a id="__codelineno-3-118" name="__codelineno-3-118" href="#__codelineno-3-118"></a>extra/qt6-positioning                      6.9.1-1             6.9.2-1                0.00 MiB       0.37 MiB
-<a id="__codelineno-3-119" name="__codelineno-3-119" href="#__codelineno-3-119"></a>extra/qt6-shadertools                      6.9.1-1             6.9.2-1                0.00 MiB       1.58 MiB
-<a id="__codelineno-3-120" name="__codelineno-3-120" href="#__codelineno-3-120"></a>extra/qt6-speech                           6.9.1-1             6.9.2-1                0.00 MiB       0.13 MiB
-<a id="__codelineno-3-121" name="__codelineno-3-121" href="#__codelineno-3-121"></a>extra/qt6-svg                              6.9.1-1             6.9.2-1               -0.01 MiB       0.27 MiB
-<a id="__codelineno-3-122" name="__codelineno-3-122" href="#__codelineno-3-122"></a>extra/qt6-translations                     6.9.1-1             6.9.2-1                0.74 MiB       1.89 MiB
-<a id="__codelineno-3-123" name="__codelineno-3-123" href="#__codelineno-3-123"></a>extra/qt6-wayland                          6.9.1-1             6.9.2-1                0.02 MiB       1.23 MiB
-<a id="__codelineno-3-124" name="__codelineno-3-124" href="#__codelineno-3-124"></a>extra/qt6-webchannel                       6.9.1-1             6.9.2-1                0.00 MiB       0.13 MiB
-<a id="__codelineno-3-125" name="__codelineno-3-125" href="#__codelineno-3-125"></a>extra/qt6-webengine                        6.9.1-3             6.9.2-2                0.00 MiB      87.14 MiB
-<a id="__codelineno-3-126" name="__codelineno-3-126" href="#__codelineno-3-126"></a>extra/qt6ct                                0.10-4              0.10-5                 0.00 MiB       0.17 MiB
-<a id="__codelineno-3-127" name="__codelineno-3-127" href="#__codelineno-3-127"></a>chaotic-aur/rate-mirrors                   0.20.0-2            0.22.0-1              -0.07 MiB       3.80 MiB
-<a id="__codelineno-3-128" name="__codelineno-3-128" href="#__codelineno-3-128"></a>extra/sdl3                                 3.2.20-1            3.2.22-1              -0.40 MiB       1.38 MiB
-<a id="__codelineno-3-129" name="__codelineno-3-129" href="#__codelineno-3-129"></a>extra/shiboken6                            6.9.1-2             6.9.2-1                0.00 MiB       1.30 MiB
-<a id="__codelineno-3-130" name="__codelineno-3-130" href="#__codelineno-3-130"></a>extra/svt-av1                              3.1.0-1             3.1.2-1                0.00 MiB       1.96 MiB
-<a id="__codelineno-3-131" name="__codelineno-3-131" href="#__codelineno-3-131"></a>extra/swappy                               1.7.1-1             1.8.0-1                0.00 MiB       0.03 MiB
-<a id="__codelineno-3-132" name="__codelineno-3-132" href="#__codelineno-3-132"></a>extra/udisks2                              2.10.1-6            2.10.2-1               0.00 MiB       0.73 MiB
-<a id="__codelineno-3-133" name="__codelineno-3-133" href="#__codelineno-3-133"></a>extra/upower                               1.90.9-1            1.90.10-1              0.02 MiB       0.15 MiB
-<a id="__codelineno-3-134" name="__codelineno-3-134" href="#__codelineno-3-134"></a>extra/usd                                  25.08-3             25.08-4                0.00 MiB      25.14 MiB
-<a id="__codelineno-3-135" name="__codelineno-3-135" href="#__codelineno-3-135"></a>extra/uv                                   0.8.13-1            0.8.15-1               3.33 MiB      13.45 MiB
-<a id="__codelineno-3-136" name="__codelineno-3-136" href="#__codelineno-3-136"></a>extra/uwsm                                 0.23.2-1            0.23.3-1               0.01 MiB       0.08 MiB
-<a id="__codelineno-3-137" name="__codelineno-3-137" href="#__codelineno-3-137"></a>extra/vulkan-intel                         1:25.2.1-2          1:25.2.1-5             0.04 MiB       4.39 MiB
-<a id="__codelineno-3-138" name="__codelineno-3-138" href="#__codelineno-3-138"></a>extra/vulkan-mesa-layers                   1:25.2.1-2          1:25.2.1-5             0.00 MiB       0.43 MiB
-<a id="__codelineno-3-139" name="__codelineno-3-139" href="#__codelineno-3-139"></a>extra/vulkan-radeon                        1:25.2.1-2          1:25.2.1-5             0.02 MiB       2.97 MiB
-<a id="__codelineno-3-140" name="__codelineno-3-140" href="#__codelineno-3-140"></a>extra/vulkan-swrast                        1:25.2.1-2          1:25.2.1-5             0.02 MiB       2.08 MiB
-<a id="__codelineno-3-141" name="__codelineno-3-141" href="#__codelineno-3-141"></a>chaotic-aur/wayland-protocols-git          1.45.r9.g9730142-1  1.45.r12.gfff667c-1    0.00 MiB       0.17 MiB
-<a id="__codelineno-3-142" name="__codelineno-3-142" href="#__codelineno-3-142"></a>extra/webkit2gtk-4.1                       2.48.5-1            2.48.6-1               0.00 MiB      33.51 MiB
-<a id="__codelineno-3-143" name="__codelineno-3-143" href="#__codelineno-3-143"></a>extra/wireplumber                          0.5.10-1            0.5.11-1               0.08 MiB       0.25 MiB
-<a id="__codelineno-3-144" name="__codelineno-3-144" href="#__codelineno-3-144"></a>extra/xcb-util-cursor                      0.1.5-1             0.1.6-1                0.00 MiB       0.01 MiB
-<a id="__codelineno-3-145" name="__codelineno-3-145" href="#__codelineno-3-145"></a>core/xfsprogs                              6.15.0-1            6.16.0-1               0.01 MiB       1.34 MiB
-<a id="__codelineno-3-146" name="__codelineno-3-146" href="#__codelineno-3-146"></a>extra/yt-dlp                               2025.08.22-1        2025.08.27-1           0.00 MiB       4.94 MiB
-<a id="__codelineno-3-147" name="__codelineno-3-147" href="#__codelineno-3-147"></a>
-<a id="__codelineno-3-148" name="__codelineno-3-148" href="#__codelineno-3-148"></a>Total Download Size:   1172.98 MiB
-<a id="__codelineno-3-149" name="__codelineno-3-149" href="#__codelineno-3-149"></a>Total Installed Size:  3869.70 MiB
-<a id="__codelineno-3-150" name="__codelineno-3-150" href="#__codelineno-3-150"></a>Net Upgrade Size:        36.81 MiB
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> sudo garuda-update
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>:: Synchronising package databases...
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> garuda is up to date
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> core is up to date
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a> extra                                                                               7.9 MiB  8.03 MiB/s 00:01 [------------------------------------------------------------------] 100%
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a> multilib is up to date
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a> chaotic-aur is up to date
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>--&gt; Refreshing mirrorlists using rate-mirrors, please be patient..🍵
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>:: Synchronising package databases...
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a> garuda downloading...
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a> core downloading...
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a> extra downloading...
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a> multilib downloading...
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a> chaotic-aur downloading...
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>spawn pacman -Su
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>:: Starting full system upgrade...
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>warning: snapper-tools: local (1.3.1-1.6) is newer than chaotic-aur (1.3.1-1)
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>resolving dependencies...
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>looking for conflicting packages...
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>warning: dependency cycle detected:
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>warning: qt6-multimedia-ffmpeg will be installed before its qt6-multimedia dependency
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>Package (119)                              Old Version         New Version          Net Change  Download Size
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>extra/alembic                              1.8.8-2             1.8.8-3                0.00 MiB       0.82 MiB
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>extra/aom                                  3.12.1-1            3.13.0-1               0.53 MiB       2.91 MiB
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>extra/aquamarine                           0.9.3-1             0.9.4-1                0.00 MiB       0.36 MiB
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>extra/blender                              17:4.5.2-1          17:4.5.2-2            -0.76 MiB     151.36 MiB
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>extra/bolt                                 0.9.9-1             0.9.10-1               0.00 MiB       0.15 MiB
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>extra/calibre                              8.7.0-1             8.7.0-2                1.28 MiB      34.68 MiB
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>extra/chmlib                               0.40-8              0.40-9                 0.00 MiB       0.02 MiB
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>extra/chromaprint                          1.5.1-10            1.6.0-1                0.01 MiB       0.05 MiB
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>extra/chromium                             139.0.7258.138-1    139.0.7258.154-1      29.15 MiB     115.34 MiB
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>extra/clojure                              1.12.1.1561-2       1.12.2.1565-1          0.11 MiB      14.28 MiB
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>chaotic-aur/downgrade                      11.5.2-1            11.5.4-1               0.00 MiB       0.03 MiB
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>extra/exiv2                                0.28.5-1            0.28.7-1               0.27 MiB       2.86 MiB
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>extra/eza                                  0.23.0-1            0.23.1-1               0.01 MiB       0.58 MiB
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>extra/fastfetch                            2.50.2-1            2.51.1-1               0.01 MiB       0.49 MiB
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>garuda/firedragon                          1:11.30.0_1-2       1:12.2.1-1            -1.57 MiB     113.28 MiB
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>extra/firefox                              142.0-1             142.0.1-1              0.08 MiB      76.67 MiB
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>extra/fluidsynth                           2.4.7-1             2.4.8-1                0.00 MiB       0.25 MiB
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>extra/fwupd                                2.0.13-1            2.0.14-1               0.08 MiB       5.17 MiB
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>extra/fzf                                  0.65.1-1            0.65.2-1               0.00 MiB       1.51 MiB
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>garuda/garuda-hardware-tool                0.2.1-6             0.2.2-1                0.00 MiB       0.00 MiB
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>garuda/garuda-health                       1.7.3-1             1.7.4-1                0.00 MiB       0.01 MiB
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>garuda/garuda-setup-assistant              4.2.0-1             4.2.0-1.4              0.00 MiB       0.05 MiB
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>garuda/garuda-system-maintenance           3.0.2-1             3.0.2-1.1              0.00 MiB       0.06 MiB
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>extra/gegl                                 0.4.62-1            0.4.62-2               0.04 MiB       4.09 MiB
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>extra/gimp                                 3.0.4-3             3.0.4-4                0.04 MiB      22.01 MiB
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>extra/gnu-netcat                           0.7.1-11            0.7.1-12               0.00 MiB       0.03 MiB
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>extra/gperftools                           2.17-1              2.17.2-1               0.01 MiB       0.49 MiB
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>extra/gst-libav                            1.26.5-1            1.26.5-2               0.00 MiB       0.10 MiB
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>extra/gst-plugins-bad                      1.26.5-1            1.26.5-2               0.00 MiB       1.12 MiB
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>extra/gst-plugins-bad-libs                 1.26.5-1            1.26.5-2               0.00 MiB       2.86 MiB
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>extra/gst-plugins-base                     1.26.5-1            1.26.5-2               0.00 MiB       0.21 MiB
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>extra/gst-plugins-base-libs                1.26.5-1            1.26.5-2               0.00 MiB       2.35 MiB
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>extra/gst-plugins-good                     1.26.5-1            1.26.5-2               0.00 MiB       2.21 MiB
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>extra/gst-plugins-ugly                     1.26.5-1            1.26.5-2               0.00 MiB       0.17 MiB
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>extra/gstreamer                            1.26.5-1            1.26.5-2               0.02 MiB       2.02 MiB
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>extra/gstreamer-vaapi                      1.26.5-1            1.26.5-2               0.00 MiB       0.31 MiB
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>extra/harfbuzz                             11.4.4-1            11.4.5-1               0.00 MiB       1.11 MiB
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>extra/harfbuzz-icu                         11.4.4-1            11.4.5-1               0.00 MiB       0.01 MiB
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>extra/hypridle                             0.1.6-6             0.1.7-1                0.01 MiB       0.10 MiB
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>extra/hyprutils                            0.8.3-1             0.8.4-1                0.00 MiB       0.11 MiB
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>extra/imagemagick                          7.1.2.2-1           7.1.2.3-1              0.00 MiB       8.66 MiB
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>extra/imath                                3.1.12-4            3.2.1-1                0.20 MiB       3.91 MiB
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>extra/inxi                                 3.3.38.1-1          3.3.39.1-1             0.01 MiB       0.35 MiB
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>extra/kdenlive                             25.08.0-1           25.08.0-2              0.00 MiB      19.44 MiB
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>extra/lame                                 3.100-5             3.100-6                0.03 MiB       0.33 MiB
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>multilib/lib32-harfbuzz                    11.4.4-1            11.4.5-1               0.00 MiB       0.92 MiB
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>multilib/lib32-libtirpc                    1.3.6-2             1.3.7-1                0.00 MiB       0.07 MiB
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>multilib/lib32-mesa                        1:25.2.1-1          1:25.2.1-5             2.78 MiB      11.28 MiB
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a>multilib/lib32-pcre2                       10.45-1             10.46-1               -0.01 MiB       0.49 MiB
+<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a>multilib/lib32-vulkan-intel                1:25.2.1-1          1:25.2.1-5             0.00 MiB       4.35 MiB
+<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a>multilib/lib32-vulkan-mesa-layers          1:25.2.1-1          1:25.2.1-5             0.00 MiB       0.44 MiB
+<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a>multilib/lib32-vulkan-radeon               1:25.2.1-1          1:25.2.1-5             0.00 MiB       3.00 MiB
+<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a>extra/libei                                1.4.1-1             1.5.0-1                0.00 MiB       0.10 MiB
+<a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a>extra/libiec61883                          1.2.0-8             1.2.0-9                0.01 MiB       0.03 MiB
+<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a>extra/libinput                             1.29.0-1            1.29.1-1               0.00 MiB       0.33 MiB
+<a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a>extra/libsysprof-capture                   48.0-7              48.1-2                 0.00 MiB       0.05 MiB
+<a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a>core/libtirpc                              1.3.6-2             1.3.7-1                0.00 MiB       0.17 MiB
+<a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a>extra/liburing                             2.11-1              2.12-1                 0.01 MiB       0.20 MiB
+<a id="__codelineno-4-86" name="__codelineno-4-86" href="#__codelineno-4-86"></a>extra/libwireplumber                       0.5.10-1            0.5.11-1               0.01 MiB       0.27 MiB
+<a id="__codelineno-4-87" name="__codelineno-4-87" href="#__codelineno-4-87"></a>extra/libxfixes                            6.0.1-2             6.0.2-1                0.00 MiB       0.01 MiB
+<a id="__codelineno-4-88" name="__codelineno-4-88" href="#__codelineno-4-88"></a>core/linux-api-headers                     6.16-1              6.16-2                 0.83 MiB       1.45 MiB
+<a id="__codelineno-4-89" name="__codelineno-4-89" href="#__codelineno-4-89"></a>extra/linux-zen                            6.16.3.zen1-1       6.16.4.zen1-1         -0.03 MiB     147.55 MiB
+<a id="__codelineno-4-90" name="__codelineno-4-90" href="#__codelineno-4-90"></a>extra/linux-zen-headers                    6.16.3.zen1-1       6.16.4.zen1-1          0.00 MiB      53.45 MiB
+<a id="__codelineno-4-91" name="__codelineno-4-91" href="#__codelineno-4-91"></a>extra/mathjax                              3.2.2-2             4.0.0-1               -4.47 MiB       1.20 MiB
+<a id="__codelineno-4-92" name="__codelineno-4-92" href="#__codelineno-4-92"></a>extra/mesa                                 1:25.2.1-2          1:25.2.1-5             2.89 MiB      11.21 MiB
+<a id="__codelineno-4-93" name="__codelineno-4-93" href="#__codelineno-4-93"></a>extra/neovim                               0.11.3-1            0.11.4-1               0.05 MiB       6.83 MiB
+<a id="__codelineno-4-94" name="__codelineno-4-94" href="#__codelineno-4-94"></a>extra/nftables                             1:1.1.4-2           1:1.1.5-1              0.00 MiB       0.42 MiB
+<a id="__codelineno-4-95" name="__codelineno-4-95" href="#__codelineno-4-95"></a>extra/nodejs                               24.6.0-1            24.7.0-1               0.11 MiB      16.69 MiB
+<a id="__codelineno-4-96" name="__codelineno-4-96" href="#__codelineno-4-96"></a>extra/noto-fonts                           1:2025.08.01-1      1:2025.09.01-1         0.00 MiB      27.16 MiB
+<a id="__codelineno-4-97" name="__codelineno-4-97" href="#__codelineno-4-97"></a>extra/npm                                  11.5.2-1            11.6.0-1               0.00 MiB       1.55 MiB
+<a id="__codelineno-4-98" name="__codelineno-4-98" href="#__codelineno-4-98"></a>extra/opencolorio                          2.4.2-1             2.4.2-2                0.86 MiB       2.41 MiB
+<a id="__codelineno-4-99" name="__codelineno-4-99" href="#__codelineno-4-99"></a>extra/opencv                               4.12.0-3            4.12.0-4               0.00 MiB      28.71 MiB
+<a id="__codelineno-4-100" name="__codelineno-4-100" href="#__codelineno-4-100"></a>extra/openexr                              3.3.5-1             3.3.5-2                0.00 MiB       0.95 MiB
+<a id="__codelineno-4-101" name="__codelineno-4-101" href="#__codelineno-4-101"></a>extra/openimageio                          3.0.9.1-1           3.0.9.1-2              0.04 MiB       4.19 MiB
+<a id="__codelineno-4-102" name="__codelineno-4-102" href="#__codelineno-4-102"></a>extra/openshadinglanguage                  1.14.7.0-1          1.14.7.0-2             0.01 MiB       2.10 MiB
+<a id="__codelineno-4-103" name="__codelineno-4-103" href="#__codelineno-4-103"></a>extra/opentimelineio                       0.17.0-2            0.17.0-3               0.06 MiB       0.87 MiB
+<a id="__codelineno-4-104" name="__codelineno-4-104" href="#__codelineno-4-104"></a>extra/openvdb                              12.1.0-1            12.1.0-2               0.00 MiB      11.04 MiB
+<a id="__codelineno-4-105" name="__codelineno-4-105" href="#__codelineno-4-105"></a>core/pcre2                                 10.45-1             10.46-1               -0.01 MiB       1.57 MiB
+<a id="__codelineno-4-106" name="__codelineno-4-106" href="#__codelineno-4-106"></a>chaotic-aur/plasma5-themes-sweet-full-git  r426.43d600b-1      r428.54fed24-1         0.00 MiB       2.98 MiB
+<a id="__codelineno-4-107" name="__codelineno-4-107" href="#__codelineno-4-107"></a>extra/pyside6                              6.9.1-2             6.9.2-1                0.01 MiB       8.92 MiB
+<a id="__codelineno-4-108" name="__codelineno-4-108" href="#__codelineno-4-108"></a>extra/python-more-itertools                10.7.0-1            10.8.0-1               0.04 MiB       0.12 MiB
+<a id="__codelineno-4-109" name="__codelineno-4-109" href="#__codelineno-4-109"></a>extra/python-pyqt6                         6.9.1-1             6.9.1-2                0.03 MiB       3.87 MiB
+<a id="__codelineno-4-110" name="__codelineno-4-110" href="#__codelineno-4-110"></a>extra/python-soupsieve                     2.7-1               2.8-1                  0.00 MiB       0.08 MiB
+<a id="__codelineno-4-111" name="__codelineno-4-111" href="#__codelineno-4-111"></a>extra/qt6-5compat                          6.9.1-1             6.9.2-1                0.00 MiB       0.46 MiB
+<a id="__codelineno-4-112" name="__codelineno-4-112" href="#__codelineno-4-112"></a>extra/qt6-base                             6.9.1-5             6.9.2-1                0.10 MiB      14.35 MiB
+<a id="__codelineno-4-113" name="__codelineno-4-113" href="#__codelineno-4-113"></a>extra/qt6-declarative                      6.9.1-3             6.9.2-1                0.01 MiB      15.38 MiB
+<a id="__codelineno-4-114" name="__codelineno-4-114" href="#__codelineno-4-114"></a>extra/qt6-imageformats                     6.9.1-1             6.9.2-1                0.00 MiB       0.07 MiB
+<a id="__codelineno-4-115" name="__codelineno-4-115" href="#__codelineno-4-115"></a>extra/qt6-multimedia                       6.9.1-1             6.9.2-3                0.05 MiB       1.15 MiB
+<a id="__codelineno-4-116" name="__codelineno-4-116" href="#__codelineno-4-116"></a>extra/qt6-multimedia-ffmpeg                6.9.1-1             6.9.2-3                0.04 MiB       0.53 MiB
+<a id="__codelineno-4-117" name="__codelineno-4-117" href="#__codelineno-4-117"></a>extra/qt6-networkauth                      6.9.1-1             6.9.2-1                0.00 MiB       0.12 MiB
+<a id="__codelineno-4-118" name="__codelineno-4-118" href="#__codelineno-4-118"></a>extra/qt6-positioning                      6.9.1-1             6.9.2-1                0.00 MiB       0.37 MiB
+<a id="__codelineno-4-119" name="__codelineno-4-119" href="#__codelineno-4-119"></a>extra/qt6-shadertools                      6.9.1-1             6.9.2-1                0.00 MiB       1.58 MiB
+<a id="__codelineno-4-120" name="__codelineno-4-120" href="#__codelineno-4-120"></a>extra/qt6-speech                           6.9.1-1             6.9.2-1                0.00 MiB       0.13 MiB
+<a id="__codelineno-4-121" name="__codelineno-4-121" href="#__codelineno-4-121"></a>extra/qt6-svg                              6.9.1-1             6.9.2-1               -0.01 MiB       0.27 MiB
+<a id="__codelineno-4-122" name="__codelineno-4-122" href="#__codelineno-4-122"></a>extra/qt6-translations                     6.9.1-1             6.9.2-1                0.74 MiB       1.89 MiB
+<a id="__codelineno-4-123" name="__codelineno-4-123" href="#__codelineno-4-123"></a>extra/qt6-wayland                          6.9.1-1             6.9.2-1                0.02 MiB       1.23 MiB
+<a id="__codelineno-4-124" name="__codelineno-4-124" href="#__codelineno-4-124"></a>extra/qt6-webchannel                       6.9.1-1             6.9.2-1                0.00 MiB       0.13 MiB
+<a id="__codelineno-4-125" name="__codelineno-4-125" href="#__codelineno-4-125"></a>extra/qt6-webengine                        6.9.1-3             6.9.2-2                0.00 MiB      87.14 MiB
+<a id="__codelineno-4-126" name="__codelineno-4-126" href="#__codelineno-4-126"></a>extra/qt6ct                                0.10-4              0.10-5                 0.00 MiB       0.17 MiB
+<a id="__codelineno-4-127" name="__codelineno-4-127" href="#__codelineno-4-127"></a>chaotic-aur/rate-mirrors                   0.20.0-2            0.22.0-1              -0.07 MiB       3.80 MiB
+<a id="__codelineno-4-128" name="__codelineno-4-128" href="#__codelineno-4-128"></a>extra/sdl3                                 3.2.20-1            3.2.22-1              -0.40 MiB       1.38 MiB
+<a id="__codelineno-4-129" name="__codelineno-4-129" href="#__codelineno-4-129"></a>extra/shiboken6                            6.9.1-2             6.9.2-1                0.00 MiB       1.30 MiB
+<a id="__codelineno-4-130" name="__codelineno-4-130" href="#__codelineno-4-130"></a>extra/svt-av1                              3.1.0-1             3.1.2-1                0.00 MiB       1.96 MiB
+<a id="__codelineno-4-131" name="__codelineno-4-131" href="#__codelineno-4-131"></a>extra/swappy                               1.7.1-1             1.8.0-1                0.00 MiB       0.03 MiB
+<a id="__codelineno-4-132" name="__codelineno-4-132" href="#__codelineno-4-132"></a>extra/udisks2                              2.10.1-6            2.10.2-1               0.00 MiB       0.73 MiB
+<a id="__codelineno-4-133" name="__codelineno-4-133" href="#__codelineno-4-133"></a>extra/upower                               1.90.9-1            1.90.10-1              0.02 MiB       0.15 MiB
+<a id="__codelineno-4-134" name="__codelineno-4-134" href="#__codelineno-4-134"></a>extra/usd                                  25.08-3             25.08-4                0.00 MiB      25.14 MiB
+<a id="__codelineno-4-135" name="__codelineno-4-135" href="#__codelineno-4-135"></a>extra/uv                                   0.8.13-1            0.8.15-1               3.33 MiB      13.45 MiB
+<a id="__codelineno-4-136" name="__codelineno-4-136" href="#__codelineno-4-136"></a>extra/uwsm                                 0.23.2-1            0.23.3-1               0.01 MiB       0.08 MiB
+<a id="__codelineno-4-137" name="__codelineno-4-137" href="#__codelineno-4-137"></a>extra/vulkan-intel                         1:25.2.1-2          1:25.2.1-5             0.04 MiB       4.39 MiB
+<a id="__codelineno-4-138" name="__codelineno-4-138" href="#__codelineno-4-138"></a>extra/vulkan-mesa-layers                   1:25.2.1-2          1:25.2.1-5             0.00 MiB       0.43 MiB
+<a id="__codelineno-4-139" name="__codelineno-4-139" href="#__codelineno-4-139"></a>extra/vulkan-radeon                        1:25.2.1-2          1:25.2.1-5             0.02 MiB       2.97 MiB
+<a id="__codelineno-4-140" name="__codelineno-4-140" href="#__codelineno-4-140"></a>extra/vulkan-swrast                        1:25.2.1-2          1:25.2.1-5             0.02 MiB       2.08 MiB
+<a id="__codelineno-4-141" name="__codelineno-4-141" href="#__codelineno-4-141"></a>chaotic-aur/wayland-protocols-git          1.45.r9.g9730142-1  1.45.r12.gfff667c-1    0.00 MiB       0.17 MiB
+<a id="__codelineno-4-142" name="__codelineno-4-142" href="#__codelineno-4-142"></a>extra/webkit2gtk-4.1                       2.48.5-1            2.48.6-1               0.00 MiB      33.51 MiB
+<a id="__codelineno-4-143" name="__codelineno-4-143" href="#__codelineno-4-143"></a>extra/wireplumber                          0.5.10-1            0.5.11-1               0.08 MiB       0.25 MiB
+<a id="__codelineno-4-144" name="__codelineno-4-144" href="#__codelineno-4-144"></a>extra/xcb-util-cursor                      0.1.5-1             0.1.6-1                0.00 MiB       0.01 MiB
+<a id="__codelineno-4-145" name="__codelineno-4-145" href="#__codelineno-4-145"></a>core/xfsprogs                              6.15.0-1            6.16.0-1               0.01 MiB       1.34 MiB
+<a id="__codelineno-4-146" name="__codelineno-4-146" href="#__codelineno-4-146"></a>extra/yt-dlp                               2025.08.22-1        2025.08.27-1           0.00 MiB       4.94 MiB
+<a id="__codelineno-4-147" name="__codelineno-4-147" href="#__codelineno-4-147"></a>
+<a id="__codelineno-4-148" name="__codelineno-4-148" href="#__codelineno-4-148"></a>Total Download Size:   1172.98 MiB
+<a id="__codelineno-4-149" name="__codelineno-4-149" href="#__codelineno-4-149"></a>Total Installed Size:  3869.70 MiB
+<a id="__codelineno-4-150" name="__codelineno-4-150" href="#__codelineno-4-150"></a>Net Upgrade Size:        36.81 MiB
 </code></pre></div>
 </details>
 <h3 id="post-update-hook">Post update hook<a class="headerlink" href="#post-update-hook" title="Permanent link">λ︎</a></h3>
 <p>After all the packages have been installed, Garuda Linux runs a post install transaction hook to ensure key parts of the system are correct and manage snapshots.</p>
 <details class="example">
 <summary>Garuda Linux Post Update hook output</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>:: Running post-transaction hooks...
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>( 1/28) Restoring Linux kernel modules...
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>++ uname -r
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>+ KVER=6.16.3-zen1-1-zen
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>+ test -e /usr/lib/modules/backup/6.16.3-zen1-1-zen
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>+ rsync -AHXal --ignore-existing /usr/lib/modules/backup/6.16.3-zen1-1-zen /usr/lib/modules/
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>+ rm -rf /usr/lib/modules/backup
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>( 2/28) Creating system user accounts...
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>( 3/28) Reloading system manager configuration...
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>( 4/28) Reloading user manager configuration...
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>( 5/28) Updating udev hardware database...
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>( 6/28) Restarting marked services...
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>( 7/28) Creating temporary files...
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>( 8/28) Reloading device manager configuration...
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>( 9/28) Arming ConditionNeedsUpdate...
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>(10/28) Updating the MIME type database...
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>(11/28) Updating module dependencies...
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>(12/28) Checking for package with missing dependencies...
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>(13/28) Updating initramfs with dracut
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>:: Building initramfs for linux-zen (6.16.4-zen1-1-zen)
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>:: Building fallback initramfs for linux-zen (6.16.4-zen1-1-zen)
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>(14/28) Updating linux initcpios...
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>(15/28) Foreign/AUR package notification
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>puddletag 2.5.0-1
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>(16/28) Orphaned package notification...
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>mathjax 4.0.0-1
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>(17/28) Checking for .pacnew and .pacsave files...
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>(18/28) GRUB update after transactions...
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>Generating grub configuration file ...
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>Found theme: /usr/share/grub/themes/garuda/theme.txt
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>Found linux image: /boot/vmlinuz-linux-zen
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>Found initrd image: /boot/initramfs-linux-zen.img
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>Found fallback initrd image(s) in /boot:  initramfs-linux-zen-fallback.img
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>Warning: os-prober will be executed to detect other bootable partitions.
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>Its output will be used to detect bootable binaries on them and create new boot entries.
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>Found Garuda Linux on /dev/nvme0n1p2
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>Adding boot menu entry for UEFI Firmware Settings ...
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>Detecting snapshots ...
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>Found snapshot: 2025-09-04 12:34:18 | @/.snapshots/108/snapshot | pre  | pacman -Su                                                               |
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>Found snapshot: 2025-09-04 12:22:57 | @/.snapshots/107/snapshot | post | aribb25 ffmpeg4.4 ftgl glm libcddb libgoom2 libkate libmfx liboggz libti |
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>Found snapshot: 2025-09-04 12:22:54 | @/.snapshots/106/snapshot | pre  | pacman -S vlc vlc-plugins-all                                            |
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>Found snapshot: 2025-09-04 12:22:07 | @/.snapshots/105/snapshot | post | vlc-git                                                                  |
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>Found snapshot: 2025-09-04 12:22:06 | @/.snapshots/104/snapshot | pre  | pacman -R vlc-git                                                        |
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>Found snapshot: 2025-09-03 11:56:53 | @/.snapshots/103/snapshot | post | python-pip                                                               |
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>Found snapshot: 2025-09-03 11:56:52 | @/.snapshots/102/snapshot | pre  | pacman -S python-pip                                                     |
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>Found 7 snapshot(s)
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>Unmount /tmp/grub-btrfs.uwdym4sSfk .. Success
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>Found memtest86+ image: /boot/memtest86+/memtest.bin
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>/usr/bin/grub-probe: warning: unknown device type nvme0n1.
-<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>done
-<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>(19/28) Reloading system bus configuration...
-<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>(20/28) Checking for old perl modules...
-<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>(21/28) Copy FireDragon Distribution Settings
-<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>(22/28) Copy Firefox Distribution Settings
-<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>(23/28) Updating fontconfig cache...
-<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>(24/28) Updating icon theme caches...
-<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>(25/28) Updating the info directory file...
-<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>(26/28) Updating the desktop file MIME type cache...
-<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>(27/28) Performing snapper post snapshots for the following configurations...
-<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>==&gt; root: 109
-<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>(28/28) Syncing all file systems...
-<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>
-<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>System updated! 🐧
-<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>
-<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>--- System Health Check Report ---
-<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>22/23 checks run in 0.97 seconds ⌛
-<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>Powered by garuda-health 🦅
-<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>
-<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>--- LOW ---
-<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a> - Old Btrfs snapshots found that can be deleted (fix available)
-<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>
-<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>--- INFO ---
-<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a> - A reboot is pending (update applied since last reboot)
-<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>
-<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>Run garuda-health --fix to apply fixes.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>:: Running post-transaction hooks...
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>( 1/28) Restoring Linux kernel modules...
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>++ uname -r
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>+ KVER=6.16.3-zen1-1-zen
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>+ test -e /usr/lib/modules/backup/6.16.3-zen1-1-zen
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>+ rsync -AHXal --ignore-existing /usr/lib/modules/backup/6.16.3-zen1-1-zen /usr/lib/modules/
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>+ rm -rf /usr/lib/modules/backup
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>( 2/28) Creating system user accounts...
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>( 3/28) Reloading system manager configuration...
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>( 4/28) Reloading user manager configuration...
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>( 5/28) Updating udev hardware database...
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>( 6/28) Restarting marked services...
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>( 7/28) Creating temporary files...
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>( 8/28) Reloading device manager configuration...
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>( 9/28) Arming ConditionNeedsUpdate...
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>(10/28) Updating the MIME type database...
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>(11/28) Updating module dependencies...
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>(12/28) Checking for package with missing dependencies...
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>(13/28) Updating initramfs with dracut
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>:: Building initramfs for linux-zen (6.16.4-zen1-1-zen)
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>:: Building fallback initramfs for linux-zen (6.16.4-zen1-1-zen)
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>(14/28) Updating linux initcpios...
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>(15/28) Foreign/AUR package notification
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>puddletag 2.5.0-1
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>(16/28) Orphaned package notification...
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>mathjax 4.0.0-1
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>(17/28) Checking for .pacnew and .pacsave files...
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>(18/28) GRUB update after transactions...
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>Generating grub configuration file ...
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>Found theme: /usr/share/grub/themes/garuda/theme.txt
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>Found linux image: /boot/vmlinuz-linux-zen
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>Found initrd image: /boot/initramfs-linux-zen.img
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>Found fallback initrd image(s) in /boot:  initramfs-linux-zen-fallback.img
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>Warning: os-prober will be executed to detect other bootable partitions.
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>Its output will be used to detect bootable binaries on them and create new boot entries.
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>Found Garuda Linux on /dev/nvme0n1p2
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>Adding boot menu entry for UEFI Firmware Settings ...
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>Detecting snapshots ...
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>Found snapshot: 2025-09-04 12:34:18 | @/.snapshots/108/snapshot | pre  | pacman -Su                                                               |
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>Found snapshot: 2025-09-04 12:22:57 | @/.snapshots/107/snapshot | post | aribb25 ffmpeg4.4 ftgl glm libcddb libgoom2 libkate libmfx liboggz libti |
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>Found snapshot: 2025-09-04 12:22:54 | @/.snapshots/106/snapshot | pre  | pacman -S vlc vlc-plugins-all                                            |
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>Found snapshot: 2025-09-04 12:22:07 | @/.snapshots/105/snapshot | post | vlc-git                                                                  |
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>Found snapshot: 2025-09-04 12:22:06 | @/.snapshots/104/snapshot | pre  | pacman -R vlc-git                                                        |
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>Found snapshot: 2025-09-03 11:56:53 | @/.snapshots/103/snapshot | post | python-pip                                                               |
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>Found snapshot: 2025-09-03 11:56:52 | @/.snapshots/102/snapshot | pre  | pacman -S python-pip                                                     |
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>Found 7 snapshot(s)
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>Unmount /tmp/grub-btrfs.uwdym4sSfk .. Success
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>Found memtest86+ image: /boot/memtest86+/memtest.bin
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>/usr/bin/grub-probe: warning: unknown device type nvme0n1.
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>done
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>(19/28) Reloading system bus configuration...
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>(20/28) Checking for old perl modules...
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>(21/28) Copy FireDragon Distribution Settings
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>(22/28) Copy Firefox Distribution Settings
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>(23/28) Updating fontconfig cache...
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>(24/28) Updating icon theme caches...
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>(25/28) Updating the info directory file...
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>(26/28) Updating the desktop file MIME type cache...
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>(27/28) Performing snapper post snapshots for the following configurations...
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>==&gt; root: 109
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>(28/28) Syncing all file systems...
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>System updated! 🐧
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>--- System Health Check Report ---
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>22/23 checks run in 0.97 seconds ⌛
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>Powered by garuda-health 🦅
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>--- LOW ---
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a> - Old Btrfs snapshots found that can be deleted (fix available)
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>--- INFO ---
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a> - A reboot is pending (update applied since last reboot)
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a>Run garuda-health --fix to apply fixes.
 </code></pre></div>
 </details>
 <h3 id="garuda-linux-health-check">Garuda Linux Health check<a class="headerlink" href="#garuda-linux-health-check" title="Permanent link">λ︎</a></h3>
 <p>A heath check report is generated at the end of a package update.</p>
 <div class="admonition info">
 <p class="admonition-title">Post package update system health check report</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>--- System Health Check Report ---
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>22/23 checks run in 0.97 seconds ⌛
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Powered by garuda-health 🦅
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>--- LOW ---
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a> - Old Btrfs snapshots found that can be deleted (fix available)
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>--- INFO ---
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> - A reboot is pending (update applied since last reboot)
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Run garuda-health --fix to apply fixes.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>--- System Health Check Report ---
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>22/23 checks run in 0.97 seconds ⌛
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Powered by garuda-health 🦅
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>--- LOW ---
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> - Old Btrfs snapshots found that can be deleted (fix available)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>--- INFO ---
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a> - A reboot is pending (update applied since last reboot)
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>Run garuda-health --fix to apply fixes.
 </code></pre></div>
 </div>
 <p>The report had a low priority notice that stated "Old Btrfs snapshots found that can be deleted (fix available)"</p>
@@ -1565,34 +1586,34 @@
 <p>Then a system rebot was done (from the power button on the waybar).</p>
 <details class="example">
 <summary>Run garuda-health --fix</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>❯ sudo garuda-health --fix
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>--- System Health Check Report ---
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>22/23 checks run in 0.89 seconds ⌛
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Powered by garuda-health 🦅
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>--- LOW ---
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> - Old Btrfs snapshots found that can be deleted (fix available)
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>--- INFO ---
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a> - A reboot is pending (update applied since last reboot)
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>Run garuda-health --fix to apply fixes.
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>--- Applying Fixes ---
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Fixing "Old Btrfs snapshots found that can be deleted":
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>The following command will be executed:
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>  sudo snapper-tools delete-old
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>Continue? [y/N]: y
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>Old Btrfs snapshots removed successfully.
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>--- Re-running checks after applying fixes ---
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>--- System Health Check Report ---
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>22/23 checks run in 0.80 seconds ⌛
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>Powered by garuda-health 🦅
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>--- INFO ---
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a> - A reboot is pending (update applied since last reboot)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>❯ sudo garuda-health --fix
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--- System Health Check Report ---
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>22/23 checks run in 0.89 seconds ⌛
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Powered by garuda-health 🦅
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>--- LOW ---
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a> - Old Btrfs snapshots found that can be deleted (fix available)
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>--- INFO ---
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a> - A reboot is pending (update applied since last reboot)
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>Run garuda-health --fix to apply fixes.
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>--- Applying Fixes ---
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>Fixing "Old Btrfs snapshots found that can be deleted":
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>The following command will be executed:
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>  sudo snapper-tools delete-old
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>Continue? [y/N]: y
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>Old Btrfs snapshots removed successfully.
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>--- Re-running checks after applying fixes ---
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>--- System Health Check Report ---
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>22/23 checks run in 0.80 seconds ⌛
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>Powered by garuda-health 🦅
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>--- INFO ---
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a> - A reboot is pending (update applied since last reboot)
 </code></pre></div>
 </details>
 <h2 id="clojure">Clojure<a class="headerlink" href="#clojure" title="Permanent link">λ︎</a></h2>
@@ -1604,73 +1625,73 @@
 </ul>
 <details class="example">
 <summary>Clojure package install output</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo pacman -S clojure
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>resolving dependencies...
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>looking for conflicting packages...
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Package (1)    New Version    Net Change  Download Size
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>extra/clojure  1.12.1.1561-2   16.50 MiB      14.19 MiB
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Total Download Size:   14.19 MiB
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Total Installed Size:  16.50 MiB
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>:: Proceed with installation? [Y/n]
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>:: Retrieving packages...
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a> clojure-1.12.1.1561-2-any                                         14.2 MiB  12.3 MiB/s 00:01
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>[--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>(1/1) checking keys in keyring                                                                                                                                          [--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>(1/1) checking package integrity                                                                                                                                        [--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>(1/1) loading package files                                                                                                                                             [--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>(1/1) checking for file conflicts                                                                                                                                       [--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>(1/1) checking available disk space                                                                                                                                     [--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>:: Running pre-transaction hooks...
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>(1/2) Rejecting pacman transaction if running in snapshot...
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>(2/2) Performing snapper pre snapshots for the following configurations...
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>==&gt; root: 98
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>:: Processing package changes...
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>(1/1) installing clojure                                                                                                                                                [--------------------------------------------------------------------------------------------------------] 100%
-<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>Re-login or source /etc/profile.d/clojure.sh
-<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>Optional dependencies for clojure
-<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    leiningen: automate clojure projects
-<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    rlwrap: friendly shell with readline support
-<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>:: Running post-transaction hooks...
-<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>(1/6) Arming ConditionNeedsUpdate...
-<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>(2/6) Foreign/AUR package notification
-<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>puddletag 2.5.0-1
-<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>(3/6) Orphaned package notification...
-<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>=&gt; No orphans found.
-<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>(4/6) Checking for .pacnew and .pacsave files...
-<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>(5/6) Performing snapper post snapshots for the following configurations...
-<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>==&gt; root: 99
-<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>(6/6) Syncing all file systems...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo pacman -S clojure
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>resolving dependencies...
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>looking for conflicting packages...
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Package (1)    New Version    Net Change  Download Size
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>extra/clojure  1.12.1.1561-2   16.50 MiB      14.19 MiB
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>Total Download Size:   14.19 MiB
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>Total Installed Size:  16.50 MiB
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>:: Proceed with installation? [Y/n]
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>:: Retrieving packages...
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a> clojure-1.12.1.1561-2-any                                         14.2 MiB  12.3 MiB/s 00:01
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>[--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>(1/1) checking keys in keyring                                                                                                                                          [--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>(1/1) checking package integrity                                                                                                                                        [--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>(1/1) loading package files                                                                                                                                             [--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>(1/1) checking for file conflicts                                                                                                                                       [--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>(1/1) checking available disk space                                                                                                                                     [--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>:: Running pre-transaction hooks...
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>(1/2) Rejecting pacman transaction if running in snapshot...
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>(2/2) Performing snapper pre snapshots for the following configurations...
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>==&gt; root: 98
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>:: Processing package changes...
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>(1/1) installing clojure                                                                                                                                                [--------------------------------------------------------------------------------------------------------] 100%
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>Re-login or source /etc/profile.d/clojure.sh
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>Optional dependencies for clojure
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>    leiningen: automate clojure projects
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>    rlwrap: friendly shell with readline support
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>:: Running post-transaction hooks...
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>(1/6) Arming ConditionNeedsUpdate...
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>(2/6) Foreign/AUR package notification
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>puddletag 2.5.0-1
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>(3/6) Orphaned package notification...
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>=&gt; No orphans found.
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>(4/6) Checking for .pacnew and .pacsave files...
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>(5/6) Performing snapper post snapshots for the following configurations...
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>==&gt; root: 99
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>(6/6) Syncing all file systems...
 </code></pre></div>
 </details>
 <h3 id="post-install">Post Install<a class="headerlink" href="#post-install" title="Permanent link">λ︎</a></h3>
 <p>Install output says to run the <code>/etc/profile.d/clojure.sh</code> script to use the <code>clojure</code> command in the current shell session or start a new shell session.</p>
 <div class="admonition example">
 <p class="admonition-title">Clojure script from Arch Linux package install</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CLOJURE_HOME</span><span class="o">=</span>/usr/share/clojure
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CLOJURE_HOME</span><span class="o">=</span>/usr/share/clojure
 </code></pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Post install script to set CLOJURE_HOME</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>.<span class="w"> </span>/etc/profile.d/clojure.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>.<span class="w"> </span>/etc/profile.d/clojure.sh
 </code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Test clojure cli on the command line</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>❯ clojure
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Downloading: org/clojure/clojure/1.12.1/clojure-1.12.1.pom from central
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Downloading: org/clojure/spec.alpha/0.5.238/spec.alpha-0.5.238.pom from central
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Downloading: org/clojure/core.specs.alpha/0.4.74/core.specs.alpha-0.4.74.pom from central
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Downloading: org/clojure/pom.contrib/1.2.0/pom.contrib-1.2.0.pom from central
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Downloading: org/clojure/core.specs.alpha/0.4.74/core.specs.alpha-0.4.74.jar from central
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Downloading: org/clojure/clojure/1.12.1/clojure-1.12.1.jar from central
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Downloading: org/clojure/spec.alpha/0.5.238/spec.alpha-0.5.238.jar from central
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>Clojure 1.12.1
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>user=&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>❯ clojure
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Downloading: org/clojure/clojure/1.12.1/clojure-1.12.1.pom from central
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Downloading: org/clojure/spec.alpha/0.5.238/spec.alpha-0.5.238.pom from central
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Downloading: org/clojure/core.specs.alpha/0.4.74/core.specs.alpha-0.4.74.pom from central
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Downloading: org/clojure/pom.contrib/1.2.0/pom.contrib-1.2.0.pom from central
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Downloading: org/clojure/core.specs.alpha/0.4.74/core.specs.alpha-0.4.74.jar from central
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Downloading: org/clojure/clojure/1.12.1/clojure-1.12.1.jar from central
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>Downloading: org/clojure/spec.alpha/0.5.238/spec.alpha-0.5.238.jar from central
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>Clojure 1.12.1
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>user=&gt;
 </code></pre></div>
 </div>
 <h3 id="additional-tools-for-clojure">Additional tools for Clojure<a class="headerlink" href="#additional-tools-for-clojure" title="Permanent link">λ︎</a></h3>
@@ -1679,70 +1700,70 @@
 <p class="admonition-title">tools.edn config not included</p>
 <p>A tools/config.edn configuration is created when first running <code>clojure</code> or the wrapper script <code>clj</code>.</p>
 <p>An example configuration from Clojure CLI clojure-1.12.1.1561-2 release
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="ss">:lib</span><span class="w"> </span><span class="nv">io.github.clojure/tools.tools</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w"> </span><span class="ss">:coord</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/tag</span><span class="w"> </span><span class="s">"v0.3.4"</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">         </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"0e9e6c8b409ac916ad6f2ec5bc075bbcb09545c0"</span><span class="p">}}</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="ss">:lib</span><span class="w"> </span><span class="nv">io.github.clojure/tools.tools</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w"> </span><span class="ss">:coord</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/tag</span><span class="w"> </span><span class="s">"v0.3.4"</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">         </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"0e9e6c8b409ac916ad6f2ec5bc075bbcb09545c0"</span><span class="p">}}</span>
 </code></pre></div><p></p>
 <p>Practicalli Clojure CLI does not include a configuration file as it would require additional work to maintain a Git history for both users and the project maintainer.</p>
 </div>
 <h3 id="java-restricted-method">Java Restricted Method<a class="headerlink" href="#java-restricted-method" title="Permanent link">λ︎</a></h3>
 <p>After updating Practicalli Clojure CLI Config I tested the creation and running of a Clojure project, using the Practicalli Project Templaces (deps-new library).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-X:project/create
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>clojure<span class="w"> </span>-X:project/create
 </code></pre></div>
 <p>The command successfully created a project in the <code>playground</code> directory.</p>
 <p>Chainging into the <code>playground</code> directory, the REPL was run using <code>make repl</code> command.</p>
 <div class="admonition example">
 <p class="admonition-title">Java warning: restricted method</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>    WARNING: A restricted method in java.lang.System has been called
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    WARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:/home/practicalli/.m2/repository/org/fusesource/jansi/jansi/1.16/jansi-1.16.jar)
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>    WARNING: A restricted method in java.lang.System has been called
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    WARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:/home/practicalli/.m2/repository/org/fusesource/jansi/jansi/1.16/jansi-1.16.jar)
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 </code></pre></div>
 <p>I believe this is happening as Arch Linux installed Java 24 by default.</p>
 <div class="admonition example">
 <p class="admonition-title">Java Version installed on Arch Linux</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>java --version
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>openjdk 24.0.2 2025-07-15
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>OpenJDK Runtime Environment (build 24.0.2)
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>OpenJDK 64-Bit Server VM (build 24.0.2, mixed mode, sharing)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>java --version
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>openjdk 24.0.2 2025-07-15
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>OpenJDK Runtime Environment (build 24.0.2)
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>OpenJDK 64-Bit Server VM (build 24.0.2, mixed mode, sharing)
 </code></pre></div>
 </div>
 <p>TODO: investigate which part of the Clojure project is causing the warning and discover a suitable resolution.</p>
 <details class="example">
 <summary>Java warning: restricted method when running Clojure REPL from Practicalli Template project</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>---------------------------------------------------------
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Loading custom user namespace tools...
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>---------------------------------------------------------
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>---------------------------------------------------------
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>Namesapece Management:
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>(namespace/refresh)            ; refresh all changed namespaces
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>(namespace/refresh-all)        ; refresh all namespaces
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Hotload libraries:             ; Clojure 1.12.x
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>(add-lib 'library-name)
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>(add-libs '{domain/library-name {:mvn/version "v1.2.3"}})
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>(sync-deps)                    ; load dependencies from deps.edn - deps-* lsp snippets for adding library
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>Portal Inspector: - portal started by default, listening to all evaluations
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>(inspect/clear)                ; clear all values in portal
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>(remove-tap #'inspect/submit)  ; stop sending to portal
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>(inspect/close)                ; close portal
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>Mulog Publisher: - mulog publisher started by default
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>(mulog-events/stop)            ; stop publishing log events
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
-<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>(help)                         ; print help text
-<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>---------------------------------------------------------
-<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>Set REPL refresh directories to  (src resources)
-<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>nREPL server started on port 37769 on host localhost - nrepl://localhost:37769
-<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>WARNING: A restricted method in java.lang.System has been called
-<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>WARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:/home/practicalli/.m2/repository/org/fusesource/jansi/jansi/1.16/jansi-1.16.jar)
-<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
-<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>[Rebel readline] Type :repl/help for online help info
-<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>user=&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>---------------------------------------------------------
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Loading custom user namespace tools...
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>---------------------------------------------------------
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>---------------------------------------------------------
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>Namesapece Management:
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>(namespace/refresh)            ; refresh all changed namespaces
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>(namespace/refresh-all)        ; refresh all namespaces
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>Hotload libraries:             ; Clojure 1.12.x
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>(add-lib 'library-name)
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>(add-libs '{domain/library-name {:mvn/version "v1.2.3"}})
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>(sync-deps)                    ; load dependencies from deps.edn - deps-* lsp snippets for adding library
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>Portal Inspector: - portal started by default, listening to all evaluations
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>(inspect/clear)                ; clear all values in portal
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>(remove-tap #'inspect/submit)  ; stop sending to portal
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>(inspect/close)                ; close portal
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>Mulog Publisher: - mulog publisher started by default
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>(mulog-events/stop)            ; stop publishing log events
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>(help)                         ; print help text
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>---------------------------------------------------------
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>Set REPL refresh directories to  (src resources)
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>nREPL server started on port 37769 on host localhost - nrepl://localhost:37769
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>WARNING: A restricted method in java.lang.System has been called
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>WARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:/home/practicalli/.m2/repository/org/fusesource/jansi/jansi/1.16/jansi-1.16.jar)
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>[Rebel readline] Type :repl/help for online help info
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>user=&gt;
 </code></pre></div>
 </details>
 <h2 id="vlc-media-player">VLC Media Player<a class="headerlink" href="#vlc-media-player" title="Permanent link">λ︎</a></h2>
@@ -1757,117 +1778,117 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Install everything</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>vlc<span class="w"> </span>vlc-plugins-all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>vlc<span class="w"> </span>vlc-plugins-all
 </code></pre></div>
 </div>
 <details class="example">
 <summary>Install Vlc and all plugins</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo pacman -S vlc vlc-plugins-all
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>resolving dependencies...
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>looking for conflicting packages...
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>Package (97)                       New Version   Net Change  Download Size
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>extra/aribb25                      0.2.7-3         0.09 MiB       0.03 MiB
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>extra/ffmpeg4.4                    4.4.6-2        23.46 MiB       8.52 MiB
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>extra/ftgl                         2.4.0-3         2.28 MiB       0.31 MiB
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>extra/glm                          1.0.1-1        20.34 MiB       3.42 MiB
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>extra/libcddb                      1.3.2-7         0.15 MiB       0.04 MiB
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>extra/libgoom2                     2k4-5           0.21 MiB       0.09 MiB
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>extra/libkate                      0.4.3-1         0.52 MiB       0.15 MiB
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>extra/libmfx                       23.2.2-4        0.28 MiB       0.06 MiB
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>extra/liboggz                      1.1.3-1         2.12 MiB       0.32 MiB
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>extra/libtiger                     0.3.4-8         0.06 MiB       0.02 MiB
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>extra/libvlc                       3.0.21-28       2.17 MiB       0.66 MiB
-<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>extra/live-media                   2025.05.24-1    2.51 MiB       0.53 MiB
-<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>extra/projectm                     3.1.12-5       25.94 MiB       2.13 MiB
-<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>extra/python-wxpython              1:4.2.3-3      52.95 MiB       9.51 MiB
-<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>extra/sdl12-compat                 1.2.68-2        0.64 MiB       0.13 MiB
-<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>extra/sdl_image                    1.2.12-9        0.06 MiB       0.03 MiB
-<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>extra/vlc-cli                      3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>extra/vlc-gui-qt                   3.0.21-28       3.12 MiB       1.03 MiB
-<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>extra/vlc-plugin-a52dec            3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>extra/vlc-plugin-aalib             3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>extra/vlc-plugin-alsa              3.0.21-28       0.05 MiB       0.02 MiB
-<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>extra/vlc-plugin-aom               3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>extra/vlc-plugin-archive           3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>extra/vlc-plugin-aribb24           3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>extra/vlc-plugin-aribb25           3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>extra/vlc-plugin-ass               3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>extra/vlc-plugin-avahi             3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>extra/vlc-plugin-bluray            3.0.21-28       0.07 MiB       0.03 MiB
-<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>extra/vlc-plugin-caca              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a>extra/vlc-plugin-cddb              3.0.21-28       0.06 MiB       0.03 MiB
-<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>extra/vlc-plugin-chromecast        3.0.21-28       0.15 MiB       0.07 MiB
-<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>extra/vlc-plugin-dav1d             3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>extra/vlc-plugin-dbus              3.0.21-28       0.08 MiB       0.03 MiB
-<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>extra/vlc-plugin-dbus-screensaver  3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a>extra/vlc-plugin-dca               3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a>extra/vlc-plugin-dvb               3.0.21-28       0.42 MiB       0.18 MiB
-<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>extra/vlc-plugin-dvd               3.0.21-28       0.08 MiB       0.04 MiB
-<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>extra/vlc-plugin-faad2             3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a>extra/vlc-plugin-ffmpeg            3.0.21-28       0.27 MiB       0.09 MiB
-<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a>extra/vlc-plugin-firewire          3.0.21-28       0.04 MiB       0.02 MiB
-<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a>extra/vlc-plugin-flac              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>extra/vlc-plugin-fluidsynth        3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a>extra/vlc-plugin-freetype          3.0.21-28       0.07 MiB       0.04 MiB
-<a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a>extra/vlc-plugin-gme               3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a>extra/vlc-plugin-gnutls            3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a>extra/vlc-plugin-gstreamer         3.0.21-28       0.04 MiB       0.02 MiB
-<a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a>extra/vlc-plugin-inflate           3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a>extra/vlc-plugin-jack              3.0.21-28       0.04 MiB       0.02 MiB
-<a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a>extra/vlc-plugin-journal           3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a>extra/vlc-plugin-jpeg              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a>extra/vlc-plugin-kate              3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a>extra/vlc-plugin-kwallet           3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a>extra/vlc-plugin-libsecret         3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a>extra/vlc-plugin-lirc              3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>extra/vlc-plugin-live555           3.0.21-28       0.06 MiB       0.03 MiB
-<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>extra/vlc-plugin-lua               3.0.21-28       0.95 MiB       0.30 MiB
-<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a>extra/vlc-plugin-mad               3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a>extra/vlc-plugin-matroska          3.0.21-28       0.44 MiB       0.18 MiB
-<a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a>extra/vlc-plugin-mdns              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a>extra/vlc-plugin-modplug           3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a>extra/vlc-plugin-mpeg2             3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a>extra/vlc-plugin-mpg123            3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a>extra/vlc-plugin-mtp               3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-70" name="__codelineno-17-70" href="#__codelineno-17-70"></a>extra/vlc-plugin-musepack          3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-71" name="__codelineno-17-71" href="#__codelineno-17-71"></a>extra/vlc-plugin-nfs               3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-72" name="__codelineno-17-72" href="#__codelineno-17-72"></a>extra/vlc-plugin-notify            3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-73" name="__codelineno-17-73" href="#__codelineno-17-73"></a>extra/vlc-plugin-ogg               3.0.21-28       0.13 MiB       0.06 MiB
-<a id="__codelineno-17-74" name="__codelineno-17-74" href="#__codelineno-17-74"></a>extra/vlc-plugin-opus              3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-75" name="__codelineno-17-75" href="#__codelineno-17-75"></a>extra/vlc-plugin-png               3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-76" name="__codelineno-17-76" href="#__codelineno-17-76"></a>extra/vlc-plugin-pulse             3.0.21-28       0.08 MiB       0.02 MiB
-<a id="__codelineno-17-77" name="__codelineno-17-77" href="#__codelineno-17-77"></a>extra/vlc-plugin-quicksync         3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-78" name="__codelineno-17-78" href="#__codelineno-17-78"></a>extra/vlc-plugin-samplerate        3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-79" name="__codelineno-17-79" href="#__codelineno-17-79"></a>extra/vlc-plugin-sdl               3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-80" name="__codelineno-17-80" href="#__codelineno-17-80"></a>extra/vlc-plugin-sftp              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-81" name="__codelineno-17-81" href="#__codelineno-17-81"></a>extra/vlc-plugin-shout             3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-82" name="__codelineno-17-82" href="#__codelineno-17-82"></a>extra/vlc-plugin-smb               3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-83" name="__codelineno-17-83" href="#__codelineno-17-83"></a>extra/vlc-plugin-soxr              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-84" name="__codelineno-17-84" href="#__codelineno-17-84"></a>extra/vlc-plugin-speex             3.0.21-28       0.04 MiB       0.02 MiB
-<a id="__codelineno-17-85" name="__codelineno-17-85" href="#__codelineno-17-85"></a>extra/vlc-plugin-srt               3.0.21-28       0.04 MiB       0.01 MiB
-<a id="__codelineno-17-86" name="__codelineno-17-86" href="#__codelineno-17-86"></a>extra/vlc-plugin-svg               3.0.21-28       0.03 MiB       0.01 MiB
-<a id="__codelineno-17-87" name="__codelineno-17-87" href="#__codelineno-17-87"></a>extra/vlc-plugin-tag               3.0.21-28       0.10 MiB       0.04 MiB
-<a id="__codelineno-17-88" name="__codelineno-17-88" href="#__codelineno-17-88"></a>extra/vlc-plugin-theora            3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-89" name="__codelineno-17-89" href="#__codelineno-17-89"></a>extra/vlc-plugin-twolame           3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-90" name="__codelineno-17-90" href="#__codelineno-17-90"></a>extra/vlc-plugin-udev              3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-91" name="__codelineno-17-91" href="#__codelineno-17-91"></a>extra/vlc-plugin-upnp              3.0.21-28       0.06 MiB       0.03 MiB
-<a id="__codelineno-17-92" name="__codelineno-17-92" href="#__codelineno-17-92"></a>extra/vlc-plugin-vorbis            3.0.21-28       0.03 MiB       0.02 MiB
-<a id="__codelineno-17-93" name="__codelineno-17-93" href="#__codelineno-17-93"></a>extra/vlc-plugin-vpx               3.0.21-28       0.02 MiB       0.01 MiB
-<a id="__codelineno-17-94" name="__codelineno-17-94" href="#__codelineno-17-94"></a>extra/vlc-plugin-x264              3.0.21-28       0.09 MiB       0.02 MiB
-<a id="__codelineno-17-95" name="__codelineno-17-95" href="#__codelineno-17-95"></a>extra/vlc-plugin-x265              3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-96" name="__codelineno-17-96" href="#__codelineno-17-96"></a>extra/vlc-plugin-xml               3.0.21-28       0.01 MiB       0.01 MiB
-<a id="__codelineno-17-97" name="__codelineno-17-97" href="#__codelineno-17-97"></a>extra/vlc-plugin-zvbi              3.0.21-28       0.12 MiB       0.05 MiB
-<a id="__codelineno-17-98" name="__codelineno-17-98" href="#__codelineno-17-98"></a>extra/vlc-plugins-base             3.0.21-28       7.54 MiB       1.92 MiB
-<a id="__codelineno-17-99" name="__codelineno-17-99" href="#__codelineno-17-99"></a>extra/vlc-plugins-extra            3.0.21-28       0.05 MiB       0.02 MiB
-<a id="__codelineno-17-100" name="__codelineno-17-100" href="#__codelineno-17-100"></a>extra/vlc-plugins-video-output     3.0.21-28       0.64 MiB       0.15 MiB
-<a id="__codelineno-17-101" name="__codelineno-17-101" href="#__codelineno-17-101"></a>extra/vlc-plugins-visualization    3.0.21-28       0.11 MiB       0.04 MiB
-<a id="__codelineno-17-102" name="__codelineno-17-102" href="#__codelineno-17-102"></a>extra/vlc                          3.0.21-28      40.06 MiB       6.08 MiB
-<a id="__codelineno-17-103" name="__codelineno-17-103" href="#__codelineno-17-103"></a>extra/vlc-plugins-all              3.0.21-28       0.00 MiB       0.00 MiB
-<a id="__codelineno-17-104" name="__codelineno-17-104" href="#__codelineno-17-104"></a>
-<a id="__codelineno-17-105" name="__codelineno-17-105" href="#__codelineno-17-105"></a>Total Download Size:    37.06 MiB
-<a id="__codelineno-17-106" name="__codelineno-17-106" href="#__codelineno-17-106"></a>Total Installed Size:  189.76 MiB
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo pacman -S vlc vlc-plugins-all
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>resolving dependencies...
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>looking for conflicting packages...
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>Package (97)                       New Version   Net Change  Download Size
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>extra/aribb25                      0.2.7-3         0.09 MiB       0.03 MiB
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>extra/ffmpeg4.4                    4.4.6-2        23.46 MiB       8.52 MiB
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>extra/ftgl                         2.4.0-3         2.28 MiB       0.31 MiB
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>extra/glm                          1.0.1-1        20.34 MiB       3.42 MiB
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>extra/libcddb                      1.3.2-7         0.15 MiB       0.04 MiB
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>extra/libgoom2                     2k4-5           0.21 MiB       0.09 MiB
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>extra/libkate                      0.4.3-1         0.52 MiB       0.15 MiB
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>extra/libmfx                       23.2.2-4        0.28 MiB       0.06 MiB
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>extra/liboggz                      1.1.3-1         2.12 MiB       0.32 MiB
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>extra/libtiger                     0.3.4-8         0.06 MiB       0.02 MiB
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>extra/libvlc                       3.0.21-28       2.17 MiB       0.66 MiB
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>extra/live-media                   2025.05.24-1    2.51 MiB       0.53 MiB
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>extra/projectm                     3.1.12-5       25.94 MiB       2.13 MiB
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>extra/python-wxpython              1:4.2.3-3      52.95 MiB       9.51 MiB
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>extra/sdl12-compat                 1.2.68-2        0.64 MiB       0.13 MiB
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>extra/sdl_image                    1.2.12-9        0.06 MiB       0.03 MiB
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>extra/vlc-cli                      3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>extra/vlc-gui-qt                   3.0.21-28       3.12 MiB       1.03 MiB
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>extra/vlc-plugin-a52dec            3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>extra/vlc-plugin-aalib             3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>extra/vlc-plugin-alsa              3.0.21-28       0.05 MiB       0.02 MiB
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>extra/vlc-plugin-aom               3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>extra/vlc-plugin-archive           3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>extra/vlc-plugin-aribb24           3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>extra/vlc-plugin-aribb25           3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>extra/vlc-plugin-ass               3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>extra/vlc-plugin-avahi             3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>extra/vlc-plugin-bluray            3.0.21-28       0.07 MiB       0.03 MiB
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>extra/vlc-plugin-caca              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>extra/vlc-plugin-cddb              3.0.21-28       0.06 MiB       0.03 MiB
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>extra/vlc-plugin-chromecast        3.0.21-28       0.15 MiB       0.07 MiB
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>extra/vlc-plugin-dav1d             3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>extra/vlc-plugin-dbus              3.0.21-28       0.08 MiB       0.03 MiB
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>extra/vlc-plugin-dbus-screensaver  3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>extra/vlc-plugin-dca               3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>extra/vlc-plugin-dvb               3.0.21-28       0.42 MiB       0.18 MiB
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>extra/vlc-plugin-dvd               3.0.21-28       0.08 MiB       0.04 MiB
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>extra/vlc-plugin-faad2             3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>extra/vlc-plugin-ffmpeg            3.0.21-28       0.27 MiB       0.09 MiB
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>extra/vlc-plugin-firewire          3.0.21-28       0.04 MiB       0.02 MiB
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>extra/vlc-plugin-flac              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a>extra/vlc-plugin-fluidsynth        3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a>extra/vlc-plugin-freetype          3.0.21-28       0.07 MiB       0.04 MiB
+<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>extra/vlc-plugin-gme               3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>extra/vlc-plugin-gnutls            3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a>extra/vlc-plugin-gstreamer         3.0.21-28       0.04 MiB       0.02 MiB
+<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a>extra/vlc-plugin-inflate           3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a>extra/vlc-plugin-jack              3.0.21-28       0.04 MiB       0.02 MiB
+<a id="__codelineno-18-55" name="__codelineno-18-55" href="#__codelineno-18-55"></a>extra/vlc-plugin-journal           3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-56" name="__codelineno-18-56" href="#__codelineno-18-56"></a>extra/vlc-plugin-jpeg              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-57" name="__codelineno-18-57" href="#__codelineno-18-57"></a>extra/vlc-plugin-kate              3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-58" name="__codelineno-18-58" href="#__codelineno-18-58"></a>extra/vlc-plugin-kwallet           3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-59" name="__codelineno-18-59" href="#__codelineno-18-59"></a>extra/vlc-plugin-libsecret         3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-60" name="__codelineno-18-60" href="#__codelineno-18-60"></a>extra/vlc-plugin-lirc              3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-61" name="__codelineno-18-61" href="#__codelineno-18-61"></a>extra/vlc-plugin-live555           3.0.21-28       0.06 MiB       0.03 MiB
+<a id="__codelineno-18-62" name="__codelineno-18-62" href="#__codelineno-18-62"></a>extra/vlc-plugin-lua               3.0.21-28       0.95 MiB       0.30 MiB
+<a id="__codelineno-18-63" name="__codelineno-18-63" href="#__codelineno-18-63"></a>extra/vlc-plugin-mad               3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-64" name="__codelineno-18-64" href="#__codelineno-18-64"></a>extra/vlc-plugin-matroska          3.0.21-28       0.44 MiB       0.18 MiB
+<a id="__codelineno-18-65" name="__codelineno-18-65" href="#__codelineno-18-65"></a>extra/vlc-plugin-mdns              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-66" name="__codelineno-18-66" href="#__codelineno-18-66"></a>extra/vlc-plugin-modplug           3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-67" name="__codelineno-18-67" href="#__codelineno-18-67"></a>extra/vlc-plugin-mpeg2             3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-68" name="__codelineno-18-68" href="#__codelineno-18-68"></a>extra/vlc-plugin-mpg123            3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-69" name="__codelineno-18-69" href="#__codelineno-18-69"></a>extra/vlc-plugin-mtp               3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-70" name="__codelineno-18-70" href="#__codelineno-18-70"></a>extra/vlc-plugin-musepack          3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-71" name="__codelineno-18-71" href="#__codelineno-18-71"></a>extra/vlc-plugin-nfs               3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-72" name="__codelineno-18-72" href="#__codelineno-18-72"></a>extra/vlc-plugin-notify            3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-73" name="__codelineno-18-73" href="#__codelineno-18-73"></a>extra/vlc-plugin-ogg               3.0.21-28       0.13 MiB       0.06 MiB
+<a id="__codelineno-18-74" name="__codelineno-18-74" href="#__codelineno-18-74"></a>extra/vlc-plugin-opus              3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-75" name="__codelineno-18-75" href="#__codelineno-18-75"></a>extra/vlc-plugin-png               3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-76" name="__codelineno-18-76" href="#__codelineno-18-76"></a>extra/vlc-plugin-pulse             3.0.21-28       0.08 MiB       0.02 MiB
+<a id="__codelineno-18-77" name="__codelineno-18-77" href="#__codelineno-18-77"></a>extra/vlc-plugin-quicksync         3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-78" name="__codelineno-18-78" href="#__codelineno-18-78"></a>extra/vlc-plugin-samplerate        3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a>extra/vlc-plugin-sdl               3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-80" name="__codelineno-18-80" href="#__codelineno-18-80"></a>extra/vlc-plugin-sftp              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-81" name="__codelineno-18-81" href="#__codelineno-18-81"></a>extra/vlc-plugin-shout             3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-82" name="__codelineno-18-82" href="#__codelineno-18-82"></a>extra/vlc-plugin-smb               3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-83" name="__codelineno-18-83" href="#__codelineno-18-83"></a>extra/vlc-plugin-soxr              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-84" name="__codelineno-18-84" href="#__codelineno-18-84"></a>extra/vlc-plugin-speex             3.0.21-28       0.04 MiB       0.02 MiB
+<a id="__codelineno-18-85" name="__codelineno-18-85" href="#__codelineno-18-85"></a>extra/vlc-plugin-srt               3.0.21-28       0.04 MiB       0.01 MiB
+<a id="__codelineno-18-86" name="__codelineno-18-86" href="#__codelineno-18-86"></a>extra/vlc-plugin-svg               3.0.21-28       0.03 MiB       0.01 MiB
+<a id="__codelineno-18-87" name="__codelineno-18-87" href="#__codelineno-18-87"></a>extra/vlc-plugin-tag               3.0.21-28       0.10 MiB       0.04 MiB
+<a id="__codelineno-18-88" name="__codelineno-18-88" href="#__codelineno-18-88"></a>extra/vlc-plugin-theora            3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-89" name="__codelineno-18-89" href="#__codelineno-18-89"></a>extra/vlc-plugin-twolame           3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-90" name="__codelineno-18-90" href="#__codelineno-18-90"></a>extra/vlc-plugin-udev              3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-91" name="__codelineno-18-91" href="#__codelineno-18-91"></a>extra/vlc-plugin-upnp              3.0.21-28       0.06 MiB       0.03 MiB
+<a id="__codelineno-18-92" name="__codelineno-18-92" href="#__codelineno-18-92"></a>extra/vlc-plugin-vorbis            3.0.21-28       0.03 MiB       0.02 MiB
+<a id="__codelineno-18-93" name="__codelineno-18-93" href="#__codelineno-18-93"></a>extra/vlc-plugin-vpx               3.0.21-28       0.02 MiB       0.01 MiB
+<a id="__codelineno-18-94" name="__codelineno-18-94" href="#__codelineno-18-94"></a>extra/vlc-plugin-x264              3.0.21-28       0.09 MiB       0.02 MiB
+<a id="__codelineno-18-95" name="__codelineno-18-95" href="#__codelineno-18-95"></a>extra/vlc-plugin-x265              3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-96" name="__codelineno-18-96" href="#__codelineno-18-96"></a>extra/vlc-plugin-xml               3.0.21-28       0.01 MiB       0.01 MiB
+<a id="__codelineno-18-97" name="__codelineno-18-97" href="#__codelineno-18-97"></a>extra/vlc-plugin-zvbi              3.0.21-28       0.12 MiB       0.05 MiB
+<a id="__codelineno-18-98" name="__codelineno-18-98" href="#__codelineno-18-98"></a>extra/vlc-plugins-base             3.0.21-28       7.54 MiB       1.92 MiB
+<a id="__codelineno-18-99" name="__codelineno-18-99" href="#__codelineno-18-99"></a>extra/vlc-plugins-extra            3.0.21-28       0.05 MiB       0.02 MiB
+<a id="__codelineno-18-100" name="__codelineno-18-100" href="#__codelineno-18-100"></a>extra/vlc-plugins-video-output     3.0.21-28       0.64 MiB       0.15 MiB
+<a id="__codelineno-18-101" name="__codelineno-18-101" href="#__codelineno-18-101"></a>extra/vlc-plugins-visualization    3.0.21-28       0.11 MiB       0.04 MiB
+<a id="__codelineno-18-102" name="__codelineno-18-102" href="#__codelineno-18-102"></a>extra/vlc                          3.0.21-28      40.06 MiB       6.08 MiB
+<a id="__codelineno-18-103" name="__codelineno-18-103" href="#__codelineno-18-103"></a>extra/vlc-plugins-all              3.0.21-28       0.00 MiB       0.00 MiB
+<a id="__codelineno-18-104" name="__codelineno-18-104" href="#__codelineno-18-104"></a>
+<a id="__codelineno-18-105" name="__codelineno-18-105" href="#__codelineno-18-105"></a>Total Download Size:    37.06 MiB
+<a id="__codelineno-18-106" name="__codelineno-18-106" href="#__codelineno-18-106"></a>Total Installed Size:  189.76 MiB
 </code></pre></div>
 </details>
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">λ︎</a></h2>
@@ -1884,7 +1905,7 @@
 <p><code>python -m venv /path/to/preferred/location/</code> creates a virtual environment</p>
 <div class="admonition note">
 <p class="admonition-title">Create a python environment for the current user</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.local/py-venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.local/py-venv
 </code></pre></div>
 </div>
 <blockquote>
@@ -1895,7 +1916,7 @@
 <p><code>python-pip</code> or <code>pip</code> in a python virtual environment is used to manage requirements (add, delete, download, etc)</p>
 <div class="admonition note">
 <p class="admonition-title">Install python library dependencies from a requirements.txt file (relative virtual environment)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>./bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>./bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
 </div>
 <p><a href="https://github.com/astral-sh/uv">UV</a> claims to be a faster and more complete tool than python pip, replacing the need for pip-tools, pipx, poetry, pyenv, twine, virtualenv, etc.</p>
@@ -1941,7 +1962,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2025 23:18:20 UTC">September 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 5, 2025 20:47:43 UTC">September 5, 2025</span>
   </span>
 
     
