@@ -945,6 +945,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#latest-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-hyprland-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Hyprland version
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -973,6 +991,33 @@
   <a href="#lazyvim-challenges" class="md-nav__link">
     <span class="md-ellipsis">
       LazyVim challenges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceal-level-feels-awkward" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceal level feels awkward
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazygit" class="md-nav__link">
+    <span class="md-ellipsis">
+      lazygit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazyvim-extras-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      LazyVim Extras Git
     </span>
   </a>
   
@@ -1077,7 +1122,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              7 min read
+                              9 min read
                             
                           </span>
                         </div>
@@ -1243,12 +1288,44 @@
 <li>remove spotify and other apps I dont need (simple enough to do, some things can be removed via the Omarchy menu)</li>
 </ul>
 <p>There may be other adjustments, but I assume they can all be easily made through the <code>~/.config/</code> files that Omarchy invites the user to modify.</p>
+<h3 id="latest-update">Latest update<a class="headerlink" href="#latest-update" title="Permanent link">λ︎</a></h3>
+<p>Hyprland has release a new extension</p>
+<p>TODO: how to check which version of hyprland is running.</p>
+<p>The guesture config has changed and ... is no longer supported.</p>
+<div class="admonition warning">
+<p class="admonition-title">Gesture syntax change in latest hyprland</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># gestures {</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#     # See https://wiki.hyprland.org/Configuring/Variables/ for more</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#     workspace_swipe = on</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># }</span>
+</code></pre></div>
+<h3 id="check-hyprland-version">Check Hyprland version<a class="headerlink" href="#check-hyprland-version" title="Permanent link">λ︎</a></h3>
+<p><code>hyprctl version</code> command shows the current version of Hyprland running.  This is useful information to know when there has been an upgrade and configuration names have changed and there are errors at the top of the screen.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>❯ hyprctl version
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Hyprland 0.51.0 built from branch  at commit 46174f78b374b6cea669c48880877a8bdcf7802f  (version: bump to 0.51.0).
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Date: Wed Sep 10 12:41:05 2025
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Tag: v0.51.0, commits: 6418
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>built against:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a> aquamarine 0.9.4
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a> hyprlang 0.6.3
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a> hyprutils 0.8.4
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a> hyprcursor 0.1.13
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a> hyprgraphics 0.1.5
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>no flags were set
+</code></pre></div>
 <h2 id="lazyvim">LazyVim<a class="headerlink" href="#lazyvim" title="Permanent link">λ︎</a></h2>
 <p>Omarchy opens Neovim by default to edit <code>.config</code> configuration files.  LazyVim is used as the Neovim configuration.</p>
 <p>It seems prudent to give LazyVim a trial run for a week to see if its as usable for my work as AstroNvim.  This would be one less change I needed to make to Omarchy.</p>
 <p><a href="">LazyVim</a> had a lot of commits in the last week or so, partly due to Folke being back from holiday it seems.</p>
 <p>Unfortunately the LazyVim Clojure extra is still broken for Neovim 0.11.x, as it includes nvim-treesitter-sexp package.  Its not clear what the correct proceedure is to resolved, especially as the issue was raised on nvim-treesitter-sexp repository on 2024-11-10.</p>
 <p>As its only one package, then I should be able to disable it easily (if LazyVim is as simple as AstroNvim) and add nvim-parpar (parinfer and paredit).</p>
+<div class="admonition tip">
+<p class="admonition-title">TOP TIP: Visually select an expression</p>
+<p><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd>v</kbd></span> <span class="keys"><kbd>%</kbd></span> when on the opening or closing paren of an expression selects the whole expression. </p>
+</div>
 <h3 id="lazyvim-positives">LazyVim positives<a class="headerlink" href="#lazyvim-positives" title="Permanent link">λ︎</a></h3>
 <ul>
 <li>extensive use of Snacks and includes the graphic toggles in the UI toggles menu.</li>
@@ -1257,10 +1334,70 @@
 </ul>
 <h3 id="lazyvim-challenges">LazyVim challenges<a class="headerlink" href="#lazyvim-challenges" title="Permanent link">λ︎</a></h3>
 <ul>
+<li>no git client by default.  This seems a huge omission, maybe I need to install lazygit before I see something. Otherwise I will check the LazyVim Extras for Neogit)</li>
 <li>completion uses <span class="keys"><kbd class="key-enter">Enter</kbd></span> key and arrow keys to navigate (rather than ++Tab++)</li>
-<li>no key binding to save, so using <code>:w</code> for now (maybe there is a save on quit - no, but it is possible to save the current session, although I would need to test if that also includes unsaved changes).</li>
-<li>Links in markdown hide (which is nice) but automatically expand when the cursor is on top. I could get used to this, but it also messes up the format on some lines when not expanded.</li>
+<li>no key mapping to save, e.g. ++SPC+"w"++, so using <code>:w</code> for now (maybe there is a save on quit - no, but it is possible to save the current session, although I would need to test if that also includes unsaved changes). It seems quiting LazyVim does prompt to save unsaved files (as least one of them).</li>
+<li>Links in markdown hide (which is nice) but automatically expand when the cursor is on top. I could get used to this, but it also messes up the format on some lines when not expanded. See []</li>
+<li>marksman not part of the markdown mode (missing anchor completion).  This was an addition required for AstroNvim, via Mason tool installer.</li>
+<li>no popup terminal, although ++SPC+"f"+"t"++ creates a split that shows a terminal window.  The format of the prompt theme doesnt look quite right though.</li>
+<li>LazyVim Clojure Extra contains the broken <code>nvim-treesitter-sexp</code> package.  Update: Folke has updated the Clojure Extra to use nvim-paredit.  I will still need to include a <code>lua/plugins/clojure.lua</code> file to include <code>nvim-parinfer</code> package.</li>
 </ul>
+<h3 id="conceal-level-feels-awkward">Conceal level feels awkward<a class="headerlink" href="#conceal-level-feels-awkward" title="Permanent link">λ︎</a></h3>
+<p>LazyVim in markdown hides the full links and code block languages, showing only the link name and content of the code block.</p>
+<p>I find this a little fiddly to work with code blocks, as you have to just trust that you are entering code in the right place.  The open and close notations do show when the cursor is on that line though.</p>
+<p>In theory I like the hyperlinks url being hidden and just showing the title.  The problem is that the format of the surrounding text is down as if the url text was still there.  Therefore the text looks incorrectly formatted.</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd><span>+</span><kbd>u</kbd><span>+</span><kbd>c</kbd></span> toggles the use of conceal level.</p>
+<h3 id="lazygit">lazygit<a class="headerlink" href="#lazygit" title="Permanent link">λ︎</a></h3>
+<p>I installed LazyGit in the hope that LazyVim would automatically use it.  This was not the case :sad-face:</p>
+<p>Actually it does work but Neovim must be run after LazyGit is installed.  LazyVim only checks for LazyGit when it starts up (which makes sense).</p>
+<div class="admonition warning">
+<p class="admonition-title">Run LazyGit from the command line first</p>
+<p>When running LazyGit from LazyVim it checks for a configuration file.  Either add your own config file or run lazygit on the command line (outside of Neovim) which creates an empty config file.</p>
+<p>Running LazyGit or manually adding the config file should be done before trying to run LazyGit in LazyVim, otherwise you get the following error.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>2025/09/19 18:00:10 stat /home/practicalli/.config/lazygit/config.yml: no such file or directory
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>[Process exited 1]
+</code></pre></div>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt; sudo pacman -S lazygit
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[sudo] password for practicalli:                 
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>resolving dependencies...
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>looking for conflicting packages...
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Package (1)    New Version  Net Change  Download Size
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>extra/lazygit  0.55.1-1      21.48 MiB       6.16 MiB
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Total Download Size:    6.16 MiB
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Total Installed Size:  21.48 MiB
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>:: Proceed with installation? [Y/n] 
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>:: Retrieving packages...
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a> lazygit-0.55.1-1-x86_64                                                                6.2 MiB  11.1 MiB/s 00:01 [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>(1/1) checking keys in keyring                                                                                    [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>(1/1) checking package integrity                                                                                  [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>(1/1) loading package files                                                                                       [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>(1/1) checking for file conflicts                                                                                 [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>(1/1) checking available disk space                                                                               [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>:: Running pre-transaction hooks...
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>(1/2) Rejecting pacman transaction if running in snapshot...
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>(2/2) Performing snapper pre snapshots for the following configurations...
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>==&gt; root: 122
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>:: Processing package changes...
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>(1/1) installing lazygit                                                                                          [--------------------------------------------------------------------] 100%
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>:: Running post-transaction hooks...
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>(1/6) Arming ConditionNeedsUpdate...
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>(2/6) Foreign/AUR package notification
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>puddletag 2.5.0-1
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>(3/6) Orphaned package notification...
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>mathjax 4.0.0-1
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>(4/6) Checking for .pacnew and .pacsave files...
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>(5/6) Performing snapper post snapshots for the following configurations...
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>==&gt; root: 123
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>(6/6) Syncing all file systems...
+</code></pre></div>
+<h3 id="lazyvim-extras-git">LazyVim Extras Git<a class="headerlink" href="#lazyvim-extras-git" title="Permanent link">λ︎</a></h3>
+<p><code>:LazyExtras</code> command opens a menu to add (and remove) the <a href="https://www.lazyvim.org/extras">LazyVim Extras</a> available.</p>
 <h2 id="eric-evants">Eric Evants<a class="headerlink" href="#eric-evants" title="Permanent link">λ︎</a></h2>
 <p>Strategic Design can help with Generative AI</p>
 <p>AI embedded in products in surprising and yet unknown ways.   Me: Meta Content Protocol is one visable presence of AI.</p>
