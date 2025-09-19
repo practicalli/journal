@@ -1012,6 +1012,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="lazygit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazygit-mini-cheatsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      LazyGit Mini Cheatsheet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1122,7 +1137,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              9 min read
+                              10 min read
                             
                           </span>
                         </div>
@@ -1396,6 +1411,20 @@
 <a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>==&gt; root: 123
 <a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>(6/6) Syncing all file systems...
 </code></pre></div>
+<h4 id="lazygit-mini-cheatsheet">LazyGit Mini Cheatsheet<a class="headerlink" href="#lazygit-mini-cheatsheet" title="Permanent link">λ︎</a></h4>
+<p><code>space</code> commit the selected changes
+<code>c</code> to create a commit with staged changes
+<code>A</code> amend without edit 
+<code>P</code> pushes local commits to remote repository. When changing remote history, <code>Enter</code> to <code>--force-with-lease</code> or <code>Esc</code> to abort push.
+<code>p</code> to pull</p>
+<p>I recall there is a way to select specific lines of a file to stage.  Investigate the key mappings to do so.</p>
+<p>After a little playing around if found the keys.</p>
+<p>In the <code>Files</code> menu, use <code>j</code> / <code>k</code> to navigate to the relevant file name</p>
+<p><code>Enter</code> switches to the <code>Unstaged Changes</code> window, showing a diff of changes in that file.  All the changes are highlighted, so <code>space</code> would stage them all.</p>
+<p>Instead, <code>v</code> switches to visual select and <code>j</code> / <code>k</code>  or arrow keys selects individual lines.</p>
+<p><code>space</code> stages which ever lines are highlighted.</p>
+<p><code>l</code> moved to the <code>Staged Changes</code> panel and <code>v</code> enters visual mode to select lines.</p>
+<p><code>space</code> will unstage all the highlighted lines.</p>
 <h3 id="lazyvim-extras-git">LazyVim Extras Git<a class="headerlink" href="#lazyvim-extras-git" title="Permanent link">λ︎</a></h3>
 <p><code>:LazyExtras</code> command opens a menu to add (and remove) the <a href="https://www.lazyvim.org/extras">LazyVim Extras</a> available.</p>
 <h2 id="eric-evants">Eric Evants<a class="headerlink" href="#eric-evants" title="Permanent link">λ︎</a></h2>
