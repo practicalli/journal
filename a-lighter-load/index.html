@@ -1155,7 +1155,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              10 min read
+                              12 min read
                             
                           </span>
                         </div>
@@ -1470,6 +1470,29 @@
 <p>How does AI support core domain thinking?</p>
 <p>Eric: I appreciate generic sub-domains more, especially as those sub-domains are pealled away and mastered then it makes the system easier to reason about.</p>
 <h2 id="omarchy">Omarchy<a class="headerlink" href="#omarchy" title="Permanent link">λ︎</a></h2>
+<p>Omarchy 3 is distributed as a self-contained ISO, so no internet downloads should be required during the install.</p>
+<p>This does mean a 7 GB download is required, along with a USB stick or suitable SD card of 8 Gb or more.</p>
+<p>There are links to the ISO image on the Omarchy website and in the manual, but I didnt see a link to a checksum file to check the integrity of the download.</p>
+<p>Omarchy recommends Caligula for Linux to burn the ISO to the removable media.</p>
+<div class="admonition note">
+<p class="admonition-title">Burn Omarchy ISO to usb memory stick</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso
+</code></pre></div>
+<p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
+<p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for Omarchy to be plugged into the computer, just in case :)</p>
+<p>After 915.3 seconds (caligula shows the times) the Omarchy image was written to the USB memory stick and verified the image was written without error.  653.8 seconds to write the image, the rest to verify.</p>
+<blockquote>
+<p>NOTE: I used an old USB Memory Stick (USB-A) which I picked up somewhere for free. Newer USB sticks with USB-C or SD Memory cards may be faster.</p>
+</blockquote>
+<p>Booting from the USB Memory stick displayed a simple Omarchy menu system to define key information about the user, login name &amp; password, Full name and email address (used for Git authentication), computer name and finally selecting where to install Omarchy.</p>
+<p>After 7 minutes 23 seconds Omarchy was installed.</p>
+<p>Enter to reboot the computer and remove the USB memory stick after the computer shuts down, just before starting again.</p>
+<p>Omarchy starts with a simple login screen, with a prompt for the users password.</p>
+<blockquote>
+<p>NOTE: I had to login a second time, as a few seconds after first entering the password Omarchy returned me to the password prompt.</p>
+</blockquote>
+<p>It will be interesting to see how much tweaking I feel compelled to do over the coming weeks.</p>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
