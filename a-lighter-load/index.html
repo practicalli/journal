@@ -1068,6 +1068,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Omarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyprland-tweaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyprland tweaking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1376,10 +1418,14 @@
 </ul>
 <h3 id="lazyvim-challenges">LazyVim challenges<a class="headerlink" href="#lazyvim-challenges" title="Permanent link">λ︎</a></h3>
 <ul>
-<li>no git client by default.  This seems a huge omission, maybe I need to install lazygit before I see something. Otherwise I will check the LazyVim Extras for Neogit)</li>
+<li>no git client by default.  This seems a huge omission, maybe I need to install lazygit before I see something. Otherwise I will check the LazyVim Extras for Neogit) - Update: install LazyGit TUI and LazyVim provides key mappings, e.g. <code>SPC g g</code></li>
 <li>completion uses <span class="keys"><kbd class="key-enter">Enter</kbd></span> key and arrow keys to navigate (rather than ++Tab++)</li>
-<li>no key mapping to save, e.g. ++SPC+"w"++, so using <code>:w</code> for now (maybe there is a save on quit - no, but it is possible to save the current session, although I would need to test if that also includes unsaved changes). It seems quiting LazyVim does prompt to save unsaved files (as least one of them).</li>
-<li>Links in markdown hide (which is nice) but automatically expand when the cursor is on top. I could get used to this, but it also messes up the format on some lines when not expanded. See []</li>
+<li>
+<p>no which key mapping to save, e.g. ++SPC+"w"++, so using <code>:w</code> for now (maybe there is a save on quit - no, but it is possible to save the current session, although I would need to test if that also includes unsaved changes). It seems quiting LazyVim does prompt to save unsaved files (as least one of them). Update: <code>C-s</code> is used to save the current buffer to its file,</p>
+</li>
+<li>
+<p>Links in markdown hide (which is nice) but automatically expand when the cursor is on top. I could get used to this, but it also messes up the format on some lines when not expanded. See []</p>
+</li>
 <li>marksman not part of the markdown mode (missing anchor completion).  This was an addition required for AstroNvim, via Mason tool installer.</li>
 <li>no popup terminal, although ++SPC+"f"+"t"++ creates a split that shows a terminal window.  The format of the prompt theme doesnt look quite right though.</li>
 <li>LazyVim Clojure Extra contains the broken <code>nvim-treesitter-sexp</code> package.  Update: Folke has updated the Clojure Extra to use nvim-paredit.  I will still need to include a <code>lua/plugins/clojure.lua</code> file to include <code>nvim-parinfer</code> package.</li>
@@ -1477,7 +1523,7 @@
 <div class="admonition note">
 <p class="admonition-title">Burn Omarchy ISO to usb memory stick</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso<span class="w"> </span>
 </code></pre></div>
 <p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
 <p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for Omarchy to be plugged into the computer, just in case :)</p>
@@ -1493,6 +1539,24 @@
 <p>NOTE: I had to login a second time, as a few seconds after first entering the password Omarchy returned me to the password prompt.</p>
 </blockquote>
 <p>It will be interesting to see how much tweaking I feel compelled to do over the coming weeks.</p>
+<h3 id="removing-software">Removing software<a class="headerlink" href="#removing-software" title="Permanent link">λ︎</a></h3>
+<p>Super + Alt, SPACE &gt; Remove to remove software not required.</p>
+<p>The computer used to test Omarchy has 8Gb of memory and 256 Gb or storage, so larger programs and those not otherwise not being tested can be removed.</p>
+<ul>
+<li>libre-office </li>
+</ul>
+<h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">λ︎</a></h3>
+<p>Switch to Kitty terminal and reuse the Practicalli dotfiles or appreciate configuration options from there.</p>
+<p>Super + Alt Space to open the system menu.  Navigate to Install &gt; Terminal and select Kitty.</p>
+<p>A prompt shows to enter the sudo password and installs Kitty packages on correct entry.</p>
+<p>A Restart Hyprland button appears once install is complete.  This sets Omarchy to use Kitty as the default terminal, opening all requested configuration files in that terminal (and Neovim).</p>
+<h3 id="slack">Slack<a class="headerlink" href="#slack" title="Permanent link">λ︎</a></h3>
+<h3 id="hyprland-tweaking">Hyprland tweaking<a class="headerlink" href="#hyprland-tweaking" title="Permanent link">λ︎</a></h3>
+<p>Before any changes, version control the original configuration so we can easily track what has been changed from the defaults.</p>
+<p>Assume this is done with Neovim and lazy, to update config files</p>
+<ul>
+<li>enable natural scrolling</li>
+</ul>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
