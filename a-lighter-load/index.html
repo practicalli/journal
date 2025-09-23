@@ -1061,57 +1061,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#omarchy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Omarchy
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Omarchy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#removing-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Removing software
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Terminal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slack" class="md-nav__link">
-    <span class="md-ellipsis">
-      Slack
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hyprland-tweaking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hyprland tweaking
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1175,7 +1124,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2025-09-20 00:00:00+00:00" class="md-ellipsis">September 20, 2025</time>
+                          <time datetime="2025-09-21 00:00:00+00:00" class="md-ellipsis">September 21, 2025</time>
                         </div>
                       </li>
                     
@@ -1197,7 +1146,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              12 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -1514,49 +1463,7 @@
 <p>Bounded context in an existing 'legacy' environment requires a discovery phase ?</p>
 <p>Eric: tends to do discovery and design in concert, perhaps focusing on one aspect during any particular hour (or strategic design session).  The elaboration of discovery and design is iterative.</p>
 <p>How does AI support core domain thinking?</p>
-<p>Eric: I appreciate generic sub-domains more, especially as those sub-domains are pealled away and mastered then it makes the system easier to reason about.</p>
-<h2 id="omarchy">Omarchy<a class="headerlink" href="#omarchy" title="Permanent link">λ︎</a></h2>
-<p>Omarchy 3 is distributed as a self-contained ISO, so no internet downloads should be required during the install.</p>
-<p>This does mean a 7 GB download is required, along with a USB stick or suitable SD card of 8 Gb or more.</p>
-<p>There are links to the ISO image on the Omarchy website and in the manual, but I didnt see a link to a checksum file to check the integrity of the download.</p>
-<p>Omarchy recommends Caligula for Linux to burn the ISO to the removable media.</p>
-<div class="admonition note">
-<p class="admonition-title">Burn Omarchy ISO to usb memory stick</p>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso<span class="w"> </span>
-</code></pre></div>
-<p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
-<p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for Omarchy to be plugged into the computer, just in case :)</p>
-<p>After 915.3 seconds (caligula shows the times) the Omarchy image was written to the USB memory stick and verified the image was written without error.  653.8 seconds to write the image, the rest to verify.</p>
-<blockquote>
-<p>NOTE: I used an old USB Memory Stick (USB-A) which I picked up somewhere for free. Newer USB sticks with USB-C or SD Memory cards may be faster.</p>
-</blockquote>
-<p>Booting from the USB Memory stick displayed a simple Omarchy menu system to define key information about the user, login name &amp; password, Full name and email address (used for Git authentication), computer name and finally selecting where to install Omarchy.</p>
-<p>After 7 minutes 23 seconds Omarchy was installed.</p>
-<p>Enter to reboot the computer and remove the USB memory stick after the computer shuts down, just before starting again.</p>
-<p>Omarchy starts with a simple login screen, with a prompt for the users password.</p>
-<blockquote>
-<p>NOTE: I had to login a second time, as a few seconds after first entering the password Omarchy returned me to the password prompt.</p>
-</blockquote>
-<p>It will be interesting to see how much tweaking I feel compelled to do over the coming weeks.</p>
-<h3 id="removing-software">Removing software<a class="headerlink" href="#removing-software" title="Permanent link">λ︎</a></h3>
-<p>Super + Alt, SPACE &gt; Remove to remove software not required.</p>
-<p>The computer used to test Omarchy has 8Gb of memory and 256 Gb or storage, so larger programs and those not otherwise not being tested can be removed.</p>
-<ul>
-<li>libre-office </li>
-</ul>
-<h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">λ︎</a></h3>
-<p>Switch to Kitty terminal and reuse the Practicalli dotfiles or appreciate configuration options from there.</p>
-<p>Super + Alt Space to open the system menu.  Navigate to Install &gt; Terminal and select Kitty.</p>
-<p>A prompt shows to enter the sudo password and installs Kitty packages on correct entry.</p>
-<p>A Restart Hyprland button appears once install is complete.  This sets Omarchy to use Kitty as the default terminal, opening all requested configuration files in that terminal (and Neovim).</p>
-<h3 id="slack">Slack<a class="headerlink" href="#slack" title="Permanent link">λ︎</a></h3>
-<h3 id="hyprland-tweaking">Hyprland tweaking<a class="headerlink" href="#hyprland-tweaking" title="Permanent link">λ︎</a></h3>
-<p>Before any changes, version control the original configuration so we can easily track what has been changed from the defaults.</p>
-<p>Assume this is done with Neovim and lazy, to update config files</p>
-<ul>
-<li>enable natural scrolling</li>
-</ul>
+<p>Eric: I appreciate generic sub-domains more, especially as those sub-domains are pealed away and mastered then it makes the system easier to reason about.</p>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
@@ -1584,7 +1491,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2025 09:59:55 UTC">September 16, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 21, 2025 20:27:16 UTC">September 21, 2025</span>
   </span>
 
     
