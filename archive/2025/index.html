@@ -952,7 +952,7 @@
           
           <li class="md-meta__item">
             
-              3 min read
+              4 min read
             
           </li>
         
@@ -962,6 +962,43 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="a-brave-new-world"><a class="toclink" href="../../a-brave-new-world/">A brave new world</a></h2>
+<h3 id="hyprland"><a class="toclink" href="../../a-brave-new-world/#hyprland">Hyprland</a></h3>
+<p>After some experimentation I finally got Thunar file manager dialogs appearing in nice places on the screen.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># Practicalli - set Thunar popups to float
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a># Didnt seem to work
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># windowrule = float, initialClass: thunar, title: Rename: .*
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># windowrule = float, initialClass: thunar, title: File Operation Progress: .*
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a># Example windowrule v2
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a># windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a># See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a># windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a># Practicalli - set Thunar popups to float using windowrulev2
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a># Make all windows float
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a># windowrulev2 = float, class:.*
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a># windowrule = move 100%- 100%-,class:^(thunar)$,title:(Rename.*)$
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a># popups appear center of display by default
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a># stays focused until dismissed - not sure if this makes a difference...
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a># windowrule = float,stayfocused,class:^(thunar)$,title:(Rename.*)$
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a># windowrule = float,stayfocused,move cursor -50% -50%,class:^(thunar)$,title:(Rename.*)$
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a># windowrule = move cursor -50% -50%,class:^(thunar)$,title:(Rename.*)$
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a># Show thunar rename popup at the mouse pointer position
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>windowrule = float,stayfocused,move cursor -50% -50%,class:^(thunar)$,title:(Rename.*)$
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a># windowrulev2 = move 100%- 100%-,stayfocused,class:^(thunar)$,title:(Rename.*)$
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a># windowrule = float,class:^(thunar)$,title:(File Operation Progress.*)$
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a># windowrulev2 = float,move 100%- 100%-,class:^(thunar)$,title:(File Operation Progress.*)$
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>windowrule = float,class:^(thunar)$,title:(File Operation Progress.*)$
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a># windowrule = move onscreen 100%- 100%-,class:^(thunar)$,title:(File Operation Progress.*)$  # wrong format
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a># windowrule = move onscreen 80% 80%,class:^(thunar)$,title:(File Operation Progress.*)$
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>windowrule = move onscreen 100%-24 100%-24,class:^(thunar)$,title:(File Operation Progress.*)$
+</code></pre></div>
 <h3 id="omarchy"><a class="toclink" href="../../a-brave-new-world/#omarchy">Omarchy</a></h3>
 <p>Omarchy 3 is distributed as a self-contained ISO, so no internet downloads should be required during the install.</p>
 <p>This does mean a 7 GB download is required, along with a USB stick or suitable SD card of 8 Gb or more.</p>
@@ -970,7 +1007,7 @@
 <div class="admonition note">
 <p class="admonition-title">Burn Omarchy ISO to usb memory stick</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso<span class="w"> </span>
 </code></pre></div>
 <p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
 <p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for Omarchy to be plugged into the computer, just in case :)</p>
