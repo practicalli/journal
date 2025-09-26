@@ -962,10 +962,13 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="a-brave-new-world"><a class="toclink" href="../../a-brave-new-world/">A brave new world</a></h2>
-<p>Another 3 cycle rides in a row planned for this week, for a estimated 250 km distance for the week.  This would be about 50 km more than I used to commute each week when working in Central London (before Covid).</p>
+<p>Another 3 cycle rides in a row this week, covering 256 km distance for the week.  This would be about 50 km more than I used to commute each week when working in Central London (before Covid).  The first two rides went well, the third was in colder conditions that I prepared for, so I was a little cold during the ride.</p>
+<p>Three cycle rides in a row seem to be quite a challenge, although 2 rides in a row seem to be okay.</p>
 <p>Started watching Star Trek Discovery from the beginning.  I find it a very engaging with an intricate combination of plot lines.  The most involved of any series from the Star Trek world.</p>
 <h3 id="hyprland"><a class="toclink" href="../../a-brave-new-world/#hyprland">Hyprland</a></h3>
 <p>After some experimentation I finally got Thunar file manager dialogs appearing in nice places on the screen.</p>
+<div class="admonition example">
+<p class="admonition-title">Experiments with Hyprland window rules</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># Practicalli - set Thunar popups to float
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a># Didnt seem to work
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># windowrule = float, initialClass: thunar, title: Rename: .*
@@ -1001,6 +1004,7 @@
 <a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a># windowrule = move onscreen 80% 80%,class:^(thunar)$,title:(File Operation Progress.*)$
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>windowrule = move onscreen 100%-24 100%-24,class:^(thunar)$,title:(File Operation Progress.*)$
 </code></pre></div>
+</div>
 <h3 id="omarchy"><a class="toclink" href="../../a-brave-new-world/#omarchy">Omarchy</a></h3>
 <p>Omarchy 3 is distributed as a self-contained ISO, so no internet downloads should be required during the install.</p>
 <p>This does mean a 7 GB download is required, along with a USB stick or suitable SD card of 8 Gb or more.</p>
@@ -1009,7 +1013,7 @@
 <div class="admonition note">
 <p class="admonition-title">Burn Omarchy ISO to usb memory stick</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso
 </code></pre></div>
 <p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
 <p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for Omarchy to be plugged into the computer, just in case :)</p>
@@ -1029,7 +1033,19 @@
 <p>Super + Alt, SPACE &gt; Remove to remove software not required.</p>
 <p>The computer used to test Omarchy has 8Gb of memory and 256 Gb or storage, so larger programs and those not otherwise not being tested can be removed.</p>
 <ul>
-<li>libre-office </li>
+<li>libre-office - wide range of office documents (I use Google docs, sheets, etc.)</li>
+<li>Obsidian - not taking app (I use Neovim instead)</li>
+<li>Typora writing tool (commercial)</li>
+<li>Dropbox file sharing and syncing</li>
+<li>Spotify supports dubious podcasts so philosophically objection al to me</li>
+</ul>
+<h4 id="evaluate-software"><a class="toclink" href="../../a-brave-new-world/#evaluate-software">Evaluate software</a></h4>
+<ul>
+<li>Kdenlive video editor (an alternative to Blender)</li>
+<li>Signal end to end encryption (is there a need for this?)</li>
+<li>LocalSend sends files to other devices across the network</li>
+<li>mpv is that better than vlc ?</li>
+<li>Tailscale VPN</li>
 </ul>
 <h4 id="terminal"><a class="toclink" href="../../a-brave-new-world/#terminal">Terminal</a></h4>
 <p>Switch to Kitty terminal and reuse the Practicalli dotfiles or appreciate configuration options from there.</p>

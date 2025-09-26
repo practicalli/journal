@@ -937,6 +937,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#evaluate-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#terminal" class="md-nav__link">
     <span class="md-ellipsis">
       Terminal
@@ -1123,10 +1132,13 @@
 
   <h1>A brave new world</h1>
 
-<p>Another 3 cycle rides in a row planned for this week, for a estimated 250 km distance for the week.  This would be about 50 km more than I used to commute each week when working in Central London (before Covid).</p>
+<p>Another 3 cycle rides in a row this week, covering 256 km distance for the week.  This would be about 50 km more than I used to commute each week when working in Central London (before Covid).  The first two rides went well, the third was in colder conditions that I prepared for, so I was a little cold during the ride.</p>
+<p>Three cycle rides in a row seem to be quite a challenge, although 2 rides in a row seem to be okay.</p>
 <p>Started watching Star Trek Discovery from the beginning.  I find it a very engaging with an intricate combination of plot lines.  The most involved of any series from the Star Trek world.</p>
 <h2 id="hyprland">Hyprland<a class="headerlink" href="#hyprland" title="Permanent link">λ︎</a></h2>
 <p>After some experimentation I finally got Thunar file manager dialogs appearing in nice places on the screen.</p>
+<div class="admonition example">
+<p class="admonition-title">Experiments with Hyprland window rules</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Practicalli - set Thunar popups to float
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a># Didnt seem to work
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># windowrule = float, initialClass: thunar, title: Rename: .*
@@ -1162,6 +1174,7 @@
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a># windowrule = move onscreen 80% 80%,class:^(thunar)$,title:(File Operation Progress.*)$
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>windowrule = move onscreen 100%-24 100%-24,class:^(thunar)$,title:(File Operation Progress.*)$
 </code></pre></div>
+</div>
 <h2 id="omarchy">Omarchy<a class="headerlink" href="#omarchy" title="Permanent link">λ︎</a></h2>
 <p>Omarchy 3 is distributed as a self-contained ISO, so no internet downloads should be required during the install.</p>
 <p>This does mean a 7 GB download is required, along with a USB stick or suitable SD card of 8 Gb or more.</p>
@@ -1170,7 +1183,7 @@
 <div class="admonition note">
 <p class="admonition-title">Burn Omarchy ISO to usb memory stick</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/omarchy-3.0.1.iso
 </code></pre></div>
 <p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
 <p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for Omarchy to be plugged into the computer, just in case :)</p>
@@ -1190,7 +1203,19 @@
 <p>Super + Alt, SPACE &gt; Remove to remove software not required.</p>
 <p>The computer used to test Omarchy has 8Gb of memory and 256 Gb or storage, so larger programs and those not otherwise not being tested can be removed.</p>
 <ul>
-<li>libre-office </li>
+<li>libre-office - wide range of office documents (I use Google docs, sheets, etc.)</li>
+<li>Obsidian - not taking app (I use Neovim instead)</li>
+<li>Typora writing tool (commercial)</li>
+<li>Dropbox file sharing and syncing</li>
+<li>Spotify supports dubious podcasts so philosophically objection al to me</li>
+</ul>
+<h3 id="evaluate-software">Evaluate software<a class="headerlink" href="#evaluate-software" title="Permanent link">λ︎</a></h3>
+<ul>
+<li>Kdenlive video editor (an alternative to Blender)</li>
+<li>Signal end to end encryption (is there a need for this?)</li>
+<li>LocalSend sends files to other devices across the network</li>
+<li>mpv is that better than vlc ?</li>
+<li>Tailscale VPN</li>
 </ul>
 <h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">λ︎</a></h3>
 <p>Switch to Kitty terminal and reuse the Practicalli dotfiles or appreciate configuration options from there.</p>
@@ -1231,7 +1256,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 25, 2025 21:44:39 UTC">September 25, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 26, 2025 20:19:50 UTC">September 26, 2025</span>
   </span>
 
     
