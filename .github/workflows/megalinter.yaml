@@ -36,7 +36,7 @@ jobs:
 
       # Git Checkout
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           sparse-checkout: |
@@ -47,7 +47,7 @@ jobs:
 
       # MegaLinter Configuration
       - name: MegaLinter Run
-        uses: oxsecurity/megalinter/flavors/documentation@v8
+        uses: oxsecurity/megalinter/flavors/documentation@v9
         id: ml
         env:
 
