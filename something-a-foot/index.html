@@ -1059,34 +1059,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="LLM Response">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#review-of-llm-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Review of LLM results
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#practicalli-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practicalli workflows
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1097,6 +1069,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cycling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rear-gear-shifter-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rear Gear Shifter issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-electric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going Electric ?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1185,7 +1185,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              8 min read
+                              9 min read
                             
                           </span>
                         </div>
@@ -1245,12 +1245,16 @@
 
   <h1>Something a foot</h1>
 
+<p>Completed <a href="#cycling">6,000 km distance for cycle riding this year</a>, a very satisfying number as I wasnt able to do much cycling before May.</p>
 <p>A new month means its time to update dependencies across all projects. Although antq has proven very good at reporting outdated dependencies for Clojure projects and GitHub actions, it is quite a niche tool and something extra to learn or maintain a config for.</p>
 <p>When reviewing options for liquida/antq there was a link to ... GitHub workflow that generates a PR with all the dependency updates.  This project is now in maintenance mode and recommends looking at the Renovate GitHub action.</p>
 <p>So I decided to create a CI workflow using Renovate that generates a pull request to update Clojure library dependencies and GitHub actions.</p>
 <p>Rather than write this myself, I felt it was a useful task to ask an LLM tool to tackle.  I felt confident I knew how to write a clear question (prompt) for the LLM tool.  It was also a small enough task that I wouldnt blow all my 'free' tokens.  I also hoped that it was a simple enough task that I wouldnt have to keep refining the question to get the response I needed.</p>
 <p>The reply should be simple enough that I can understand, as I already have plenty of experience writing GitHub workflows and configurations for the tools used by a workflow (e.g. Megalinter).</p>
-<p>The results are documented in this post and the results were also published to the web:</p>
+<p>Unfortunately the resulting Renovate.json configuration doesnt like Clojure, so AI seems to have failed quite badly (or was too optimistic).</p>
+<p>Taking my usual approach of an Internet search, I discovered the Mend App, which is described in more detail in the <a href="https://docs.mend.io/integrations/latest/mend-for-github-com">Mend for GitHub.com docs</a>.</p>
+<p>The Mend app kind of works but still seems to require some manual intervention (pressing buttons on developer.mend.io app) and only supports (or only configured for) maven dependencies and not git updates, e.g. seancorfield/deps-new.</p>
+<p>The results of the discussion with the LLM are documented in this post and the results were also published to the web:</p>
 <p><a class="md-button" href="https://claude.ai/public/artifacts/98bc2a13-f609-4bb3-b31e-b5fd47556d85" target="_blank">Create GitHub workflow with Renovate for Clojure projects</a></p>
 <!-- more -->
 
@@ -1277,7 +1281,7 @@
 </code></pre></div>
 <h2 id="github-workflows">GitHub workflows<a class="headerlink" href="#github-workflows" title="Permanent link">λ︎</a></h2>
 <p>Practicalli has <a href="https://practical.li/engineering-playbook/continuous-integration/github/workflows/practicalli/" target="_blank">GitHub workflows to automate common tasks</a>.</p>
-<p>The <a href="">liquidz/antq</a> workflow is used to check for new versions at the start of every month, reporting when a newer version of a library is available.  This worflow still required me to run liquidz/antq locally, commit changes and push to GitHub, for each of the many repositories Practicalli manages.</p>
+<p>The <a href="https://github.com/liquidz/antq">liquidz/antq</a> workflow is used to check for new versions at the start of every month, reporting when a newer version of a library is available.  This worflow still required me to run liquidz/antq locally, commit changes and push to GitHub, for each of the many repositories Practicalli manages.</p>
 <p>This can take many hours of my time.  Using a workflow that generated the requisite pull requests should save some time.</p>
 <p><a href="https://github.com/dependabot">Dependabot</a> and <a href="https://docs.renovatebot.com/">Renovate</a> are widely used tools to manage dependencies.  <a href="https://github.com/dependabot">Dependabot</a> is quite simple and specific to the GitHub service.  <a href="https://docs.renovatebot.com/">Renovate</a> has more features and provides greater control over a repository.</p>
 <p>I decided to try Renovate first, as a more generic solution should be more future-proof.  I also wanted to create separate pull requests for GitHub actions verses Clojure library dependencies.</p>
@@ -1323,148 +1327,165 @@
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>   ```
 <a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
 <a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>The workflow will create separate pull requests for Clojure dependencies and GitHub Actions, making it easy to review and merge updates independently!
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>!!! EXAMPLE "Renovate configuration"
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    ```json title=".github/renovate.json"
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    {
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>      "extends": [
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        "config:recommended"
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>      ],
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>      "packageRules": [
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>        {
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>          "description": "Group all Clojure dependencies into one PR",
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>          "matchManagers": ["deps-edn"],
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>          "groupName": "Clojure dependencies",
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>          "semanticCommitType": "chore",
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>          "semanticCommitScope": "deps"
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>        },
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>        {
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>          "description": "Group all GitHub Actions into a separate PR",
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>          "matchManagers": ["github-actions"],
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>          "groupName": "GitHub Actions",
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>          "semanticCommitType": "ci",
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>          "semanticCommitScope": "actions"
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>        }
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>      ],
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>      "clojure": {
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>        "enabled": true
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>      },
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>      "schedule": [
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>        "at any time"
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>      ],
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>      "timezone": "UTC",
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>      "prConcurrentLimit": 10,
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>      "prHourlyLimit": 0,
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>      "automerge": false,
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>      "platformAutomerge": false,
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>      "rebaseWhen": "behind-base-branch"
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>    }
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>    ```
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>!!! EXAMPLE "GitHub Workflow configuration"
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>    ```yaml title=".github/workflows/renovate.yaml"
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>    name: Renovate Dependencies
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>    on:
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>      schedule:
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>        # Run on the first day of every month at 04:00 UTC
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>        - cron: '0 4 1 * *'
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>      workflow_dispatch: # Allow manual trigger
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>    jobs:
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>      renovate:
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>        runs-on: ubuntu-latest
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>        steps:
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>          - name: Checkout repository
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>            uses: actions/checkout@v4
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>          - name: Run Renovate
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>            uses: renovatebot/github-action@v40.3.2
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>            with:
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>              configurationFile: .github/renovate.json
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>              token: ${{ secrets.RENOVATE_TOKEN }}
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>            env:
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>              LOG_LEVEL: info
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>    ```
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a>
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a>
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a>### Review of LLM results
+<a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a>
+<a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a>GitHub workflows are comprehensively documented, so my expectations from the LLM were quite high.  The renovate GitHub action is well known so there should be plenty of examples of use out in the Internet.
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a>
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a>The setup requirements were accurate, although I took a slight detour and created a `RENOVATE_TOKEN` secret within the Practicalli Organisation.  Adding an Organisation secret avoids the need to add this token to each of the Practicalli repositories.
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>
+<a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>Ironically, the generated GitHub workflow to check for the newest library versions is not actually using the latest library versions.  The GitHub workflow file was update by checking the latest versions on the respective GitHub repository releases.
+<a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a>
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a>- [Checkout action](https://github.com/actions/checkout){target=_blank} is version v6.0.1, `actions/checkout@v6`
+<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a>- [Renovate action](https://github.com/renovatebot/renovate) is version 42.34.1:  `renovatebot/github-action@v42`
+<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a>
+<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a>### Practicalli workflows
+<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a>
+<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>```json
+<a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a>{
+<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a>  "comment": "Renovate updates for Clojure library dependencies and GitHub actions",
+<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a>  "author": "Practicalli Johnny",
+<a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+<a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>  "extends": [ "config:recommended" ],
+<a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a>  "packageRules": [
+<a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a>    {
+<a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a>      "description": "Clojure dependency updates Pull Request",
+<a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a>      "matchManagers": ["deps-edn"],
+<a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a>      "groupName": "Clojure dependencies",
+<a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a>      "semanticCommitType": "chore",
+<a id="__codelineno-1-129" name="__codelineno-1-129" href="#__codelineno-1-129"></a>      "semanticCommitScope": "deps"
+<a id="__codelineno-1-130" name="__codelineno-1-130" href="#__codelineno-1-130"></a>    },
+<a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a>    {
+<a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a>      "description": "GitHub Action updates Pull Request",
+<a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a>      "matchManagers": ["github-actions"],
+<a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a>      "groupName": "GitHub Actions",
+<a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a>      "semanticCommitType": "ci",
+<a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a>      "semanticCommitScope": "actions"
+<a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a>    }
+<a id="__codelineno-1-138" name="__codelineno-1-138" href="#__codelineno-1-138"></a>  ],
+<a id="__codelineno-1-139" name="__codelineno-1-139" href="#__codelineno-1-139"></a>  "clojure": { "enabled": true },
+<a id="__codelineno-1-140" name="__codelineno-1-140" href="#__codelineno-1-140"></a>  "schedule": [ "at any time" ],
+<a id="__codelineno-1-141" name="__codelineno-1-141" href="#__codelineno-1-141"></a>  "timezone": "UTC",
+<a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a>  "prConcurrentLimit": 10,
+<a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a>  "prHourlyLimit": 0,
+<a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a>  "automerge": false,
+<a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a>  "platformAutomerge": false,
+<a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a>  "rebaseWhen": "behind-base-branch"
+<a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a>}
 </code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Renovate configuration</p>
-<div class="highlight"><span class="filename">.github/renovate.json</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">"extends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s2">"config:recommended"</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">"packageRules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Group all Clojure dependencies into one PR"</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">"matchManagers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"deps-edn"</span><span class="p">],</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clojure dependencies"</span><span class="p">,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">"semanticCommitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chore"</span><span class="p">,</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">"semanticCommitScope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deps"</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Group all GitHub Actions into a separate PR"</span><span class="p">,</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">      </span><span class="nt">"matchManagers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"github-actions"</span><span class="p">],</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GitHub Actions"</span><span class="p">,</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">      </span><span class="nt">"semanticCommitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ci"</span><span class="p">,</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">      </span><span class="nt">"semanticCommitScope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"actions"</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="nt">"clojure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="nt">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="s2">"at any time"</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">  </span><span class="nt">"prConcurrentLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span><span class="nt">"prHourlyLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">  </span><span class="nt">"automerge"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">  </span><span class="nt">"platformAutomerge"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">  </span><span class="nt">"rebaseWhen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"behind-base-branch"</span>
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">GitHub Workflow configuration</p>
-<div class="highlight"><span class="filename">.github/workflows/renovate.yaml</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Renovate Dependencies</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">on</span><span class="p">:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1"># Run on the first day of every month at 04:00 UTC</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">'0</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"> </span><span class="c1"># Allow manual trigger</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">jobs</span><span class="p">:</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">renovate</span><span class="p">:</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Renovate</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovatebot/github-action@v40.3.2</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">          </span><span class="nt">configurationFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/renovate.json</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">          </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.RENOVATE_TOKEN }}</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">          </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
-</code></pre></div>
-</div>
-<h3 id="review-of-llm-results">Review of LLM results<a class="headerlink" href="#review-of-llm-results" title="Permanent link">λ︎</a></h3>
-<p>GitHub workflows are comprehensively documented, so my expectations from the LLM were quite high.  The renovate GitHub action is well known so there should be plenty of examples of use out in the Internet.</p>
-<p>Ironically, the generated GitHub workflow to check for the newest library versions is not actually using the latest library versions.  The GitHub workflow file was update by checking the latest versions on the respective GitHub repository releases.</p>
-<ul>
-<li><a href="https://github.com/actions/checkout" target="_blank">Checkout action</a> is version v6.0.1, <code>actions/checkout@v6</code></li>
-<li><a href="https://github.com/renovatebot/renovate">Renovate action</a> is version 42.34.1:  <code>renovatebot/github-action@v42</code></li>
-</ul>
-<h3 id="practicalli-workflows">Practicalli workflows<a class="headerlink" href="#practicalli-workflows" title="Permanent link">λ︎</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Renovate updates for Clojure library dependencies and GitHub actions"</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practicalli Johnny"</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">"extends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"config:recommended"</span><span class="w"> </span><span class="p">],</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">"packageRules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clojure dependency updates Pull Request"</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">"matchManagers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"deps-edn"</span><span class="p">],</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clojure dependencies"</span><span class="p">,</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">"semanticCommitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chore"</span><span class="p">,</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="nt">"semanticCommitScope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deps"</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GitHub Action updates Pull Request"</span><span class="p">,</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">      </span><span class="nt">"matchManagers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"github-actions"</span><span class="p">],</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">      </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GitHub Actions"</span><span class="p">,</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">      </span><span class="nt">"semanticCommitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ci"</span><span class="p">,</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">      </span><span class="nt">"semanticCommitScope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"actions"</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">  </span><span class="nt">"clojure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">  </span><span class="nt">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"at any time"</span><span class="w"> </span><span class="p">],</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">  </span><span class="nt">"prConcurrentLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">  </span><span class="nt">"prHourlyLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">  </span><span class="nt">"automerge"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">  </span><span class="nt">"platformAutomerge"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">  </span><span class="nt">"rebaseWhen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"behind-base-branch"</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Renovate version updates</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">on</span><span class="p">:</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="c1"># Run on the first day of every month at 04:00 UTC</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">'0</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"> </span><span class="c1"># Allow manual trigger</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">jobs</span><span class="p">:</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">renovate</span><span class="p">:</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🚀 Job automatically triggered by ${{ github.event_name }}"</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🐧 Job running on ${{ runner.os }} server"</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v6</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">          </span><span class="nt">sparse-checkout</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">            </span><span class="no">.github</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">            </span><span class="no">deps.edn</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🐙 ${{ github.repository }} repository was cloned to the runner."</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Renovate</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovatebot/github-action@v42</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">          </span><span class="nt">configurationFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/renovate.json</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">          </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.RENOVATE_TOKEN }}</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">          </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">      </span><span class="c1"># Summary and status</span>
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🎨 Renovate version update check completed"</span>
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🍏 Job status is ${{ job.status }}."</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Renovate version updates</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">on</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="c1"># Run on the first day of every month at 04:00 UTC</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">'0</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"> </span><span class="c1"># Allow manual trigger</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">renovate</span><span class="p">:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🚀 Job automatically triggered by ${{ github.event_name }}"</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🐧 Job running on ${{ runner.os }} server"</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v6</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">          </span><span class="nt">sparse-checkout</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">            </span><span class="no">.github</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="no">deps.edn</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🐙 ${{ github.repository }} repository was cloned to the runner."</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Renovate</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovatebot/github-action@v42</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">          </span><span class="nt">configurationFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/renovate.json</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">          </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.RENOVATE_TOKEN }}</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">          </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">      </span><span class="c1"># Summary and status</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🎨 Renovate version update check completed"</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "🍏 Job status is ${{ job.status }}."</span>
 </code></pre></div>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
+<p>A ride to the Archive Cafe near East Grinstead and a loop to Otford and back were the two rides this week (with a quick ride to the local bike shop and back in between).</p>
+<p>With the Otford ride I completed 6,000 km in distance for 2025, a very pleasing achievement as I didnt do any longer distance cycling until May/June.</p>
+<p>Volunteering for Devoxx London helped my cycle 45km a day for the second week in May.  This gave me the confidence that I had recovered from the medication I had been on which had prevented me from exercising.</p>
+<p>I hope that I can keep reasonably illness free and fit enough throughout the winter season, so I can aim for 10,000 km distance for 2026.</p>
+<p>I guess that is one new years resolution set <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:"></p>
+<h3 id="rear-gear-shifter-issues">Rear Gear Shifter issues<a class="headerlink" href="#rear-gear-shifter-issues" title="Permanent link">λ︎</a></h3>
 <p>My rear gears have been a little tricky for the last few weeks and it seems that the right shifter is starting to fail.</p>
 <p>Finding an exact replacement is proving to be a little tricky.  Shimano have stopped delivery of new parts until January next year, so it would be at least a month before I could get a new part.</p>
 <p>Finding a shop with the exact part is also proving tricky and second hand parts are not very clear on if the shifter is for disc or rim brakes.</p>
@@ -1493,9 +1514,13 @@
 <ul>
 <li><a href="https://www.bikeparts.co.uk/products/shimano-st-r8000-right-hand-main-lever-assembly">R8000 Righ Hand main lever assembly</a> - 84.99 GBP (free shipping)</li>
 </ul>
-<p>Alternative approach would be to replace the groupset with an electroic version, preferably wireless.  This would be more expense but would be the only major upgrade I was interested in doing to the bike.</p>
+<h3 id="going-electric">Going Electric ?<a class="headerlink" href="#going-electric" title="Permanent link">λ︎</a></h3>
+<p>Alternative approach would be to replace the groupset with an electronic version, preferably wireless.  This would be more expense but would be the only major upgrade I was interested in doing to the bike.</p>
 <p>It should be possible to mix and match Ltwoo components with either Shimano or SRAM.  Ltwoo group set should be significantly cheaper (perhaps slightly heavier) but should give similar performance (according to Trace Velo review).</p>
 <p>There would be a maintenance cost to replacing the existing system with a new groupset.  However, the maintenance that I would ask the bike shop to do is to change the shifters and rework the hydraulic breaks.</p>
+<blockquote>
+<p>NOTE: I found a replacement R8020 manual gear shifter for a reasonable price (106 GBP), so I will delay investing in electronic gearset for now.</p>
+</blockquote>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
@@ -1523,7 +1548,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 4, 2025 13:32:05 UTC">December 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 6, 2025 23:04:11 UTC">December 6, 2025</span>
   </span>
 
     
