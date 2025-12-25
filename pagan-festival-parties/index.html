@@ -1009,6 +1009,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="NAS recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-raid-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create RAID Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1360,6 +1377,10 @@
 </details>
 <p>The RAID is still showing as unmounted and the extfs file check command will not run, so it seems the raid array is toast.</p>
 <p>I removed the RAID array and formatted the drives (quick format).  Next I will rebuild the array and restore backups.</p>
+<h3 id="create-raid-arrays">Create RAID Arrays<a class="headerlink" href="#create-raid-arrays" title="Permanent link">λ︎</a></h3>
+<p>There are 8 disks in the NAS so I am creating two RAID 6 arrays.  A RAID 6 array requires a minimum of 4 disks.</p>
+<p>This approach means that I can experience up to 2 disk failures on each RAID 6 array.</p>
+<p>I will loose more space, but I should have more than enough room left for all the content I wish to store locally.</p>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
@@ -1387,7 +1408,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 24, 2025 10:21:34 UTC">December 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 25, 2025 00:23:04 UTC">December 25, 2025</span>
   </span>
 
     
