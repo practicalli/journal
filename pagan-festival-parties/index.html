@@ -1067,14 +1067,14 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"></path></svg>
-                        <time datetime="2025-12-23 00:00:00+00:00" class="md-ellipsis">December 23, 2025</time>
+                        <time datetime="2025-12-24 00:00:00+00:00" class="md-ellipsis">December 24, 2025</time>
                       </div>
                     </li>
                     
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2025-12-23 00:00:00+00:00" class="md-ellipsis">December 23, 2025</time>
+                          <time datetime="2025-12-24 00:00:00+00:00" class="md-ellipsis">December 24, 2025</time>
                         </div>
                       </li>
                     
@@ -1096,7 +1096,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              6 min read
+                              7 min read
                             
                           </span>
                         </div>
@@ -1319,6 +1319,47 @@
 <a id="__codelineno-3-130" name="__codelineno-3-130" href="#__codelineno-3-130"></a>       7       8      115        7      active sync   /dev/sdh3
 </code></pre></div>
 </details>
+<p>Leaving the NAS running overnight, the raid array reports to be in a clean status.  Hopefully a reboot will return the NAS to full operation :crossed_fingers:</p>
+<details class="example">
+<summary>NAS RAID status after adding drive</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[~] # mdadm --misc --detail /dev/md0
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/dev/md0:
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        Version : 01.00.03
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  Creation Time : Sat Jan 23 19:04:18 2021
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>     Raid Level : raid6
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>     Array Size : 17572185216 (16758.14 GiB 17993.92 GB)
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  Used Dev Size : 2928697536 (2793.02 GiB 2998.99 GB)
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   Raid Devices : 8
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>  Total Devices : 8
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Preferred Minor : 0
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    Persistence : Superblock is persistent
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    Update Time : Wed Dec 24 15:29:51 2025
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>          State : clean
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a> Active Devices : 8
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>Working Devices : 8
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a> Failed Devices : 0
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  Spare Devices : 0
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>     Chunk Size : 64K
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>           Name : 0
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>           UUID : cf1b4f4e:6d83f848:0afc40fb:20a69932
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>         Events : 40298
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    Number   Major   Minor   RaidDevice State
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>       0       8        3        0      active sync   /dev/sda3
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>       9       8       19        1      active sync   /dev/sdb3
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>       2       8       35        2      active sync   /dev/sdc3
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>       3       8       51        3      active sync   /dev/sdd3
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>       4       8       67        4      active sync   /dev/sde3
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>       8       8       83        5      active sync   /dev/sdf3
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>       6       8       99        6      active sync   /dev/sdg3
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>       7       8      115        7      active sync   /dev/sdh3
+</code></pre></div>
+</details>
+<p>The RAID is still showing as unmounted and the extfs file check command will not run, so it seems the raid array is toast.</p>
+<p>I removed the RAID array and formatted the drives (quick format).  Next I will rebuild the array and restore backups.</p>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
@@ -1346,7 +1387,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 23, 2025 13:24:46 UTC">December 23, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 24, 2025 10:21:34 UTC">December 24, 2025</span>
   </span>
 
     
