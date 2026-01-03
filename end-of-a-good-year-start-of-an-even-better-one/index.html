@@ -1052,14 +1052,25 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Neovim">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qnap-raid-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QNAP RAID server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QNAP RAID server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bad-block-check" class="md-nav__link">
+  <a href="#bad-block-check-on-all-drives" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bad block check
+        Bad block check on all drives
       
     </span>
   </a>
@@ -1067,10 +1078,49 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-and-fix-paritition" class="md-nav__link">
+  <a href="#check-and-fix-raid-array-partition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check and fix paritition
+        Check and fix raid array partition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debian-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian Linux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debian Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-file-system-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check file system usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Logs
       
     </span>
   </a>
@@ -1195,7 +1245,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              7 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -1265,11 +1315,11 @@
 <p>The last week of 2025 and the start of 2026.</p>
 <p>Started 2026 with a Park Run (jog) with a Strava time of 27 minutes 46 seconds, but that doesn't seem right as I think my fitness tracker got confused.  My Park Run recorded time was 35 minutes and 25 seconds, which isn't bad considering I was a minute late to the start <img alt="🤣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f923.svg" title=":rolling_on_the_floor_laughing:"></p>
 <p>My injuries continue to recover.  I have some exercises to help with 'tennis elbow' and 'trigger finger' in my left arm and hand.  An icy walk to the Podiatrist on Friday confirms that the diabetic ulcer has pretty much gone, so now I can start testing activities to see if any of them stop the ulcer from completely healing or getting worse.</p>
-<p>Preparing for a lot of cycing in the new year with some shopping for bicycle and general winter items.</p>
+<p>Preparing for a lot of cycling in the new year with some shopping for bicycle and general winter items.</p>
 <ul>
 <li>Shimano R8000 Cassette, 11-32</li>
 <li>Shimano HG701 Chain</li>
-<li>Cospo Cadence sensor (a garmin sensor got lost some where)</li>
+<li>Cospo Cadence sensor (the Garmin sensor got lost some where)</li>
 <li>Insulated stainless steel water bottles - stop my water getting even colder during the winter months</li>
 <li>neck warmers, with breathable mesh around mouth (stop the warmer getting too damp)</li>
 <li>mini bike chain pliers - small enough to carry in top bag in case of issues with chain</li>
@@ -1292,6 +1342,9 @@
 <li>Clojure Web Services: rewrite book, drop older content</li>
 </ul>
 <h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
+<p>Time for another plugin and lsp update check.</p>
+<p>After the update on 'rogueone' I noticed that the marksman tool was no longer installed via Mason, so I did not see heading prompts when auto-completing links starting with <code>#</code>.</p>
+<p>Marksman was installed manually via the Mason menu, <code>SPC p m</code>, and navigating to the marksman tool, pressing <code>i</code> to install.</p>
 <details class="example">
 <summary>AstroNvim update 29 December 2025</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  Total: 71 plugins
@@ -1350,10 +1403,17 @@
 <a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>        2e88a46 Update SchemaStore catalog (11 days ago)
 </code></pre></div>
 </details>
-<h3 id="bad-block-check">Bad block check<a class="headerlink" href="#bad-block-check" title="Permanent link">λ︎</a></h3>
-<p>Selected each drive in turw within the Storage Manager &gt; Volume Management panel, pressing the 'Scan Now' button to initiate the bad blocks check. After a brief pause for a UI refresh, the next drive in the list was set to scan for bad blocks.</p>
-<p>Took most of the day and completed successfully</p>
-<h3 id="check-and-fix-paritition">Check and fix paritition<a class="headerlink" href="#check-and-fix-paritition" title="Permanent link">λ︎</a></h3>
+<h2 id="qnap-raid-server">QNAP RAID server<a class="headerlink" href="#qnap-raid-server" title="Permanent link">λ︎</a></h2>
+<p>Its taken a bit of time to stabalise the RAID arrays on the QNAP NAS server, but after checking the hardware and the file system it seems stable.  I may want to copy files across again to make sure they are all okay.</p>
+<p>I had copied a large amount of files to the new RAID6 arrays as an initial test.  The copying seemed to be successful at the time.  However, on a reboot the <code>/dev/md0</code> RAID array was showing unmounted in the Storage Manager panel (QNAP web app).</p>
+<p>I ran a <a href="#bad-block-check-on-all-drives">bad block check</a> to check the hardware of each drive.  All drives completed their check successfully, which took about a day to complete.</p>
+<p>Then ran a <a href="#check-and-fix-raid-array-partition">file system check and repair</a>.  This did highlight and fix some issues with the partition, but all seems good now.</p>
+<p>I have a new 4TB drive I will swap with an older 3TB drive, which I think will fail some time this year (although it seems to be good for the moment).</p>
+<h3 id="bad-block-check-on-all-drives">Bad block check on all drives<a class="headerlink" href="#bad-block-check-on-all-drives" title="Permanent link">λ︎</a></h3>
+<p>Using the QNAP web app, I selected each drive in turn within the Storage Manager &gt; Volume Management panel, pressing the 'Scan Now' button to initiate the bad blocks check. After a brief pause for a UI refresh, the next drive in the list was set to scan for bad blocks.</p>
+<p>Took most of the day and completed successfully across all drives.</p>
+<p>One of the RAID arrays was still showing as unmounted.</p>
+<h3 id="check-and-fix-raid-array-partition">Check and fix raid array partition<a class="headerlink" href="#check-and-fix-raid-array-partition" title="Permanent link">λ︎</a></h3>
 <p>SSH onto NAS</p>
 <details class="example">
 <summary>Check status of unmounted RAID</summary>
@@ -1460,6 +1520,98 @@
 <a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>/dev/md0: 30914/91523072 files (1.7% non-contiguous), 471488935/1464348768 blocks
 </code></pre></div>
 </details>
+<h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
+<p>I am optimising the space used by my Debian Linux install, so its not wasting space with files I will not look at.</p>
+<p>The Debian Wiki has <a href="https://wiki.debian.org/DiskFreeSpace">suggestions for clearing up disk space</a></p>
+<h3 id="check-file-system-usage">Check file system usage<a class="headerlink" href="#check-file-system-usage" title="Permanent link">λ︎</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Check usage across local partitions</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>df<span class="w"> </span>--hlT
+</code></pre></div>
+<p>Flag meanings</p>
+<ul>
+<li><code>h</code> or <code>--human-readable</code> shows file use using K, M, G to simplify, in powers of 1024</li>
+<li><code>l</code> or <code>--local</code> only show local partitions, including removable media, but not remotely mounted partitions</li>
+<li><code>-T</code> print file system type of partitions, e.g. ext4</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯ df --human-readable --local -T
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Filesystem           Type                       Size  Used Avail Use% Mounted on
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>udev                 devtmpfs                    15G     0   15G   0% /dev
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>tmpfs                tmpfs                      3.0G  2.4M  3.0G   1% /run
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>/dev/nvme0n1p2       ext4                       444G  417G  4.7G  99% /
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>tmpfs                tmpfs                       15G   16K   15G   1% /dev/shm
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>efivarfs             efivarfs                   154K   67K   83K  45% /sys/firmware/efi/efivars
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>tmpfs                tmpfs                      5.0M   16K  5.0M   1% /run/lock
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>tmpfs                tmpfs                      1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>tmpfs                tmpfs                       15G  8.0K   15G   1% /tmp
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>/dev/nvme0n1p1       vfat                       975M  8.8M  966M   1% /boot/efi
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>tmpfs                tmpfs                      3.0G  4.1M  3.0G   1% /run/user/1000
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>/dev/sda1            vfat                        15G   11G  4.8G  68% /media/practicalli/6565-3835
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>/dev/sdc1            exfat                      954G  952G  2.2G 100% /media/practicalli/6637-3132
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>nvim-0.11.5.appimage fuse.nvim-0.11.5.appimage  9.7M  9.7M     0 100% /tmp/.mount_nvimbMgJCn
+</code></pre></div>
+<p>Or simplify the output to specific file system types, e.g. ext4 is typically used for the main file space for system and user files, e.g. / and /home/practicalli/</p>
+<div class="admonition note">
+<p class="admonition-title">File usage on main partition</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>df<span class="w"> </span>--human-readable<span class="w"> </span>--local<span class="w"> </span>--type<span class="o">=</span>ext4
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Output of File usage on main partition</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Filesystem      Size  Used Avail Use% Mounted on
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>/dev/nvme0n1p2  444G  417G  4.6G  99% /
+</code></pre></div>
+</div>
+<h3 id="system-logs">System Logs<a class="headerlink" href="#system-logs" title="Permanent link">λ︎</a></h3>
+<p>A lot of information can be logged to files in <code>/var/log</code> and unless something is seriously wrong then these logs are rarely viewed.</p>
+<p>In fact, unless something issue happens whilst I am using the computer I am unlikely to spend time fixing issues.  Usually it is far less time consuming to re-install Debian Linux from scratch than to debug an issue that is not immediately obvious.</p>
+<p>System logs are managed by <a href="">journalctl</a></p>
+<div class="admonition note">
+<p class="admonition-title">Check disk usage by system logs</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--disk-usage
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Set logs to rotate daily and remove older logs</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--rotate
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--vacuum-time<span class="o">=</span>1d
+</code></pre></div>
+</div>
+<details class="example">
+<summary>Output from rotating and vacuuming logs</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>❯ sudo journalctl --disk-usage
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Archived and active journals take up 852.3M in the file system.
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>❯ sudo journalctl --cacuum-time=1d
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>❯ sudo journalctl --rotate
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>❯ sudo journalctl --vacuum-time=1d
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Vacuuming done, freed 0B of archived journals from /run/log/journal.
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000000288ee-000644b980192f0f.journal (11.6M).
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-0000000000028905-000644b98c33898f.journal (6.9M).
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-000000000002dcb8-0006455ae0a80c53.journal (7.4M).
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000002dcbb-0006455ae0cb0de2.journal (83.8M).
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000006d083-000645610b746488.journal (83.3M).
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ab885-00064562a535bc56.journal (57.1M).
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ccc44-000645827f677255.journal (9.6M).
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ccc7e-000645828de47e13.journal (84.5M).
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000010c0ba-000645868da56476.journal (83.2M).
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000014ab3c-0006458c1161009d.journal (83.7M).
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-0000000000189be8-0006458e19582fb3.journal (81.1M).
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@0006467be5219895-175a231dd5dba9d1.journal~ (40M).
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000001c70df-000645e6ee14869f.journal (34.1M).
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000001dc114-0006467be6fc450b.journal (51.4M).
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000001ef8ff-000646a472870713.journal (51.9M).
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-0000000000203ead-000646c62168fc4d.journal (38.2M).
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>Vacuuming done, freed 808.5M of archived journals from /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a.
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>Vacuuming done, freed 0B of archived journals from /var/log/journal.
+</code></pre></div>
+</details>
+<blockquote>
+<p>TODO: what is the default log rotate</p>
+</blockquote>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
 <p>Planning for cycling in 2026 has started, even though its too cold (icy) to actually ride for the next week or so.</p>
 <p>A good training plan for the Dragon Ride in June will ensure I can complete in a timely fashion (and hopefully be a little quicker than my friends also doing the ride).</p>
