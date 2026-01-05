@@ -1041,6 +1041,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Practicalli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practicalli-cycling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practicalli Cycling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1273,7 +1290,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              12 min read
+                              13 min read
                             
                           </span>
                         </div>
@@ -1350,6 +1367,7 @@
 <p>The last week of 2025 and the start of 2026.</p>
 <p>Started 2026 with a Park Run (jog) with a Strava time of 27 minutes 46 seconds, but that doesn't seem right as I think my fitness tracker got confused.  My Park Run recorded time was 35 minutes and 25 seconds, which isn't bad considering I was a minute late to the start <img alt="🤣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f923.svg" title=":rolling_on_the_floor_laughing:"></p>
 <p>My injuries continue to recover.  I have some exercises to help with 'tennis elbow' and 'trigger finger' in my left arm and hand.  An icy walk to the Podiatrist on Friday confirms that the diabetic ulcer has pretty much gone, so now I can start testing activities to see if any of them stop the ulcer from completely healing or getting worse.</p>
+<p>Started the slow migration from Material for MkDocs to Zensical.  The first step is to create a new book with Zensical before migrating existing books.  I've started by creating <a href="https://practical.li/cycling">Practicalli Cycling</a>.</p>
 <p>Preparing for a lot of cycling in the new year with some shopping for bicycle and general winter items.</p>
 <ul>
 <li>Shimano R8000 Cassette, 11-32</li>
@@ -1376,6 +1394,73 @@
 <li>Engineering Playbook: extend practices section</li>
 <li>Clojure Web Services: rewrite book, drop older content</li>
 </ul>
+<h3 id="practicalli-cycling">Practicalli Cycling<a class="headerlink" href="#practicalli-cycling" title="Permanent link">λ︎</a></h3>
+<p>Create a directory for Practicalli Cycling in <code>~/projects/practicalli/books-new/cycling/</code>.</p>
+<p>Using <code>uv</code> to manage Python packages within this project.</p>
+<ul>
+<li>create a Python Virtual environment</li>
+<li>activate the virtual environment</li>
+<li>create a Python project (creates <code>pyproject.toml</code> file)</li>
+<li>install Zensical package in virtual environment (zensical added to <code>pyproject.toml</code> file)</li>
+<li>create a Zensical project from template (includes GitHub workflow for publishing)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Create Python Virtual Environment</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>venv
+</code></pre></div>
+</div>
+<details class="example">
+<summary>Output of creating Python Virtual Environment</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>❯ uv venv
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Using CPython 3.13.11 interpreter at: /usr/bin/python
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Creating virtual environment at: .venv
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Activate with: source .venv/bin/activate
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Create Python project</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv<span class="w"> </span>init
+</code></pre></div>
+</div>
+<details class="example">
+<summary>Output of creating Python project</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uv init
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Initialized project `cycling`
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Error if project not created before adding zensical</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯ uv add zensical
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>error: No `pyproject.toml` found in current directory or any parent directory
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Add Zensical to Python project</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>uv<span class="w"> </span>init
+</code></pre></div>
+</div>
+<details class="example">
+<summary>Output of adding zensical to python project</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>❯ uv add zensical
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Resolved 9 packages in 386ms
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Prepared 2 packages in 2.21s
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Installed 7 packages in 346ms
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a> + click==8.3.1
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> + deepmerge==2.0
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a> + markdown==3.10
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> + pygments==2.19.2
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a> + pymdown-extensions==10.20
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a> + pyyaml==6.0.3
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a> + zensical==0.0.15
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Create Zensical project from template</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>zensical<span class="w"> </span>new<span class="w"> </span>.
+</code></pre></div>
+</div>
+<p>GitHub CLI was used to create a remote repository from the local git repository (once files had been committed).</p>
+<p>Before publishing the website on Github, the repository must be configured via Settings &gt; Pages to use a GitHub workflow.  No workflow needs to be added as the <code>.github/workflows/docs.yml</code> workflow is added when creating the Zensical project from the template.</p>
 <h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
 <p>Time for another plugin and lsp update check.</p>
 <p>After the update on 'rogueone' I noticed that the marksman tool was no longer installed via Mason, so I did not see heading prompts when auto-completing links starting with <code>#</code>.</p>
@@ -1388,60 +1473,60 @@
 <p><code>:sort</code> is useful for organising tags in front matter of blog posts such as Practicalli Journal.</p>
 <details class="example">
 <summary>AstroNvim update 29 December 2025</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  Total: 71 plugins
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Updated (7)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    ○ aerial.nvim  User AstroFile
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        5c4e2da chore(master): release 2.7.0 (#483) (10 days ago)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        14102dc fix: navigate to symbol with Snacks in scratch buf (#499) (10 days ago)
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        8bb8697 feat: support javascript prototype-attached fns (#495) (5 weeks ago)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        3c42785 refactor: fetch lspkind symbol directly from table (#494) (6 weeks ago)
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        5e687b5 feat(yaml): treesitter name array elements symbol based upon "name" key (#485) (3 months ago)
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        99a5fb8 feat: treesitter queries for editorconfig, hcl, ssh_config (#484) (3 months ago)
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        c7cbbad fix: wait until buffer wipeout to clean up data (#476) (4 months ago)
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    ● astrocommunity 0.05ms  start
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        65fcdbe feat(file-explorer): add yazi.nvim (#1706) (2 days ago)
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        123596f feat(avante-nvim): add missing keybinds (#1705) (3 days ago)
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        5095951 feat(utility): added support for nvzone-menu plugin (#1691) (3 days ago)
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        32ea083 feat(git): add vscode-diff.nvim.plugin (#1704) (8 days ago)
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        03f6c2e feat(just): add just-lsp (#1702) (8 days ago)
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        2916a11 feat(colorscheme): Add Alabaster colorscheme (#1701) (8 days ago)
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        be1df9e fix(rustowl): fix build failure (#1695) (8 days ago)
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    ○ conjure  racket  hy  scheme  guile  julia  lisp  rust  sql  clojure  lua  python  janet  fennel
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        90e7dbd Merge branch 'Stansom-main' (7 days ago)
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        04dde53 Update broken link to "conversational software development" blog (7 days ago)
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        330fe45 Fix link to post in README (7 days ago)
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        b549fa1 Fix link to S7 (7 days ago)
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        1fcf758 Add newer clients to README (7 days ago)
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        b173884 JS: body-contains-forbidden-keyword refactor (3 weeks ago)
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        1d89a4a JS: Improve error handling in transformers (6 weeks ago)
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        9913945 JS fix namespace import bug (6 weeks ago)
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    ○ gist.nvim  GistCreate  GistCreateFromFile  GistsList
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        2d4bc31 docs: center image (3 days ago)
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        bebbc37 docs: update readme (3 days ago)
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    ○ grug-far.nvim  GrugFar  GrugFarWithin
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        74eef26 remove repro dir (6 days ago)
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        3ecc8f4 adding test (6 days ago)
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        a65b75d fixing the issue (6 days ago)
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        ecefcac repro dir (6 days ago)
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        bc589a1 astgrep-rules fixing replace for operate-within-range (11 days ago)
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>        e3c3e61 not passing --lang for rules based search (11 days ago)
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    ○ octo.nvim  Octo
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>        09ff70e fix(window): use a single float instead of two floats for title and content (#1403) (11 days ago)
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>        113d7aa feat(timeline): show repository in cross repo references (#1405) (11 days ago)
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>        2d82fb4 implement blocking and blockedby (#1388) (11 days ago)
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    ○ schemastore.nvim
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>        60f1b3d Update SchemaStore catalog (3 days ago)
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>        5ed01fc Update SchemaStore catalog (5 days ago)
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>        8b92ea8 Update SchemaStore catalog (10 days ago)
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>        806187c Update SchemaStore catalog (11 days ago)
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>        2e88a46 Update SchemaStore catalog (11 days ago)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>  Total: 71 plugins
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  Updated (7)
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    ○ aerial.nvim  User AstroFile
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        5c4e2da chore(master): release 2.7.0 (#483) (10 days ago)
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        14102dc fix: navigate to symbol with Snacks in scratch buf (#499) (10 days ago)
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        8bb8697 feat: support javascript prototype-attached fns (#495) (5 weeks ago)
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        3c42785 refactor: fetch lspkind symbol directly from table (#494) (6 weeks ago)
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        5e687b5 feat(yaml): treesitter name array elements symbol based upon "name" key (#485) (3 months ago)
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        99a5fb8 feat: treesitter queries for editorconfig, hcl, ssh_config (#484) (3 months ago)
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        c7cbbad fix: wait until buffer wipeout to clean up data (#476) (4 months ago)
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    ● astrocommunity 0.05ms  start
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        65fcdbe feat(file-explorer): add yazi.nvim (#1706) (2 days ago)
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        123596f feat(avante-nvim): add missing keybinds (#1705) (3 days ago)
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>        5095951 feat(utility): added support for nvzone-menu plugin (#1691) (3 days ago)
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>        32ea083 feat(git): add vscode-diff.nvim.plugin (#1704) (8 days ago)
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>        03f6c2e feat(just): add just-lsp (#1702) (8 days ago)
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        2916a11 feat(colorscheme): Add Alabaster colorscheme (#1701) (8 days ago)
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        be1df9e fix(rustowl): fix build failure (#1695) (8 days ago)
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>    ○ conjure  racket  hy  scheme  guile  julia  lisp  rust  sql  clojure  lua  python  janet  fennel
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>        90e7dbd Merge branch 'Stansom-main' (7 days ago)
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>        04dde53 Update broken link to "conversational software development" blog (7 days ago)
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>        330fe45 Fix link to post in README (7 days ago)
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>        b549fa1 Fix link to S7 (7 days ago)
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>        1fcf758 Add newer clients to README (7 days ago)
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>        b173884 JS: body-contains-forbidden-keyword refactor (3 weeks ago)
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>        1d89a4a JS: Improve error handling in transformers (6 weeks ago)
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>        9913945 JS fix namespace import bug (6 weeks ago)
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>    ○ gist.nvim  GistCreate  GistCreateFromFile  GistsList
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>        2d4bc31 docs: center image (3 days ago)
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>        bebbc37 docs: update readme (3 days ago)
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>    ○ grug-far.nvim  GrugFar  GrugFarWithin
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>        74eef26 remove repro dir (6 days ago)
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>        3ecc8f4 adding test (6 days ago)
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>        a65b75d fixing the issue (6 days ago)
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>        ecefcac repro dir (6 days ago)
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>        bc589a1 astgrep-rules fixing replace for operate-within-range (11 days ago)
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>        e3c3e61 not passing --lang for rules based search (11 days ago)
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>    ○ octo.nvim  Octo
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>        09ff70e fix(window): use a single float instead of two floats for title and content (#1403) (11 days ago)
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>        113d7aa feat(timeline): show repository in cross repo references (#1405) (11 days ago)
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>        2d82fb4 implement blocking and blockedby (#1388) (11 days ago)
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>    ○ schemastore.nvim
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>        60f1b3d Update SchemaStore catalog (3 days ago)
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>        5ed01fc Update SchemaStore catalog (5 days ago)
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>        8b92ea8 Update SchemaStore catalog (10 days ago)
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>        806187c Update SchemaStore catalog (11 days ago)
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>        2e88a46 Update SchemaStore catalog (11 days ago)
 </code></pre></div>
 </details>
 <h2 id="qnap-raid-server">QNAP RAID server<a class="headerlink" href="#qnap-raid-server" title="Permanent link">λ︎</a></h2>
@@ -1458,107 +1543,107 @@
 <p>SSH onto NAS</p>
 <details class="example">
 <summary>Check status of unmounted RAID</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[~] # mdadm --detail /dev/md0
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/dev/md0:
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        Version : 01.00.03
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  Creation Time : Thu Dec 25 00:21:41 2025
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>     Raid Level : raid6
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>     Array Size : 5857395072 (5586.05 GiB 5997.97 GB)
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  Used Dev Size : 2928697536 (2793.02 GiB 2998.99 GB)
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>   Raid Devices : 4
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  Total Devices : 4
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Preferred Minor : 0
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    Persistence : Superblock is persistent
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    Update Time : Tue Dec 30 11:32:41 2025
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>          State : clean
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a> Active Devices : 4
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>Working Devices : 4
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a> Failed Devices : 0
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  Spare Devices : 0
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>     Chunk Size : 64K
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>           Name : 0
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>           UUID : db736564:54a89199:2a50ccda:2c209b95
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>         Events : 17
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    Number   Major   Minor   RaidDevice State
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>       0       8       67        0      active sync   /dev/sde3
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>       1       8       83        1      active sync   /dev/sdf3
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>       2       8       99        2      active sync   /dev/sdg3
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>       3       8      115        3      active sync   /dev/sdh3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[~] # mdadm --detail /dev/md0
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>/dev/md0:
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        Version : 01.00.03
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  Creation Time : Thu Dec 25 00:21:41 2025
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>     Raid Level : raid6
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>     Array Size : 5857395072 (5586.05 GiB 5997.97 GB)
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  Used Dev Size : 2928697536 (2793.02 GiB 2998.99 GB)
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>   Raid Devices : 4
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  Total Devices : 4
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Preferred Minor : 0
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    Persistence : Superblock is persistent
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    Update Time : Tue Dec 30 11:32:41 2025
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>          State : clean
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a> Active Devices : 4
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Working Devices : 4
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a> Failed Devices : 0
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  Spare Devices : 0
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>     Chunk Size : 64K
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>           Name : 0
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>           UUID : db736564:54a89199:2a50ccda:2c209b95
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>         Events : 17
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    Number   Major   Minor   RaidDevice State
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>       0       8       67        0      active sync   /dev/sde3
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>       1       8       83        1      active sync   /dev/sdf3
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>       2       8       99        2      active sync   /dev/sdg3
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>       3       8      115        3      active sync   /dev/sdh3
 </code></pre></div>
 </details>
 <p>Started checking partition.  Seems to have found lots of errors...</p>
 <details class="example">
 <summary>Check ext4 partition on raid array</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[~] # e2fsck_64 -fp -C 0 /dev/md0
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/dev/md0: One or more block group descriptor checksums are invalid.  FIXED.
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>/dev/md0: Group descriptor 24896 checksum is 0x35a9, should be 0x7229.  FIXED.
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Inode 34865161 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>/dev/md0: Inode 34865163 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>/dev/md0: Inode 34865169 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Inode 45777004 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>/dev/md0: Inode 45777193 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Inode 48824345 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Inode 49316034 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>Inode 49610821 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>Inode 50724865 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Inode 51281921 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Inode 53084172 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>Inode 53706761 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>Inode 54263809 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>Inode 54985702 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>/dev/md0: Inode 55050316 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>/dev/md0: Inode 55051133 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>/dev/md0: Inode 55051991 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>/dev/md0: Inode 55052209 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>/dev/md0: Inode 55054947 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>/dev/md0: Inode 55083721 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>Inode 55116533 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>Inode 56262664 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>Inode 58130433 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>Inode 58982401 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>Inode 62193665 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>/dev/md0: Inode 62291970 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>/dev/md0: Inode 62292100 has INDEX_FL flag set on filesystem without htree support.
-<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>HTREE INDEX CLEARED.
-<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>Duplicate or bad block in use!
-<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>/dev/md0: Multiply-claimed block(s) in inode 34865162: 131072
-<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>/dev/md0: (There are 1 inodes containing multiply-claimed blocks.)
-<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>
-<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>/dev/md0: File /Multimedia/Movies/The Great Wall.mkv (inode #34865162, mod time Thu Oct 23 20:54:03 2025)
-<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>  has 1 multiply-claimed block(s), shared with 1 file(s):
-<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>/dev/md0:   &lt;filesystem metadata&gt;
-<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>/dev/md0: MULTIPLY-CLAIMED BLOCKS CLONED.
-<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>/dev/md0: 30914/91523072 files (1.7% non-contiguous), 471488935/1464348768 blocks
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[~] # e2fsck_64 -fp -C 0 /dev/md0
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>/dev/md0: One or more block group descriptor checksums are invalid.  FIXED.
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>/dev/md0: Group descriptor 24896 checksum is 0x35a9, should be 0x7229.  FIXED.
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Inode 34865161 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>/dev/md0: Inode 34865163 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>/dev/md0: Inode 34865169 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Inode 45777004 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>/dev/md0: Inode 45777193 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>Inode 48824345 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>Inode 49316034 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>Inode 49610821 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>Inode 50724865 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>Inode 51281921 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>Inode 53084172 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>Inode 53706761 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>Inode 54263809 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>Inode 54985702 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>/dev/md0: Inode 55050316 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>/dev/md0: Inode 55051133 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>/dev/md0: Inode 55051991 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>/dev/md0: Inode 55052209 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>/dev/md0: Inode 55054947 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>/dev/md0: Inode 55083721 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>Inode 55116533 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>Inode 56262664 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>Inode 58130433 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>Inode 58982401 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>Inode 62193665 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>/dev/md0: Inode 62291970 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>/dev/md0: Inode 62292100 has INDEX_FL flag set on filesystem without htree support.
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>HTREE INDEX CLEARED.
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>Duplicate or bad block in use!
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>/dev/md0: Multiply-claimed block(s) in inode 34865162: 131072
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>/dev/md0: (There are 1 inodes containing multiply-claimed blocks.)
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>/dev/md0: File /Multimedia/Movies/The Great Wall.mkv (inode #34865162, mod time Thu Oct 23 20:54:03 2025)
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>  has 1 multiply-claimed block(s), shared with 1 file(s):
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>/dev/md0:   &lt;filesystem metadata&gt;
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>/dev/md0: MULTIPLY-CLAIMED BLOCKS CLONED.
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a>/dev/md0: 30914/91523072 files (1.7% non-contiguous), 471488935/1464348768 blocks
 </code></pre></div>
 </details>
 <h2 id="debian-linux">Debian Linux<a class="headerlink" href="#debian-linux" title="Permanent link">λ︎</a></h2>
@@ -1568,7 +1653,7 @@
 <div class="admonition note">
 <p class="admonition-title">Check usage across local partitions</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>df<span class="w"> </span>--hlT
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>df<span class="w"> </span>--hlT
 </code></pre></div>
 <p>Flag meanings</p>
 <ul>
@@ -1576,32 +1661,32 @@
 <li><code>l</code> or <code>--local</code> only show local partitions, including removable media, but not remotely mounted partitions</li>
 <li><code>-T</code> print file system type of partitions, e.g. ext4</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯ df --human-readable --local -T
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Filesystem           Type                       Size  Used Avail Use% Mounted on
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>udev                 devtmpfs                    15G     0   15G   0% /dev
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>tmpfs                tmpfs                      3.0G  2.4M  3.0G   1% /run
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>/dev/nvme0n1p2       ext4                       444G  417G  4.7G  99% /
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>tmpfs                tmpfs                       15G   16K   15G   1% /dev/shm
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>efivarfs             efivarfs                   154K   67K   83K  45% /sys/firmware/efi/efivars
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>tmpfs                tmpfs                      5.0M   16K  5.0M   1% /run/lock
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>tmpfs                tmpfs                      1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>tmpfs                tmpfs                       15G  8.0K   15G   1% /tmp
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>/dev/nvme0n1p1       vfat                       975M  8.8M  966M   1% /boot/efi
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>tmpfs                tmpfs                      3.0G  4.1M  3.0G   1% /run/user/1000
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>/dev/sda1            vfat                        15G   11G  4.8G  68% /media/practicalli/6565-3835
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>/dev/sdc1            exfat                      954G  952G  2.2G 100% /media/practicalli/6637-3132
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>nvim-0.11.5.appimage fuse.nvim-0.11.5.appimage  9.7M  9.7M     0 100% /tmp/.mount_nvimbMgJCn
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>❯ df --human-readable --local -T
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Filesystem           Type                       Size  Used Avail Use% Mounted on
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>udev                 devtmpfs                    15G     0   15G   0% /dev
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>tmpfs                tmpfs                      3.0G  2.4M  3.0G   1% /run
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>/dev/nvme0n1p2       ext4                       444G  417G  4.7G  99% /
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>tmpfs                tmpfs                       15G   16K   15G   1% /dev/shm
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>efivarfs             efivarfs                   154K   67K   83K  45% /sys/firmware/efi/efivars
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>tmpfs                tmpfs                      5.0M   16K  5.0M   1% /run/lock
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>tmpfs                tmpfs                      1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>tmpfs                tmpfs                       15G  8.0K   15G   1% /tmp
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>/dev/nvme0n1p1       vfat                       975M  8.8M  966M   1% /boot/efi
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>tmpfs                tmpfs                      3.0G  4.1M  3.0G   1% /run/user/1000
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>/dev/sda1            vfat                        15G   11G  4.8G  68% /media/practicalli/6565-3835
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>/dev/sdc1            exfat                      954G  952G  2.2G 100% /media/practicalli/6637-3132
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>nvim-0.11.5.appimage fuse.nvim-0.11.5.appimage  9.7M  9.7M     0 100% /tmp/.mount_nvimbMgJCn
 </code></pre></div>
 <p>Or simplify the output to specific file system types, e.g. ext4 is typically used for the main file space for system and user files, e.g. / and /home/practicalli/</p>
 <div class="admonition note">
 <p class="admonition-title">File usage on main partition</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>df<span class="w"> </span>--human-readable<span class="w"> </span>--local<span class="w"> </span>--type<span class="o">=</span>ext4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>df<span class="w"> </span>--human-readable<span class="w"> </span>--local<span class="w"> </span>--type<span class="o">=</span>ext4
 </code></pre></div>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Output of File usage on main partition</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Filesystem      Size  Used Avail Use% Mounted on
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>/dev/nvme0n1p2  444G  417G  4.6G  99% /
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Filesystem      Size  Used Avail Use% Mounted on
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>/dev/nvme0n1p2  444G  417G  4.6G  99% /
 </code></pre></div>
 </div>
 <h3 id="system-logs">System Logs<a class="headerlink" href="#system-logs" title="Permanent link">λ︎</a></h3>
@@ -1610,44 +1695,44 @@
 <p>System logs are managed by <a href="">journalctl</a></p>
 <div class="admonition note">
 <p class="admonition-title">Check disk usage by system logs</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--disk-usage
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--disk-usage
 </code></pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Set logs to rotate daily and remove older logs</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--rotate
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--vacuum-time<span class="o">=</span>1d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--rotate
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--vacuum-time<span class="o">=</span>1d
 </code></pre></div>
 </div>
 <details class="example">
 <summary>Output from rotating and vacuuming logs</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>❯ sudo journalctl --disk-usage
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Archived and active journals take up 852.3M in the file system.
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>❯ sudo journalctl --cacuum-time=1d
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>❯ sudo journalctl --rotate
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>❯ sudo journalctl --vacuum-time=1d
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Vacuuming done, freed 0B of archived journals from /run/log/journal.
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000000288ee-000644b980192f0f.journal (11.6M).
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-0000000000028905-000644b98c33898f.journal (6.9M).
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-000000000002dcb8-0006455ae0a80c53.journal (7.4M).
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000002dcbb-0006455ae0cb0de2.journal (83.8M).
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000006d083-000645610b746488.journal (83.3M).
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ab885-00064562a535bc56.journal (57.1M).
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ccc44-000645827f677255.journal (9.6M).
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ccc7e-000645828de47e13.journal (84.5M).
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000010c0ba-000645868da56476.journal (83.2M).
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000014ab3c-0006458c1161009d.journal (83.7M).
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-0000000000189be8-0006458e19582fb3.journal (81.1M).
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@0006467be5219895-175a231dd5dba9d1.journal~ (40M).
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000001c70df-000645e6ee14869f.journal (34.1M).
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000001dc114-0006467be6fc450b.journal (51.4M).
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000001ef8ff-000646a472870713.journal (51.9M).
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-0000000000203ead-000646c62168fc4d.journal (38.2M).
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>Vacuuming done, freed 808.5M of archived journals from /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a.
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>Vacuuming done, freed 0B of archived journals from /var/log/journal.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>❯ sudo journalctl --disk-usage
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Archived and active journals take up 852.3M in the file system.
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>❯ sudo journalctl --cacuum-time=1d
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>❯ sudo journalctl --rotate
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>❯ sudo journalctl --vacuum-time=1d
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>Vacuuming done, freed 0B of archived journals from /run/log/journal.
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000000288ee-000644b980192f0f.journal (11.6M).
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-0000000000028905-000644b98c33898f.journal (6.9M).
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-000000000002dcb8-0006455ae0a80c53.journal (7.4M).
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000002dcbb-0006455ae0cb0de2.journal (83.8M).
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000006d083-000645610b746488.journal (83.3M).
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ab885-00064562a535bc56.journal (57.1M).
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ccc44-000645827f677255.journal (9.6M).
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000000ccc7e-000645828de47e13.journal (84.5M).
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000010c0ba-000645868da56476.journal (83.2M).
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-000000000014ab3c-0006458c1161009d.journal (83.7M).
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-0000000000189be8-0006458e19582fb3.journal (81.1M).
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@0006467be5219895-175a231dd5dba9d1.journal~ (40M).
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/user-1000@8e133b0d80ca4d5d9c376648aebc03fc-00000000001c70df-000645e6ee14869f.journal (34.1M).
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000001dc114-0006467be6fc450b.journal (51.4M).
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-00000000001ef8ff-000646a472870713.journal (51.9M).
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>Deleted archived journal /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a/system@8e133b0d80ca4d5d9c376648aebc03fc-0000000000203ead-000646c62168fc4d.journal (38.2M).
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>Vacuuming done, freed 808.5M of archived journals from /var/log/journal/49f1458ea6dd4f33a6bfc2b0d4bf810a.
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>Vacuuming done, freed 0B of archived journals from /var/log/journal.
 </code></pre></div>
 </details>
 <blockquote>
@@ -1659,22 +1744,22 @@
 <p><code>visualvm</code> package is fairly recent version in the Debian Linux packages (2.10 package, the latest being 2.2 on the VisualVM website which supports features in Java 24 onward).</p>
 <div class="admonition example">
 <p class="admonition-title">Install Java via Practicalli Debian Post Install Script</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>===========================================
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Install default-jdk
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>===========================================
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Reading package lists... Done
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Building dependency tree... Done
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Reading state information... Done
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>The following additional packages will be installed:
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>  ca-certificates-java default-jdk-headless default-jre default-jre-headless java-common libatk-wrapper-java libatk-wrapper-java-jni libice-dev libsm-dev libxt-dev openjdk-21-jdk
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>  openjdk-21-jdk-headless openjdk-21-jre openjdk-21-jre-headless
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Suggested packages:
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>  libice-doc libsm-doc libxt-doc openjdk-21-demo openjdk-21-source visualvm fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei | fonts-wqy-zenhei fonts-indic
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>The following NEW packages will be installed:
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>  ca-certificates-java default-jdk default-jdk-headless default-jre default-jre-headless java-common libatk-wrapper-java libatk-wrapper-java-jni libice-dev libsm-dev libxt-dev openjdk-21-jdk
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>  openjdk-21-jdk-headless openjdk-21-jre openjdk-21-jre-headless
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>0 upgraded, 15 newly installed, 0 to remove and 0 not upgrad
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>===========================================
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Install default-jdk
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>===========================================
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>Reading package lists... Done
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Building dependency tree... Done
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>Reading state information... Done
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>The following additional packages will be installed:
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>  ca-certificates-java default-jdk-headless default-jre default-jre-headless java-common libatk-wrapper-java libatk-wrapper-java-jni libice-dev libsm-dev libxt-dev openjdk-21-jdk
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>  openjdk-21-jdk-headless openjdk-21-jre openjdk-21-jre-headless
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>Suggested packages:
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>  libice-doc libsm-doc libxt-doc openjdk-21-demo openjdk-21-source visualvm fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei | fonts-wqy-zenhei fonts-indic
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>The following NEW packages will be installed:
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>  ca-certificates-java default-jdk default-jdk-headless default-jre default-jre-headless java-common libatk-wrapper-java libatk-wrapper-java-jni libice-dev libsm-dev libxt-dev openjdk-21-jdk
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>  openjdk-21-jdk-headless openjdk-21-jre openjdk-21-jre-headless
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>0 upgraded, 15 newly installed, 0 to remove and 0 not upgrad
 </code></pre></div>
 </div>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
@@ -1770,7 +1855,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 3, 2026 20:47:28 UTC">January 3, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 5, 2026 23:17:44 UTC">January 5, 2026</span>
   </span>
 
     
