@@ -1693,6 +1693,7 @@
 <p>A lot of information can be logged to files in <code>/var/log</code> and unless something is seriously wrong then these logs are rarely viewed.</p>
 <p>In fact, unless something issue happens whilst I am using the computer I am unlikely to spend time fixing issues.  Usually it is far less time consuming to re-install Debian Linux from scratch than to debug an issue that is not immediately obvious.</p>
 <p>System logs are managed by <a href="">journalctl</a></p>
+<p>According to <code>/etc/logrotate.conf</code> the default rotation is every 4 weeks.  I changed this to every day, so that journalctl should delete all the rotated logs after 1 day.</p>
 <div class="admonition note">
 <p class="admonition-title">Check disk usage by system logs</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--disk-usage
@@ -1735,9 +1736,6 @@
 <a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>Vacuuming done, freed 0B of archived journals from /var/log/journal.
 </code></pre></div>
 </details>
-<blockquote>
-<p>TODO: what is the default log rotate</p>
-</blockquote>
 <h3 id="java-install">Java install<a class="headerlink" href="#java-install" title="Permanent link">λ︎</a></h3>
 <p>Install the <code>default-jdk</code> package seems to be the simplest way to automate the install of the current Long Term Support (LTS) version of Java in Debian Linux.</p>
 <p>This package also installs certificates required for running Java, from its package dependencies.</p>
@@ -1855,7 +1853,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 5, 2026 23:17:44 UTC">January 5, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 15, 2026 16:19:26 UTC">January 15, 2026</span>
   </span>
 
     
