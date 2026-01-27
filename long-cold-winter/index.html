@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cycling" class="md-skip">
+        <a href="#github" class="md-skip">
           Skip to content
         </a>
       
@@ -1035,6 +1035,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cycling" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1158,7 +1169,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -1189,6 +1200,13 @@
         <span class="md-tag">cycling</span>
       
     
+      
+      
+      
+      
+        <span class="md-tag">github</span>
+      
+    
   </nav>
 
 
@@ -1213,11 +1231,63 @@
 
 <p>The week started very cold but there is hope for a slightly warmer day on Wednesday.  This is probably the last nice day for a ride this month.  With the weather forcasts all taling about an unstable Polar Vortex, the next couple of weeks may not be that great for cycling out doors.</p>
 <p>I will be planning a bicycle trip around the Loch Lomond area in early spring.  I have a friend who lives near by so it will be great to catch up with them.</p>
+<p>As part of my digital storage and services clean-up I found a fairly simple way to <a href="#github">show which GitHub repositories I had stared</a>, which are probably quite numerous over the last decade or more and of varying relevance.</p>
 <!-- more -->
 
+<h2 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">λ︎</a></h2>
+<p>I have had a GitHub account for over a decade and in that time I have probably stared many repositories, some of which I am may no longer be interested in.</p>
+<p>The <a href="https://github.com/rverst/stargazer" target="_blank">star</a> GitHub Action will create a list of all repositories stared by the GitHub account.</p>
+<p>The <a href="https://github.com/practicalli-johnny/omg-its-full-of-stars" target="_blank">practicalli-johnny/omb-its-full-of-stars</a> repository was created to contain a generated <code>README.md</code> file listing all my stared repositories. A GitHub workflow was added that uses the stargazer GitHub action to generate the list of stared repositories, creating a commit and pushing it to the default branch.</p>
+<div class="admonition example">
+<p class="admonition-title">Full Of Stars GitHub Workflow</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># This workflow builds a list of your starred repositories</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Full Of Stars</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">on</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="c1"># Manually trigger workflow</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="c1"># Daily schedule</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">'42</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v6</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="c1"># Generate the list</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create star list</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stargazer</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rverst/stargazer@v1.2.6</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">          </span><span class="nt">github-user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.actor }}</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">          </span><span class="nt">github-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">          </span><span class="nt">list-file</span><span class="p">:</span><span class="w"> </span><span class="s">"README.md"</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="c1"># Commit the changes</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commit files</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">          </span><span class="no">git config --local user.email "actions@noreply.github.com"</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">          </span><span class="no">git config --local user.name "github-actions[bot]"</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">          </span><span class="no">git add .</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">          </span><span class="no">git commit -m "Update list of starred repositories on GitHub"</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">      </span><span class="c1"># Push the changes</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@v1</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">          </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.ref }}</span>
+</code></pre></div>
+</div>
+<p>In the GitHub repository <strong>Settings</strong> &gt; <strong>Actions</strong> &gt; <strong>General</strong> scroll down to the <strong>Workflow pernissions</strong> and select <strong>Read and write permissions</strong> (rather than the default Read permissions).</p>
+<p>Go to the <strong>Actions</strong> section of the repository and start the <strong>Full Of Stars</strong> workflow.</p>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
 <p>One of the most significant upgrades to a bicycle is new wheels, to replace the stock wheels that often come with a new bike.  The upgrade is significant in the performance and feel of the bike, but they also come at a significant cost.</p>
-<p>Carbon wheels with ceramic bearings are commonly sighted as a premium wheel for excellent performance.  This style of wheel set should be significantly lighter than stock aluminium wheels, between 500 and 750 grams (three quaters of a kilogram) lighter.  These are also the most expensive option.</p>
+<p>Carbon wheels with ceramic bearings are commonly sighted as a premium wheel for excellent performance.  This style of wheel set should be significantly lighter than stock aluminium wheels, between 500 and 750 grams (three quarters of a kilogram) lighter.  These are also the most expensive option.</p>
 <p>There are several very reputable brands from China, Elite wheels (who sponsor GCN) and SuperTeam.</p>
 <p>SuperTeam do seem to offer the best price to performance ratio.  They have wheels from 300 GBP to 900 GBP.</p>
 <p>A less talked about aspect of newer wheels is a wider internal and external width.  This increase in width started with Mountain and Gravel bikes that used signifiantly bigger tyres.  As the choice of road tyres have gone from 23C to 28C or 32C, then there is a significant advantage in a wider wheel.</p>
@@ -1236,12 +1306,17 @@
 <p>If ordering via PayPal express checkout (its not really any faster, but you dont have to enter address and credit card details) then the wheels cost about 25 GBP more due to PayPal fees and currency conversion rate between USD and GBP.</p>
 <p>The wheels will take between 18-25 days to arrive (which I expected) so I should have them by the time the weather is much nicer at the end of February.  Just in time for ramping up my training for the Dragon Ride in June.</p>
 <h3 id="tracking-wear-with-strava">Tracking wear with Strava<a class="headerlink" href="#tracking-wear-with-strava" title="Permanent link">λ︎</a></h3>
-<p>Deadpool</p>
+<p>Maintenance required for a bicycle is easier to track if a bike and its components are added to Strava (or similar service that all your rides are published too).</p>
+<p>I bought my Ribble bicyle just before doing the Lands End to John O'Groates ride in 2019 and put a big Deadpool sticker on it so I knew which bike was mine.  Since then I just call that bike Deadpool.</p>
+<p>Deadpool components</p>
 <ul>
 <li>front and rear tyres since the French Trip 2025</li>
 <li>jocky wheels</li>
 <li>look keo pedals</li>
+<li>front week since start</li>
+<li>rear wheel - Bontrager since 14 November 2025 (original Mavic Aksium wheel cracked).</li>
 </ul>
+<p>I set Deadpool as the default bike for ride activates, so everything that goes on Strava helps me understand how much distance the components have endured.</p>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
@@ -1269,7 +1344,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 27, 2026 12:59:45 UTC">January 27, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 27, 2026 21:39:28 UTC">January 27, 2026</span>
   </span>
 
     
