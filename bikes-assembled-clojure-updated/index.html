@@ -1041,6 +1041,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Clojure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-integration-for-the-latest-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Integration for the latest dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1048,6 +1065,17 @@
     <span class="md-ellipsis">
       
         Practicalli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neovim
       
     </span>
   </a>
@@ -1128,7 +1156,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-02-04 00:00:00+00:00" class="md-ellipsis">February 4, 2026</time>
+                          <time datetime="2026-02-05 00:00:00+00:00" class="md-ellipsis">February 5, 2026</time>
                         </div>
                       </li>
                     
@@ -1150,7 +1178,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              9 min read
                             
                           </span>
                         </div>
@@ -1192,6 +1220,13 @@
       
       
       
+        <span class="md-tag">neovim</span>
+      
+    
+      
+      
+      
+      
         <span class="md-tag">practicalli</span>
       
     
@@ -1224,11 +1259,33 @@
 
   <h1>Bikes Assembled, Clojure updated</h1>
 
+<p><a href="#clojure">Clojure Monthy updates</a> for the CLI aliases and Project Templates.</p>
+<p><a href="#Neovim">Neovim update of plugins</a> for the Practicalli Astro5 configuration.</p>
 <p>A quick trip to the Coney Hall cycle shop fixed a troublesome hub in the rear wheel, checked with the mechanic on how to assemble the compression plug, donation of an old rear wheel, and collection of a 100mm and 110mm stem to test out the correct length for a good bike fit.</p>
+<p>My rim brake wheels are starting to wear out, after 20 years of riding.  I will seek out some Fulcrum wheels so I can keep the original look. Fulcrum Racing 5, 3, 1 or zero wheels are options.  The Racing Zero wheels are the lightest at around 1430 grams, as they use aluminium bladed spokes.  Probably nicer than some of the cheaper carbon wheels.</p>
+<p>A review of my tennis elbow and trigger finger with the local GP.  I am being referred to advanced Physiotherapy to see if I need an injection in my finger to relieve the locking.  From the x-ray of my hand there was no sign of Osteoarthritis (yet) although my blood test did indicate markers for rheumatoid arthritis.</p>
 <!-- more -->
 
 <h2 id="clojure">Clojure<a class="headerlink" href="#clojure" title="Permanent link">λ︎</a></h2>
 <p>Time to update Clojure CLI Config.</p>
+<p>I update the libraries in each alias to their latest version using liquidz/antq.  I have an alias called <code>:update/dependency-versions</code>.</p>
+<p>I run <code>clojure -T:update/dependency-versions</code> from the root of the project locally.  Then commit the changes that liquidz/antq has made.</p>
+<p>First I commit updates to the actions in any of the GitHub workflows for the project.</p>
+<p>Then I commit all the library version changes in <code>deps.edn</code>.</p>
+<p>Finally I cut a new release with details of all workflow and library changes.</p>
+<h3 id="continuous-integration-for-the-latest-dependencies">Continuous Integration for the latest dependencies<a class="headerlink" href="#continuous-integration-for-the-latest-dependencies" title="Permanent link">λ︎</a></h3>
+<p>There seem to be several approaches to including</p>
+<ol>
+<li>Running Antq locally and manually create a PR for the changes, create a new release from PR (works but time consuming, although I have optomised it a bit)</li>
+<li>Create a GitHub workflow with antq action and add an action to create a PR from the output of antq</li>
+<li>Use clojure-dependency-update-action (author @nnichols states project in maintenance mode, recommends using renovate instead)</li>
+<li>Create workflow with BigConfig (havent tried this yet, is this too big for this specific task ?)</li>
+<li>Create a renovate github action (WIP)</li>
+<li>Setup Mend Renovate service (free version) and add custom sources for Clojars.org and GitHub</li>
+<li>Create a dependabot workflow (does this support Clojure archives &amp; repositories - official support very unlikely).</li>
+</ol>
+<p>When asking on the Clojurians slack I only had a reply from one person.  They kindly shared their companies custom script they run to update dependencies.  Several parts are particular to that company, but I could spend some time crafting something easily maintainable for Practicalli.</p>
+<p>There were several mentions of Renovate in the Clojurians Slack community, but nothing that indicates a working solution (equivalent to antq).</p>
 <h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
 <p>I am trying to understand the best way to update Zensical and it is not that obvious.</p>
 <p>The Zensical documentation says <code>uv</code> can be used to upgrade a package.</p>
@@ -1294,6 +1351,138 @@
 </code></pre></div>
 </details>
 <p>The question remaining is that should I simply update the <code>pyproject.toml</code> file and run <code>make docs-install</code> and forget about upgrading the zensical package using uv ?</p>
+<h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
+<p>Time to update AstroNvim plugins again.</p>
+<p>An update highlights there are new versions of the specific AstroNvim plugins with release 5.3.15. A second call to update brought in additional plugins now the newer AstroNvim plugins were installed.</p>
+<p>The Astrocommunity has some breaking changes, but not affecting any plugins used in the Practicalli nvim-astro5 config.</p>
+<details class="example">
+<summary>Astronvim update packages</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  Breaking Changes (1)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    ● astrocommunity 0.04ms  start
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        773e9bd refactor(cord-nvim): remove redundant build step (#1732) (2 days ago)
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        9ee60b5 fix(opencode-nvim): Fix keybinding commands (#1731) (6 days ago)
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        b17ae49 fix(crazy-coverage-nvim): update command and key descriptions (#1726) (6 days ago)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        75acbbd fix(overseer-nvim)!: Adjust overseer-nvim command to match v2.0 (#1729) (9 days ago)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        8925b98 fix(fyler-nvim): rename deprecated setting  (#1727) (2 weeks ago)
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>  Updated (8)
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    ● AstroNvim 0.08ms  start
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        7fd5832 chore(main): release 5.3.15 (10 days ago)
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        93b273b fix(snapshot): update `lazy_snapshot` (10 days ago)
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    ○ blink.cmp  InsertEnter  CmdlineEnter
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        4b18c32 chore: bump version to 1.9.1 (22 hours ago)
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        22cbfef docs: fix changelog repo links (2 days ago)
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        0d67f21 chore(nix): update flake.lock (2 days ago)
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>        bc54f81 chore: bump version to 1.9.0 (2 days ago)
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        cc824ec chore: bump frizbee to 0.7.0 to fix nightly build (2 days ago)
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        0dbc060 docs: add blink-cmp-copilot-chat community source (#2371) (2 days ago)
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        fab799d refactor(window): simplify positioning logic for documentation (5 days ago)
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        b137f63 fix: don't clear last_char on transient mode changes (#2325) (13 days ago)
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        2b4d146 feat(cmdline): support v:lua custom completion (#2350) (13 days ago)
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>        e05c91f fix(provider): respect `min_keyword_length` over global setting (#2354) (13 days ago)
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        820f1dd fix: explicitly target temp buffer in dot-repeat (3 weeks ago)
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>        356ec15 docs: update vimdocs (3 weeks ago)
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        946b55d docs(recipes): fix lspkind after breaking change (#2358) (3 weeks ago)
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        b1b7740 docs: update vimdocs (3 weeks ago)
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        8883f6d docs: remove mention of luasnip as built-in source (3 weeks ago)
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    ○ conjure  janet  fennel  racket  hy  scheme  guile  julia  lisp  rust  clojure  python  sql  lua
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>        8dba456 Merge pull request #757 from russtoku/fix-issue-756 (3 days ago)
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>        8e4d20e Fix for issue #756. (5 days ago)
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>        4036396 Merge pull request #755 from jship/docs (3 weeks ago)
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>        793faab Document the macroexpand-related mappings in Clojure docs (3 weeks ago)
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>        33daae1 Update Elixir docs to refer to Elixir REPL instead of Ruby one (3 weeks ago)
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>        db81492 Add a mapping to restart the babashka auto REPL (3 weeks ago)
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>        fa0c1f5 Pick elixir command based on OS #747 (3 weeks ago)
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>        1c0af54 Merge pull request #754 from pyrmont/bugfix.random-sponsor (3 weeks ago)
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>        889d1fe Merge pull request #753 from pyrmont/bugfix.eval-file-log (3 weeks ago)
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>        1c99f32 Merge branch 'jship-python-on-success-init' (3 weeks ago)
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>        d48c4cc Update README.adoc (3 weeks ago)
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>        85954f9 Merge pull request #750 from jship/ts-python-error (3 weeks ago)
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>        fcfcac5 Merge pull request #748 from russtoku/patch-1 (3 weeks ago)
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>        5262736 Set math.randomseed before generating sponsor message (3 weeks ago)
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>        3823914 Call modify-client-exec-fn-opts in eval.file (3 weeks ago)
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>        eaa241d Python client was doing some on-success init inside call to display-repl-status (3 weeks ago)
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>        6093f55 Avoid pcall on vim.treesitter.language.add as it doesn't assert/error (3 weeks ago)
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>        2a8912b Update README.adoc (4 weeks ago)
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>    ○ gist.nvim  GistCreateFromFile  GistsList  GistCreate
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>        38136c3 fix: update 0x0 user-agent to include program version (2 weeks ago)
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>        da0289a refactor: improve error handling and setup validation (2 weeks ago)
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>        6231003 fix(gitlab,sourcehut): add nil checks for config.prompts (2 weeks ago)
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>        6295004 fix(list): add nil check for config.list (2 weeks ago)
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>        a9a324c fix(gh): add nil checks and unify is_public field (2 weeks ago)
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>        0bc9df1 fix: unify is_public field naming in CreateContext (2 weeks ago)
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>        746ec1e align 0x0 and termbin apis (2 weeks ago)
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>        4f64899 fix: better error handling (2 weeks ago)
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>        d8c7f3d refactor: use new neovim apis (0.10+) (2 weeks ago)
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>        3602ff9 chore: recursive config merge (2 weeks ago)
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>    ○ grug-far.nvim  GrugFar  GrugFarWithin
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>        275dbed only close window when new window was initially created and we are in that window (3 days ago)
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>        14babc9 feat: complete command with context (6 days ago)
+<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>        1f7a722 fix: treesitter highlight on result don't work on 0.12 (2 weeks ago)
+<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>
+<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a>    ○ neogit  Neogit  User AstroGitFile
+<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a>        7387022 feat: allow to customize initial name on branch rename (12 days ago)
+<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a>
+<a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a>    ○ octo.nvim  Octo
+<a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a>        5ae580d fix: preserve cursor position when hiding thread buffer (#1422) (2 weeks ago)
+<a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a>        295252d fix(pickers.fzf.search): accommodate new fzf_live (#1420) (2 weeks ago)
+<a id="__codelineno-6-75" name="__codelineno-6-75" href="#__codelineno-6-75"></a>        e1ec5cc fix(pr): enter pr checks window on open (#1419) (3 weeks ago)
+<a id="__codelineno-6-76" name="__codelineno-6-76" href="#__codelineno-6-76"></a>
+<a id="__codelineno-6-77" name="__codelineno-6-77" href="#__codelineno-6-77"></a>    ○ schemastore.nvim
+<a id="__codelineno-6-78" name="__codelineno-6-78" href="#__codelineno-6-78"></a>        6365190 Update SchemaStore catalog (19 hours ago)
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Second update now that AstroNvim plugins updated</summary>
+</details>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>  Updated (6)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    ○ friendly-snippets  LuaSnip
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        6cd7280 Revert "Merge pull request #512 from xudyang1/ci/pass-glob-to-prettier" (13 days ago)
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        bde8ad4 Merge pull request #512 from xudyang1/ci/pass-glob-to-prettier (13 days ago)
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        9c6afe4 ci: pass globs to prettier rather than the shell (1 year, 3 months ago)
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    ● mason-tool-installer.nvim 1.02ms  Lazy load
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        443f1ef Merge pull request #85 from zachbugay/main (2 weeks ago)
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        0dd96da remove changes to .luarc.json (2 weeks ago)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        9ff030b Use Mason Package Install Options (3 weeks ago)
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    ● neoconf.nvim 3.25ms  nvim-lspconfig
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        bbe36f4 chore(build): auto-generate vimdoc, schemas and annotations (13 days ago)
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        58f1567 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        91cae15 chore(build): auto-generate vimdoc, schemas and annotations (2 weeks ago)
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        54bb266 chore(build): auto-generate vimdoc, schemas and annotations (3 weeks ago)
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        3115c11 chore(build): auto-generate vimdoc, schemas and annotations (3 weeks ago)
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        b432480 chore(build): auto-generate vimdoc, schemas and annotations (3 weeks ago)
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        7568d2b chore(build): auto-generate vimdoc, schemas and annotations (3 weeks ago)
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        f063e73 chore(build): auto-generate vimdoc, schemas and annotations (4 weeks ago)
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        f2fd6a4 chore(build): auto-generate vimdoc, schemas and annotations (5 weeks ago)
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        5b66419 chore(build): auto-generate vimdoc, schemas and annotations (5 weeks ago)
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    ● none-ls.nvim 8.65ms  User AstroFile
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        3c206df chore: Auto generate docs (3 weeks ago)
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>        e2cbdcb fix(builtins/diagnostics/vacuum): also check for `nil` (#317) (3 weeks ago)
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>        1fcf9cb [pre-commit.ci] pre-commit autoupdate (#316) (4 weeks ago)
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        0b45795 chore: Auto generate docs (5 weeks ago)
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        e701fa6 feat(diagnostics): gitleaks builtin (#315) (5 weeks ago)
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    ○ nvim-dap  mason-nvim-dap.nvim
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>        085386b Flush logs eagerly (2 weeks ago)
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>        cdfd55a Extend docs for status() with statusline integration example (4 weeks ago)
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>        b4c65e7 Fallback step_into with askFortargets to regular step_into on empty targets (4 weeks ago)
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>        a151766 Change `executables` filter for pick_file to check file extension on windows (4 weeks ago)
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>        03e83f1 Allow stopped event with threadId that's missing in threads response (5 weeks ago)
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>        7bb46cc Fix payload for restart request per DAP spec (#1576) (5 weeks ago)
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>    ● nvim-ts-autotag 2.23ms  User AstroFile
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>        db15f2e Add 'only: issues' to stale bot config to disable it for PRs (2 weeks ago)
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>        578eef4 feat: add vento support (2 weeks ago)
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>        ed4ad67 feat: dot support (2 weeks ago)
+</code></pre></div>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
 <p>I learned about modern headsets over the weekend, specifically the difference between spider caps and compression plugs.</p>
 <p>I have a Bianchi 928 RC bicycle from 2006, which has a carbon frame, forks, stem and handlebards.</p>
@@ -1330,7 +1519,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 4, 2026 21:14:05 UTC">February 4, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 5, 2026 19:52:14 UTC">February 5, 2026</span>
   </span>
 
     
