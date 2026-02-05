@@ -1044,6 +1044,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#practicalli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practicalli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cycling" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1117,7 +1128,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-02-02 00:00:00+00:00" class="md-ellipsis">February 2, 2026</time>
+                          <time datetime="2026-02-04 00:00:00+00:00" class="md-ellipsis">February 4, 2026</time>
                         </div>
                       </li>
                     
@@ -1139,7 +1150,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -1177,6 +1188,20 @@
         <span class="md-tag">cycling</span>
       
     
+      
+      
+      
+      
+        <span class="md-tag">practicalli</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">zensical</span>
+      
+    
   </nav>
 
 
@@ -1204,6 +1229,71 @@
 
 <h2 id="clojure">Clojure<a class="headerlink" href="#clojure" title="Permanent link">λ︎</a></h2>
 <p>Time to update Clojure CLI Config.</p>
+<h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
+<p>I am trying to understand the best way to update Zensical and it is not that obvious.</p>
+<p>The Zensical documentation says <code>uv</code> can be used to upgrade a package.</p>
+<div class="admonition note">
+<p class="admonition-title">Make task: docs-upgrade</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">docs-upgrade</span><span class="o">:</span><span class="w">  </span><span class="c">## Update Zensical version in Python virtual environment</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Install<span class="w"> </span>Zensical<span class="w">  </span>---------------------<span class="k">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">$(</span>PYTHON_VENV_ACTIVATE<span class="k">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>uv<span class="w"> </span>lock<span class="w"> </span>--upgrade-package<span class="w"> </span><span class="nv">zensical</span><span class="o">==</span><span class="k">$(</span>version<span class="k">)</span>
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Run make docs-upgrade task</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>docs-upgrade<span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="s2">"0.0.21"</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Output from docs-upgrade</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cycling main  ? ✗ make docs-upgrade version="0.0.21"
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-- Install Zensical  ---------------------
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>. .venv/bin/activate &amp;&amp; uv lock --upgrade-package zensical==0.0.21
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Using CPython 3.13.11 interpreter at: /usr/bin/python3.13
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Resolved 9 packages in 432ms
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Updated zensical v0.0.9 -&gt; v0.0.21
+</code></pre></div>
+</div>
+<p>This does not update the <code>pyproject.toml</code> file.</p>
+<p>Checking the version of zensical shows the original version in the <code>pyproject.toml</code> file, 0.0.9, rather than the newer 0.0.21.</p>
+<p>After editing the <code>pyproject.toml</code> file and updating the version of zensical in the dependencies, the zensical version was still showing 0.0.9.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[project]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cycling"</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.1.0"</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Practical guide to cycling"</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"README.md"</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&gt;=3.13"</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="s2">"zensical&gt;=0.0.21"</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">]</span>
+</code></pre></div>
+<p>Then install Zensical again.  This cleans out the Python Virtual Environment and installs Zensical and related packages.</p>
+<div class="admonition note">
+<p class="admonition-title">Install Zensical in Python Virtual Environment</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make<span class="w"> </span>docs-install
+</code></pre></div>
+<details class="example">
+<summary>Output of make docs-install</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cycling main  ? ❯ make docs-install
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-- Install Zensical  ---------------------
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>. .venv/bin/activate &amp;&amp; uv add zensical
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Using CPython 3.13.11 interpreter at: /usr/bin/python3.13
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Removed virtual environment at: .venv
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Creating virtual environment at: .venv
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Resolved 9 packages in 192ms
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Prepared 1 package in 5.91s
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Installed 7 packages in 459ms
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a> + click==8.3.1
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a> + deepmerge==2.0
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a> + markdown==3.10
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a> + pygments==2.19.2
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a> + pymdown-extensions==10.17.1
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a> + pyyaml==6.0.3
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a> + zensical==0.0.21
+</code></pre></div>
+</details>
+<p>The question remaining is that should I simply update the <code>pyproject.toml</code> file and run <code>make docs-install</code> and forget about upgrading the zensical package using uv ?</p>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
 <p>I learned about modern headsets over the weekend, specifically the difference between spider caps and compression plugs.</p>
 <p>I have a Bianchi 928 RC bicycle from 2006, which has a carbon frame, forks, stem and handlebards.</p>
@@ -1240,7 +1330,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 2, 2026 22:52:56 UTC">February 2, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 4, 2026 21:14:05 UTC">February 4, 2026</span>
   </span>
 
     
