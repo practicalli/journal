@@ -1071,6 +1071,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#practicalli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practicalli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#makefile-tasks-for-zensical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Makefile tasks for Zensical
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1134,7 +1156,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-02-09 00:00:00+00:00" class="md-ellipsis">February 9, 2026</time>
+                          <time datetime="2026-02-13 00:00:00+00:00" class="md-ellipsis">February 13, 2026</time>
                         </div>
                       </li>
                     
@@ -1156,7 +1178,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              39 min read
+                              41 min read
                             
                           </span>
                         </div>
@@ -1192,6 +1214,27 @@
       
       
         <span class="md-tag">conjure</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">make</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">practicalli</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">zensical</span>
       
     
   </nav>
@@ -3941,6 +3984,81 @@
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span>✓<span class="w"> </span>lua-language-server<span class="w"> </span>lua_ls
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span>✓<span class="w"> </span>gh
 </code></pre></div>
+<h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
+<p>I am enjoying using Zensical (a from the ground rewrite of MkDocs and Material for MkDocs) which is currently used for all the practicalli books.</p>
+<p>The Zensical docs include install instructions with the standard <code>pip</code> package manager and <code>uv</code> which is a rust language implementation that seems much faster (in my own experience).</p>
+<p>The uv instructions seem to focus on Zensical as part of a Python project, which require a <code>pyproject.toml</code> configuration file.</p>
+<p><a href="">uv can install packages as a tool</a>, by placing an executable file in <code>~/.local/bin</code>.  This greatly simplifies the command and removes the need for pyproject.toml and <code>uv.lock</code> files.</p>
+<div class="admonition note">
+<p class="admonition-title">Install the latest version of Zensical as a tool</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical
+</code></pre></div>
+</div>
+<details class="example">
+<summary>Output of Zensical tool install</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>~ ❯ uv tool install zensical
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Resolved 7 packages in 1.45s
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Prepared 3 packages in 6.72s
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Installed 7 packages in 351ms
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a> + click==8.3.1
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a> + deepmerge==2.0
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a> + markdown==3.10.2
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a> + pygments==2.19.2
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a> + pymdown-extensions==10.20.1
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a> + pyyaml==6.0.3
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a> + zensical==0.0.23
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>Installed 1 executable: zensical
+</code></pre></div>
+</details>
+<p><code>uv tool</code> command installs binaries in <code>~/.local/bin/</code> so this command only needs to run once.</p>
+<p>If <code>~/.local/bin/</code> is not already on the execution PATH, then <code>uv</code> shows a warning and the <code>zensical</code> command will not be recognised (without the full path to the file).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>warning: `/home/practicalli/.local/share/../bin` is not on your PATH. To use installed tools, run `export PATH="/home/practicalli/.local/share/../bin:$PATH"` or `uv tool update-shell`.
+</code></pre></div>
+<p>For bash, edit the <code>~/.bashrc</code> file and add the following</p>
+<div class="admonition note">
+<p class="admonition-title">Add local/bin to execution path for bash shell</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Add local bin to system path</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>~/.local/bin/:<span class="nv">$PATH</span>
+</code></pre></div>
+</div>
+<blockquote>
+<p>NOTE: Ideally the export would be wrapped in an <code>if</code> expression that tests for the existance of the <code>~/.local/bin</code> directory.</p>
+</blockquote>
+<p>The uv tool install can be passed additional arguments, for example a tool can be upgraded by appending the <code>--upgrade</code> option.</p>
+<div class="admonition note">
+<p class="admonition-title">Install or update Zensical as a tool</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>--upgrade
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Install specific version of Zensical as a tool</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="nv">zensical</span><span class="o">==</span><span class="m">0</span>.0.21
+</code></pre></div>
+</div>
+<h2 id="makefile-tasks-for-zensical">Makefile tasks for Zensical<a class="headerlink" href="#makefile-tasks-for-zensical" title="Permanent link">λ︎</a></h2>
+<p>Practicalli uses a Makefile to define tasks to provide a consistent command line interface across all projects, as well as simplifying those commands.</p>
+<p><code>docs-install</code> uses the <code>uv tool</code> approach to install or upgrade zensical.  This approach removes the need to have separate tasks for install and upgrade.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># --- Documentation Generation  ------------------ #</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nf">docs-install</span><span class="o">:</span><span class="w">  </span><span class="c">## Install or upgrade Zensical in Python virtual environment</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>--upgrade
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nf">docs</span><span class="o">:</span><span class="w">  </span><span class="c">## Build and run docs in local server</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span>--------------------------<span class="k">)</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="nf">docs-open</span><span class="o">:</span><span class="w">  </span><span class="c">## Build docs, run server &amp; open browser</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Browser<span class="w"> </span>----------------<span class="k">)</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span><span class="w"> </span>--open
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="nf">docs-build</span><span class="o">:</span><span class="w">  </span><span class="c">## Build docs locally</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Build<span class="w"> </span>Docs<span class="w"> </span>Website<span class="w"> </span>--------------------<span class="k">)</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span>zensical<span class="w"> </span>build
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="nf">docs-debug</span><span class="o">:</span><span class="w">  </span><span class="c">## Run local server in debug mode</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span>Debug<span class="w"> </span>--------------------<span class="k">)</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span><span class="w"> </span>-v
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="c"># ------------------------------------------------ #</span>
+</code></pre></div>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
@@ -3968,7 +4086,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 11, 2026 01:13:42 UTC">February 11, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 13, 2026 23:08:09 UTC">February 13, 2026</span>
   </span>
 
     
