@@ -1080,9 +1080,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Practicalli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#makefile-tasks-for-zensical" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1090,6 +1091,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1264,7 +1270,7 @@
 <!-- more -->
 
 <h2 id="conjure">Conjure<a class="headerlink" href="#conjure" title="Permanent link">λ︎</a></h2>
-<p><a href="https://github.com/Olical/conjure">Conjure</a> is an excellent Neovim plugin for Clojure development (and many other languages).</p>
+<p><a href="https://github.com/Olical/conjure" target="_blank">Conjure</a> is an excellent Neovim plugin for Clojure development (and many other languages).</p>
 <p>Set <code>conjure#debug</code> to <code>true</code> in the Neovim plugin config for clojure and restart Neovim.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span><span class="s2">"conjure#debug"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
@@ -1391,8 +1397,8 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">                </span><span class="s">"--interactive"</span><span class="p">]}</span>
 </code></pre></div>
 </details>
-<p>Neovim was started, using the <a href="https://github.com/practicalli/nvim-astro5">Practicalli nvim-astro5</a> configuration, with <code>clojure#debug</code> enabled.</p>
-<p><span class="keys"><kbd class="key-space">Space</kbd><span>+</span><kbd>f</kbd><span>+</span><kbd>f</kbd></span> in Neovim to open the <code>01-basic.clj</code> file from the <a href="https://github.com/practicalli/clojure-through-code">Practicalli Clojure Through Code project</a>.</p>
+<p>Neovim was started, using the <a href="https://github.com/practicalli/nvim-astro5" target="_blank">Practicalli nvim-astro5</a> configuration, with <code>clojure#debug</code> enabled.</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd><span>+</span><kbd>f</kbd><span>+</span><kbd>f</kbd></span> in Neovim to open the <code>01-basic.clj</code> file from the <a href="https://github.com/practicalli/clojure-through-code" target="_blank">Practicalli Clojure Through Code project</a>.</p>
 <p><span class="keys"><kbd class="key-comma">,</kbd><span>+</span><kbd>l</kbd><span>+</span><kbd>s</kbd></span> in Neovim opened the Conjure log in a split window (using a split as assuming there will be a lot of output in debug mode).</p>
 <p>As a Clojure file has been opened, Conjure does an amount of work and starts printing debug information in the log window.</p>
 <details class="example">
@@ -3988,8 +3994,8 @@
 <h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
 <p>I am enjoying using Zensical (a from the ground rewrite of MkDocs and Material for MkDocs) which is currently used for all the practicalli books.</p>
 <p>The Zensical docs include install instructions with the standard <code>pip</code> package manager and <code>uv</code> which is a rust language implementation that seems much faster (in my own experience).</p>
-<p>The uv instructions seem to focus on Zensical as part of a Python project, which require a <code>pyproject.toml</code> configuration file.</p>
-<p><a href="">uv can install packages as a tool</a>, by placing an executable file in <code>~/.local/bin</code>.  This greatly simplifies the command and removes the need for pyproject.toml and <code>uv.lock</code> files.</p>
+<p>The uv instructions seem to focus on Zensical as part of a Python project, which requires a <code>pyproject.toml</code> configuration file and recommends a Python Virtual Environmet.</p>
+<p><a href="https://docs.astral.sh/uv/concepts/tools/" target="_blank">uv can install packages as a tool</a>, by placing an executable file in <code>~/.local/bin</code>.  This greatly simplifies the command and removes the need for a Python Virtual Environment, a pyproject.toml and <code>uv.lock</code> file.</p>
 <div class="admonition note">
 <p class="admonition-title">Install the latest version of Zensical as a tool</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical
@@ -4036,7 +4042,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="nv">zensical</span><span class="o">==</span><span class="m">0</span>.0.21
 </code></pre></div>
 </div>
-<h2 id="makefile-tasks-for-zensical">Makefile tasks for Zensical<a class="headerlink" href="#makefile-tasks-for-zensical" title="Permanent link">λ︎</a></h2>
+<h3 id="makefile-tasks-for-zensical">Makefile tasks for Zensical<a class="headerlink" href="#makefile-tasks-for-zensical" title="Permanent link">λ︎</a></h3>
 <p>Practicalli uses a Makefile to define tasks to provide a consistent command line interface across all projects, as well as simplifying those commands.</p>
 <p><code>docs-install</code> uses the <code>uv tool</code> approach to install or upgrade zensical.  This approach removes the need to have separate tasks for install and upgrade.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># --- Documentation Generation  ------------------ #</span>
@@ -4087,7 +4093,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 13, 2026 23:58:15 UTC">February 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 14, 2026 00:09:06 UTC">February 14, 2026</span>
   </span>
 
     
