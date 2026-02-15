@@ -53,37 +53,24 @@ dependencies-update: ## Update all library dependencies and GitHub action
 # -------------------------------------- #
 
 # --- Documentation Generation  -------- #
-python-venv:  ## Create Python Virtual Environment
-	$(info -- Create Python Virtual Environment -----)
-	python3 -m venv ~/.local/venv
-
-python-activate:  ## Activate Python Virtual Environment for MkDocs
-	$(info -- Mkdocs Local Server -------------------)
-	source ~/.local/venv/bin/activate
-
 mkdocs-install:
-	$(info -- Install Material for MkDocs -----------)
-	source ~/.local/venv/bin/activate && pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
+	uv tool install --with mkdocs-material --with mkdocs-callouts --with mkdocs-glightbox --with mkdocs-git-revision-date-localized-plugin --with mkdocs-redirects --with mkdocs-rss-plugin --with pillow --with cairosvg mkdocs
 
-docs: ## Build and run mkdocs in local server (python venv)
+docs: ## Build and run mkdocs in local server
 	$(info -- MkDocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
+	$(MKDOCS_SERVER)
 
 docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
 	$(info -- Mkdocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
+	$(MKDOCS_SERVER) --dirtyreload
 
 docs-build:  ## Build mkdocs (python venv)
 	$(info -- Mkdocs Build Website ------------------)
-	source ~/.local/venv/bin/activate && mkdocs build
+	mkdocs build
 
-docs-debug:  ## Run mkdocs local server in debug mode (python venv)
+docs-debug:  ## Run mkdocs local server in debug mode
 	$(info -- Mkdocs Local Server Debug -------------)
-	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) -v
-
-docs-staging:  ## Deploy to staging repository
-	$(info -- Mkdocs Staging Deploy -----------------)
-	source ~/.local/venv/bin/activate && mkdocs gh-deploy --force --no-history --config-file mkdocs-staging.yml
+	$(MKDOCS_SERVER) -v
 # -------------------------------------- #
 
 # ------- Version Control -------------- #
