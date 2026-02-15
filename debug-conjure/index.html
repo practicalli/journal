@@ -1072,16 +1072,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practicalli" class="md-nav__link">
+  <a href="#zensical" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Practicalli
+        Zensical
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Practicalli">
+    <nav class="md-nav" aria-label="Zensical">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uv-tool-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UV tool Install
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-cargo-bin-to-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Cargo bin to path
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#makefile-tasks-for-zensical" class="md-nav__link">
@@ -1234,7 +1256,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              44 min read
+                              45 min read
                             
                           </span>
                         </div>
@@ -4046,11 +4068,12 @@
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span>✓<span class="w"> </span>lua-language-server<span class="w"> </span>lua_ls
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span>✓<span class="w"> </span>gh
 </code></pre></div>
-<h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
+<h2 id="zensical">Zensical<a class="headerlink" href="#zensical" title="Permanent link">λ︎</a></h2>
 <p>I am enjoying using Zensical (a from the ground rewrite of MkDocs and Material for MkDocs) which is currently used for all the practicalli books.</p>
 <p>The Zensical docs include install instructions with the standard <code>pip</code> package manager and <code>uv</code> which is a rust language implementation that seems much faster (in my own experience).</p>
 <p>The uv instructions seem to focus on Zensical as part of a Python project, which requires a <code>pyproject.toml</code> configuration file and recommends a Python Virtual Environmet.</p>
 <p><a href="https://docs.astral.sh/uv/concepts/tools/" target="_blank">uv can install packages as a tool</a>, by placing an executable file in <code>~/.local/bin</code>.  This greatly simplifies the command and removes the need for a Python Virtual Environment, a pyproject.toml and <code>uv.lock</code> file.</p>
+<h3 id="uv-tool-install">UV tool Install<a class="headerlink" href="#uv-tool-install" title="Permanent link">λ︎</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Install the latest version of Zensical as a tool</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical
@@ -4073,6 +4096,7 @@
 </code></pre></div>
 </details>
 <p><code>uv tool</code> command installs binaries in <code>~/.local/bin/</code> so this command only needs to run once.</p>
+<h3 id="add-cargo-bin-to-path">Add Cargo bin to path<a class="headerlink" href="#add-cargo-bin-to-path" title="Permanent link">λ︎</a></h3>
 <p>If <code>~/.local/bin/</code> is not already on the execution PATH, then <code>uv</code> shows a warning and the <code>zensical</code> command will not be recognised (without the full path to the file).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>warning: `/home/practicalli/.local/share/../bin` is not on your PATH. To use installed tools, run `export PATH="/home/practicalli/.local/share/../bin:$PATH"` or `uv tool update-shell`.
 </code></pre></div>
@@ -4086,40 +4110,49 @@
 <blockquote>
 <p>NOTE: Ideally the export would be wrapped in an <code>if</code> expression that tests for the existance of the <code>~/.local/bin</code> directory.</p>
 </blockquote>
+<p>For Zsh, edit the <code>zshenv</code> file and add <code>~/.cargo/bin</code> directory to the execution path if that directory exists</p>
+<div class="admonition note">
+<p class="admonition-title">Add Cargo bin director to path - Zsh</p>
+<div class="highlight"><span class="filename">.zshenv</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">## Rust local binaries</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$HOME</span>/.cargo/bin<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nv">path</span><span class="o">=(</span><span class="nv">$HOME</span>/.cargo/bin<span class="o">(</span>/N<span class="o">)</span><span class="w"> </span><span class="nv">$path</span><span class="o">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">fi</span>
+</code></pre></div>
+</div>
 <p>The uv tool install can be passed additional arguments, for example a tool can be upgraded by appending the <code>--upgrade</code> option.</p>
 <div class="admonition note">
 <p class="admonition-title">Install or update Zensical as a tool</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>--upgrade
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>--upgrade
 </code></pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Install specific version of Zensical as a tool</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="nv">zensical</span><span class="o">==</span><span class="m">0</span>.0.21
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="nv">zensical</span><span class="o">==</span><span class="m">0</span>.0.21
 </code></pre></div>
 </div>
 <h3 id="makefile-tasks-for-zensical">Makefile tasks for Zensical<a class="headerlink" href="#makefile-tasks-for-zensical" title="Permanent link">λ︎</a></h3>
 <p>Practicalli uses a Makefile to define tasks to provide a consistent command line interface across all projects, as well as simplifying those commands.</p>
 <p><code>docs-install</code> uses the <code>uv tool</code> approach to install or upgrade zensical.  This approach removes the need to have separate tasks for install and upgrade.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># --- Documentation Generation  ------------------ #</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nf">docs-install</span><span class="o">:</span><span class="w">  </span><span class="c">## Install or upgrade Zensical in Python virtual environment</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>--upgrade
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nf">docs</span><span class="o">:</span><span class="w">  </span><span class="c">## Build and run docs in local server</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span>--------------------------<span class="k">)</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="nf">docs-open</span><span class="o">:</span><span class="w">  </span><span class="c">## Build docs, run server &amp; open browser</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Browser<span class="w"> </span>----------------<span class="k">)</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span><span class="w"> </span>--open
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="nf">docs-build</span><span class="o">:</span><span class="w">  </span><span class="c">## Build docs locally</span>
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Build<span class="w"> </span>Docs<span class="w"> </span>Website<span class="w"> </span>--------------------<span class="k">)</span>
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span>zensical<span class="w"> </span>build
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="nf">docs-debug</span><span class="o">:</span><span class="w">  </span><span class="c">## Run local server in debug mode</span>
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span>Debug<span class="w"> </span>--------------------<span class="k">)</span>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span><span class="w"> </span>-v
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="c"># ------------------------------------------------ #</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c"># --- Documentation Generation  ------------------ #</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nf">docs-install</span><span class="o">:</span><span class="w">  </span><span class="c">## Install or upgrade Zensical in Python virtual environment</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>--upgrade
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nf">docs</span><span class="o">:</span><span class="w">  </span><span class="c">## Build and run docs in local server</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span>--------------------------<span class="k">)</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nf">docs-open</span><span class="o">:</span><span class="w">  </span><span class="c">## Build docs, run server &amp; open browser</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Browser<span class="w"> </span>----------------<span class="k">)</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span><span class="w"> </span>--open
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="nf">docs-build</span><span class="o">:</span><span class="w">  </span><span class="c">## Build docs locally</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Build<span class="w"> </span>Docs<span class="w"> </span>Website<span class="w"> </span>--------------------<span class="k">)</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span>zensical<span class="w"> </span>build
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="nf">docs-debug</span><span class="o">:</span><span class="w">  </span><span class="c">## Run local server in debug mode</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Local<span class="w"> </span>Server<span class="w"> </span>Debug<span class="w"> </span>--------------------<span class="k">)</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="k">$(</span>DOCS_SERVER<span class="k">)</span><span class="w"> </span>-v
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="c"># ------------------------------------------------ #</span>
 </code></pre></div>
 <h2 id="tuis">TUIs<a class="headerlink" href="#tuis" title="Permanent link">λ︎</a></h2>
 <p>Most TUIs I have found are written in Rust and publish pre-compiled binaries via GitHub releases.</p>
@@ -4131,82 +4164,82 @@
 <p>The <a href="https://wiki.debian.org/Rust">recommended approach by the Debian Rust team</a> is to install <code>rustup</code> and use that tool to download the latest stable rust compiler and cargo tooling.</p>
 <div class="admonition note">
 <p class="admonition-title">Install Rustup on Debian Linux</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rustup
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rustup
 </code></pre></div>
 </div>
 <details class="example">
 <summary>Output of install rustup</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>❯ sudo apt install rustup
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Installing:
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  rustup
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>Summary:
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 38
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>  Download size: 2,158 kB
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>  Space needed: 7,078 kB / 4,425 MB available
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 rustup amd64 1.27.1-3+b1 [2,158 kB]
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>Fetched 2,158 kB in 0s (8,546 kB/s)
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>Selecting previously unselected package rustup.
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>(Reading database ... 233922 files and directories currently installed.)
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>Preparing to unpack .../rustup_1.27.1-3+b1_amd64.deb ...
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>Unpacking rustup (1.27.1-3+b1) ...
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>Setting up rustup (1.27.1-3+b1) ...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>❯ sudo apt install rustup
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Installing:
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  rustup
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>Summary:
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 38
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>  Download size: 2,158 kB
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>  Space needed: 7,078 kB / 4,425 MB available
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>Get:1 http://deb.debian.org/debian trixie/main amd64 rustup amd64 1.27.1-3+b1 [2,158 kB]
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>Fetched 2,158 kB in 0s (8,546 kB/s)
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>Selecting previously unselected package rustup.
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>(Reading database ... 233922 files and directories currently installed.)
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>Preparing to unpack .../rustup_1.27.1-3+b1_amd64.deb ...
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>Unpacking rustup (1.27.1-3+b1) ...
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>Setting up rustup (1.27.1-3+b1) ...
 </code></pre></div>
 </details>
 <div class="admonition note">
 <p class="admonition-title">Use latest stable Rust release from upstream</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>rustup<span class="w"> </span>default<span class="w"> </span>stable
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rustup<span class="w"> </span>default<span class="w"> </span>stable
 </code></pre></div>
 </div>
 <details class="example">
 <summary>Output of rustup default stable command</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>❯ rustup default stable
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>info: latest update on 2026-02-12, rust version 1.93.1 (01f6ddf75 2026-02-11)
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>info: downloading component 'cargo'
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>info: downloading component 'clippy'
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>info: downloading component 'rust-docs'
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a> 20.7 MiB /  20.7 MiB (100 %)  16.5 MiB/s in  1s ETA:  0s
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>info: downloading component 'rust-std'
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a> 28.1 MiB /  28.1 MiB (100 %)  16.3 MiB/s in  1s ETA:  0s
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>info: downloading component 'rustc'
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a> 74.4 MiB /  74.4 MiB (100 %)  16.4 MiB/s in  4s ETA:  0s
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>info: downloading component 'rustfmt'
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>info: installing component 'cargo'
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>info: installing component 'clippy'
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>info: installing component 'rust-docs'
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a> 20.7 MiB /  20.7 MiB (100 %)  12.3 MiB/s in  1s ETA:  0s
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>info: installing component 'rust-std'
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a> 28.1 MiB /  28.1 MiB (100 %)  26.2 MiB/s in  1s ETA:  0s
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>info: installing component 'rustc'
-<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a> 74.4 MiB /  74.4 MiB (100 %)  26.9 MiB/s in  2s ETA:  0s
-<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>info: installing component 'rustfmt'
-<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
-<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
-<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>  stable-x86_64-unknown-linux-gnu installed - rustc 1.93.1 (01f6ddf75 2026-02-11)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>❯ rustup default stable
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>info: latest update on 2026-02-12, rust version 1.93.1 (01f6ddf75 2026-02-11)
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>info: downloading component 'cargo'
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>info: downloading component 'clippy'
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>info: downloading component 'rust-docs'
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a> 20.7 MiB /  20.7 MiB (100 %)  16.5 MiB/s in  1s ETA:  0s
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>info: downloading component 'rust-std'
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a> 28.1 MiB /  28.1 MiB (100 %)  16.3 MiB/s in  1s ETA:  0s
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>info: downloading component 'rustc'
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a> 74.4 MiB /  74.4 MiB (100 %)  16.4 MiB/s in  4s ETA:  0s
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>info: downloading component 'rustfmt'
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>info: installing component 'cargo'
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>info: installing component 'clippy'
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>info: installing component 'rust-docs'
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a> 20.7 MiB /  20.7 MiB (100 %)  12.3 MiB/s in  1s ETA:  0s
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>info: installing component 'rust-std'
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a> 28.1 MiB /  28.1 MiB (100 %)  26.2 MiB/s in  1s ETA:  0s
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>info: installing component 'rustc'
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a> 74.4 MiB /  74.4 MiB (100 %)  26.9 MiB/s in  2s ETA:  0s
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>info: installing component 'rustfmt'
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>  stable-x86_64-unknown-linux-gnu installed - rustc 1.93.1 (01f6ddf75 2026-02-11)
 </code></pre></div>
 </details>
 <details class="warning">
 <summary>Installing Debian Linux Cargo package not recommended</summary>
 <p>The version of cargo and rust compiler in Debian Linux packages is currently v1.85.0.  Use the <code>rustup</code> debian package to install the latest stable rust tools.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>❯ sudo apt install cargo                                                                                 in 10s261ms   12:48  practicalli󰣚
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Installing:
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  cargo
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>Installing dependencies:
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>  clang-19        lib32stdc++6            libclang-cpp19      libhttp-parser2.9  libpfm4           libxml2-dev  llvm-19               llvm-19-runtime   python3-yaml
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>  clang-tools-19  libc6-i386              libclang-rt-19-dev  libobjc-14-dev     libstd-rust-1.85  libz3-dev    llvm-19-dev           llvm-19-tools     rust-llvm
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>  lib32gcc-s1     libclang-common-19-dev  libgit2-1.9         libobjc4           libstd-rust-dev   lld-19       llvm-19-linker-tools  python3-pygments  rustc
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>Suggested packages:
-<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>  cargo-doc  clang-19-doc  wasi-libc  llvm-19-doc  python-pygments-doc
-<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
-<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>Summary:
-<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>  Upgrading: 0, Installing: 28, Removing: 0, Not Upgrading: 38
-<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>  Download size: 167 MB
-<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>  Space needed: 966 MB / 4,303 MB available
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>❯ sudo apt install cargo                                                                                 in 10s261ms   12:48  practicalli󰣚
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Installing:
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  cargo
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Installing dependencies:
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>  clang-19        lib32stdc++6            libclang-cpp19      libhttp-parser2.9  libpfm4           libxml2-dev  llvm-19               llvm-19-runtime   python3-yaml
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>  clang-tools-19  libc6-i386              libclang-rt-19-dev  libobjc-14-dev     libstd-rust-1.85  libz3-dev    llvm-19-dev           llvm-19-tools     rust-llvm
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>  lib32gcc-s1     libclang-common-19-dev  libgit2-1.9         libobjc4           libstd-rust-dev   lld-19       llvm-19-linker-tools  python3-pygments  rustc
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>Suggested packages:
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>  cargo-doc  clang-19-doc  wasi-libc  llvm-19-doc  python-pygments-doc
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>Summary:
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>  Upgrading: 0, Installing: 28, Removing: 0, Not Upgrading: 38
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>  Download size: 167 MB
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>  Space needed: 966 MB / 4,303 MB available
 </code></pre></div>
 </details>
 <h3 id="compiling-locally">Compiling locally<a class="headerlink" href="#compiling-locally" title="Permanent link">λ︎</a></h3>
@@ -4214,39 +4247,42 @@
 <p>Download the source code, either from the release or by cloning the repository (shallow clone, as the history is not required)</p>
 <div class="admonition note">
 <p class="admonition-title">Clone YouTui source code - shallow clone</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/nick42d/youtui.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/nick42d/youtui.git
 </code></pre></div>
 </div>
 <details class="example">
 <summary>Output of shallow clone</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>❯ git clone --depth=1 https://github.com/nick42d/youtui.git
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Cloning into 'youtui'...
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>remote: Enumerating objects: 361, done.
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>remote: Counting objects: 100% (361/361), done.
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>remote: Compressing objects: 100% (261/261), done.
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>remote: Total 361 (delta 134), reused 197 (delta 85), pack-reused 0 (from 0)
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>Receiving objects: 100% (361/361), 3.87 MiB | 5.43 MiB/s, done.
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>Resolving deltas: 100% (134/134), done.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>❯ git clone --depth=1 https://github.com/nick42d/youtui.git
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Cloning into 'youtui'...
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>remote: Enumerating objects: 361, done.
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>remote: Counting objects: 100% (361/361), done.
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>remote: Compressing objects: 100% (261/261), done.
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>remote: Total 361 (delta 134), reused 197 (delta 85), pack-reused 0 (from 0)
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>Receiving objects: 100% (361/361), 3.87 MiB | 5.43 MiB/s, done.
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>Resolving deltas: 100% (134/134), done.
 </code></pre></div>
 </details>
 <p>Compile the source code and generate a binary file, saved to <code>~/.cargo/bin</code></p>
 <div class="admonition note">
 <p class="admonition-title">Compile youtui and install the resulting binary</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>cargo<span class="w"> </span>install<span class="w"> </span>youtui<span class="w"> </span>--locked
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>cargo<span class="w"> </span>install<span class="w"> </span>youtui<span class="w"> </span>--locked
 </code></pre></div>
 <p>Compile time was ~ 4 minutes and 30 seconds on an AMD Ryzen™ 7 PRO 4750U.</p>
+<blockquote>
+<p>NOTE: see <a href="#add-cargo-bin-to-path">add cargo bin to path</a> if <code>~/.cargo/bin</code> directory is not on the execution path already.</p>
+</blockquote>
 <h3 id="configure-youtui">Configure YouTUI<a class="headerlink" href="#configure-youtui" title="Permanent link">λ︎</a></h3>
 <p>By default YouTUI uses browser authentication, so the cookie from a POST request to music.youtube.com must be copies to the <code>~/.config/youtui/cookie.txt</code> file.  The Cookie value was copies from the Firefox developer tools (F12) &gt; Network tab &gt; Select a POST request &gt;  Resource Headers &gt; Cookie</p>
 <p>Now I can search for music in YouTUI, but the music will not play (403 forbidden errors).</p>
 <p>Copy the <code>examples/config/config.toml</code> file from the YouTui GitHub repository into <code>~/.config/youtui/config.toml</code>.  Edit this config file and use yt-dlp as the download tool (installing yt-dlp if not already available).</p>
 <div class="admonition example">
 <p class="admonition-title">YouTUI config file excerpt</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Example config.toml file for youtui containing the application defaults.</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">auth_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Browser"</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># downloader_type = "Native" - failing to download</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">downloader_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"YtDlp"</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="n">yt_dlp_command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"yt-dlp"</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Example config.toml file for youtui containing the application defaults.</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">auth_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Browser"</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1"># downloader_type = "Native" - failing to download</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="n">downloader_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"YtDlp"</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="n">yt_dlp_command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"yt-dlp"</span>
 </code></pre></div>
 </div>
 <hr>
@@ -4276,7 +4312,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 15, 2026 15:39:23 UTC">February 15, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 15, 2026 15:54:35 UTC">February 15, 2026</span>
   </span>
 
     
