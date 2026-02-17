@@ -1067,6 +1067,54 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-02-16 00:00:00+00:00">February 16, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/practicalli/" class="md-meta__link">practicalli</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="debian-linux-scripting"><a class="toclink" href="debian-linux-scripting/">Debian Linux scripting</a></h2>
+
+    
+      <nav class="md-post__action">
+        <a href="debian-linux-scripting/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-02-09 00:00:00+00:00">February 9, 2026</time></li>
         
           <li class="md-meta__item">
@@ -1529,65 +1577,6 @@
     
       <nav class="md-post__action">
         <a href="winding-down-for-2025/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-12-01 00:00:00+00:00">December 1, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/practicalli/" class="md-meta__link">practicalli</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="something-a-foot"><a class="toclink" href="something-a-foot/">Something a foot</a></h2>
-<p>Completed <a href="something-a-foot/#cycling">6,000 km distance for cycle riding this year</a>, a very satisfying number as I wasnt able to do much cycling before May.</p>
-<p>A new month means its time to update dependencies across all projects. Although antq has proven very good at reporting outdated dependencies for Clojure projects and GitHub actions, it is quite a niche tool and something extra to learn or maintain a config for.</p>
-<p>When reviewing options for liquida/antq there was a link to ... GitHub workflow that generates a PR with all the dependency updates.  This project is now in maintenance mode and recommends looking at the Renovate GitHub action.</p>
-<p>So I decided to create a CI workflow using Renovate that generates a pull request to update Clojure library dependencies and GitHub actions.</p>
-<p>Rather than write this myself, I felt it was a useful task to ask an LLM tool to tackle.  I felt confident I knew how to write a clear question (prompt) for the LLM tool.  It was also a small enough task that I wouldnt blow all my 'free' tokens.  I also hoped that it was a simple enough task that I wouldnt have to keep refining the question to get the response I needed.</p>
-<p>The reply should be simple enough that I can understand, as I already have plenty of experience writing GitHub workflows and configurations for the tools used by a workflow (e.g. Megalinter).</p>
-<p>Unfortunately the resulting Renovate.json configuration doesnt like Clojure, so AI seems to have failed quite badly (or was too optimistic).</p>
-<p>Taking my usual approach of an Internet search, I discovered the Mend App, which is described in more detail in the <a href="https://docs.mend.io/integrations/latest/mend-for-github-com">Mend for GitHub.com docs</a>.</p>
-<p>The Mend app kind of works but still seems to require some manual intervention (pressing buttons on developer.mend.io app) and only supports (or only configured for) maven dependencies and not git updates, e.g. seancorfield/deps-new.</p>
-<p>The results of the discussion with the LLM are documented in this post and the results were also published to the web:</p>
-<p><a class="md-button" href="https://claude.ai/public/artifacts/98bc2a13-f609-4bb3-b31e-b5fd47556d85" target="_blank">Create GitHub workflow with Renovate for Clojure projects</a></p>
-
-    
-      <nav class="md-post__action">
-        <a href="something-a-foot/">
           Continue reading
         </a>
       </nav>

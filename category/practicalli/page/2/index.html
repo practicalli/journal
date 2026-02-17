@@ -1063,6 +1063,65 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2025-12-01 00:00:00+00:00">December 1, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">practicalli</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              9 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="something-a-foot"><a class="toclink" href="../../../../something-a-foot/">Something a foot</a></h2>
+<p>Completed <a href="../../../../something-a-foot/#cycling">6,000 km distance for cycle riding this year</a>, a very satisfying number as I wasnt able to do much cycling before May.</p>
+<p>A new month means its time to update dependencies across all projects. Although antq has proven very good at reporting outdated dependencies for Clojure projects and GitHub actions, it is quite a niche tool and something extra to learn or maintain a config for.</p>
+<p>When reviewing options for liquida/antq there was a link to ... GitHub workflow that generates a PR with all the dependency updates.  This project is now in maintenance mode and recommends looking at the Renovate GitHub action.</p>
+<p>So I decided to create a CI workflow using Renovate that generates a pull request to update Clojure library dependencies and GitHub actions.</p>
+<p>Rather than write this myself, I felt it was a useful task to ask an LLM tool to tackle.  I felt confident I knew how to write a clear question (prompt) for the LLM tool.  It was also a small enough task that I wouldnt blow all my 'free' tokens.  I also hoped that it was a simple enough task that I wouldnt have to keep refining the question to get the response I needed.</p>
+<p>The reply should be simple enough that I can understand, as I already have plenty of experience writing GitHub workflows and configurations for the tools used by a workflow (e.g. Megalinter).</p>
+<p>Unfortunately the resulting Renovate.json configuration doesnt like Clojure, so AI seems to have failed quite badly (or was too optimistic).</p>
+<p>Taking my usual approach of an Internet search, I discovered the Mend App, which is described in more detail in the <a href="https://docs.mend.io/integrations/latest/mend-for-github-com">Mend for GitHub.com docs</a>.</p>
+<p>The Mend app kind of works but still seems to require some manual intervention (pressing buttons on developer.mend.io app) and only supports (or only configured for) maven dependencies and not git updates, e.g. seancorfield/deps-new.</p>
+<p>The results of the discussion with the LLM are documented in this post and the results were also published to the web:</p>
+<p><a class="md-button" href="https://claude.ai/public/artifacts/98bc2a13-f609-4bb3-b31e-b5fd47556d85" target="_blank">Create GitHub workflow with Renovate for Clojure projects</a></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../something-a-foot/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2025-11-24 00:00:00+00:00">November 24, 2025</time></li>
         
           <li class="md-meta__item">
@@ -1543,153 +1602,6 @@
           Continue reading
         </a>
       </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-09-22 00:00:00+00:00">September 22, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../" class="md-meta__link">practicalli</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="a-brave-new-world"><a class="toclink" href="../../../../a-brave-new-world/">A brave new world</a></h2>
-<p>Another 3 cycle rides in a row this week, covering 256 km distance for the week.  This would be about 50 km more than I used to commute each week when working in Central London (before Covid).  The first two rides went well, the third was in colder conditions that I prepared for, so I was a little cold during the ride.</p>
-<p>Three cycle rides in a row seem to be quite a challenge, although 2 rides in a row seem to be okay.</p>
-<p>Started watching Star Trek Discovery from the beginning.  I find it a very engaging with an intricate combination of plot lines.  The most involved of any series from the Star Trek world.</p>
-<h3 id="hyprland"><a class="toclink" href="../../../../a-brave-new-world/#hyprland">Hyprland</a></h3>
-<p>After some experimentation I finally got Thunar file manager dialogs appearing in nice places on the screen.</p>
-<div class="admonition example">
-<p class="admonition-title">Experiments with Hyprland window rules</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Practicalli - set Thunar popups to float
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a># Didnt seem to work
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a># windowrule = float, initialClass: thunar, title: Rename: .*
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a># windowrule = float, initialClass: thunar, title: File Operation Progress: .*
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a># Example windowrule v2
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a># windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a># See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a># windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a># Practicalli - set Thunar popups to float using windowrulev2
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a># Make all windows float
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a># windowrulev2 = float, class:.*
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a># windowrule = move 100%- 100%-,class:^(thunar)$,title:(Rename.*)$
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a># popups appear center of display by default
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a># stays focused until dismissed - not sure if this makes a difference...
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a># windowrule = float,stayfocused,class:^(thunar)$,title:(Rename.*)$
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a># windowrule = float,stayfocused,move cursor -50% -50%,class:^(thunar)$,title:(Rename.*)$
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a># windowrule = move cursor -50% -50%,class:^(thunar)$,title:(Rename.*)$
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a># Show thunar rename popup at the mouse pointer position
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>windowrule = float,stayfocused,move cursor -50% -50%,class:^(thunar)$,title:(Rename.*)$
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a># windowrulev2 = move 100%- 100%-,stayfocused,class:^(thunar)$,title:(Rename.*)$
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a># windowrule = float,class:^(thunar)$,title:(File Operation Progress.*)$
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a># windowrulev2 = float,move 100%- 100%-,class:^(thunar)$,title:(File Operation Progress.*)$
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>windowrule = float,class:^(thunar)$,title:(File Operation Progress.*)$
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a># windowrule = move onscreen 100%- 100%-,class:^(thunar)$,title:(File Operation Progress.*)$  # wrong format
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a># windowrule = move onscreen 80% 80%,class:^(thunar)$,title:(File Operation Progress.*)$
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>windowrule = move onscreen 100%-24 100%-24,class:^(thunar)$,title:(File Operation Progress.*)$
-</code></pre></div>
-</div>
-<h3 id="opinionated-hyprland"><a class="toclink" href="../../../../a-brave-new-world/#opinionated-hyprland">Opinionated Hyprland</a></h3>
-<p>There is an opinionated Arch/Hyprland distributon (has a maintainer with extremely concerning opinions).  It is available as a self-contained ISO, so no internet downloads should be required during the install.</p>
-<p>This does mean a 7 GB download is required, along with a USB stick or suitable SD card of 8 Gb or more.</p>
-<p>There are links to the ISO image on the website and in the manual, but I didnt see a link to a checksum file to check the integrity of the download.</p>
-<p>Caligula is recommend to burn the ISO to the removable media on a Linux operating system.  I like this tool.</p>
-<div class="admonition note">
-<p class="admonition-title">Burn opinionated ISO to usb memory stick</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>caligula<span class="w"> </span>burn<span class="w"> </span>~/Downloads/opinionated-3.0.1.iso
-</code></pre></div>
-</div>
-<p>Caligula will prompt for a checksum file if one is not found.  Unfortunately I did not have time to hunt for one.</p>
-<p>Caligula shows a selection list for all  the removable media it finds, detailing the size of that media.  I recommend only the USB memory stick to be used for opinionated to be plugged into the computer, just in case :)</p>
-<p>After 915.3 seconds (caligula shows the times) the opinionated image was written to the USB memory stick and verified the image was written without error.  653.8 seconds to write the image, the rest to verify.</p>
-<blockquote>
-<p>NOTE: I used an old USB Memory Stick (USB-A) which I picked up somewhere for free. Newer USB sticks with USB-C or SD Memory cards may be faster.</p>
-</blockquote>
-<p>Booting from the USB Memory stick displayed a simple opinionated menu system to define key information about the user, login name &amp; password, Full name and email address (used for Git authentication), computer name and finally selecting where to install opinionated.</p>
-<p>After 7 minutes 23 seconds opinionated was installed.</p>
-<p>Enter to reboot the computer and remove the USB memory stick after the computer shuts down, just before starting again.</p>
-<p>opinionated starts with a simple login screen, with a prompt for the users password.</p>
-<blockquote>
-<p>NOTE: I had to login a second time, as a few seconds after first entering the password opinionated returned me to the password prompt.</p>
-</blockquote>
-<p>It will be interesting to see how much tweaking I feel compelled to do over the coming weeks.</p>
-<h4 id="removing-software"><a class="toclink" href="../../../../a-brave-new-world/#removing-software">Removing software</a></h4>
-<p>Super + Alt, SPACE &gt; Remove to remove software not required.</p>
-<p>The computer used to test opinionated has 8Gb of memory and 256 Gb or storage, so larger programs and those not otherwise not being tested can be removed.</p>
-<ul>
-<li>libre-office - wide range of office documents (I use Google docs, sheets, etc.)</li>
-<li>Obsidian - not taking app (I use Neovim instead)</li>
-<li>Typora writing tool (commercial)</li>
-<li>Dropbox file sharing and syncing</li>
-<li>Spotify supports dubious podcasts so philosophically objection al to me</li>
-</ul>
-<h4 id="evaluate-software"><a class="toclink" href="../../../../a-brave-new-world/#evaluate-software">Evaluate software</a></h4>
-<p>There are many software packages installed and even more made installable via the opinionated menu.</p>
-<ul>
-<li>Kdenlive video editor (an alternative to Blender)</li>
-<li>Signal end to end encryption (is there a need for this?)</li>
-<li>LocalSend sends files to other devices across the network</li>
-<li>mpv is that better than vlc ?  - I prefer VLC, but mpv seems quite usable.  I will stick with VLC.</li>
-<li>Tailscale VPN</li>
-</ul>
-<h4 id="terminal"><a class="toclink" href="../../../../a-brave-new-world/#terminal">Terminal</a></h4>
-<p>Switch to Kitty terminal and reuse the Practicalli dotfiles or appreciate configuration options from there.</p>
-<p>Super + Alt Space to open the system menu.  Navigate to Install &gt; Terminal and select Kitty.</p>
-<p>A prompt shows to enter the sudo password and installs Kitty packages on correct entry.</p>
-<p>A Restart Hyprland button appears once install is complete.  This sets opinionated to use Kitty as the default terminal, opening all requested configuration files in that terminal (and Neovim).</p>
-<h4 id="slack"><a class="toclink" href="../../../../a-brave-new-world/#slack">Slack</a></h4>
-<p>Not clear how to install slack.</p>
-<h4 id="hyprland-tweaking"><a class="toclink" href="../../../../a-brave-new-world/#hyprland-tweaking">Hyprland tweaking</a></h4>
-<p>Before any changes, version control the original configuration so we can easily track what has been changed from the defaults.</p>
-<p>Assume this is done with Neovim and lazy, to update config files</p>
-<ul>
-<li>enable natural scrolling</li>
-</ul>
-<hr>
-<p>Thank you.</p>
-<p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
-<p><a class="md-button" href="https://github.com/practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg></span> Practical.li GitHub Org</a>
-<a class="md-button" href="https://github.com/practicalli-johnny" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg></span> practicalli-johnny profile</a></p>
-<p><a class="md-button" href="https://clj.social/@practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg></span> @practicalli@clj.social</a>
-<a class="md-button" href="https://twitter.com/practcial_li" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"></path></svg></span> @practical_li</a></p>
     
     
   </div>
