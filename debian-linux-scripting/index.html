@@ -1560,185 +1560,207 @@
 <a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>Continue? [Y/n]
 </code></pre></div>
 </details>
+<p>Once the package is installed, choose the arttic greeter as the lightdm-greeter</p>
+<div class="admonition note">
+<p class="admonition-title">Update Alternatives for LightDM</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>lightdm-greeter
+</code></pre></div>
+</div>
+<details class="example">
+<summary>Choose Arctica greeter in update-alternatives</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>❯<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>lightdm-greeter
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>practicalli:
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>There<span class="w"> </span>are<span class="w"> </span><span class="m">2</span><span class="w"> </span>choices<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>alternative<span class="w"> </span>lightdm-greeter<span class="w"> </span><span class="o">(</span>providing<span class="w"> </span>/usr/share/xgreeters/lightdm-greeter.desktop<span class="o">)</span>.
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span>Selection<span class="w">    </span>Path<span class="w">                                              </span>Priority<span class="w">   </span>Status
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>------------------------------------------------------------
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>*<span class="w"> </span><span class="m">0</span><span class="w">            </span>/usr/share/xgreeters/lightdm-gtk-greeter.desktop<span class="w">   </span><span class="m">60</span><span class="w">        </span>auto<span class="w"> </span>mode
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="m">1</span><span class="w">            </span>/usr/share/xgreeters/arctica-greeter.desktop<span class="w">       </span><span class="m">50</span><span class="w">        </span>manual<span class="w"> </span>mode
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="m">2</span><span class="w">            </span>/usr/share/xgreeters/lightdm-gtk-greeter.desktop<span class="w">   </span><span class="m">60</span><span class="w">        </span>manual<span class="w"> </span>mode
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Press<span class="w"> </span>&lt;enter&gt;<span class="w"> </span>to<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>choice<span class="o">[</span>*<span class="o">]</span>,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span>selection<span class="w"> </span>number:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>update-alternatives:<span class="w"> </span>using<span class="w"> </span>/usr/share/xgreeters/arctica-greeter.desktop<span class="w"> </span>to<span class="w"> </span>provide<span class="w"> </span>/usr/share/xgreeters/lightdm-greeter.desktop<span class="w"> </span><span class="o">(</span>lightdm-greeter<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>manual<span class="w"> </span>mode
+</code></pre></div>
+</details>
 <h3 id="sddm">SDDM<a class="headerlink" href="#sddm" title="Permanent link">λ︎</a></h3>
 <p>SDDM is commonly used with the KDE desktop environment and Hyprland compositor, as its highly customisable and has a wide availability of themes.</p>
 <p>SDDM supports both X11 and Wayland sessions.</p>
 <p>The Debian Linux package for SDDM depends on many additional packages, although when using KDE rather than Gnome many of these packages will already be installed.</p>
 <details class="example">
 <summary>SDDM package install dependencies</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>❯ sudo apt install sddm
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>[sudo] password for practicalli:
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Installing:
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  sddm
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Installing dependencies:
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  aha                             libkf5iconthemes-bin         libkf6sonnetui6                   libxdgutilsbasedir1.0.1
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  apt-config-icons-hidpi          libkf5iconthemes-data        libkf6statusnotifieritem-data     libxdgutilsdesktopentry1.0.1
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  apt-config-icons-large          libkf5iconthemes5            libkf6statusnotifieritem6         libxmlsec1t64
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  apt-config-icons-large-hidpi    libkf5itemviews-data         libkf6style6                      libxmlsec1t64-openssl
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  bluedevil                       libkf5itemviews5             libkf6su-bin                      libzip5
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  bluez-obexd                     libkf5jobwidgets-data        libkf6su-data                     media-player-info
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  breeze                          libkf5jobwidgets5            libkf6su6                         mesa-utils
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>  breeze-cursor-theme             libkf5kiocore5               libkf6svg6                        mesa-utils-bin
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  breeze-gtk-theme                libkf5kiofilewidgets5        libkf6syndication6                milou
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>  breeze-icon-theme               libkf5kiogui5                libkf6syntaxhighlighting-data     ocean-sound-theme
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>  breeze-wallpaper                libkf5kiontlm5               libkf6syntaxhighlighting6         oxygen-sounds
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  bup                             libkf5kiowidgets5            libkf6texteditor-bin              partitionmanager
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>  bup-doc                         libkf5kirigami2-5            libkf6texteditor-data             phonon-backend-vlc-common
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>  catdoc                          libkf5notifications-data     libkf6texteditor-katepart         phonon4qt6
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>  clinfo                          libkf5notifications5         libkf6texteditor6                 phonon4qt6-backend-vlc
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>  cryfs                           libkf5service-bin            libkf6texttemplate6               plasma-activities-bin
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>  docbook-xsl                     libkf5service-data           libkf6textwidgets-data            plasma-browser-integration
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>  drkonqi                         libkf5service5               libkf6textwidgets6                plasma-desktop
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>  evolution-data-server-common    libkf5solid5                 libkf6unitconversion-data         plasma-desktop-data
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>  fonts-hack                      libkf5solid5-data            libkf6unitconversion6             plasma-desktop-doc
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>  fonts-noto                      libkf5sonnet5-data           libkf6userfeedback-data           plasma-desktoptheme
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>  fonts-noto-cjk                  libkf5sonnetcore5            libkf6userfeedback-doc            plasma-discover
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>  fonts-noto-cjk-extra            libkf5sonnetui5              libkf6userfeedbackcore6           plasma-discover-backend-fwupd
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>  fonts-noto-core                 libkf5style5                 libkf6wallet-data                 plasma-discover-common
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>  fonts-noto-extra                libkf5textwidgets-data       libkf6wallet6                     plasma-disks
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>  fonts-noto-ui-core              libkf5textwidgets5           libkf6walletbackend6              plasma-firewall
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>  fonts-noto-ui-extra             libkf5wallet-bin             libkf6widgetsaddons-data          plasma-integration
-<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>  fonts-noto-unhinted             libkf5wallet-data            libkf6widgetsaddons6              plasma-nm
-<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>  frameworkintegration6           libkf5wallet5                libkf6windowsystem-data           plasma-pa
-<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>  gdb                             libkf5waylandclient5         libkf6windowsystem6               plasma-systemmonitor
-<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>  ibus-data                       libkf5widgetsaddons-data     libkf6xmlgui-data                 plasma-thunderbolt
-<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>  isa-support                     libkf5widgetsaddons5         libkf6xmlgui6                     plasma-vault
-<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>  kaccounts-providers             libkf5windowsystem-data      libkfontinst6                     plasma-welcome
-<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>  kactivitymanagerd               libkf5windowsystem5          libkfontinstui6                   plasma-workspace
-<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>  kde-cli-tools                   libkf5xmlgui-bin             libkglobalacceld0                 plasma-workspace-data
-<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>  kde-cli-tools-data              libkf5xmlgui-data            libkirigami-data                  plasma-workspace-doc
-<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>  kde-config-gtk-style            libkf5xmlgui5                libkirigami6                      plasma5-integration
-<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>  kde-config-screenlocker         libkf6archive-data           libkirigamidelegates6             pnp.ids
-<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>  kde-config-sddm                 libkf6archive6               libkirigamidialogs6               polkit-kde-agent-1
-<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>  kde-config-updates              libkf6attica6                libkirigamilayouts6               powerdevil
-<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>  kde-spectacle                   libkf6auth-data              libkirigamiplatform6              powerdevil-data
-<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>  kde-style-breeze                libkf6authcore6              libkirigamiprimitives6            python3-fuse
-<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>  kde-style-breeze-data           libkf6baloo6                 libkirigamiprivate6               python3-pylibacl
-<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>  kde-style-breeze-qt5            libkf6balooengine6           libklipper6                       python3-pyxattr
-<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>  kdeconnect                      libkf6bluezqt-data           libkmpris6                        python3-sentry-sdk
-<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>  kdeconnect-libs                 libkf6bluezqt6               libkpipewire-data                 python3-tornado
-<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>  kded5                           libkf6bookmarks-data         libkpipewire6                     qdbus-qt6
-<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>  kded6                           libkf6bookmarks6             libkpipewiredmabuf6               qml-module-gsettings
-<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>  kdoctools6                      libkf6bookmarkswidgets6      libkpipewirerecord6               qml-module-gsettings1.0
-<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>  keditbookmarks                  libkf6breezeicons6           libkpmcore12                      qml-module-org-kde-kirigami2
-<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>  kf6-breeze-icon-theme           libkf6calendarevents6        libkscreen-bin                    qml-module-org-kde-qqc2desktopstyle
-<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>  kgamma                          libkf6codecs-data            libkscreen-data                   qml-module-org-kde-sonnet
-<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>  kglobalacceld                   libkf6codecs6                libkscreenlocker6                 qml-module-qtgraphicaleffects
-<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>  khelpcenter                     libkf6colorscheme-data       libksysguard-bin                  qml-module-qtqml-models2
-<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>  khelpcenter-data                libkf6colorscheme6           libksysguard-data                 qml-module-qtquick-controls2
-<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>  kinfocenter                     libkf6completion-data        libksysguardformatter2            qml-module-qtquick-layouts
-<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>  kio                             libkf6completion6            libksysguardsensorfaces2          qml-module-qtquick-templates2
-<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>  kio-extras                      libkf6config-bin             libksysguardsensors2              qml-module-qtquick-window2
-<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>  kio-extras-data                 libkf6config-data            libksysguardsystemstats2          qml-module-qtquick2
-<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>  kio-fuse                        libkf6configcore6            libkwaylandclient6                qml6-module-org-kde-activities
-<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>  kio6                            libkf6configgui6             libkwin6                          qml6-module-org-kde-baloo
-<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>  kirigami-addons-data            libkf6configqml6             libkworkspace6-6                  qml6-module-org-kde-bluezqt
-<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>  kmenuedit                       libkf6configwidgets-data     liblayershellqtinterface6         qml6-module-org-kde-breeze
-<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>  kpackagetool6                   libkf6configwidgets6         libmarkdown2                      qml6-module-org-kde-config
-<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>  kscreen                         libkf6contacts-data          libnotificationmanager1           qml6-module-org-kde-coreaddons
-<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>  ksshaskpass                     libkf6contacts6              libopenconnect5                   qml6-module-org-kde-desktop
-<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>  ksystemstats                    libkf6coreaddons-data        libpackagekitqt6-1                qml6-module-org-kde-draganddrop
-<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>  kup-backup                      libkf6coreaddons6            libpam-kwallet-common             qml6-module-org-kde-graphicaleffects
-<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>  kwallet6                        libkf6crash6                 libpam-kwallet5                   qml6-module-org-kde-guiaddons
-<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>  kwalletmanager                  libkf6dbusaddons-bin         libphonenumber8                   qml6-module-org-kde-iconthemes
-<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>  kwayland-integration            libkf6dbusaddons-data        libphonon-l10n                    qml6-module-org-kde-kcmutils
-<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>  kwayland5-data                  libkf6dbusaddons6            libphonon4qt6-4t64                qml6-module-org-kde-kdeconnect
-<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>  kwayland6-data                  libkf6declarative-data       libplasma-geolocation-interface6  qml6-module-org-kde-kholidays
-<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>  kwin-common                     libkf6dnssd-data             libplasma5support-data            qml6-module-org-kde-kirigami
-<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>  kwin-data                       libkf6dnssd6                 libplasma5support6                qml6-module-org-kde-kirigamiaddons-components
-<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>  kwin-style-breeze               libkf6doctools6              libplasma6                        qml6-module-org-kde-kirigamiaddons-datetime
-<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>  kwin-wayland                    libkf6filemetadata-bin       libplasmaactivities6              qml6-module-org-kde-kirigamiaddons-delegates
-<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>  kwrited                         libkf6filemetadata-data      libplasmaactivitiesstats1         qml6-module-org-kde-kirigamiaddons-formcard
-<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>  layer-shell-qt                  libkf6filemetadata3          libplasmaquick6                   qml6-module-org-kde-kirigamiaddons-tableview
-<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>  libaccounts-glib0               libkf6globalaccel-data       libpolkit-qt5-1-1                 qml6-module-org-kde-kirigamiaddons-treeview
-<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>  libaccounts-qt6-1               libkf6globalaccel6           libpolkit-qt6-1-1                 qml6-module-org-kde-kitemmodels
-<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>  libappimage1.0abi1t64           libkf6guiaddons-bin          libpoppler-qt6-3t64               qml6-module-org-kde-kquickcontrols
-<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>  libappstreamqt3                 libkf6guiaddons-data         libpowerdevilcore2                qml6-module-org-kde-kquickcontrolsaddons
-<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>  libbabeltrace1                  libkf6guiaddons6             libprocesscore10                  qml6-module-org-kde-ksvg
-<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>  libbatterycontrol6              libkf6holidays-data          libpskc0t64                       qml6-module-org-kde-ksysguard
-<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>  libboost-chrono1.83.0t64        libkf6holidays6              libqaccessibilityclient-qt6-0     qml6-module-org-kde-kwindowsystem
-<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>  libboost-program-options1.83.0  libkf6i18n-data              libqalculate-data                 qml6-module-org-kde-networkmanager
-<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>  libcamel-1.2-64t64              libkf6i18n6                  libqalculate23                    qml6-module-org-kde-newstuff
-<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>  libcolorcorrect6                libkf6i18nlocaledata6        libqca-qt6-2                      qml6-module-org-kde-notifications
-<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>  libdbusmenu-qt5-2               libkf6i18nqml6               libqca-qt6-plugins                qml6-module-org-kde-people
-<a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a>  libddcutil5                     libkf6iconthemes-bin         libqcoro6core0t64                 qml6-module-org-kde-pipewire
-<a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a>  libdebuginfod-common            libkf6iconthemes-data        libqcoro6dbus0t64                 qml6-module-org-kde-plasma-plasma5support
-<a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a>  libdebuginfod1t64               libkf6iconthemes6            libqmobipocket6-2                 qml6-module-org-kde-prison
-<a id="__codelineno-9-100" name="__codelineno-9-100" href="#__codelineno-9-100"></a>  libdisplay-info-bin             libkf6iconwidgets6           libqt5qmlworkerscript5            qml6-module-org-kde-purpose
-<a id="__codelineno-9-101" name="__codelineno-9-101" href="#__codelineno-9-101"></a>  libdmtx0t64                     libkf6idletime6              libqt5quickcontrols2-5            qml6-module-org-kde-quickcharts
-<a id="__codelineno-9-102" name="__codelineno-9-102" href="#__codelineno-9-102"></a>  libebackend-1.2-11t64           libkf6itemmodels6            libqt5quicktemplates2-5           qml6-module-org-kde-sonnet
-<a id="__codelineno-9-103" name="__codelineno-9-103" href="#__codelineno-9-103"></a>  libebook-1.2-21t64              libkf6itemviews-data         libqt5texttospeech5               qml6-module-org-kde-syntaxhighlighting
-<a id="__codelineno-9-104" name="__codelineno-9-104" href="#__codelineno-9-104"></a>  libebook-contacts-1.2-4t64      libkf6itemviews6             libqt6bluetooth6                  qml6-module-org-kde-userfeedback
-<a id="__codelineno-9-105" name="__codelineno-9-105" href="#__codelineno-9-105"></a>  libedata-book-1.2-27t64         libkf6jobwidgets-data        libqt6bluetooth6-bin              qml6-module-qt-labs-folderlistmodel
-<a id="__codelineno-9-106" name="__codelineno-9-106" href="#__codelineno-9-106"></a>  libedataserver-1.2-27t64        libkf6jobwidgets6            libqt6core5compat6                qml6-module-qt-labs-platform
-<a id="__codelineno-9-107" name="__codelineno-9-107" href="#__codelineno-9-107"></a>  libepub0                        libkf6kcmutils-bin           libqt6labsplatform6               qml6-module-qt-labs-qmlmodels
-<a id="__codelineno-9-108" name="__codelineno-9-108" href="#__codelineno-9-108"></a>  libfakekey0                     libkf6kcmutils-data          libqt6multimedia6                 qml6-module-qt5compat-graphicaleffects
-<a id="__codelineno-9-109" name="__codelineno-9-109" href="#__codelineno-9-109"></a>  libfmt10                        libkf6kcmutils6              libqt6openglwidgets6              qml6-module-qtcore
-<a id="__codelineno-9-110" name="__codelineno-9-110" href="#__codelineno-9-110"></a>  libfuse2t64                     libkf6kcmutilscore6          libqt6positioning6                qml6-module-qtmultimedia
-<a id="__codelineno-9-111" name="__codelineno-9-111" href="#__codelineno-9-111"></a>  libgit2-1.9                     libkf6kcmutilsquick6         libqt6positioning6-plugins        qml6-module-qtpositioning
-<a id="__codelineno-9-112" name="__codelineno-9-112" href="#__codelineno-9-112"></a>  libgsettings-qt1                libkf6kiocore6               libqt6positioningquick6           qml6-module-qtqml
-<a id="__codelineno-9-113" name="__codelineno-9-113" href="#__codelineno-9-113"></a>  libhfstospell11                 libkf6kiofilewidgets6        libqt6printsupport6               qml6-module-qtqml-models
-<a id="__codelineno-9-114" name="__codelineno-9-114" href="#__codelineno-9-114"></a>  libhttp-parser2.9               libkf6kiogui6                libqt6quickcontrols2-6            qml6-module-qtqml-workerscript
-<a id="__codelineno-9-115" name="__codelineno-9-115" href="#__codelineno-9-115"></a>  libipt2                         libkf6kiowidgets6            libqt6quickshapes6                qml6-module-qtquick
-<a id="__codelineno-9-116" name="__codelineno-9-116" href="#__codelineno-9-116"></a>  libkaccounts6-2                 libkf6modemmanagerqt6        libqt6quicktemplates2-6           qml6-module-qtquick-controls
-<a id="__codelineno-9-117" name="__codelineno-9-117" href="#__codelineno-9-117"></a>  libkdecorations3-6              libkf6networkmanagerqt6      libqt6quickwidgets6               qml6-module-qtquick-dialogs
-<a id="__codelineno-9-118" name="__codelineno-9-118" href="#__codelineno-9-118"></a>  libkdecorations3private2        libkf6newstuff-data          libqt6sensors6                    qml6-module-qtquick-effects
-<a id="__codelineno-9-119" name="__codelineno-9-119" href="#__codelineno-9-119"></a>  libkdsoap-qt6-2                 libkf6newstuffcore6          libqt6serialport6                 qml6-module-qtquick-layouts
-<a id="__codelineno-9-120" name="__codelineno-9-120" href="#__codelineno-9-120"></a>  libkdsoapwsdiscoveryclient0     libkf6newstuffwidgets6       libqt6shadertools6                qml6-module-qtquick-particles
-<a id="__codelineno-9-121" name="__codelineno-9-121" href="#__codelineno-9-121"></a>  libkexiv2qt6-0                  libkf6notifications-data     libqt6sql6                        qml6-module-qtquick-shapes
-<a id="__codelineno-9-122" name="__codelineno-9-122" href="#__codelineno-9-122"></a>  libkf5archive-data              libkf6notifications6         libqt6sql6-sqlite                 qml6-module-qtquick-templates
-<a id="__codelineno-9-123" name="__codelineno-9-123" href="#__codelineno-9-123"></a>  libkf5archive5                  libkf6notifyconfig-data      libqt6texttospeech6               qml6-module-qtquick-tooling
-<a id="__codelineno-9-124" name="__codelineno-9-124" href="#__codelineno-9-124"></a>  libkf5auth-data                 libkf6notifyconfig6          libqt6uitools6                    qml6-module-qtquick-virtualkeyboard
-<a id="__codelineno-9-125" name="__codelineno-9-125" href="#__codelineno-9-125"></a>  libkf5authcore5                 libkf6package-data           libqt6virtualkeyboard6            qml6-module-qtquick-window
-<a id="__codelineno-9-126" name="__codelineno-9-126" href="#__codelineno-9-126"></a>  libkf5bookmarks-data            libkf6package6               libqt6webchannel6                 qml6-module-qtwebchannel
-<a id="__codelineno-9-127" name="__codelineno-9-127" href="#__codelineno-9-127"></a>  libkf5bookmarks5                libkf6parts-data             libqt6webchannelquick6            qml6-module-qtwebengine
-<a id="__codelineno-9-128" name="__codelineno-9-128" href="#__codelineno-9-128"></a>  libkf5codecs-data               libkf6parts6                 libqt6webengine6-data             qml6-module-qtwebview
-<a id="__codelineno-9-129" name="__codelineno-9-129" href="#__codelineno-9-129"></a>  libkf5codecs5                   libkf6people-data            libqt6webenginecore6              qml6-module-sso-onlineaccounts
-<a id="__codelineno-9-130" name="__codelineno-9-130" href="#__codelineno-9-130"></a>  libkf5completion-data           libkf6people6                libqt6webenginecore6-bin          qt6-virtualkeyboard-plugin
-<a id="__codelineno-9-131" name="__codelineno-9-131" href="#__codelineno-9-131"></a>  libkf5completion5               libkf6peoplebackend6         libqt6webenginequick6             qtspeech5-speechd-plugin
-<a id="__codelineno-9-132" name="__codelineno-9-132" href="#__codelineno-9-132"></a>  libkf5config-bin                libkf6prison6                libqt6webenginewidgets6           rsync
-<a id="__codelineno-9-133" name="__codelineno-9-133" href="#__codelineno-9-133"></a>  libkf5config-data               libkf6prisonscanner6         libqt6webview6                    sddm-theme-breeze
-<a id="__codelineno-9-134" name="__codelineno-9-134" href="#__codelineno-9-134"></a>  libkf5configcore5               libkf6pty-data               libquickcharts1                   sddm-theme-debian-breeze
-<a id="__codelineno-9-135" name="__codelineno-9-135" href="#__codelineno-9-135"></a>  libkf5configgui5                libkf6pty6                   libquickchartscontrols1           signon-plugin-oauth2
-<a id="__codelineno-9-136" name="__codelineno-9-136" href="#__codelineno-9-136"></a>  libkf5configwidgets-data        libkf6pulseaudioqt5          libscim8v5                        smartmontools
-<a id="__codelineno-9-137" name="__codelineno-9-137" href="#__codelineno-9-137"></a>  libkf5configwidgets5            libkf6purpose-bin            libsignon-plugins-common1         socat
-<a id="__codelineno-9-138" name="__codelineno-9-138" href="#__codelineno-9-138"></a>  libkf5coreaddons-data           libkf6purpose-data           libsignon-qt6-1                   sonnet-plugins
-<a id="__codelineno-9-139" name="__codelineno-9-139" href="#__codelineno-9-139"></a>  libkf5coreaddons5               libkf6purpose6               libsource-highlight-common        sonnet6-plugins
-<a id="__codelineno-9-140" name="__codelineno-9-140" href="#__codelineno-9-140"></a>  libkf5crash5                    libkf6purposewidgets6        libsource-highlight4t64           sse3-support
-<a id="__codelineno-9-141" name="__codelineno-9-141" href="#__codelineno-9-141"></a>  libkf5dbusaddons-bin            libkf6qqc2desktopstyle-data  libspdlog1.15                     sshfs
-<a id="__codelineno-9-142" name="__codelineno-9-142" href="#__codelineno-9-142"></a>  libkf5dbusaddons-data           libkf6runner6                libsquashfuse0                    switcheroo-control
-<a id="__codelineno-9-143" name="__codelineno-9-143" href="#__codelineno-9-143"></a>  libkf5dbusaddons5               libkf6screen8                libstoken1t64                     systemd-coredump
-<a id="__codelineno-9-144" name="__codelineno-9-144" href="#__codelineno-9-144"></a>  libkf5doctools5                 libkf6screendpms8            libtaskmanager6                   systemsettings
-<a id="__codelineno-9-145" name="__codelineno-9-145" href="#__codelineno-9-145"></a>  libkf5globalaccel-bin           libkf6service-bin            libtomcrypt1                      vulkan-tools
-<a id="__codelineno-9-146" name="__codelineno-9-146" href="#__codelineno-9-146"></a>  libkf5globalaccel-data          libkf6service-data           libtommath1                       wayland-utils
-<a id="__codelineno-9-147" name="__codelineno-9-147" href="#__codelineno-9-147"></a>  libkf5globalaccel5              libkf6service6               libvoikko1                        xdg-desktop-portal-kde
-<a id="__codelineno-9-148" name="__codelineno-9-148" href="#__codelineno-9-148"></a>  libkf5guiaddons-data            libkf6solid-data             libweather-ion7                   xsettingsd
-<a id="__codelineno-9-149" name="__codelineno-9-149" href="#__codelineno-9-149"></a>  libkf5guiaddons5                libkf6solid6                 libxapian30                       xwaylandvideobridge
-<a id="__codelineno-9-150" name="__codelineno-9-150" href="#__codelineno-9-150"></a>  libkf5i18n-data                 libkf6sonnet-data            libxcb-dpms0
-<a id="__codelineno-9-151" name="__codelineno-9-151" href="#__codelineno-9-151"></a>  libkf5i18n5                     libkf6sonnetcore6            libxcb-record0
-<a id="__codelineno-9-152" name="__codelineno-9-152" href="#__codelineno-9-152"></a>
-<a id="__codelineno-9-153" name="__codelineno-9-153" href="#__codelineno-9-153"></a>Suggested packages:
-<a id="__codelineno-9-154" name="__codelineno-9-154" href="#__codelineno-9-154"></a>  tk                      libxalan2-java                libpam-fprintd  reiserfsprogs                    network-manager-iodine       python-pyxattr-doc
-<a id="__codelineno-9-155" name="__codelineno-9-155" href="#__codelineno-9-155"></a>  | wish                  libxslthl-java                libpam-sss      xfsprogs                         network-manager-l2tp         python3-pycurl
-<a id="__codelineno-9-156" name="__codelineno-9-156" href="#__codelineno-9-156"></a>  dbtoepub                xalan                         libpam-pkcs11   phonon4qt6-backend-gstreamer     network-manager-openconnect  python-tornado-doc
-<a id="__codelineno-9-157" name="__codelineno-9-157" href="#__codelineno-9-157"></a>  docbook-xsl-doc-html    gdb-doc                       voikko-fi       kde-config-flatpak               network-manager-openvpn      python3-twisted
-<a id="__codelineno-9-158" name="__codelineno-9-158" href="#__codelineno-9-158"></a>  | docbook-xsl-doc-pdf   gdbserver                     xapian-tools    plasma-theme-oxygen              network-manager-pptp         python3-braceexpand
-<a id="__codelineno-9-159" name="__codelineno-9-159" href="#__codelineno-9-159"></a>  | docbook-xsl-doc-text  libc-dbg                      btrfs-progs     plasma-discover-backend-flatpak  network-manager-ssh          gsmartcontrol
-<a id="__codelineno-9-160" name="__codelineno-9-160" href="#__codelineno-9-160"></a>  | docbook-xsl-doc       ibus                          hfsplus         plasma-discover-backend-snap     network-manager-strongswan   smart-notifier
-<a id="__codelineno-9-161" name="__codelineno-9-161" href="#__codelineno-9-161"></a>  docbook-xsl-saxon       kde-config-gtk-style-preview  hfsutils        firewalld                        network-manager-vpnc         hspell
-<a id="__codelineno-9-162" name="__codelineno-9-162" href="#__codelineno-9-162"></a>  fop                     samba                         jfsutils        | ufw                            gocryptfs
-<a id="__codelineno-9-163" name="__codelineno-9-163" href="#__codelineno-9-163"></a>  libsaxon-java           kwin-addons                   reiser4progs    network-manager-fortisslvpn      python-pylibacl-doc
-<a id="__codelineno-9-164" name="__codelineno-9-164" href="#__codelineno-9-164"></a>
-<a id="__codelineno-9-165" name="__codelineno-9-165" href="#__codelineno-9-165"></a>Recommended packages:
-<a id="__codelineno-9-166" name="__codelineno-9-166" href="#__codelineno-9-166"></a>  software-properties-qt
-<a id="__codelineno-9-167" name="__codelineno-9-167" href="#__codelineno-9-167"></a>
-<a id="__codelineno-9-168" name="__codelineno-9-168" href="#__codelineno-9-168"></a>Summary:
-<a id="__codelineno-9-169" name="__codelineno-9-169" href="#__codelineno-9-169"></a>  Upgrading: 0, Installing: 579, Removing: 0, Not Upgrading: 0
-<a id="__codelineno-9-170" name="__codelineno-9-170" href="#__codelineno-9-170"></a>  Download size: 617 MB
-<a id="__codelineno-9-171" name="__codelineno-9-171" href="#__codelineno-9-171"></a>  Space needed: 2,081 MB / 3,416 MB available
-<a id="__codelineno-9-172" name="__codelineno-9-172" href="#__codelineno-9-172"></a>
-<a id="__codelineno-9-173" name="__codelineno-9-173" href="#__codelineno-9-173"></a>Continue? [Y/n]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>❯ sudo apt install sddm
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>[sudo] password for practicalli:
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Installing:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  sddm
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Installing dependencies:
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  aha                             libkf5iconthemes-bin         libkf6sonnetui6                   libxdgutilsbasedir1.0.1
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>  apt-config-icons-hidpi          libkf5iconthemes-data        libkf6statusnotifieritem-data     libxdgutilsdesktopentry1.0.1
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>  apt-config-icons-large          libkf5iconthemes5            libkf6statusnotifieritem6         libxmlsec1t64
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>  apt-config-icons-large-hidpi    libkf5itemviews-data         libkf6style6                      libxmlsec1t64-openssl
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  bluedevil                       libkf5itemviews5             libkf6su-bin                      libzip5
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  bluez-obexd                     libkf5jobwidgets-data        libkf6su-data                     media-player-info
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>  breeze                          libkf5jobwidgets5            libkf6su6                         mesa-utils
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>  breeze-cursor-theme             libkf5kiocore5               libkf6svg6                        mesa-utils-bin
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>  breeze-gtk-theme                libkf5kiofilewidgets5        libkf6syndication6                milou
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>  breeze-icon-theme               libkf5kiogui5                libkf6syntaxhighlighting-data     ocean-sound-theme
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>  breeze-wallpaper                libkf5kiontlm5               libkf6syntaxhighlighting6         oxygen-sounds
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>  bup                             libkf5kiowidgets5            libkf6texteditor-bin              partitionmanager
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>  bup-doc                         libkf5kirigami2-5            libkf6texteditor-data             phonon-backend-vlc-common
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>  catdoc                          libkf5notifications-data     libkf6texteditor-katepart         phonon4qt6
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>  clinfo                          libkf5notifications5         libkf6texteditor6                 phonon4qt6-backend-vlc
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>  cryfs                           libkf5service-bin            libkf6texttemplate6               plasma-activities-bin
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>  docbook-xsl                     libkf5service-data           libkf6textwidgets-data            plasma-browser-integration
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>  drkonqi                         libkf5service5               libkf6textwidgets6                plasma-desktop
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>  evolution-data-server-common    libkf5solid5                 libkf6unitconversion-data         plasma-desktop-data
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>  fonts-hack                      libkf5solid5-data            libkf6unitconversion6             plasma-desktop-doc
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>  fonts-noto                      libkf5sonnet5-data           libkf6userfeedback-data           plasma-desktoptheme
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>  fonts-noto-cjk                  libkf5sonnetcore5            libkf6userfeedback-doc            plasma-discover
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>  fonts-noto-cjk-extra            libkf5sonnetui5              libkf6userfeedbackcore6           plasma-discover-backend-fwupd
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>  fonts-noto-core                 libkf5style5                 libkf6wallet-data                 plasma-discover-common
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>  fonts-noto-extra                libkf5textwidgets-data       libkf6wallet6                     plasma-disks
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>  fonts-noto-ui-core              libkf5textwidgets5           libkf6walletbackend6              plasma-firewall
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>  fonts-noto-ui-extra             libkf5wallet-bin             libkf6widgetsaddons-data          plasma-integration
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>  fonts-noto-unhinted             libkf5wallet-data            libkf6widgetsaddons6              plasma-nm
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>  frameworkintegration6           libkf5wallet5                libkf6windowsystem-data           plasma-pa
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>  gdb                             libkf5waylandclient5         libkf6windowsystem6               plasma-systemmonitor
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>  ibus-data                       libkf5widgetsaddons-data     libkf6xmlgui-data                 plasma-thunderbolt
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>  isa-support                     libkf5widgetsaddons5         libkf6xmlgui6                     plasma-vault
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>  kaccounts-providers             libkf5windowsystem-data      libkfontinst6                     plasma-welcome
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>  kactivitymanagerd               libkf5windowsystem5          libkfontinstui6                   plasma-workspace
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>  kde-cli-tools                   libkf5xmlgui-bin             libkglobalacceld0                 plasma-workspace-data
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>  kde-cli-tools-data              libkf5xmlgui-data            libkirigami-data                  plasma-workspace-doc
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>  kde-config-gtk-style            libkf5xmlgui5                libkirigami6                      plasma5-integration
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>  kde-config-screenlocker         libkf6archive-data           libkirigamidelegates6             pnp.ids
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>  kde-config-sddm                 libkf6archive6               libkirigamidialogs6               polkit-kde-agent-1
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>  kde-config-updates              libkf6attica6                libkirigamilayouts6               powerdevil
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>  kde-spectacle                   libkf6auth-data              libkirigamiplatform6              powerdevil-data
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>  kde-style-breeze                libkf6authcore6              libkirigamiprimitives6            python3-fuse
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>  kde-style-breeze-data           libkf6baloo6                 libkirigamiprivate6               python3-pylibacl
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>  kde-style-breeze-qt5            libkf6balooengine6           libklipper6                       python3-pyxattr
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>  kdeconnect                      libkf6bluezqt-data           libkmpris6                        python3-sentry-sdk
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>  kdeconnect-libs                 libkf6bluezqt6               libkpipewire-data                 python3-tornado
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>  kded5                           libkf6bookmarks-data         libkpipewire6                     qdbus-qt6
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>  kded6                           libkf6bookmarks6             libkpipewiredmabuf6               qml-module-gsettings
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>  kdoctools6                      libkf6bookmarkswidgets6      libkpipewirerecord6               qml-module-gsettings1.0
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>  keditbookmarks                  libkf6breezeicons6           libkpmcore12                      qml-module-org-kde-kirigami2
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>  kf6-breeze-icon-theme           libkf6calendarevents6        libkscreen-bin                    qml-module-org-kde-qqc2desktopstyle
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>  kgamma                          libkf6codecs-data            libkscreen-data                   qml-module-org-kde-sonnet
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>  kglobalacceld                   libkf6codecs6                libkscreenlocker6                 qml-module-qtgraphicaleffects
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>  khelpcenter                     libkf6colorscheme-data       libksysguard-bin                  qml-module-qtqml-models2
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>  khelpcenter-data                libkf6colorscheme6           libksysguard-data                 qml-module-qtquick-controls2
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>  kinfocenter                     libkf6completion-data        libksysguardformatter2            qml-module-qtquick-layouts
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>  kio                             libkf6completion6            libksysguardsensorfaces2          qml-module-qtquick-templates2
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>  kio-extras                      libkf6config-bin             libksysguardsensors2              qml-module-qtquick-window2
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>  kio-extras-data                 libkf6config-data            libksysguardsystemstats2          qml-module-qtquick2
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>  kio-fuse                        libkf6configcore6            libkwaylandclient6                qml6-module-org-kde-activities
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>  kio6                            libkf6configgui6             libkwin6                          qml6-module-org-kde-baloo
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>  kirigami-addons-data            libkf6configqml6             libkworkspace6-6                  qml6-module-org-kde-bluezqt
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>  kmenuedit                       libkf6configwidgets-data     liblayershellqtinterface6         qml6-module-org-kde-breeze
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>  kpackagetool6                   libkf6configwidgets6         libmarkdown2                      qml6-module-org-kde-config
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>  kscreen                         libkf6contacts-data          libnotificationmanager1           qml6-module-org-kde-coreaddons
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>  ksshaskpass                     libkf6contacts6              libopenconnect5                   qml6-module-org-kde-desktop
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>  ksystemstats                    libkf6coreaddons-data        libpackagekitqt6-1                qml6-module-org-kde-draganddrop
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>  kup-backup                      libkf6coreaddons6            libpam-kwallet-common             qml6-module-org-kde-graphicaleffects
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>  kwallet6                        libkf6crash6                 libpam-kwallet5                   qml6-module-org-kde-guiaddons
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>  kwalletmanager                  libkf6dbusaddons-bin         libphonenumber8                   qml6-module-org-kde-iconthemes
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>  kwayland-integration            libkf6dbusaddons-data        libphonon-l10n                    qml6-module-org-kde-kcmutils
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>  kwayland5-data                  libkf6dbusaddons6            libphonon4qt6-4t64                qml6-module-org-kde-kdeconnect
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>  kwayland6-data                  libkf6declarative-data       libplasma-geolocation-interface6  qml6-module-org-kde-kholidays
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>  kwin-common                     libkf6dnssd-data             libplasma5support-data            qml6-module-org-kde-kirigami
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>  kwin-data                       libkf6dnssd6                 libplasma5support6                qml6-module-org-kde-kirigamiaddons-components
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>  kwin-style-breeze               libkf6doctools6              libplasma6                        qml6-module-org-kde-kirigamiaddons-datetime
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>  kwin-wayland                    libkf6filemetadata-bin       libplasmaactivities6              qml6-module-org-kde-kirigamiaddons-delegates
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>  kwrited                         libkf6filemetadata-data      libplasmaactivitiesstats1         qml6-module-org-kde-kirigamiaddons-formcard
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>  layer-shell-qt                  libkf6filemetadata3          libplasmaquick6                   qml6-module-org-kde-kirigamiaddons-tableview
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>  libaccounts-glib0               libkf6globalaccel-data       libpolkit-qt5-1-1                 qml6-module-org-kde-kirigamiaddons-treeview
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>  libaccounts-qt6-1               libkf6globalaccel6           libpolkit-qt6-1-1                 qml6-module-org-kde-kitemmodels
+<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>  libappimage1.0abi1t64           libkf6guiaddons-bin          libpoppler-qt6-3t64               qml6-module-org-kde-kquickcontrols
+<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>  libappstreamqt3                 libkf6guiaddons-data         libpowerdevilcore2                qml6-module-org-kde-kquickcontrolsaddons
+<a id="__codelineno-11-90" name="__codelineno-11-90" href="#__codelineno-11-90"></a>  libbabeltrace1                  libkf6guiaddons6             libprocesscore10                  qml6-module-org-kde-ksvg
+<a id="__codelineno-11-91" name="__codelineno-11-91" href="#__codelineno-11-91"></a>  libbatterycontrol6              libkf6holidays-data          libpskc0t64                       qml6-module-org-kde-ksysguard
+<a id="__codelineno-11-92" name="__codelineno-11-92" href="#__codelineno-11-92"></a>  libboost-chrono1.83.0t64        libkf6holidays6              libqaccessibilityclient-qt6-0     qml6-module-org-kde-kwindowsystem
+<a id="__codelineno-11-93" name="__codelineno-11-93" href="#__codelineno-11-93"></a>  libboost-program-options1.83.0  libkf6i18n-data              libqalculate-data                 qml6-module-org-kde-networkmanager
+<a id="__codelineno-11-94" name="__codelineno-11-94" href="#__codelineno-11-94"></a>  libcamel-1.2-64t64              libkf6i18n6                  libqalculate23                    qml6-module-org-kde-newstuff
+<a id="__codelineno-11-95" name="__codelineno-11-95" href="#__codelineno-11-95"></a>  libcolorcorrect6                libkf6i18nlocaledata6        libqca-qt6-2                      qml6-module-org-kde-notifications
+<a id="__codelineno-11-96" name="__codelineno-11-96" href="#__codelineno-11-96"></a>  libdbusmenu-qt5-2               libkf6i18nqml6               libqca-qt6-plugins                qml6-module-org-kde-people
+<a id="__codelineno-11-97" name="__codelineno-11-97" href="#__codelineno-11-97"></a>  libddcutil5                     libkf6iconthemes-bin         libqcoro6core0t64                 qml6-module-org-kde-pipewire
+<a id="__codelineno-11-98" name="__codelineno-11-98" href="#__codelineno-11-98"></a>  libdebuginfod-common            libkf6iconthemes-data        libqcoro6dbus0t64                 qml6-module-org-kde-plasma-plasma5support
+<a id="__codelineno-11-99" name="__codelineno-11-99" href="#__codelineno-11-99"></a>  libdebuginfod1t64               libkf6iconthemes6            libqmobipocket6-2                 qml6-module-org-kde-prison
+<a id="__codelineno-11-100" name="__codelineno-11-100" href="#__codelineno-11-100"></a>  libdisplay-info-bin             libkf6iconwidgets6           libqt5qmlworkerscript5            qml6-module-org-kde-purpose
+<a id="__codelineno-11-101" name="__codelineno-11-101" href="#__codelineno-11-101"></a>  libdmtx0t64                     libkf6idletime6              libqt5quickcontrols2-5            qml6-module-org-kde-quickcharts
+<a id="__codelineno-11-102" name="__codelineno-11-102" href="#__codelineno-11-102"></a>  libebackend-1.2-11t64           libkf6itemmodels6            libqt5quicktemplates2-5           qml6-module-org-kde-sonnet
+<a id="__codelineno-11-103" name="__codelineno-11-103" href="#__codelineno-11-103"></a>  libebook-1.2-21t64              libkf6itemviews-data         libqt5texttospeech5               qml6-module-org-kde-syntaxhighlighting
+<a id="__codelineno-11-104" name="__codelineno-11-104" href="#__codelineno-11-104"></a>  libebook-contacts-1.2-4t64      libkf6itemviews6             libqt6bluetooth6                  qml6-module-org-kde-userfeedback
+<a id="__codelineno-11-105" name="__codelineno-11-105" href="#__codelineno-11-105"></a>  libedata-book-1.2-27t64         libkf6jobwidgets-data        libqt6bluetooth6-bin              qml6-module-qt-labs-folderlistmodel
+<a id="__codelineno-11-106" name="__codelineno-11-106" href="#__codelineno-11-106"></a>  libedataserver-1.2-27t64        libkf6jobwidgets6            libqt6core5compat6                qml6-module-qt-labs-platform
+<a id="__codelineno-11-107" name="__codelineno-11-107" href="#__codelineno-11-107"></a>  libepub0                        libkf6kcmutils-bin           libqt6labsplatform6               qml6-module-qt-labs-qmlmodels
+<a id="__codelineno-11-108" name="__codelineno-11-108" href="#__codelineno-11-108"></a>  libfakekey0                     libkf6kcmutils-data          libqt6multimedia6                 qml6-module-qt5compat-graphicaleffects
+<a id="__codelineno-11-109" name="__codelineno-11-109" href="#__codelineno-11-109"></a>  libfmt10                        libkf6kcmutils6              libqt6openglwidgets6              qml6-module-qtcore
+<a id="__codelineno-11-110" name="__codelineno-11-110" href="#__codelineno-11-110"></a>  libfuse2t64                     libkf6kcmutilscore6          libqt6positioning6                qml6-module-qtmultimedia
+<a id="__codelineno-11-111" name="__codelineno-11-111" href="#__codelineno-11-111"></a>  libgit2-1.9                     libkf6kcmutilsquick6         libqt6positioning6-plugins        qml6-module-qtpositioning
+<a id="__codelineno-11-112" name="__codelineno-11-112" href="#__codelineno-11-112"></a>  libgsettings-qt1                libkf6kiocore6               libqt6positioningquick6           qml6-module-qtqml
+<a id="__codelineno-11-113" name="__codelineno-11-113" href="#__codelineno-11-113"></a>  libhfstospell11                 libkf6kiofilewidgets6        libqt6printsupport6               qml6-module-qtqml-models
+<a id="__codelineno-11-114" name="__codelineno-11-114" href="#__codelineno-11-114"></a>  libhttp-parser2.9               libkf6kiogui6                libqt6quickcontrols2-6            qml6-module-qtqml-workerscript
+<a id="__codelineno-11-115" name="__codelineno-11-115" href="#__codelineno-11-115"></a>  libipt2                         libkf6kiowidgets6            libqt6quickshapes6                qml6-module-qtquick
+<a id="__codelineno-11-116" name="__codelineno-11-116" href="#__codelineno-11-116"></a>  libkaccounts6-2                 libkf6modemmanagerqt6        libqt6quicktemplates2-6           qml6-module-qtquick-controls
+<a id="__codelineno-11-117" name="__codelineno-11-117" href="#__codelineno-11-117"></a>  libkdecorations3-6              libkf6networkmanagerqt6      libqt6quickwidgets6               qml6-module-qtquick-dialogs
+<a id="__codelineno-11-118" name="__codelineno-11-118" href="#__codelineno-11-118"></a>  libkdecorations3private2        libkf6newstuff-data          libqt6sensors6                    qml6-module-qtquick-effects
+<a id="__codelineno-11-119" name="__codelineno-11-119" href="#__codelineno-11-119"></a>  libkdsoap-qt6-2                 libkf6newstuffcore6          libqt6serialport6                 qml6-module-qtquick-layouts
+<a id="__codelineno-11-120" name="__codelineno-11-120" href="#__codelineno-11-120"></a>  libkdsoapwsdiscoveryclient0     libkf6newstuffwidgets6       libqt6shadertools6                qml6-module-qtquick-particles
+<a id="__codelineno-11-121" name="__codelineno-11-121" href="#__codelineno-11-121"></a>  libkexiv2qt6-0                  libkf6notifications-data     libqt6sql6                        qml6-module-qtquick-shapes
+<a id="__codelineno-11-122" name="__codelineno-11-122" href="#__codelineno-11-122"></a>  libkf5archive-data              libkf6notifications6         libqt6sql6-sqlite                 qml6-module-qtquick-templates
+<a id="__codelineno-11-123" name="__codelineno-11-123" href="#__codelineno-11-123"></a>  libkf5archive5                  libkf6notifyconfig-data      libqt6texttospeech6               qml6-module-qtquick-tooling
+<a id="__codelineno-11-124" name="__codelineno-11-124" href="#__codelineno-11-124"></a>  libkf5auth-data                 libkf6notifyconfig6          libqt6uitools6                    qml6-module-qtquick-virtualkeyboard
+<a id="__codelineno-11-125" name="__codelineno-11-125" href="#__codelineno-11-125"></a>  libkf5authcore5                 libkf6package-data           libqt6virtualkeyboard6            qml6-module-qtquick-window
+<a id="__codelineno-11-126" name="__codelineno-11-126" href="#__codelineno-11-126"></a>  libkf5bookmarks-data            libkf6package6               libqt6webchannel6                 qml6-module-qtwebchannel
+<a id="__codelineno-11-127" name="__codelineno-11-127" href="#__codelineno-11-127"></a>  libkf5bookmarks5                libkf6parts-data             libqt6webchannelquick6            qml6-module-qtwebengine
+<a id="__codelineno-11-128" name="__codelineno-11-128" href="#__codelineno-11-128"></a>  libkf5codecs-data               libkf6parts6                 libqt6webengine6-data             qml6-module-qtwebview
+<a id="__codelineno-11-129" name="__codelineno-11-129" href="#__codelineno-11-129"></a>  libkf5codecs5                   libkf6people-data            libqt6webenginecore6              qml6-module-sso-onlineaccounts
+<a id="__codelineno-11-130" name="__codelineno-11-130" href="#__codelineno-11-130"></a>  libkf5completion-data           libkf6people6                libqt6webenginecore6-bin          qt6-virtualkeyboard-plugin
+<a id="__codelineno-11-131" name="__codelineno-11-131" href="#__codelineno-11-131"></a>  libkf5completion5               libkf6peoplebackend6         libqt6webenginequick6             qtspeech5-speechd-plugin
+<a id="__codelineno-11-132" name="__codelineno-11-132" href="#__codelineno-11-132"></a>  libkf5config-bin                libkf6prison6                libqt6webenginewidgets6           rsync
+<a id="__codelineno-11-133" name="__codelineno-11-133" href="#__codelineno-11-133"></a>  libkf5config-data               libkf6prisonscanner6         libqt6webview6                    sddm-theme-breeze
+<a id="__codelineno-11-134" name="__codelineno-11-134" href="#__codelineno-11-134"></a>  libkf5configcore5               libkf6pty-data               libquickcharts1                   sddm-theme-debian-breeze
+<a id="__codelineno-11-135" name="__codelineno-11-135" href="#__codelineno-11-135"></a>  libkf5configgui5                libkf6pty6                   libquickchartscontrols1           signon-plugin-oauth2
+<a id="__codelineno-11-136" name="__codelineno-11-136" href="#__codelineno-11-136"></a>  libkf5configwidgets-data        libkf6pulseaudioqt5          libscim8v5                        smartmontools
+<a id="__codelineno-11-137" name="__codelineno-11-137" href="#__codelineno-11-137"></a>  libkf5configwidgets5            libkf6purpose-bin            libsignon-plugins-common1         socat
+<a id="__codelineno-11-138" name="__codelineno-11-138" href="#__codelineno-11-138"></a>  libkf5coreaddons-data           libkf6purpose-data           libsignon-qt6-1                   sonnet-plugins
+<a id="__codelineno-11-139" name="__codelineno-11-139" href="#__codelineno-11-139"></a>  libkf5coreaddons5               libkf6purpose6               libsource-highlight-common        sonnet6-plugins
+<a id="__codelineno-11-140" name="__codelineno-11-140" href="#__codelineno-11-140"></a>  libkf5crash5                    libkf6purposewidgets6        libsource-highlight4t64           sse3-support
+<a id="__codelineno-11-141" name="__codelineno-11-141" href="#__codelineno-11-141"></a>  libkf5dbusaddons-bin            libkf6qqc2desktopstyle-data  libspdlog1.15                     sshfs
+<a id="__codelineno-11-142" name="__codelineno-11-142" href="#__codelineno-11-142"></a>  libkf5dbusaddons-data           libkf6runner6                libsquashfuse0                    switcheroo-control
+<a id="__codelineno-11-143" name="__codelineno-11-143" href="#__codelineno-11-143"></a>  libkf5dbusaddons5               libkf6screen8                libstoken1t64                     systemd-coredump
+<a id="__codelineno-11-144" name="__codelineno-11-144" href="#__codelineno-11-144"></a>  libkf5doctools5                 libkf6screendpms8            libtaskmanager6                   systemsettings
+<a id="__codelineno-11-145" name="__codelineno-11-145" href="#__codelineno-11-145"></a>  libkf5globalaccel-bin           libkf6service-bin            libtomcrypt1                      vulkan-tools
+<a id="__codelineno-11-146" name="__codelineno-11-146" href="#__codelineno-11-146"></a>  libkf5globalaccel-data          libkf6service-data           libtommath1                       wayland-utils
+<a id="__codelineno-11-147" name="__codelineno-11-147" href="#__codelineno-11-147"></a>  libkf5globalaccel5              libkf6service6               libvoikko1                        xdg-desktop-portal-kde
+<a id="__codelineno-11-148" name="__codelineno-11-148" href="#__codelineno-11-148"></a>  libkf5guiaddons-data            libkf6solid-data             libweather-ion7                   xsettingsd
+<a id="__codelineno-11-149" name="__codelineno-11-149" href="#__codelineno-11-149"></a>  libkf5guiaddons5                libkf6solid6                 libxapian30                       xwaylandvideobridge
+<a id="__codelineno-11-150" name="__codelineno-11-150" href="#__codelineno-11-150"></a>  libkf5i18n-data                 libkf6sonnet-data            libxcb-dpms0
+<a id="__codelineno-11-151" name="__codelineno-11-151" href="#__codelineno-11-151"></a>  libkf5i18n5                     libkf6sonnetcore6            libxcb-record0
+<a id="__codelineno-11-152" name="__codelineno-11-152" href="#__codelineno-11-152"></a>
+<a id="__codelineno-11-153" name="__codelineno-11-153" href="#__codelineno-11-153"></a>Suggested packages:
+<a id="__codelineno-11-154" name="__codelineno-11-154" href="#__codelineno-11-154"></a>  tk                      libxalan2-java                libpam-fprintd  reiserfsprogs                    network-manager-iodine       python-pyxattr-doc
+<a id="__codelineno-11-155" name="__codelineno-11-155" href="#__codelineno-11-155"></a>  | wish                  libxslthl-java                libpam-sss      xfsprogs                         network-manager-l2tp         python3-pycurl
+<a id="__codelineno-11-156" name="__codelineno-11-156" href="#__codelineno-11-156"></a>  dbtoepub                xalan                         libpam-pkcs11   phonon4qt6-backend-gstreamer     network-manager-openconnect  python-tornado-doc
+<a id="__codelineno-11-157" name="__codelineno-11-157" href="#__codelineno-11-157"></a>  docbook-xsl-doc-html    gdb-doc                       voikko-fi       kde-config-flatpak               network-manager-openvpn      python3-twisted
+<a id="__codelineno-11-158" name="__codelineno-11-158" href="#__codelineno-11-158"></a>  | docbook-xsl-doc-pdf   gdbserver                     xapian-tools    plasma-theme-oxygen              network-manager-pptp         python3-braceexpand
+<a id="__codelineno-11-159" name="__codelineno-11-159" href="#__codelineno-11-159"></a>  | docbook-xsl-doc-text  libc-dbg                      btrfs-progs     plasma-discover-backend-flatpak  network-manager-ssh          gsmartcontrol
+<a id="__codelineno-11-160" name="__codelineno-11-160" href="#__codelineno-11-160"></a>  | docbook-xsl-doc       ibus                          hfsplus         plasma-discover-backend-snap     network-manager-strongswan   smart-notifier
+<a id="__codelineno-11-161" name="__codelineno-11-161" href="#__codelineno-11-161"></a>  docbook-xsl-saxon       kde-config-gtk-style-preview  hfsutils        firewalld                        network-manager-vpnc         hspell
+<a id="__codelineno-11-162" name="__codelineno-11-162" href="#__codelineno-11-162"></a>  fop                     samba                         jfsutils        | ufw                            gocryptfs
+<a id="__codelineno-11-163" name="__codelineno-11-163" href="#__codelineno-11-163"></a>  libsaxon-java           kwin-addons                   reiser4progs    network-manager-fortisslvpn      python-pylibacl-doc
+<a id="__codelineno-11-164" name="__codelineno-11-164" href="#__codelineno-11-164"></a>
+<a id="__codelineno-11-165" name="__codelineno-11-165" href="#__codelineno-11-165"></a>Recommended packages:
+<a id="__codelineno-11-166" name="__codelineno-11-166" href="#__codelineno-11-166"></a>  software-properties-qt
+<a id="__codelineno-11-167" name="__codelineno-11-167" href="#__codelineno-11-167"></a>
+<a id="__codelineno-11-168" name="__codelineno-11-168" href="#__codelineno-11-168"></a>Summary:
+<a id="__codelineno-11-169" name="__codelineno-11-169" href="#__codelineno-11-169"></a>  Upgrading: 0, Installing: 579, Removing: 0, Not Upgrading: 0
+<a id="__codelineno-11-170" name="__codelineno-11-170" href="#__codelineno-11-170"></a>  Download size: 617 MB
+<a id="__codelineno-11-171" name="__codelineno-11-171" href="#__codelineno-11-171"></a>  Space needed: 2,081 MB / 3,416 MB available
+<a id="__codelineno-11-172" name="__codelineno-11-172" href="#__codelineno-11-172"></a>
+<a id="__codelineno-11-173" name="__codelineno-11-173" href="#__codelineno-11-173"></a>Continue? [Y/n]
 </code></pre></div>
 </details>
 <hr>
@@ -1768,7 +1790,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 17, 2026 22:01:07 UTC">February 17, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 17, 2026 22:39:23 UTC">February 17, 2026</span>
   </span>
 
     
