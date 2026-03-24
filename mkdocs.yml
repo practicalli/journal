@@ -130,8 +130,6 @@ extra:
       link: https://www.linkedin.com/in/jr0cket/
     - icon: fontawesome/brands/slack
       link: https://clojurians.slack.com/messages/practicalli
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/practical_li
     - icon: fontawesome/brands/github
       link: https://github.com/practicalli
     - icon: fontawesome/brands/docker
