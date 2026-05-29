@@ -11,7 +11,7 @@ categories:
 
 What are the options for search and replace text in Neovim?
 
-Sometimes error messages are missleading...
+Sometimes error messages are misleading...
 
 <!-- more -->
 
@@ -24,6 +24,10 @@ Known options
 - `:%substitue` vim-style search and replace (I find this fiddley and not reliable, although could be user errror)
 - Clojure LSP for symbols, etc.
 
+!!! INFO "Grug is used for global search and replace by Practicalli"
+
+
+### Visual select
 
 Use a visual select to search and replace, with confirmation
 
@@ -47,13 +51,15 @@ Telescope can generate a quickfix list, showing the results of pattern matches a
 
 Use `:cdo` command to search and replace in the quickfix list
 
-```vim
-:cdo %s/current-pattern/new-pattern/g
-```
+!!! NOTE
+    ```vim
+    :cdo %s/current-pattern/new-pattern/g
+    ```
 
 Including the `c` option to confirm each replacement (using a noice popup when using Practicalli AstroNvim-config)
 
 > Practicalli Neovim search-replace pages update with lessons learned today
+
 
 ## Debian Linux
 
