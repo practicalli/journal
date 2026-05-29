@@ -1274,8 +1274,9 @@
 
 <p>Feeling a little sick so binging on movies and shows on Apple TV+.  On Monday afternoon Apple TV+ would not stream content (the play button disappeared) although I could browse the catalogue of shows.  After several hours the play button came back, although contacting Apple support was quite pointless.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://optimise2.assets-servd.host/political-lechwe/production/Mooless-info.jpg?w=1600&amp;h=904&amp;q=82&amp;fm=webp&amp;fit=crop&amp;dm=1681290833&amp;s=8fc234ed1acd070f99e0a7b3ef95079c" data-desc-position="bottom"><img align="right" alt="Mooless Moo Plant bases stake and ale pie" loading="lazy" src="https://optimise2.assets-servd.host/political-lechwe/production/Mooless-info.jpg?w=1600&amp;h=904&amp;q=82&amp;fm=webp&amp;fit=crop&amp;dm=1681290833&amp;s=8fc234ed1acd070f99e0a7b3ef95079c" style="width:360px"></a></p>
-<p>A relaxing week trying out some new vegetarian and vegan meals. <a href="https://shop.pieminister.co.uk/products/mooless-moo/">Pieminister Mooless Moo pie</a> is a plant based stake and ale pie, using jackfruit for the stake pieces.  The pastry was lovely and crispy and the pie was very filling.  The only downside to the pie for me was it was the taste and texture was too much like beef and I've never really liked that even when I did eat meat.</p>
-<p>New potatoes, Edamame, Spinach and Garden Peas complement the pie, along with some very thick <a href="https://www.bisto.co.uk/products/bisto-best-vegetable-gravy-granules-230g/">Bisto Best Vegetable Gravy</a> (I add way too many granules to make the gravy nice and thick).</p>
+<p>A relaxing week trying out some new vegetarian and vegan meals. <a href="https://shop.pieminister.co.uk/products/mooless-moo/">Pieminister Mooless Moo pie</a> is a plant based stake and ale pie, using jackfruit for the stake pieces.</p>
+<p>The pastry was lovely and crispy and the pie was very filling.  The only downside to the pie for me was it was the taste and texture was too much like beef and I've never really liked that even when I did eat meat.</p>
+<p>New potatoes, Edamame, Spinach and Garden Peas complement the pie, along with some very thick <a href="https://www.bisto.co.uk/products/bisto-best-vegetable-gravy-granules-230g/">Bisto Best Vegetable Gravy</a> (I used way too many granules to make the gravy nice and thick).</p>
 <!-- more -->
 
 <h2 id="emacs">Emacs<a class="headerlink" href="#emacs" title="Permanent link">λ︎</a></h2>
@@ -1389,6 +1390,8 @@
 <p>The tracker service can be a significant drain on computer resources as it indexes files, especially when there have been a log of changes or for a newly installed system.</p>
 <p>The tracker has many dependencies, so its not easy to remove the <code>tracker-miner-fs-3</code> package when actively using the Gnome desktop.</p>
 <p>The recommended approach is to edit the <code>.desktop</code> files and add <code>Hidden=true</code> at the end of each tracker related file and reboot the operating system.</p>
+<div class="admonition example">
+<p class="admonition-title">Desktop configuration to disable tracker service</p>
 <div class="highlight"><span class="filename">/etc/xdg/autostart/tracker-miner-fs-3.desktop</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[Desktop Entry]
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Name=Tracker File System Miner
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Comment=Crawls and processes files on the file system
@@ -1406,13 +1409,20 @@
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>X-systemd-skip=true
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>Hidden=true
 </code></pre></div>
-<p>If adding "Hiddent=true" is not sufficient, then disable the services for all users by setting them to <code>/dev/null</code> using the <code>systemctl</code> command.</p>
+</div>
+<p>If adding <code>"Hiddent=true"</code> is not sufficient, then disable the services for all users by setting them to <code>/dev/null</code> using the <code>systemctl</code> command.</p>
+<div class="admonition note">
+<p class="admonition-title">Command Line to disable tracker service</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>--global<span class="w"> </span>mask<span class="w"> </span>tracker-miner-fs-3.service
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>--global<span class="w"> </span>mask<span class="w"> </span>tracker-xdg-portal-3.service
 </code></pre></div>
+</div>
 <p>Remove the database of indexed files from each user account on the system</p>
+<div class="admonition note">
+<p class="admonition-title">Remove tracker cache files</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$HOME</span>/.cache/tracker*
 </code></pre></div>
+</div>
 <h2 id="movie-reviews-this-week">Movie reviews this week<a class="headerlink" href="#movie-reviews-this-week" title="Permanent link">λ︎</a></h2>
 <h3 id="luck-2022">Luck - 2022<a class="headerlink" href="#luck-2022" title="Permanent link">λ︎</a></h3>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/en/6/6e/Luck_%282022%29_poster.png" data-desc-position="bottom"><img align="right" alt="Luck - movie from 2022" loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/6/6e/Luck_%282022%29_poster.png"></a></p>
@@ -1420,7 +1430,6 @@
 <p>Sam feeds Bob some food and finds Bob's lucky penny.</p>
 <p>Includes a nod to the Japanese obsession with the cat.</p>
 <p>Bob was sent to Section A113 which is an <a href="https://en.wikipedia.org/wiki/A113">easter egg</a> referencing the class room number used for character animation students as the California Institute of the Arts, where some of the Pixar team used to study.</p>
-<p>Apple TV+</p>
 <h3 id="wolfs">Wolfs<a class="headerlink" href="#wolfs" title="Permanent link">λ︎</a></h3>
 <p>Brad Pitt and George Clooney bouncing off each other perfectly.  I really enjoyed this film and could watch again.</p>
 <p>Apple TV+</p>
@@ -1453,7 +1462,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2025 18:32:16 UTC">June 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2026 13:01:16 UTC">May 29, 2026</span>
   </span>
 
     
