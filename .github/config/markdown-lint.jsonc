@@ -60,7 +60,7 @@
     "ignore_code_blocks": false,
     // Fenced code languages to ignore
     "ignore_code_languages": [
-      "Makefile",
+      "make",
       "shell"
     ],
     // Number of spaces for each hard tab
