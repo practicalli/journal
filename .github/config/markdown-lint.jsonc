@@ -61,7 +61,8 @@
     // Fenced code languages to ignore
     "ignore_code_languages": [
       "make",
-      "shell"
+      "shell",
+      "shell-output"
     ],
     // Number of spaces for each hard tab
     "spaces_per_tab": 1
