@@ -1297,9 +1297,9 @@
 <!-- more -->
 
 <h2 id="debian">Debian<a class="headerlink" href="#debian" title="Permanent link">λ︎</a></h2>
-<p>Updated the UV install script to extract both <code>uv</code> and <code>uvx</code>.</p>
-<p>The <a href="https://github.com/devmatteini/dra" target="_blank">DRA</a> tool by default extracts a single file when installing from a tar or zip archive.</p>
+<p><a href="https://github.com/practicalli/dotfiles/commit/6d0a923da038146c2c2bf7686a9bb47761095042">Updated the UV install script in practicalli/dotfiles</a> to extract both <code>uv</code> and <code>uvx</code> executables.</p>
 <p>The UV GitHub Release is packages as a <code>.tar.gz</code> file that includes <code>uv</code> and <code>uvx</code> executables.  Both of these executables should be installed to use UV completely.</p>
+<p>The <a href="https://github.com/devmatteini/dra" target="_blank">DRA</a> tool by default extracts a single file when installing from a tar or zip archive.</p>
 <p>DRA can install multiple executables from a tar or zip archive using the <code>-I</code>/ <code>--install-file</code> option.  The option should be specified for each file to be extracted</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dra<span class="w"> </span>download<span class="w"> </span>--automatic<span class="w"> </span>--install-file<span class="w"> </span>uv<span class="w"> </span>--install-file<span class="w"> </span>uvx<span class="w"> </span>--output<span class="w"> </span>~/.local/bin/<span class="w"> </span>astral-sh/uv
 </code></pre></div>
