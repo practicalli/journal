@@ -118,7 +118,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practicalli" class="md-skip">
+        <a href="#debian" class="md-skip">
           Skip to content
         </a>
       
@@ -1033,6 +1033,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practicalli" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1079,6 +1090,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cycling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Overlay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1189,7 +1217,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              8 min read
+                              9 min read
                             
                           </span>
                         </div>
@@ -1268,150 +1296,157 @@
 </ul>
 <!-- more -->
 
+<h2 id="debian">Debian<a class="headerlink" href="#debian" title="Permanent link">λ︎</a></h2>
+<p>Updated the UV install script to extract both <code>uv</code> and <code>uvx</code>.</p>
+<p>The <a href="https://github.com/devmatteini/dra" target="_blank">DRA</a> tool by default extracts a single file when installing from a tar or zip archive.</p>
+<p>The UV GitHub Release is packages as a <code>.tar.gz</code> file that includes <code>uv</code> and <code>uvx</code> executables.  Both of these executables should be installed to use UV completely.</p>
+<p>DRA can install multiple executables from a tar or zip archive using the <code>-I</code>/ <code>--install-file</code> option.  The option should be specified for each file to be extracted</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dra<span class="w"> </span>download<span class="w"> </span>--automatic<span class="w"> </span>--install-file<span class="w"> </span>uv<span class="w"> </span>--install-file<span class="w"> </span>uvx<span class="w"> </span>--output<span class="w"> </span>~/.local/bin/<span class="w"> </span>astral-sh/uv
+</code></pre></div>
 <h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
 <p>Publishing Practicalli Cycling book failed at the GitHub pages stage of the workflow</p>
 <details class="example">
 <summary>Publish Zensical Docs - Deployment failed, try again later</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt; Run actions/deploy-pages@v5
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(node:2381) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>(Use `node --trace-deprecation ...` to show where the warning was created)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Fetching artifact metadata for "github-pages" in this workflow run
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Found 1 artifact(s)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Creating Pages deployment with payload:
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>{
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    "artifact_id": 8070753547,
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    "pages_build_version": "b502f71a9e7f5ea606beef32eb4daf21bb865275",
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    "oidc_token": "***"
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>}
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Created deployment for b502f71a9e7f5ea606beef32eb4daf21bb865275, ID: b502f71a9e7f5ea606beef32eb4daf21bb865275
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Getting Pages deployment status...
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Error: Deployment failed, try again later.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt; Run actions/deploy-pages@v5
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>(node:2381) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>(Use `node --trace-deprecation ...` to show where the warning was created)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Fetching artifact metadata for "github-pages" in this workflow run
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Found 1 artifact(s)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Creating Pages deployment with payload:
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>{
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    "artifact_id": 8070753547,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    "pages_build_version": "b502f71a9e7f5ea606beef32eb4daf21bb865275",
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    "oidc_token": "***"
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>}
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Created deployment for b502f71a9e7f5ea606beef32eb4daf21bb865275, ID: b502f71a9e7f5ea606beef32eb4daf21bb865275
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Getting Pages deployment status...
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Error: Deployment failed, try again later.
 </code></pre></div>
 </details>
 <p>Visiting the <a href="https://github.com/practicalli/cycling/settings/pages">repository Setting &gt;GitHub Pages</a> and changing the source of the "Build and deployment" from GitHub Actions to "Deploy from Branch" and back to "GitHub Actions" seems to have resolved the issue.  It could just have been a blip, but <a href="https://github.com/orgs/community/discussions/200823">others had reported a similar issue and hack to fix it</a>.</p>
 <p>GitHub had <a href="https://www.githubstatus.com/incidents/5bnwwg9tzd4q">an Incident with Pages</a> on July 02 (the day before), and although the issue was resolved it may have had lingering consequences.</p>
 <h2 id="megalinter">Megalinter<a class="headerlink" href="#megalinter" title="Permanent link">λ︎</a></h2>
 <p>I used <code>gh repo create</code> to host <a href="https://megalinter.io/9.6.0/custom-flavors/">a custom Megalinter flavour</a>, to be used to run quality checking tools relevant to <a href="https://zensical.org/">Zensical Static Site Generator</a> project.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>❯ gh repo create
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>? What would you like to do? Create a new repository on github.com from scratch
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>? Repository name megalinter-custom-flavor-zensical
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>? Repository owner practicalli
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>? Description Lint tools to support static site development with Zensical
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>? Visibility Public
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>? Would you like to add a README file? Yes
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>? Would you like to add a .gitignore? No
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>? Would you like to add a license? Yes
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>? Choose a license Creative Commons Zero v1.0 Universal
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>? This will create "practicalli/megalinter-custom-flavor-zensical" as a public repository on github.com. Continue? Yes
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>✓ Created repository practicalli/megalinter-custom-flavor-zensical on github.com
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  https://github.com/practicalli/megalinter-custom-flavor-zensical
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>? Clone the new repository locally? Yes
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Cloning into 'megalinter-custom-flavor-zensical'...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>❯ gh repo create
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>? What would you like to do? Create a new repository on github.com from scratch
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>? Repository name megalinter-custom-flavor-zensical
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>? Repository owner practicalli
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>? Description Lint tools to support static site development with Zensical
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>? Visibility Public
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>? Would you like to add a README file? Yes
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>? Would you like to add a .gitignore? No
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>? Would you like to add a license? Yes
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>? Choose a license Creative Commons Zero v1.0 Universal
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>? This will create "practicalli/megalinter-custom-flavor-zensical" as a public repository on github.com. Continue? Yes
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>✓ Created repository practicalli/megalinter-custom-flavor-zensical on github.com
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  https://github.com/practicalli/megalinter-custom-flavor-zensical
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>? Clone the new repository locally? Yes
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Cloning into 'megalinter-custom-flavor-zensical'...
 </code></pre></div>
 <p>The command taken from practicalli/cycling megalinter workflow, removing REPOSITORY_GITLEAKS for the newer REPOSITORY_BETTERLEAKS and removing MARKDOWN_MARKDOWLINT and using the self-described faster tool NMARKDOWN_RUMDL</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>mega-linter-runner@9.6.0<span class="w"> </span>--custom-flavor-setup<span class="w"> </span>--custom-flavor-linters<span class="w"> </span>MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npx<span class="w"> </span>mega-linter-runner@9.6.0<span class="w"> </span>--custom-flavor-setup<span class="w"> </span>--custom-flavor-linters<span class="w"> </span>MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>❯ npx mega-linter-runner@9.6.0 --custom-flavor-setup --custom-flavor-linters MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm error code ETARGET
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>npm error notarget No matching version found for mega-linter-runner@9.6.0.
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>npm error notarget In most cases you or one of your dependencies are requesting
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>npm error notarget a package version that doesn't exist.
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>npm error A complete log of this run can be found in: /home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-debug-0.log
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯ npx mega-linter-runner@9.6.0 --custom-flavor-setup --custom-flavor-linters MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>npm error code ETARGET
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>npm error notarget No matching version found for mega-linter-runner@9.6.0.
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>npm error notarget In most cases you or one of your dependencies are requesting
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>npm error notarget a package version that doesn't exist.
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>npm error A complete log of this run can be found in: /home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-debug-0.log
 </code></pre></div>
 <p>Oh dear !  Lets look at the logs (although the output above is quite clear that mega-linter-runner@0.9.6 doesnt exist).</p>
 <p>Using <code>bat</code> to view the log.  Line 30 also reports that the npm package for mega-linter-runner does not exist.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>   1 │ 0 verbose cli /home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/bin/node /home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>     │ bin/npm-cli.js
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>   2 │ 1 info using npm@11.8.0
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   3 │ 2 info using node@v24.13.1
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>   4 │ 3 silly config load:file:/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/npmrc
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>   5 │ 4 silly config load:file:/home/practicalli/projects/practicalli/megalinter-custom-flavor-zensical/.npmrc
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   6 │ 5 silly config load:file:/home/practicalli/.npmrc
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   7 │ 6 silly config load:file:/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/etc/npmrc
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   8 │ 7 verbose title npm exec mega-linter-runner@9.6.0 --custom-flavor-setup --custom-flavor-linters MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>     │ V8R
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>   9 │ 8 verbose argv "exec" "--" "mega-linter-runner@9.6.0" "--custom-flavor-setup" "--custom-flavor-linters" "MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYC
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>     │ HEE,YAML_V8R"
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  10 │ 9 verbose logfile logs-max:10 dir:/home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>  11 │ 10 verbose logfile /home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-debug-0.log
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  12 │ 11 silly logfile start cleaning logs, removing 1 files
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>  13 │ 12 silly logfile done cleaning log files
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>  14 │ 13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  15 │ 14 http fetch GET 200 https://registry.npmjs.org/mega-linter-runner 167ms (cache revalidated)
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>  16 │ 15 verbose type version
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>  17 │ 16 verbose stack mega-linter-runner: No matching version found for mega-linter-runner@9.6.0.
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>  18 │ 16 verbose stack     at module.exports (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/npm-pick-manifest/lib/index.js:210:23)
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>  19 │ 16 verbose stack     at RegistryFetcher.manifest (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/pacote/lib/registry.js:130:54)
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>  20 │ 16 verbose stack     at async getManifest (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:29:22)
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>  21 │ 16 verbose stack     at async missingFromTree (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:64:22)
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>  22 │ 16 verbose stack     at async /home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:186:32
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>  23 │ 16 verbose stack     at async Promise.all (index 0)
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>  24 │ 16 verbose stack     at async exec (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:184:3)
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>  25 │ 16 verbose stack     at async Npm.exec (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/lib/npm.js:208:9)
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>  26 │ 16 verbose stack     at async module.exports (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/lib/cli/entry.js:67:5)
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>  27 │ 17 error code ETARGET
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>  28 │ 18 error notarget No matching version found for mega-linter-runner@9.6.0.
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>  29 │ 19 error notarget In most cases you or one of your dependencies are requesting
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>  30 │ 19 error notarget a package version that doesn't exist.
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>  31 │ 20 verbose cwd /home/practicalli/projects/practicalli/megalinter-custom-flavor-zensical
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>  32 │ 21 verbose os Linux 6.12.94+deb13-amd64
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>  33 │ 22 verbose node v24.13.1
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>  34 │ 23 verbose npm  v11.8.0
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>  35 │ 24 verbose exit 1
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>  36 │ 25 verbose code 1
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>  37 │ 26 error A complete log of this run can be found in: /home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-debug-0.log
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>   1 │ 0 verbose cli /home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/bin/node /home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>     │ bin/npm-cli.js
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   2 │ 1 info using npm@11.8.0
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   3 │ 2 info using node@v24.13.1
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>   4 │ 3 silly config load:file:/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/npmrc
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>   5 │ 4 silly config load:file:/home/practicalli/projects/practicalli/megalinter-custom-flavor-zensical/.npmrc
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>   6 │ 5 silly config load:file:/home/practicalli/.npmrc
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>   7 │ 6 silly config load:file:/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/etc/npmrc
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>   8 │ 7 verbose title npm exec mega-linter-runner@9.6.0 --custom-flavor-setup --custom-flavor-linters MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>     │ V8R
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>   9 │ 8 verbose argv "exec" "--" "mega-linter-runner@9.6.0" "--custom-flavor-setup" "--custom-flavor-linters" "MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYC
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>     │ HEE,YAML_V8R"
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>  10 │ 9 verbose logfile logs-max:10 dir:/home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>  11 │ 10 verbose logfile /home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-debug-0.log
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>  12 │ 11 silly logfile start cleaning logs, removing 1 files
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>  13 │ 12 silly logfile done cleaning log files
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>  14 │ 13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>  15 │ 14 http fetch GET 200 https://registry.npmjs.org/mega-linter-runner 167ms (cache revalidated)
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>  16 │ 15 verbose type version
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>  17 │ 16 verbose stack mega-linter-runner: No matching version found for mega-linter-runner@9.6.0.
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>  18 │ 16 verbose stack     at module.exports (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/npm-pick-manifest/lib/index.js:210:23)
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>  19 │ 16 verbose stack     at RegistryFetcher.manifest (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/pacote/lib/registry.js:130:54)
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>  20 │ 16 verbose stack     at async getManifest (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:29:22)
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>  21 │ 16 verbose stack     at async missingFromTree (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:64:22)
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>  22 │ 16 verbose stack     at async /home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:186:32
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>  23 │ 16 verbose stack     at async Promise.all (index 0)
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>  24 │ 16 verbose stack     at async exec (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:184:3)
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>  25 │ 16 verbose stack     at async Npm.exec (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/lib/npm.js:208:9)
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>  26 │ 16 verbose stack     at async module.exports (/home/practicalli/.local/share/fnm/node-versions/v24.13.1/installation/lib/node_modules/npm/lib/cli/entry.js:67:5)
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>  27 │ 17 error code ETARGET
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>  28 │ 18 error notarget No matching version found for mega-linter-runner@9.6.0.
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>  29 │ 19 error notarget In most cases you or one of your dependencies are requesting
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>  30 │ 19 error notarget a package version that doesn't exist.
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>  31 │ 20 verbose cwd /home/practicalli/projects/practicalli/megalinter-custom-flavor-zensical
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>  32 │ 21 verbose os Linux 6.12.94+deb13-amd64
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>  33 │ 22 verbose node v24.13.1
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>  34 │ 23 verbose npm  v11.8.0
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>  35 │ 24 verbose exit 1
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>  36 │ 25 verbose code 1
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>  37 │ 26 error A complete log of this run can be found in: /home/practicalli/.npm/_logs/2026-07-01T20_12_43_234Z-debug-0.log
 </code></pre></div>
 <p>It seems mega-linter-runner package has not been published yet.  The <a href="https://www.npmjs.com/package/mega-linter-runner">latest version is mega-linter-runner@9.5.0 according to npm website</a></p>
 <p>Using <code>@beta</code> showed version 0.9.3 which I assume is too old.</p>
 <p>Using <code>npx mega-linter-runner --install</code> in a separate directory showed it would use version 0.9.5</p>
 <p>I tried the same command without specifying a specific number and not surprisingly it used mega-linter-runner version 0.9.5</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npx<span class="w"> </span>mega-linter-runner<span class="w"> </span>--custom-flavor-setup<span class="w"> </span>--custom-flavor-linters<span class="w"> </span>MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>npx<span class="w"> </span>mega-linter-runner<span class="w"> </span>--custom-flavor-setup<span class="w"> </span>--custom-flavor-linters<span class="w"> </span>MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>❯ npx mega-linter-runner --custom-flavor-setup --custom-flavor-linters MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Need to install the following packages:
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>mega-linter-runner@9.5.0
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Ok to proceed? (y) y
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Yeoman generator used: /home/practicalli/.npm/_npx/614e542633a698fb/node_modules/mega-linter-runner/generators/mega-linter-custom-flavor
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    .:oool'                                  ,looo;
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    .xNXNXl                                 .dXNNXo.
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>     lXXXX0c.                              'oKXXN0;
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>     .oKNXNX0kxdddddddoc,.    .;lodddddddxk0XXXX0c
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>      .:kKXXXXXXXXXXXXNXX0dllx0XXXXXXXXXXXXXXXKd,
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        .,cdkOOOOOOOO0KXXXXXXXXXXK0OOOOOOOkxo:'
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>                      'ckKXNNNXkc'
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>              ':::::;.  .c0XX0l.  .;::::;.
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>              'xXXXXXx'   :kx:   ;OXXXXKd.
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>               .dKNNXXO;   ..   :0XXXXKl.
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>                .lKXXXX0:     .lKXXXX0:
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>                  :0XXXXKl.  .dXXXXXk,
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>                   ;kXXXXKd:cxXXXXXx'
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>                    'xXNXXXXXXXXXKo.
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>                     .oKXXXXNXXX0l.
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>                      .lKNNXNNXO:
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>                        ,looool'
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>==========================================================
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>=============   MegaLinter, by OX Security   =============
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>=========  https://ox.security?ref=megalinter  ===========
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>==========================================================
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>Welcome to the MegaLinter Custom Flavor generator !
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>When you don't know what option to select, please use default values
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>Fetching MegaLinter configuration schema...
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>✔ What is the label of your custom flavor? PracticalliZensical
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>✔ Please select the linters you want to include in your custom flavor: MARKDOWN_MARKDOWN_TABLE_FORMATTER, MARKDOWN_RUMDL, REPOSITORY_BETTERLEAKS, SPELL_LYCHEE, YAML_V8R
-<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>   create megalinter-custom-flavor.yml
-<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>   create .github/workflows/megalinter-custom-flavor-builder.yml
-<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>   create .github/workflows/check-new-megalinter-version.yml
-<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>   create action.yml
-<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a> conflict README.md
-<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>✔ Overwrite README.md? overwrite
-<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>    force README.md
-<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>
-<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>No change to package.json was detected. No package manager install will be executed.
-<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>You're all set !
-<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>Now commit, push then create a GitHub Release to generate your custom flavor !
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>❯ npx mega-linter-runner --custom-flavor-setup --custom-flavor-linters MARKDOWN_MARKDOWN_TABLE_FORMATTER,MARKDOWN_RUMDL,REPOSITORY_BETTERLEAKS,SPELL_LYCHEE,YAML_V8R
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Need to install the following packages:
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>mega-linter-runner@9.5.0
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Ok to proceed? (y) y
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Yeoman generator used: /home/practicalli/.npm/_npx/614e542633a698fb/node_modules/mega-linter-runner/generators/mega-linter-custom-flavor
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    .:oool'                                  ,looo;
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    .xNXNXl                                 .dXNNXo.
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>     lXXXX0c.                              'oKXXN0;
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>     .oKNXNX0kxdddddddoc,.    .;lodddddddxk0XXXX0c
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>      .:kKXXXXXXXXXXXXNXX0dllx0XXXXXXXXXXXXXXXKd,
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        .,cdkOOOOOOOO0KXXXXXXXXXXK0OOOOOOOkxo:'
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                      'ckKXNNNXkc'
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>              ':::::;.  .c0XX0l.  .;::::;.
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>              'xXXXXXx'   :kx:   ;OXXXXKd.
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>               .dKNNXXO;   ..   :0XXXXKl.
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>                .lKXXXX0:     .lKXXXX0:
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>                  :0XXXXKl.  .dXXXXXk,
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>                   ;kXXXXKd:cxXXXXXx'
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>                    'xXNXXXXXXXXXKo.
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>                     .oKXXXXNXXX0l.
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>                      .lKNNXNNXO:
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>                        ,looool'
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>==========================================================
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>=============   MegaLinter, by OX Security   =============
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>=========  https://ox.security?ref=megalinter  ===========
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>==========================================================
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>Welcome to the MegaLinter Custom Flavor generator !
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>When you don't know what option to select, please use default values
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>Fetching MegaLinter configuration schema...
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>✔ What is the label of your custom flavor? PracticalliZensical
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>✔ Please select the linters you want to include in your custom flavor: MARKDOWN_MARKDOWN_TABLE_FORMATTER, MARKDOWN_RUMDL, REPOSITORY_BETTERLEAKS, SPELL_LYCHEE, YAML_V8R
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>   create megalinter-custom-flavor.yml
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>   create .github/workflows/megalinter-custom-flavor-builder.yml
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>   create .github/workflows/check-new-megalinter-version.yml
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>   create action.yml
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a> conflict README.md
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>✔ Overwrite README.md? overwrite
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>    force README.md
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>No change to package.json was detected. No package manager install will be executed.
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>You're all set !
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>Now commit, push then create a GitHub Release to generate your custom flavor !
 </code></pre></div>
 <p>To automate the building of the custom Megalinter image, add a Personal Access Token (using a fine grained access token).</p>
 <p>Or simply run the <code>Check for New MegaLinter version</code> action workflow, which will create a new release and create a new release.  The new release automatically triggers the <code>Build &amp; Push MegaLinter Custom Flavor</code> image, making it available to use in Practicalli projects.</p>
@@ -1422,7 +1457,7 @@
 <p>As this is a custom action it must be added as one of the patterns the Practicalli Org is allowed to use (just like with setup-clojure, etc.)</p>
 <p>Visit the Org (Practicalli) &gt; Settings &gt; Actions &gt; General</p>
 <p>Add the new action to the <code>Allow or block specified actions and reusable workflows</code> list, using a <code>*</code> wildcard to indicate any version is allowed to run.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>practicalli/megalinter-custom-flavor-zensical@*
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>practicalli/megalinter-custom-flavor-zensical@*
 </code></pre></div>
 <p>Scroll to the bottom of the page and press the Save button.</p>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
@@ -1430,6 +1465,7 @@
 <p>A friend wanted to do a 100 mile route, so I modified the route to Dymchurch.  The new route goes as far as Shadoxhurst, coming back in a bit more of a loop than the original Dymchurch route.  Shadoxhurst turned out to be a little longer than 100 miles, so I shortened the route to circle back just before Bethernden.</p>
 <p>My thigh muscles are feeling quite stiff as I havent been doing enough stretching or yoga since the Dragon Ride.  I will aim to do yoga each morning and evening.</p>
 <p>I may need to get a sports massage, e.g. <a href="https://bromleysportsmassage.com/">Bromley Sports Massage</a></p>
+<h3 id="video-overlay">Video Overlay<a class="headerlink" href="#video-overlay" title="Permanent link">λ︎</a></h3>
 <h2 id="health">Health<a class="headerlink" href="#health" title="Permanent link">λ︎</a></h2>
 <p>An order from <a href="">Forest Whole Foods</a> to top up the ingredients I most frequently cook with, plus a few items to add variety to my cooking.</p>
 <ul>
