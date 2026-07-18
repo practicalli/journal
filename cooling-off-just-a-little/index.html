@@ -1041,6 +1041,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Practicalli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-for-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material for MkDocs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1145,7 +1162,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-07-17 00:00:00+00:00" class="md-ellipsis">July 17, 2026</time>
+                          <time datetime="2026-07-18 00:00:00+00:00" class="md-ellipsis">July 18, 2026</time>
                         </div>
                       </li>
                     
@@ -1202,6 +1219,13 @@
       
       
       
+        <span class="md-tag">material-for-mkdocs</span>
+      
+    
+      
+      
+      
+      
         <span class="md-tag">practicalli</span>
       
     
@@ -1251,9 +1275,19 @@
 <p>I am reworking the Makefile tasks in <a href="https://github.com/practicalli/dotfiles">practicalli/dotfiles</a>, updating the documentation generation tasks to use Zensical (rather than Material for MkDocs).</p>
 <p>I wondered if a <code>Makefile</code> could be separated into different files, to make task definitions modular (potentially avoiding some redundancy in task definitions).</p>
 <p><code>include filename</code> in a <code>Makefile</code> will include the task defined in the <code>filename</code> file.  It was reported that imported tasks do not show up in autocompletion, making this approach less friendly to use.</p>
+<h3 id="material-for-mkdocs">Material for MkDocs<a class="headerlink" href="#material-for-mkdocs" title="Permanent link">λ︎</a></h3>
+<p>I still need Material for MkDocs for websites that include a blog, as zensical does not provide a module for that (hopefully later in 2026).</p>
+<p>To ensure MkDocs 2.x version is not installed (which is incompatible with Material for MkDocs), the Debian Linux script for material for mkdocs was updated to set a maximum version for mkdocs as a tool.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="s1">'&lt;=1.9.9'</span><span class="w"> </span>--with<span class="w"> </span>mkdocs-material<span class="w"> </span>--with<span class="w"> </span>mkdocs-callouts<span class="w"> </span>--with<span class="w"> </span>mkdocs-glightbox<span class="w"> </span>--with<span class="w"> </span>mkdocs-git-revision-date-localized-plugin<span class="w"> </span>--with<span class="w"> </span>mkdocs-redirects<span class="w"> </span>--with<span class="w"> </span>mkdocs-rss-plugin<span class="w"> </span>--with<span class="w"> </span>pillow<span class="w"> </span>--with<span class="w"> </span>cairosvg
+</code></pre></div>
+<blockquote>
+<p>NOTE: the special characters in the version (representing less than or equals) must be escaped to avoid being misinterpreted by the shell (bash, zsh, etc.)</p>
+</blockquote>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
 <p><a href="https://www.strava.com/activities/19310338355" target="_blank">Sleepy in Collier St</a> on Tuesday started at a steady pace, got a little faster after the Kent Alps.</p>
 <p>The weather was cloudy until I started to return, when the sun came out along with a headwind.  The return part of the route was slower and I was struggling with motivation, but focusing on my breath helped keep me going.</p>
+<p>A later start on Saturday for a <a href="https://www.strava.com/activities/19363942512">Speedy Speedgate Solo</a> ride.  Starting at a fairly steady pace, I wasnt intending to push myself but seemed to have a lot of energy.  The temperature was okay for summer, a lot cooler that the excessive heat of the last few weeks.</p>
+<p>I managed 75km in 3 hours, with most of the ride in heart rate zone 2 (normally half of any ride is in zone 1, with zone 2 &amp; 3 making up another 40%)</p>
 <h3 id="gps">GPS<a class="headerlink" href="#gps" title="Permanent link">λ︎</a></h3>
 <p>I generated an overlay video using GPStitch.</p>
 <p>The resultant video was at a frame rate of 30 frames per second.  The camera I record the rides with generated video at 25 frames per second.</p>
@@ -1261,14 +1295,14 @@
 <p>I have been exploring the options available for GPStitch and how to <a href="#video-editing">convert a video to 25 frames per second using ffmpeg</a></p>
 <h2 id="video-editing">Video editing<a class="headerlink" href="#video-editing" title="Permanent link">λ︎</a></h2>
 <p>Convert a generated overlay video to 25 frames per second can be done using the <code>-r</code> frame rate option.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>original-video.mp4<span class="w"> </span>-r<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">2025</span>-10-30_overlay-25fps.mp4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>original-video.mp4<span class="w"> </span>-r<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">2025</span>-10-30_overlay-25fps.mp4
 </code></pre></div>
 <p>Changing frame rate of a video can be problematic if the new frames per second (FPS) value doesn’t align with the key frames of the original video.</p>
 <p>Key frames are frames which store the full image information. A mismatch can cause quality loss, particularly in complex videos.</p>
 <p>Use the <code>-vf</code> (video filter) option with the fps filter to ensure a smooth transition without altering keyframes.</p>
 <div class="admonition note">
 <p class="admonition-title">Change frame rate without altering key frame structure</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input_video.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="s2">"fps=25"</span><span class="w"> </span>output_video.mp4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input_video.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="s2">"fps=25"</span><span class="w"> </span>output_video.mp4
 </code></pre></div>
 </div>
 <p>Use the <code>-c</code> copy option to avoid the re-encoding when generating the new video, help preserve the video and audio quality in the new video.</p>
@@ -1276,119 +1310,104 @@
 <p>The -c copy option can only be used if the frame rate change is compatible with the video format and codec:</p>
 <div class="admonition note">
 <p class="admonition-title">Change Frame rate to 25 and maintain the original video encoding</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input_video.mp4<span class="w"> </span>-r<span class="w"> </span><span class="m">25</span><span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output_video.mp4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input_video.mp4<span class="w"> </span>-r<span class="w"> </span><span class="m">25</span><span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output_video.mp4
 </code></pre></div>
 </div>
 <p>Videos may use a variable frame rate (VFR) for flexibility when streaming.  A video with constant frame rate (CFR) can be less complicated when editing.</p>
 <p>Use the <code>-vsync</code> option to convert VFR to CFR without re-encoding the video stream.</p>
 <div class="admonition note">
 <p class="admonition-title">Convert Variable frame rate to Consistent frame rate</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-r<span class="w"> </span><span class="m">30</span><span class="w"> </span>-vsync<span class="w"> </span>cfr<span class="w"> </span>output.mp4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-r<span class="w"> </span><span class="m">30</span><span class="w"> </span>-vsync<span class="w"> </span>cfr<span class="w"> </span>output.mp4
 </code></pre></div>
 </div>
 <details class="info">
 <summary>FFMpeg Help</summary>
-</details>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯ ffmpeg --help
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  built with gcc 14 (Debian 14.2.0-19)
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  configuration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  libavutil      59. 39.100 / 59. 39.100
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  libavcodec     61. 19.101 / 61. 19.101
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  libavformat    61.  7.103 / 61.  7.103
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  libavdevice    61.  3.100 / 61.  3.100
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>  libavfilter    10.  5.100 / 10.  5.100
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  libswscale      8.  3.100 /  8.  3.100
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>  libswresample   5.  3.100 /  5.  3.100
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>  libpostproc    58.  3.100 / 58.  3.100
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Universal media converter
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>Getting help:
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    -h      -- print basic options
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    -h long -- print more options
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    -h full -- print all options (including all format and codec specific options, very long)
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    -h type=name -- print all options for the named decoder/encoder/demuxer/muxer/filter/bsf/protocol
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    See man ffmpeg for detailed description of the options.
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>Per-stream options can be followed by :&lt;stream_spec&gt; to apply that option to specific streams only. &lt;stream_spec&gt; can be a stream index, or v/a/s for video/audio/subtitle (see manual for full syntax).
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>Print help / information / capabilities:
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>-L                  show license
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>-h &lt;topic&gt;          show help
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>-version            show version
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>-muxers             show available muxers
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>-demuxers           show available demuxers
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>-devices            show available devices
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>-decoders           show available decoders
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>-encoders           show available encoders
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>-filters            show available filters
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>-pix_fmts           show available pixel formats
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>-layouts            show standard channel layouts
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>-sample_fmts        show available audio sample formats
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>Global options (affect whole program instead of just one file):
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>-v &lt;loglevel&gt;       set logging level
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>-y                  overwrite output files
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>-n                  never overwrite output files
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>-stats              print progress report during encoding
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>Per-file options (input and output):
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>-f &lt;fmt&gt;            force container format (auto-detected otherwise)
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>-t &lt;duration&gt;       stop transcoding after specified duration
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>-to &lt;time_stop&gt;     stop transcoding after specified time is reached
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>-ss &lt;time_off&gt;      start transcoding at specified time
-<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>
-<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>
-<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>Per-file options (output-only):
-<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>-metadata[:&lt;spec&gt;] &lt;key=value&gt;  add metadata
-<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>
-<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>Per-stream options:
-<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>-c[:&lt;stream_spec&gt;] &lt;codec&gt;  select encoder/decoder ('copy' to copy stream without reencoding)
-<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>-filter[:&lt;stream_spec&gt;] &lt;filter_graph&gt;  apply specified filters to audio/video
-<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>
-<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>Video options:
-<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>-r[:&lt;stream_spec&gt;] &lt;rate&gt;  override input framerate/convert to given output framerate (Hz value, fraction or abbreviation)
-<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>-aspect[:&lt;stream_spec&gt;] &lt;aspect&gt;  set aspect ratio (4:3, 16:9 or 1.3333, 1.7777)
-<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>-vn                 disable video
-<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>-vcodec &lt;codec&gt;     alias for -c:v (select encoder/decoder for video streams)
-<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>-vf &lt;filter_graph&gt;  alias for -filter:v (apply filters to video streams)
-<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>-b &lt;bitrate&gt;        video bitrate (please use -b:v)
-<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>
-<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>Audio options:
-<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>-aq &lt;quality&gt;       set audio quality (codec-specific)
-<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>-ar[:&lt;stream_spec&gt;] &lt;rate&gt;  set audio sampling rate (in Hz)
-<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>-ac[:&lt;stream_spec&gt;] &lt;channels&gt;  set number of audio channels
-<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>-an                 disable audio
-<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>-acodec &lt;codec&gt;     alias for -c:a (select encoder/decoder for audio streams)
-<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>-ab &lt;bitrate&gt;       alias for -b:a (select bitrate for audio streams)
-<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>-af &lt;filter_graph&gt;  alias for -filter:a (apply filters to audio streams)
-<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>
-<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a>Subtitle options:
-<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a>-sn                 disable subtitle
-<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a>-scodec &lt;codec&gt;     alias for -c:s (select encoder/decoder for subtitle streams)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>❯ ffmpeg --help
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  built with gcc 14 (Debian 14.2.0-19)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  configuration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  libavutil      59. 39.100 / 59. 39.100
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  libavcodec     61. 19.101 / 61. 19.101
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  libavformat    61.  7.103 / 61.  7.103
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  libavdevice    61.  3.100 / 61.  3.100
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  libavfilter    10.  5.100 / 10.  5.100
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  libswscale      8.  3.100 /  8.  3.100
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  libswresample   5.  3.100 /  5.  3.100
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  libpostproc    58.  3.100 / 58.  3.100
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Universal media converter
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>Getting help:
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    -h      -- print basic options
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    -h long -- print more options
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    -h full -- print all options (including all format and codec specific options, very long)
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    -h type=name -- print all options for the named decoder/encoder/demuxer/muxer/filter/bsf/protocol
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    See man ffmpeg for detailed description of the options.
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>Per-stream options can be followed by :&lt;stream_spec&gt; to apply that option to specific streams only. &lt;stream_spec&gt; can be a stream index, or v/a/s for video/audio/subtitle (see manual for full syntax).
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Print help / information / capabilities:
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>-L                  show license
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>-h &lt;topic&gt;          show help
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>-version            show version
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>-muxers             show available muxers
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>-demuxers           show available demuxers
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>-devices            show available devices
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>-decoders           show available decoders
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>-encoders           show available encoders
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>-filters            show available filters
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>-pix_fmts           show available pixel formats
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>-layouts            show standard channel layouts
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>-sample_fmts        show available audio sample formats
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>Global options (affect whole program instead of just one file):
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>-v &lt;loglevel&gt;       set logging level
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>-y                  overwrite output files
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>-n                  never overwrite output files
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>-stats              print progress report during encoding
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>Per-file options (input and output):
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>-f &lt;fmt&gt;            force container format (auto-detected otherwise)
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>-t &lt;duration&gt;       stop transcoding after specified duration
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>-to &lt;time_stop&gt;     stop transcoding after specified time is reached
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>-ss &lt;time_off&gt;      start transcoding at specified time
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>Per-file options (output-only):
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>-metadata[:&lt;spec&gt;] &lt;key=value&gt;  add metadata
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>Per-stream options:
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>-c[:&lt;stream_spec&gt;] &lt;codec&gt;  select encoder/decoder ('copy' to copy stream without reencoding)
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>-filter[:&lt;stream_spec&gt;] &lt;filter_graph&gt;  apply specified filters to audio/video
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>Video options:
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>-r[:&lt;stream_spec&gt;] &lt;rate&gt;  override input framerate/convert to given output framerate (Hz value, fraction or abbreviation)
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>-aspect[:&lt;stream_spec&gt;] &lt;aspect&gt;  set aspect ratio (4:3, 16:9 or 1.3333, 1.7777)
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>-vn                 disable video
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>-vcodec &lt;codec&gt;     alias for -c:v (select encoder/decoder for video streams)
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>-vf &lt;filter_graph&gt;  alias for -filter:v (apply filters to video streams)
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>-b &lt;bitrate&gt;        video bitrate (please use -b:v)
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>Audio options:
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a>-aq &lt;quality&gt;       set audio quality (codec-specific)
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>-ar[:&lt;stream_spec&gt;] &lt;rate&gt;  set audio sampling rate (in Hz)
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>-ac[:&lt;stream_spec&gt;] &lt;channels&gt;  set number of audio channels
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a>-an                 disable audio
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>-acodec &lt;codec&gt;     alias for -c:a (select encoder/decoder for audio streams)
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>-ab &lt;bitrate&gt;       alias for -b:a (select bitrate for audio streams)
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a>-af &lt;filter_graph&gt;  alias for -filter:a (apply filters to audio streams)
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>Subtitle options:
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>-sn                 disable subtitle
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a>-scodec &lt;codec&gt;     alias for -c:s (select encoder/decoder for subtitle streams)
 </code></pre></div>
+</details>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
 <p><a class="md-button" href="https://github.com/practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg></span> Practical.li GitHub Org</a>
 <a class="md-button" href="https://github.com/practicalli-johnny" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg></span> practicalli-johnny profile</a></p>
 <p><a class="md-button" href="https://clj.social/@practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg></span> @practicalli@clj.social</a></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>0173760b (feat(post): journal week starting 13 July 2026)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 
 
 
@@ -1409,7 +1428,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 17, 2026 17:54:16 UTC">July 17, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 18, 2026 22:08:53 UTC">July 18, 2026</span>
   </span>
 
     
