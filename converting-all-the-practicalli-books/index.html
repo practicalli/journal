@@ -1134,7 +1134,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-08-18 00:00:00+00:00" class="md-ellipsis">August 18, 2026</time>
+                          <time datetime="2026-08-23 00:00:00+00:00" class="md-ellipsis">August 23, 2026</time>
                         </div>
                       </li>
                     
@@ -1156,7 +1156,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -1209,7 +1209,9 @@
 
   <h1>Converting all the Practicalli books</h1>
 
-<p>Another heatwave is over so I can focus on getting more work done on <a href="#practicalli">migrating the Practicalli books to Zensical</a></p>
+<p>Another heatwave is over so I was able to focus on getting more work done on <a href="#practicalli">migrating the Practicalli books to Zensical</a>.</p>
+<p>The main Practicalli books are now using Zensical to build the site (locally and via CI workflow).  However, due to challenges with the Zensical theme the books sill use the original <code>mkdocs.yml</code> configuration.</p>
+<p>The <a href="https://practical.li/">root Practical.li website</a> is still built with MkDocs and will remain so until Zensical supports blog sites.  I could separate the blog site out of the <code>practicalli.github.io</code> repository, but as this site is so small it is not worth the effort.</p>
 <p>Entertainment this week includes:</p>
 <ul>
 <li>Silo: season 3 of the excellent post-apocalypse Sci-Fi show with Rebecca Ferguson as a person desperately trying to save the people who live in their silo.</li>
@@ -1219,18 +1221,24 @@
 
 <h2 id="practicalli">Practicalli<a class="headerlink" href="#practicalli" title="Permanent link">λ︎</a></h2>
 <p>Converting books to Zensical, mainly so they will build faster.  The Zensical theme is a little different but nicer in most regards.</p>
-<p>The Navigation seems to be constrained to two levels in the new Zensical theme, which is a limiting factor for the larger books.</p>
+<p>The Navigation seems to be constrained to two levels in the new Zensical theme, which is a limiting factor for the larger books.  The new theme can have 'tabs' for the main sections which show as a top level navigation across the top of the page.</p>
+<p>This top level navigation is nice but it does limit the number of sections before the top navigation becomes to wide for the page.</p>
 <p><a href="https://practical.li/cycling">Practicalli Cycling</a> is a new book for 2026 written using Zensical from the start.</p>
 <p>These existing books have been partially converted.  They use the mkdocs.yml config but are built with Zensical</p>
 <ul>
 <li><a href="https://practical.li/engineering-playbook" target="_blank">Engineering Playbook</a></li>
 <li><a href="https://practical.li/clojure" target="_blank">Clojure</a></li>
 <li><a href="https://practical.li/clojure-web-services" target="_blank">Clojure Web Services</a></li>
+<li><a href="https://practical.li/Neovim" target="_blank">Neovim</a></li>
+<li><a href="https://practical.li/spacemacs" target="_blank">Spacemacs</a></li>
 </ul>
+<p>I have started adding docs to the Clojure-CLI-Config and dotfiles repositories, to add greater understanding to these projects.</p>
 <h2 id="cycling">Cycling<a class="headerlink" href="#cycling" title="Permanent link">λ︎</a></h2>
 <p>I may need a new cassette at some point.</p>
 <p>Looking at the ZTTO cassettes give about an 85 gram weight advantage over the Shimano Ultegra R8000 cassette, for the 11-32 ratios.</p>
+<p>Unfortunately the ZTTO cassettes are significantly more expensive than the Shimano Ultegra models and durability is a concern.  Most of the weight is saved around the largest rings, which is fine when there are only a few hills, but a significant concern for a rider of my weight going up the Kent Alps.</p>
 <p><a href="https://www.sigmasports.com/item/Shimano/Ultegra-R8000-11-Speed-Bike-Cassette/17TXL" target="_blank">Sigma Sports Ultegra R800 11-speed cassette</a> is currently 45 GBP and seems a reasonable price.</p>
+<p>The rear derailleur cage continues to feel too loose, assumingly from wear or some damage.  Unless there is a way to fix this then a new rear derailleur will be required.</p>
 <h3 id="spatzwear">Spatzwear<a class="headerlink" href="#spatzwear" title="Permanent link">λ︎</a></h3>
 <p>I really like their cycling socks.  The silicone grips on the base ensure my feet dont move around.  The socks are a little snug for my big feet, but I assume after a few rides then each pair of socks will be a perfect fit.</p>
 <p>I've asked a question about the design of the ShiftR 3 short-sleeved Jersey.  The description on the website claims it has 3 traditional pockets, but actually its a single cargo pocket with 3 short dividers at the top to give the impression of three separate pockets.</p>
@@ -1262,7 +1270,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 18, 2026 16:16:07 UTC">August 18, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 20:39:11 UTC">August 23, 2026</span>
   </span>
 
     
