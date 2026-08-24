@@ -2,6 +2,7 @@
 
 ## Added
 
+- build(make): 🔧 practicalli tasks with commented zensical docs tasks
 - ci(github): 🔧 practicalli workflows including zensical custom flavor
 - dev: created blog configuration for Material for MkDocs
 - dev: add git & github configuration and workflows

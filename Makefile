@@ -1,31 +1,42 @@
-# -------------------------------------- #
+# ------------------------------------------------ #
 # Practicalli Makefile
 #
 # Consistent set of targets to support local book development
-# -------------------------------------- #
+#
+# `-` before a command ignores any errors returned
+# ------------------------------------------------ #
 
-# -- Makefile task config -------------- #
+# Requirements
+# - python
+# - uv
+# - clojure & practicalli cli config (dependency check)
+# - docker (run megalinter locally)
+# - node.js (mega-linter-runner via npx)
+# ------------------------------------------------ #
+
+# -- Makefile task config ------------------------ #
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all clean docs lint pre-commit-check test
-# -------------------------------------- #
+.PHONY: all clean dist docs lint pre-commit-check
+# ------------------------------------------------ #
 
-# -- Makefile Variables ---------------- #
+# -- Makefile Variables -------------------------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
 
-SHELL := /usr/bin/zsh
+# SHELL := /usr/bin/zsh
 
 # Tool Commands
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
 MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
+DOCS_SERVER := zensical serve --dev-addr localhost:7777
 OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
-# -------------------------------------- #
+# ------------------------------------------------ #
 
-# --  Quality Checks  ------------------ #
-pre-commit-check: lint
+# -- Code Quality -------------------------------- #
+pre-commit-check: lint ## Format and lint with Megalinter
 
 lint:  ## Run MegaLinter with custom configuration (node.js required)
 	$(info -- MegaLinter Runner ---------------------)
@@ -50,7 +61,7 @@ dependencies-outdated: ## Report new versions of library dependencies and GitHub
 dependencies-update: ## Update all library dependencies and GitHub action
 	$(info -- Search for outdated libraries ---------)
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
-# -------------------------------------- #
+# ------------------------------------------------ #
 
 # --- Documentation Generation  -------- #
 mkdocs-install:
@@ -73,7 +84,30 @@ docs-debug:  ## Run mkdocs local server in debug mode
 	$(MKDOCS_SERVER) -v
 # -------------------------------------- #
 
-# ------- Version Control -------------- #
+# -- Documentation Generation Zensical ----------- #
+# docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
+# 	uv tool install zensical --with catppuccin-zensical --upgrade
+#
+# docs:  ## Build and run docs in local server
+# 	$(info -- Local Server --------------------------)
+# 	$(DOCS_SERVER)
+#
+# docs-open:  ## Build docs, run server & open browser
+# 	$(info -- Local Server & Browser ----------------)
+# 	$(DOCS_SERVER) --open
+#
+# docs-build:  ## Build docs locally
+# 	$(info -- Build Docs Website --------------------)
+# 	zensical build
+#
+# docs-debug:  ## Run local server in debug mode
+# 	$(info -- Local Server Debug --------------------)
+# 	$(DOCS_SERVER) -v
+#
+# dist: docs-build ## Build Zensical website
+# ------------------------------------------------ #
+
+# -- Version Control ----------------------------- #
 git-sr:  ## status list of git repos under current directory
 	$(info -- Multiple Git Repo Status --------------)
 	mgitstatus -e --flatten
@@ -81,15 +115,13 @@ git-sr:  ## status list of git repos under current directory
 git-status:  ## status details of git repos under current directory
 	$(info -- Multiple Git Status -------------------)
 	mgitstatus
-# -------------------------------------- #
+# ------------------------------------------------ #
 
-# ------------ Help -------------------- #
+# -- Help ---------------------------------------- #
 # Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
 
 help:  ## Describe available tasks in Makefile
 	@grep '^[a-zA-Z]' $(MAKEFILE_LIST) | \
 	sort | \
 	awk -F ':.*?## ' 'NF==2 {printf "\033[36m  %-$(HELP-DESCRIPTION-SPACING)s\033[0m %s\n", $$1, $$2}'
-# -------------------------------------- #
-
-dist: deps-build ## Build mkdocs website
+# ------------------------------------------------ #
