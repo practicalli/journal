@@ -25,13 +25,13 @@ on:
 jobs:
   scheduled-version-check:
     name: "Scheduled Version Check"
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo "🚀 Job automatically triggered by ${{ github.event_name }}"
       - run: echo "🐧 Job running on ${{ runner.os }} server"
       - run: echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"
 
-      - name: Checkout Code
+      - name: "Checkout code"
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
