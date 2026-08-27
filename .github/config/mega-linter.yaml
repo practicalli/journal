@@ -17,7 +17,7 @@
 # - YAML_V8R
 
 
-PARALLEL: true  # Run linters in parallel
+PARALLEL: false  # Run linters in parallel
 SECURITY_SUGGESTIONS: false  # Skip megalinter update notices
 
 EXCLUDED_DIRECTORIES: ".github/|CHANGELOG.md|README.md|overrides/|docs/assets/"
