@@ -108,11 +108,15 @@ docs-debug:  ## Run mkdocs local server in debug mode
 # ------------------------------------------------ #
 
 # -- Version Control ----------------------------- #
-git-sr:  ## status list of git repos under current directory
+git-rebase:  ## pull main branch and rebase local commits where relevant
 	$(info -- Multiple Git Repo Status --------------)
-	mgitstatus -e --flatten
+	git pull --rebase origin main
 
-git-status:  ## status details of git repos under current directory
+git-sr:  ## status of git repos with changes under current directory
+	$(info -- Multiple Git Repo Status --------------)
+	mgitstatus -e
+
+git-status:  ## status of all git repos under current directory
 	$(info -- Multiple Git Status -------------------)
 	mgitstatus
 # ------------------------------------------------ #
