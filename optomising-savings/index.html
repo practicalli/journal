@@ -118,7 +118,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git" class="md-skip">
+        <a href="#megalinter" class="md-skip">
           Skip to content
         </a>
       
@@ -1033,6 +1033,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#megalinter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Megalinter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1139,7 +1150,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -1170,6 +1181,27 @@
         <span class="md-tag">clojure</span>
       
     
+      
+      
+      
+      
+        <span class="md-tag">finance</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">git</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">megalinter</span>
+      
+    
   </nav>
 
 
@@ -1193,31 +1225,36 @@
   <h1>Optomising Savings</h1>
 
 <p>This week I continue to <a href="#finance">optimise my saving</a> as interest rates have been creeping up a little.</p>
-<p>I contacted Spatzwear again about their Shiftr3 Jersey and they finally confirmed there was a manufacturing issue with the rear pockets.</p>
-<p>Spatzwear have said they would send replacement jerseys, so I sent a picture of all 4 jerseys that have the issue along with the order numbers.</p>
+<p>I contacted Spatzwear again about their Shiftr3 Jersey and they finally confirmed there was a manufacturing issue with the rear pockets. Spatzwear have said they would send replacement jerseys, so I sent a picture of all 4 jerseys that have the issue along with the order numbers.</p>
 <!-- more -->
 
+<h2 id="megalinter">Megalinter<a class="headerlink" href="#megalinter" title="Permanent link">λ︎</a></h2>
+<p>Updated Practicalli custom Megalinter flavors to the latest base version, v10.1.0.</p>
+<p>Visited the GitHub page of each custom flavor and ran the <code>Build &amp; Publish MegaLinter Custom Flavor</code> action workflow.</p>
+<p>An information annotation was shown regarding the upcoming new version of the <code>ubuntu-latest</code> runner.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+</code></pre></div><p></p>
 <h2 id="git">Git<a class="headerlink" href="#git" title="Permanent link">λ︎</a></h2>
 <p>Using <code>git pull</code> will fetch and merge all remote branches.</p>
 <p>Repositories that include docs will pull the <code>gh-pages</code> branch as well as the <code>main</code> branch. As the files in the <code>gh-pages</code> branch are only generated and never edited, then that branch is not required locally.</p>
 <p>When pulling changes, specify the remote branch</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <p>A <code>git-rebase</code> task is being added to all practicalli projects.</p>
 <p>The <code>git-sr</code> (git sit-rep) task had the <code>--flatten</code> flag removed, as it does the opposite of what I expected. Flatten flag actually expands the output so that each status for a repository is printed on its own line, making the output more verbose.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># -- Version Control ----------------------------- #</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">git-rebase</span><span class="o">:</span><span class="w">  </span><span class="c">## pull main branch and rebase local commits where relevant</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Multiple<span class="w"> </span>Git<span class="w"> </span>Repo<span class="w"> </span>Status<span class="w"> </span>--------------<span class="k">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nf">git-sr</span><span class="o">:</span><span class="w">  </span><span class="c">## status of git repos with changes under current directory</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Multiple<span class="w"> </span>Git<span class="w"> </span>Repo<span class="w"> </span>Status<span class="w"> </span>--------------<span class="k">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span>mgitstatus<span class="w"> </span>-e
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nf">git-status</span><span class="o">:</span><span class="w">  </span><span class="c">## status of all git repos under current directory</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Multiple<span class="w"> </span>Git<span class="w"> </span>Status<span class="w"> </span>-------------------<span class="k">)</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span>mgitstatus
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c"># ------------------------------------------------ #</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># -- Version Control ----------------------------- #</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">git-rebase</span><span class="o">:</span><span class="w">  </span><span class="c">## pull main branch and rebase local commits where relevant</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Multiple<span class="w"> </span>Git<span class="w"> </span>Repo<span class="w"> </span>Status<span class="w"> </span>--------------<span class="k">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nf">git-sr</span><span class="o">:</span><span class="w">  </span><span class="c">## status of git repos with changes under current directory</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Multiple<span class="w"> </span>Git<span class="w"> </span>Repo<span class="w"> </span>Status<span class="w"> </span>--------------<span class="k">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>mgitstatus<span class="w"> </span>-e
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nf">git-status</span><span class="o">:</span><span class="w">  </span><span class="c">## status of all git repos under current directory</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>--<span class="w"> </span>Multiple<span class="w"> </span>Git<span class="w"> </span>Status<span class="w"> </span>-------------------<span class="k">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>mgitstatus
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c"># ------------------------------------------------ #</span>
 </code></pre></div>
 <h2 id="finance">Finance<a class="headerlink" href="#finance" title="Permanent link">λ︎</a></h2>
 <p>I've merged my Cash ISA accounts into one bank which has a 4.93% interest rate if the money is kept there for 5 years.  This period shouldnt be a problem.</p>
@@ -1229,6 +1266,7 @@
 <li><a href="https://www.skipton.co.uk/savings/easy-access/two-access-saver" target="_blank">Skipton Building Society - Two Access Saver</a> at 3.90%</li>
 <li>Post Office Online Saver at 4.30% but only for the first year, 0.90% after that so would need to look again in a years time.</li>
 </ul>
+<p>The Yorkshire Building Society products seem to be the most appropriate option for me. I will deposit a significant sum in the Triple Access eSaver and then drip-feed money into the Loyalty Regular Saver (max 250GBP per month).</p>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
