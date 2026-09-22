@@ -10,11 +10,18 @@ tags:
   - 4clojure
 ---
 
-100 days of code challenge completed.  Was it worth it?  Well yes, it got me coding almost every day, and overall I certainly achieved more than 100 hours of coding, more like several 100 hours of coding.
+100 days of code challenge completed 🥳
+
+Was it worth it?
+
+Yes, it got me coding almost every day, and overall I certainly achieved more than 100 hours of coding, more like several 100 hours of coding.
 
 I didn't do was work on a specific project every day, but that would have felt more like work and I enjoyed having a break from that routine.
 
-Will I do a 100 days of code challenge again?  Not sure, its quite a hard thing to be consistent with.  I will certainly keep a developer journal from now on as it has been very useful.
+Will I do a 100 days of code challenge again?
+
+Not sure, its quite a hard thing to be consistent with. I will certainly keep a developer journal from now on as it has been useful.
+
 
 !!! INFO "4Clojure solution"
 
@@ -31,6 +38,7 @@ Will I do a 100 days of code challenge again?  Not sure, its quite a hard thing 
 
 
 <!-- more -->
+
 
 ## 4Clojure solutions
 
