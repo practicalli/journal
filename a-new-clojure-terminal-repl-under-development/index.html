@@ -1389,69 +1389,69 @@
 </blockquote>
 <details class="info">
 <summary>Full Report of error</summary>
-</details>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    {:clojure.main/message
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>     "Execution error (FileNotFoundException) at clojure-cli.repl.hooks/resolve-hook (hooks.clj:24).\nCould not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath.\n",
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>     :clojure.main/triage
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>     {:clojure.error/class java.io.FileNotFoundException,
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>      :clojure.error/line 24,
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>      :clojure.error/cause
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>      "Could not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath.",
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>      :clojure.error/symbol clojure-cli.repl.hooks/resolve-hook,
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>      :clojure.error/source "hooks.clj",
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>      :clojure.error/phase :execution},
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>     :clojure.main/trace
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>     {:via
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>      [{:type java.io.FileNotFoundException,
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        :message
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        "Could not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath.",
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>        :at [clojure.lang.RT load "RT.java" 482]}],
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>      :trace
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>      [[clojure.lang.RT load "RT.java" 482]
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>       [clojure.lang.RT load "RT.java" 444]
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>       [clojure.core$load$fn__6933 invoke "core.clj" 6189]
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>       [clojure.core$load invokeStatic "core.clj" 6188]
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>       [clojure.core$load doInvoke "core.clj" 6172]
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>       [clojure.lang.RestFn invoke "RestFn.java" 411]
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>       [clojure.core$load_one invokeStatic "core.clj" 5961]
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>       [clojure.core$load_one invoke "core.clj" 5956]
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>       [clojure.core$load_lib$fn__6875 invoke "core.clj" 6003]
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>       [clojure.core$load_lib invokeStatic "core.clj" 6002]
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>       [clojure.core$load_lib doInvoke "core.clj" 5981]
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>       [clojure.lang.RestFn applyTo "RestFn.java" 145]
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>       [clojure.core$apply invokeStatic "core.clj" 669]
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>       [clojure.core$load_libs invokeStatic "core.clj" 6044]
-<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>       [clojure.core$load_libs doInvoke "core.clj" 6028]
-<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>       [clojure.lang.RestFn applyTo "RestFn.java" 140]
-<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>       [clojure.core$apply invokeStatic "core.clj" 669]
-<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>       [clojure.core$require invokeStatic "core.clj" 6066]
-<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>       [clojure.core$require doInvoke "core.clj" 6066]
-<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>       [clojure.lang.RestFn applyTo "RestFn.java" 140]
-<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>       [clojure.core$apply invokeStatic "core.clj" 667]
-<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>       [clojure.core$serialized_require invokeStatic "core.clj" 6142]
-<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>       [clojure.core$requiring_resolve invokeStatic "core.clj" 6151]
-<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>       [clojure.core$requiring_resolve invoke "core.clj" 6145]
-<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>       [clojure_cli.repl.hooks$resolve_hook invokeStatic "hooks.clj" 24]
-<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>       [clojure_cli.repl.hooks$resolve_hook invoke "hooks.clj" 23]
-<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>       [clojure_cli.repl.hooks$install invokeStatic "hooks.clj" 29]
-<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>       [clojure_cli.repl.hooks$install invoke "hooks.clj" 27]
-<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>       [clojure_cli.repl.server$start invokeStatic "server.clj" 131]
-<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>       [clojure_cli.repl.server$start invoke "server.clj" 128]
-<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>       [clojure_cli.repl.server$_main invokeStatic "server.clj" 199]
-<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>       [clojure_cli.repl.server$_main doInvoke "server.clj" 198]
-<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>       [clojure.lang.RestFn applyTo "RestFn.java" 140]
-<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>       [clojure.lang.Var applyTo "Var.java" 707]
-<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>       [clojure.core$apply invokeStatic "core.clj" 667]
-<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>       [clojure.main$main_opt invokeStatic "main.clj" 515]
-<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>       [clojure.main$main_opt invoke "main.clj" 511]
-<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>       [clojure.main$main invokeStatic "main.clj" 665]
-<a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>       [clojure.main$main doInvoke "main.clj" 617]
-<a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>       [clojure.lang.RestFn applyTo "RestFn.java" 140]
-<a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a>       [clojure.lang.Var applyTo "Var.java" 707]
-<a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a>       [clojure.main main "main.java" 40]],
-<a id="__codelineno-8-60" name="__codelineno-8-60" href="#__codelineno-8-60"></a>      :cause
-<a id="__codelineno-8-61" name="__codelineno-8-61" href="#__codelineno-8-61"></a>      "Could not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath."}}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{:clojure.main/message
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> "Execution error (FileNotFoundException) at clojure-cli.repl.hooks/resolve-hook (hooks.clj:24).\nCould not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath.\n",
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a> :clojure.main/triage
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a> {:clojure.error/class java.io.FileNotFoundException,
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  :clojure.error/line 24,
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  :clojure.error/cause
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  "Could not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath.",
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>  :clojure.error/symbol clojure-cli.repl.hooks/resolve-hook,
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  :clojure.error/source "hooks.clj",
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  :clojure.error/phase :execution},
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a> :clojure.main/trace
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a> {:via
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>  [{:type java.io.FileNotFoundException,
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    :message
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    "Could not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath.",
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    :at [clojure.lang.RT load "RT.java" 482]}],
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>  :trace
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>  [[clojure.lang.RT load "RT.java" 482]
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>   [clojure.lang.RT load "RT.java" 444]
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>   [clojure.core$load$fn__6933 invoke "core.clj" 6189]
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>   [clojure.core$load invokeStatic "core.clj" 6188]
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>   [clojure.core$load doInvoke "core.clj" 6172]
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>   [clojure.lang.RestFn invoke "RestFn.java" 411]
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>   [clojure.core$load_one invokeStatic "core.clj" 5961]
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>   [clojure.core$load_one invoke "core.clj" 5956]
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>   [clojure.core$load_lib$fn__6875 invoke "core.clj" 6003]
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>   [clojure.core$load_lib invokeStatic "core.clj" 6002]
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>   [clojure.core$load_lib doInvoke "core.clj" 5981]
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>   [clojure.lang.RestFn applyTo "RestFn.java" 145]
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>   [clojure.core$apply invokeStatic "core.clj" 669]
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>   [clojure.core$load_libs invokeStatic "core.clj" 6044]
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>   [clojure.core$load_libs doInvoke "core.clj" 6028]
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>   [clojure.lang.RestFn applyTo "RestFn.java" 140]
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>   [clojure.core$apply invokeStatic "core.clj" 669]
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>   [clojure.core$require invokeStatic "core.clj" 6066]
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>   [clojure.core$require doInvoke "core.clj" 6066]
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>   [clojure.lang.RestFn applyTo "RestFn.java" 140]
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>   [clojure.core$apply invokeStatic "core.clj" 667]
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>   [clojure.core$serialized_require invokeStatic "core.clj" 6142]
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>   [clojure.core$requiring_resolve invokeStatic "core.clj" 6151]
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>   [clojure.core$requiring_resolve invoke "core.clj" 6145]
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>   [clojure_cli.repl.hooks$resolve_hook invokeStatic "hooks.clj" 24]
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>   [clojure_cli.repl.hooks$resolve_hook invoke "hooks.clj" 23]
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>   [clojure_cli.repl.hooks$install invokeStatic "hooks.clj" 29]
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>   [clojure_cli.repl.hooks$install invoke "hooks.clj" 27]
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>   [clojure_cli.repl.server$start invokeStatic "server.clj" 131]
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>   [clojure_cli.repl.server$start invoke "server.clj" 128]
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>   [clojure_cli.repl.server$_main invokeStatic "server.clj" 199]
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>   [clojure_cli.repl.server$_main doInvoke "server.clj" 198]
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>   [clojure.lang.RestFn applyTo "RestFn.java" 140]
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>   [clojure.lang.Var applyTo "Var.java" 707]
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>   [clojure.core$apply invokeStatic "core.clj" 667]
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>   [clojure.main$main_opt invokeStatic "main.clj" 515]
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>   [clojure.main$main_opt invoke "main.clj" 511]
+<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>   [clojure.main$main invokeStatic "main.clj" 665]
+<a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>   [clojure.main$main doInvoke "main.clj" 617]
+<a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>   [clojure.lang.RestFn applyTo "RestFn.java" 140]
+<a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a>   [clojure.lang.Var applyTo "Var.java" 707]
+<a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a>   [clojure.main main "main.java" 40]],
+<a id="__codelineno-8-60" name="__codelineno-8-60" href="#__codelineno-8-60"></a>  :cause
+<a id="__codelineno-8-61" name="__codelineno-8-61" href="#__codelineno-8-61"></a>  "Could not locate dev/hooks__init.class, dev/hooks.clj or dev/hooks.cljc on classpath."}}
 </code></pre></div>
+</details>
 <p>Trying again after commenting the keywords that have <code>dev.,,,</code> namespaces as their values</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="c1">;; :prompt dev.full-width-prompt/prompt</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w"> </span><span class="c1">;; :middleware [dev.timing/middleware dev.heap/middleware]</span>
