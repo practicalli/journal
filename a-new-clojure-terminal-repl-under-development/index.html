@@ -1282,7 +1282,8 @@
 </ul>
 <p>The nREPL server creates an <code>.nrepl.port</code> file containing the local port the nREPL server is listening too</p>
 <h3 id="startup">Startup<a class="headerlink" href="#startup" title="Permanent link">λ︎</a></h3>
-<p>The aliases were added to the Clojure user level configuration <code>$XDG_CONFIG_HOME/clojure/deps.edn</code></p>
+<p>I have Java v25.0.4 installed and Clojure CLI 1.12.4.1602, running on Debian Linux.</p>
+<p>Aliases to run the tool were added to the Clojure user level configuration <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> using <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a>.</p>
 <p>The <code>XDG_CONFIG_HOME</code> environment variable was checked that it still points to the correct location.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>❯ echo $XDG_CONFIG_HOME
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/home/practicalli/.config
@@ -1290,7 +1291,7 @@
 <p>Run the nREPL server and client using the Clojure CLI tool.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure -M:repl/cli
 </code></pre></div>
-<p>Downloads the internet</p>
+<p>The command proceeds to download the internet (I regularly clear the local Maven cache so this took a few seconds).</p>
 <p>Warnings were shown at the end of the startup output regarding jline calling <code>java.lang.System::load</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>WARNING: A restricted method in java.lang.System has been called
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>WARNING: java.lang.System::load has been called by org.jline.nativ.JLineNativeLoader in an unnamed module (file:/home/practicalli/.m2/repository/org/jline/jline/4.3.1/jline-4.3.1.jar)
@@ -1301,24 +1302,24 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>connected to nREPL on 45963
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>user =&gt;
 </code></pre></div>
-<p>The CLojure CLI REPL did not create a config file, but did create a history buried deep in the path <code>$XDG_CONFIG_HOME/clojure/.cljconf/org.clojure/clojure-cli.repl/</code></p>
-<p>Its unclear why the config and history need to be on such a deep path when there could be a much simpler</p>
+<p>The Clojure CLI REPL honours the Clojure CLI location. It did not try to create a separate <code>$HOME/.clojure</code> directory, which is good as I dont use that classic approach to dotfiles. I checked as the Clojure CLI REPL docs only mention <code>~/.clojure</code> as the config directory.</p>
+<p>The CLojure CLI REPL did not create a config file, but did create a history buried deep in the path <code>$XDG_CONFIG_HOME/clojure/.cljconf/org.clojure/clojure-cli.repl/history</code></p>
+<p>Its unclear why the config and history files need to be on such a deep path when the could be easier to discover at:</p>
 <ul>
 <li>history: <code>$XDG_CONFIG_HOME/clojure/cli-repl/history</code></li>
 <li>config: <code>$XDG_CONFIG_HOME/clojure/cli-repl/config.edn</code></li>
 <li>dependencies: <code>$XDG_CONFIG_HOME/clojure/cli-repl/deps.edn</code></li>
 </ul>
-<p>Or</p>
+<p>Or perhaps even a shared history file with any Clojure CLI based REPL... although Rebel Readline creates a <code>.rebel-readline-history</code> in the root of each project.</p>
 <ul>
 <li>history: <code>$XDG_CONFIG_HOME/clojure/history</code></li>
 <li>config: <code>$XDG_CONFIG_HOME/clojure/cli-repl-config.edn</code></li>
 <li>dependencies: <code>$XDG_CONFIG_HOME/clojure/cli-repl-deps.edn</code></li>
 </ul>
 <blockquote>
-<p>NOTE: it felt confusing to have a <code>.cljconf</code> dotfile within the parent <code>.clojure</code> dotfile, especially when the Clojure CLI config is in <code>$HOME/.config/clojure/.cljconf</code>. I missed that this had been created at first.</p>
+<p>NOTE: it felt confusing to have a <code>.cljconf</code> dotfile within the parent Clojure CLI dotfile, especially when the Clojure CLI config is in <code>$HOME/.config/clojure/.cljconf</code>. I missed that <code>.cljconf</code> had been created at first glance.</p>
 <p>The <code>.cljconf</code> name could easily be mistaken for something related to Clojure CLI rather than Clojure CLI REPL.</p>
 </blockquote>
-<p>The Clojure CLI REPL honours the Clojure CLI location. It did not try to create a <code>$HOME/.clojure</code> directory, which is good as I dont use that classic approach to dotfiles. I checked as the Clojure CLI REPL docs only mention <code>~/.clojure</code> as the config directory.</p>
 <h3 id="first-use">First use<a class="headerlink" href="#first-use" title="Permanent link">λ︎</a></h3>
 <p>I could evaluate expressions and multi-line typing worked.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">map</span>
