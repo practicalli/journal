@@ -1089,6 +1089,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#auto-require-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-require namespaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inspector" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1100,10 +1111,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bugs-experienced" class="md-nav__link">
+  <a href="#things-that-didnt-work-as-expected" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bugs experienced
+        Things that didn't work as expected
       
     </span>
   </a>
@@ -1278,7 +1289,7 @@
 - configurable prompts
 - custom keybindings
 - Vim or Emacs editing modes <img alt="💖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f496.svg" title=":sparkling_heart:"></p>
-<p>I've added aliases to <a href="">Practicalli Clojure CLI Config</a> using my standard naming convention:</p>
+<p>I've added aliases to <a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank">Practicalli Clojure CLI Config</a> using my standard naming convention:</p>
 <ul>
 <li><code>:repl/cli</code> start nREPL server and rich REPL client</li>
 <li><code>:repl/serve</code> start nREPL server only</li>
@@ -1287,7 +1298,7 @@
 <p>The nREPL server creates an <code>.nrepl.port</code> file containing the local port the nREPL server is listening too</p>
 <h3 id="startup">Startup<a class="headerlink" href="#startup" title="Permanent link">λ︎</a></h3>
 <p>I have Java v25.0.4 installed and Clojure CLI 1.12.4.1602, running on Debian Linux.</p>
-<p>Aliases to run the tool were added to the Clojure user level configuration <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> using <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a>.</p>
+<p>Aliases to run the tool were added to the Clojure user level configuration <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> using <a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank">Practicalli Clojure CLI Config</a>.</p>
 <p>The <code>XDG_CONFIG_HOME</code> environment variable was checked that it still points to the correct location.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>❯ echo $XDG_CONFIG_HOME
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/home/practicalli/.config
@@ -1495,73 +1506,94 @@
 <a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>  All definitions a lib makes should be in its associated namespace.
 <a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>... doc key again for the full doc
 </code></pre></div>
+<h3 id="auto-require-namespaces">Auto-require namespaces<a class="headerlink" href="#auto-require-namespaces" title="Permanent link">λ︎</a></h3>
+<p>To get <code>clojure.core</code> required in any other namespace but <code>user</code> the config needs to add and auto-require.</p>
+<div class="admonition example">
+<p class="admonition-title">Practicalli declarative config for Clojure CLI REPL (so far)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">;; Practicalli Config for Clojure CLI REPL</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span><span class="ss">:bracket-pairs</span><span class="w"> </span><span class="nv">false</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w"> </span><span class="ss">:eval-form-at-cursor</span><span class="w"> </span><span class="s">"M-e"</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w"> </span><span class="ss">:doc-at-cursor</span><span class="w"> </span><span class="s">"M-d"</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w"> </span><span class="ss">:inspect</span><span class="w"> </span><span class="s">"M-i"</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w"> </span><span class="ss">:auto-require</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w"> </span><span class="p">[[</span><span class="nv">clojure.core</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="ss">:all</span><span class="p">]</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="p">[</span><span class="nv">clojure.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">apropos</span><span class="w"> </span><span class="nv">demunge</span><span class="w"> </span><span class="nv">dir</span><span class="w"> </span><span class="nb">doc find-doc </span><span class="nv">pst</span><span class="w"> </span><span class="nv">root-cause</span><span class="w"> </span><span class="nv">source</span><span class="p">]]]}</span>
+</code></pre></div>
+</div>
+<p>Now I can use all the functions in <code>clojure.core</code> unqualified in any namespace, along with my preferred functions from clojure.repl.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>user =&gt; (require 'practicalli.playground)
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>nil
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>user =&gt; (in-ns 'practicalli.playground)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>#object[clojure.lang.Namespace 0x7bc56ee6 "practicalli.playground"]
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>practicalli.playground =&gt; (map inc [1 2 3])
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>(2 3 4)
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>practicalli.playground =&gt; (doc inc)
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>-------------------------
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>clojure.core/inc
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>([x])
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  Returns a number one greater than num. Does not auto-promote
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  longs, will throw on overflow. See also: inc'
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>nil
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>practicalli.playground =&gt;
+</code></pre></div>
+<div class="admonition warn">
+<p class="admonition-title">I used only a small part of the example config</p>
+<p>I had limited time and I just wanted to see what was out of the box. The example had a config and a separate namespace which I contained more customisations (in Clojure code).</p>
+<p>I only wanted to try the declaritive part of the config for now.</p>
+</div>
 <h3 id="inspector">Inspector<a class="headerlink" href="#inspector" title="Permanent link">λ︎</a></h3>
 <p>I started by evaluating a basic expression</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 <p>Then use <code>M-i</code> to inspect the result</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>*1<span class="w">  </span>LazySeq<span class="w"> </span>·<span class="w"> </span><span class="m">5</span><span class="w"> </span>items
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="m">0</span><span class="w"> </span>·<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="m">1</span><span class="w"> </span>·<span class="w"> </span><span class="m">3</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="m">2</span><span class="w"> </span>·<span class="w"> </span><span class="m">4</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="m">3</span><span class="w"> </span>·<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="m">4</span><span class="w"> </span>·<span class="w"> </span><span class="m">6</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="m">1</span>-5<span class="w"> </span>of<span class="w"> </span><span class="m">5</span><span class="w">  </span>←↓↑→/hjkl<span class="w"> </span>navigate<span class="w"> </span>·<span class="w"> </span>d<span class="w"> </span>def<span class="w"> </span>·<span class="w"> </span>q<span class="w"> </span>quit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>*1<span class="w">  </span>LazySeq<span class="w"> </span>·<span class="w"> </span><span class="m">5</span><span class="w"> </span>items
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="m">0</span><span class="w"> </span>·<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="m">1</span><span class="w"> </span>·<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="m">2</span><span class="w"> </span>·<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="m">3</span><span class="w"> </span>·<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="m">4</span><span class="w"> </span>·<span class="w"> </span><span class="m">6</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="m">1</span>-5<span class="w"> </span>of<span class="w"> </span><span class="m">5</span><span class="w">  </span>←↓↑→/hjkl<span class="w"> </span>navigate<span class="w"> </span>·<span class="w"> </span>d<span class="w"> </span>def<span class="w"> </span>·<span class="w"> </span>q<span class="w"> </span>quit
 </code></pre></div>
 <p>The inspector shows each index and value from the sequence that was returned as the result of the evaluation.</p>
 <p>Results that return a nested map are much more interesting though.</p>
-<h3 id="bugs-experienced">Bugs experienced<a class="headerlink" href="#bugs-experienced" title="Permanent link">λ︎</a></h3>
-<p>Not including <code>resources</code> directory when defined in the project <code>deps.edn</code> file</p>
-<div class="highlight"><span class="filename">deps.edn</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">"src"</span><span class="w"> </span><span class="s">"resources"</span><span class="p">]</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w"> </span><span class="ss">:deps</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/clojure</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.12.5"</span><span class="p">}</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="c1">;; Logic</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="nv">org.clojure/core.match</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.1"</span><span class="p">}</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="c1">;; Date and time</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="nv">clojure.java-time/clojure.java-time</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.4.3"</span><span class="p">}</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="c1">;; HTML generation</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span><span class="nv">hiccup/hiccup</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.0"</span><span class="p">}}</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w"> </span><span class="ss">:aliases</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w"> </span><span class="p">{}</span><span class="c1">;; Aliases from practicalli/clojure-deps-edn included via .dir-locals</span>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w"> </span><span class="o">#</span><span class="nv">_</span><span class="p">()}</span>
+<h3 id="things-that-didnt-work-as-expected">Things that didn't work as expected<a class="headerlink" href="#things-that-didnt-work-as-expected" title="Permanent link">λ︎</a></h3>
+<p><strong>Not including <code>resources</code> directory when defined in the project <code>deps.edn</code> file</strong></p>
+<p>I have a file I slurp that resides in the root of the <code>resources</code> directory.</p>
+<p>When evaluating code in the namespace that uses the file the code fails to evaluate as the file is not found.</p>
+<div class="highlight"><span class="filename">deps.edn</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">"src"</span><span class="w"> </span><span class="s">"resources"</span><span class="p">]</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w"> </span><span class="ss">:deps</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/clojure</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.12.5"</span><span class="p">}</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="c1">;; Logic</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="nv">org.clojure/core.match</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.1"</span><span class="p">}</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="c1">;; Date and time</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="nv">clojure.java-time/clojure.java-time</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.4.3"</span><span class="p">}</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="c1">;; HTML generation</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="nv">hiccup/hiccup</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.0"</span><span class="p">}}</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w"> </span><span class="ss">:aliases</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w"> </span><span class="p">{}</span><span class="c1">;; Aliases from practicalli/clojure-deps-edn included via .dir-locals</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w"> </span><span class="o">#</span><span class="nv">_</span><span class="p">()}</span>
 </code></pre></div>
-<p>Looses core namespaces when switching to another namespace</p>
+<p>TODO: Create a simple reproducible project and create a ticket.</p>
+<p><strong>Clojure core namespace not included when switching to another namespace</strong></p>
 <blockquote>
-<p>UPDATE: can be configured in the auto-require section of Clojure CLI REPL, but nothing is required by default</p>
+<p>UPDATE: can be <a href="#auto-require-namespaces">configured in the auto-require section of Clojure CLI REPL</a>, but nothing is required by default</p>
 </blockquote>
-<div class="admonition example">
-<p class="admonition-title">No core functions after changing to <code>clojure-through-code</code> namespace</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>clojure-through-code.hhgttg-book-common-words =&gt; (map inc [1 2 3])
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Syntax error compiling at (REPL:1:1).
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Unable to resolve symbol: map in this context
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>clojure-through-code.hhgttg-book-common-words =&gt; (in-ns 'user)
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>#object[clojure.lang.Namespace 0x7f987503 "user"]
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>user =&gt; (map inc [1 2 3])
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>(2 3 4)
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>user =&gt;
+<p>Example: No core functions after changing to <code>clojure-through-code</code> namespace</p>
+<div class="highlight"><pre><span></span><code>```shell-output
+clojure-through-code.hhgttg-book-common-words =&gt; (map inc [1 2 3])
+Syntax error compiling at (REPL:1:1).
+Unable to resolve symbol: map in this context
+clojure-through-code.hhgttg-book-common-words =&gt; (in-ns 'user)
+#object[clojure.lang.Namespace 0x7f987503 "user"]
+user =&gt; (map inc [1 2 3])
+(2 3 4)
+user =&gt;
+```
 </code></pre></div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">No core functions after changing to <code>practicalli.playground</code> namespace</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a> ~/temp/playground    v25.0.4  ❯ clojure -M:repl/cli
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>nREPL server listening on port 43797
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>WARNING: A restricted method in java.lang.System has been called
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>WARNING: java.lang.System::load has been called by org.jline.nativ.JLineNativeLoader in an unnamed module (file:/home/practicalli/.m2/repository/org/jline/jline/4.3.1/jline-4.3.1.jar)
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>connected to nREPL on 43797
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>user =&gt; (in-ns 'practicalli.playground)
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>#object[clojure.lang.Namespace 0x55cc1baf "practicalli.playground"]
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>practicalli.playground =&gt; (map inc [1 2 3])
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>Syntax error compiling at (REPL:1:1).
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>Unable to resolve symbol: map in this context
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>practicalli.playground =&gt;
-</code></pre></div>
-</div>
 <hr>
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f310.svg" title=":globe_with_meridians:"> Practical.li Website</a></p>
