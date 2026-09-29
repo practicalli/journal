@@ -1076,7 +1076,7 @@
           
           <li class="md-meta__item">
             
-              10 min read
+              11 min read
             
           </li>
         
@@ -1090,8 +1090,11 @@
 <p>I had <a href="../../a-new-clojure-terminal-repl-under-development/#practicalli">a quick test of the Clojure CLI REPL</a> on a simple Practicalli project, comparing the experience with my current preference of Rebel Readine.</p>
 <p>Clojure CLI has an interesting <a href="../../a-new-clojure-terminal-repl-under-development/#inspector">Inspector feature</a> and the ability to evaluate part of an expression. A config file should be added to define key mappings for these features (no key mappings by default, but there is an example config and docs to help).</p>
 <p>There is a lot more to the config example that I didnt use, so lots more to explore there.</p>
-<p>I hope the project <a href="../../a-new-clojure-terminal-repl-under-development/#startup">simplifies the paths for the config file</a> (reduce the verbosity), to make working with the project more accessible. It does honour the Clojure CLI config location, which is excellent.</p>
+<p>I hope the project <a href="../../a-new-clojure-terminal-repl-under-development/#startup">simplifies the paths for the config file</a> (reduce the verbosity), to make working with the project more accessible. It does honour the Clojure CLI config location, which is excellent. It may be a longer path due to the amount of configuration that is possible.</p>
 <p>There is a lot of promise to the Clojure CLI REPL, but for my workflow (and without tab completion of namespace and function names) its not ready to be a replacement for Rebel Readline (yet).</p>
+<blockquote>
+<p>NOTE: the auto-require was a configuration aspect I missed (although it seems strange that clojure.core isnt a default). I guess if this would be used for different Clojure implementations then that would make sense.</p>
+</blockquote>
 <p>I will keep a lookout for updates to this project though and continue testing.</p>
 <p>For day to day work I will continue <a href="https://practical.li/clojure/clojure-cli/repl/#rebel-terminal-repl-ui" target="_blank">using Rebel Readline as my Terminal REPL prompt</a></p>
 <p><a class="md-button" href="https://practical.li/clojure/clojure-cli/repl/#rebel-terminal-repl-ui" target="_blank">Practicalli Rebel Readline Terminal REPL prompt</a></p>

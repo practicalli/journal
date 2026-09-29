@@ -1200,7 +1200,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              10 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -1256,8 +1256,11 @@
 <p>I had <a href="#practicalli">a quick test of the Clojure CLI REPL</a> on a simple Practicalli project, comparing the experience with my current preference of Rebel Readine.</p>
 <p>Clojure CLI has an interesting <a href="#inspector">Inspector feature</a> and the ability to evaluate part of an expression. A config file should be added to define key mappings for these features (no key mappings by default, but there is an example config and docs to help).</p>
 <p>There is a lot more to the config example that I didnt use, so lots more to explore there.</p>
-<p>I hope the project <a href="#startup">simplifies the paths for the config file</a> (reduce the verbosity), to make working with the project more accessible. It does honour the Clojure CLI config location, which is excellent.</p>
+<p>I hope the project <a href="#startup">simplifies the paths for the config file</a> (reduce the verbosity), to make working with the project more accessible. It does honour the Clojure CLI config location, which is excellent. It may be a longer path due to the amount of configuration that is possible.</p>
 <p>There is a lot of promise to the Clojure CLI REPL, but for my workflow (and without tab completion of namespace and function names) its not ready to be a replacement for Rebel Readline (yet).</p>
+<blockquote>
+<p>NOTE: the auto-require was a configuration aspect I missed (although it seems strange that clojure.core isnt a default). I guess if this would be used for different Clojure implementations then that would make sense.</p>
+</blockquote>
 <p>I will keep a lookout for updates to this project though and continue testing.</p>
 <p>For day to day work I will continue <a href="https://practical.li/clojure/clojure-cli/repl/#rebel-terminal-repl-ui" target="_blank">using Rebel Readline as my Terminal REPL prompt</a></p>
 <p><a class="md-button" href="https://practical.li/clojure/clojure-cli/repl/#rebel-terminal-repl-ui" target="_blank">Practicalli Rebel Readline Terminal REPL prompt</a></p>
@@ -1274,7 +1277,7 @@
 - a data inspector
 - configurable prompts
 - custom keybindings
-- Vim or Emacs editing modes</p>
+- Vim or Emacs editing modes <img alt="💖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f496.svg" title=":sparkling_heart:"></p>
 <p>I've added aliases to <a href="">Practicalli Clojure CLI Config</a> using my standard naming convention:</p>
 <ul>
 <li><code>:repl/cli</code> start nREPL server and rich REPL client</li>
@@ -1526,6 +1529,9 @@
 <a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w"> </span><span class="o">#</span><span class="nv">_</span><span class="p">()}</span>
 </code></pre></div>
 <p>Looses core namespaces when switching to another namespace</p>
+<blockquote>
+<p>UPDATE: can be configured in the auto-require section of Clojure CLI REPL, but nothing is required by default</p>
+</blockquote>
 <div class="admonition example">
 <p class="admonition-title">No core functions after changing to <code>clojure-through-code</code> namespace</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>clojure-through-code.hhgttg-book-common-words =&gt; (map inc [1 2 3])
