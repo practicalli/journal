@@ -23,6 +23,7 @@
 - dev: scheduled stale issue and pull request ci workflow
 - dev: mkdocs serve verbose output to help debug issues
 - mkdocs: add verification options for mkdocs 1.6
+- build(zensical): 🔧 add configuration for blog site with rss feed support
 
 ## Changed
 - post: updated naming scheme and corrected date
