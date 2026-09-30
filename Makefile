@@ -7,8 +7,7 @@
 # ------------------------------------------------ #
 
 # Requirements
-# - python
-# - uv
+# - python & uv (local book generation)
 # - clojure & practicalli cli config (dependency check)
 # - docker (run megalinter locally)
 # - node.js (mega-linter-runner via npx)
@@ -28,7 +27,7 @@ HELP-DESCRIPTION-SPACING := 24
 
 # SHELL := /usr/bin/zsh
 
-# Tool Commands
+# Tool variables
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
 MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 DOCS_SERVER := zensical serve --dev-addr localhost:7777
@@ -63,48 +62,27 @@ dependencies-update: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # ------------------------------------------------ #
 
-# --- Documentation Generation  -------- #
-mkdocs-install:
-	uv tool install --with mkdocs-material --with mkdocs-callouts --with mkdocs-glightbox --with mkdocs-git-revision-date-localized-plugin --with mkdocs-redirects --with mkdocs-rss-plugin --with pillow --with cairosvg mkdocs
+# -- Documentation Generation -------------------- #
+docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
+	uv tool install zensical --with catppuccin-zensical --upgrade
 
-docs: ## Build and run mkdocs in local server
-	$(info -- MkDocs Local Server -------------------)
-	$(MKDOCS_SERVER)
+docs:  ## Build and run docs in local server
+	$(info -- Local Server --------------------------)
+	$(DOCS_SERVER)
 
-docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
-	$(info -- Mkdocs Local Server -------------------)
-	$(MKDOCS_SERVER) --dirtyreload
+docs-open:  ## Build docs, run server & open browser
+	$(info -- Local Server & Browser ----------------)
+	$(DOCS_SERVER) --open
 
-docs-build:  ## Build mkdocs (python venv)
-	$(info -- Mkdocs Build Website ------------------)
-	mkdocs build
+docs-build:  ## Build docs locally
+	$(info -- Build Docs Website --------------------)
+	zensical build
 
-docs-debug:  ## Run mkdocs local server in debug mode
-	$(info -- Mkdocs Local Server Debug -------------)
-	$(MKDOCS_SERVER) -v
-# -------------------------------------- #
+docs-debug:  ## Run local server in debug mode
+	$(info -- Local Server Debug --------------------)
+	$(DOCS_SERVER) -v
 
-# -- Documentation Generation Zensical ----------- #
-# docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
-# 	uv tool install zensical --with catppuccin-zensical --upgrade
-#
-# docs:  ## Build and run docs in local server
-# 	$(info -- Local Server --------------------------)
-# 	$(DOCS_SERVER)
-#
-# docs-open:  ## Build docs, run server & open browser
-# 	$(info -- Local Server & Browser ----------------)
-# 	$(DOCS_SERVER) --open
-#
-# docs-build:  ## Build docs locally
-# 	$(info -- Build Docs Website --------------------)
-# 	zensical build
-#
-# docs-debug:  ## Run local server in debug mode
-# 	$(info -- Local Server Debug --------------------)
-# 	$(DOCS_SERVER) -v
-#
-# dist: docs-build ## Build Zensical website
+dist: docs-build ## Build Zensical website
 # ------------------------------------------------ #
 
 # -- Version Control ----------------------------- #
