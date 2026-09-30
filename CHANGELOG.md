@@ -33,3 +33,4 @@
 - dev: update Makefile with standard Practicalli tasks
 - dev: ci scheduled stale issue & pr check (monthly)
 - ci(zensical): 🚀 publish site with zensical installed via Uv
+- ci(megalinter): 💄 enhance visuals of workflow log output
