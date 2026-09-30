@@ -32,3 +32,4 @@
 - dev: update github workflows to use ubuntu-24.04
 - dev: update Makefile with standard Practicalli tasks
 - dev: ci scheduled stale issue & pr check (monthly)
+- ci(zensical): 🚀 publish site with zensical installed via Uv
