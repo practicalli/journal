@@ -1,6 +1,8 @@
 ---
 title: "Day 101: An extra day of code"
-date: 2018-12-24
+date:
+  created: 2018-12-24
+  updated: 2018-12-24
 authors:
   - practicalli
 categories:

@@ -1,6 +1,8 @@
 ---
 title: "Day 100: 4Clojure"
-date: 2018-12-23
+date:
+  created: 2018-12-23
+  updated: 2018-12-23
 authors:
   - practicalli
 categories:
