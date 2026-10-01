@@ -452,7 +452,7 @@ icon = "fontawesome/brands/slack"
 link = "https://clojurians.slack.com/messages/practicalli"
 [[project.extra.social]]
 icon = "fontawesome/brands/mastodon"
-link = "https://clj.social/@practicalli"
+link = "https://mastodon.social/@practicalli_johnny"
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://github.com/practicalli"
