@@ -36,3 +36,4 @@
 - ci(zensical): 🚀 publish site with zensical installed via Uv
 - ci(megalinter): 💄 enhance visuals of workflow log output
 - build(make): 🔧 zensical document generation tasks
+- build(zensical): 🔧 set website logo to a notebook and pen

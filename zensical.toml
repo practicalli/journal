@@ -316,8 +316,8 @@ toggle.icon = "lucide/sun"
 toggle.name = "Switch to Mocha"
 
 [project.theme.icon]
-logo = "lucide/bike"
-repo = "lucide/bike"
+logo = "lucide/notebook-pen"
+repo = "lucide/notebook-pen"
 
 # ----------------------------------------------------------------------------
 # In the "font" subsection you can configure the fonts used. By default, fonts
