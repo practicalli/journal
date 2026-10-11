@@ -39,3 +39,4 @@
 - build(zensical): 🔧 set website logo to a notebook and pen
 - build(zensical): 🐘 update link to mastodon social media account
 - build(zensical): 💄 one dark and light palette for catppuccin-zensical theme
+- build(zensical): 🔧 blog rss and social plugins configuration

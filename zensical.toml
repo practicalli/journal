@@ -355,7 +355,7 @@ quote = "fontawesome/solid/quote-left"
 # exercise = "fontawesome/solid/pencil"
 
 # ----------------------------------------------------------------------------
-# Blog Support
+# Blog Support (blog, rss, social)
 
 [project.plugins.blog]
 blog_dir = "."
@@ -386,39 +386,25 @@ match_path = "posts/.*"               # path to posts that should be included in
 categories = ["categories", "tags",]  # Included in feed summary
 length = 100                          # articles to include (Default 20)
 
-# Use date from post front matter
+# Use date from the front matter of each post
 # date_from_meta = {as_creation = "date"}  (simple format)
-# date_from_meta = { as_creation = "date.created" } # date: created: format)
-# date_from_meta = { as_update = "date.updated" } # date: updated : format)
+# date_from_meta = { as_creation = "date.created" } # date: created: format
+# date_from_meta = { as_update = "date.updated" } # date: updated : format
 
-
-# WARN: Neither syntax seems to use the front matter values
 # Set multiple values from the front matter (or use the expanded TOML below)
 # date_from_meta = [
 #   { as_creation = "date.created",  as_update = "date.updated" },
 # ]
 
+# Use date from the front matter of each post
 [project.plugins.rss.date_from_meta]
 as_creation = "date.created"
 as_update = "date.updated"
 
+# https://squidfunk.github.io/mkdocs-material/plugins/social/#social-cards
+[project.plugins.social]
+cards_layout_options = { font_family = "Ubuntu" }
 # ----------------------------------------------------------------------------
-
-#
-#       categories:
-#         - categories
-#         - tags
-
-# plugins:
-#   - rss:
-#       enabled: true
-#       # enabled: !ENV [CI, false]
-#       match_path: posts/.*
-#       date_from_meta:
-#         as_creation: date
-#       categories:
-#         - categories
-#         - tags
 
 
 # ----------------------------------------------------------------------------
