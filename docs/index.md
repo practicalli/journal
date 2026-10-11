@@ -8,6 +8,4 @@ A journal of thoughts and experiences from commercial work and community project
 
 All sponsorship funds are used to support the continued development of [:fontawesome-solid-book-open: Practicalli series of books and videos](https://practical.li/){target=_blank}, although most work is done at personal expense and time.
 
-Thanks to [:globe_with_meridians: Cognitect](https://www.cognitect.com/){target=_blank}, [:globe_with_meridians: Nubank](https://nubank.com.br/){target=_blank} and [:fontawesome-brands-github: Practicalli GitHub sponsors](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} from the community for your continued support
-
----
+Thanks to [:globe_with_meridians: Nubank](https://nubank.com.br/){target=_blank} and [:fontawesome-brands-github: Practicalli GitHub sponsors](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} for your continued support
