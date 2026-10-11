@@ -38,3 +38,4 @@
 - build(make): 🔧 zensical document generation tasks
 - build(zensical): 🔧 set website logo to a notebook and pen
 - build(zensical): 🐘 update link to mastodon social media account
+- build(zensical): 💄 one dark and light palette for catppuccin-zensical theme
