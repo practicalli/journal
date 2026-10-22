@@ -49,8 +49,6 @@ nav = [
   {"100 Days of Code" = "category/100daysofcode/"},
   {"Clojurists Together" = "category/clojurists-together/"},
   # { "Journal" = "index.md" },
-  # { "Clojurists Together" = "index.md" },
-  # { "100 Days Of Code" = "index.md" },
   { "Practicalli Team" = "practicalli-team.md" },
 
   { "RSS feed" = "feed_rss_created.xml" },  # posts by created date
