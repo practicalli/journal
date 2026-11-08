@@ -40,3 +40,4 @@
 - build(zensical): 🐘 update link to mastodon social media account
 - build(zensical): 💄 one dark and light palette for catppuccin-zensical theme
 - build(zensical): 🔧 blog rss and social plugins configuration
+- build(make): 🔧 update latest practicalli tasks for zensical static site generator
