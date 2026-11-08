@@ -41,3 +41,4 @@
 - build(zensical): 💄 one dark and light palette for catppuccin-zensical theme
 - build(zensical): 🔧 blog rss and social plugins configuration
 - build(make): 🔧 update latest practicalli tasks for zensical static site generator
+- ci(docs): ⬆️ update uv to 10.3.3 release
