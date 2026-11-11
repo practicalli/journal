@@ -1,6 +1,8 @@
 ---
 title: Lightening my life
-date: 2023-11-29
+date:
+  created: 2023-11-29
+  updated: 2023-11-29
 authors:
   - practicalli
 categories:

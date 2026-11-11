@@ -1,6 +1,8 @@
 ---
 title: On-boarding at the new job
-date: 2023-12-05
+date:
+  created: 2023-12-05
+  updated: 2023-12-05
 authors:
   - practicalli
 categories:

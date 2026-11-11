@@ -1,6 +1,8 @@
 ---
 title: Practicalli work over the winter break
-date: 2023-12-24
+date:
+  created: 2023-12-24
+  updated: 2023-12-24
 authors:
   - practicalli
 categories:

@@ -1,6 +1,8 @@
 ---
 title: End of line... for 2023
-date: 2023-12-31
+date:
+  created: 2023-12-31
+  updated: 2023-12-31
 authors:
   - practicalli
 categories:

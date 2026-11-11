@@ -1,6 +1,8 @@
 ---
 title: Neovim updates and Neovide
-date: 2023-12-17
+date:
+  created: 2023-12-17
+  updated: 2023-12-17
 authors:
   - practicalli
 categories:

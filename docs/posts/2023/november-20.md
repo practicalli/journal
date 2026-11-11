@@ -1,6 +1,8 @@
 ---
 title: Debian Linux migration
-date: 2023-11-20
+date:
+  created: 2023-11-20
+  updated: 2023-11-20
 authors:
   - practicalli
 categories:

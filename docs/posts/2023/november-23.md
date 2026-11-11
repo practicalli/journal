@@ -1,6 +1,8 @@
 ---
 title: "Practicalli Email"
-date: 2023-11-23
+date:
+  created: 2023-11-23
+  updated: 2023-11-23
 authors:
   - practicalli
 categories:

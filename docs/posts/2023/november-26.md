@@ -1,6 +1,8 @@
 ---
 title: Neovim basics
-date: 2023-11-26
+date:
+  created: 2023-11-26
+  updated: 2023-11-26
 authors:
   - practicalli
 categories:

@@ -1,6 +1,8 @@
 ---
 title: "Onboarding to a new role, hacking Clojure & Neovim"
-date: 2023-11-22
+date:
+  created: 2023-11-22
+  updated: 2023-11-22
 authors:
   - practicalli
 categories:

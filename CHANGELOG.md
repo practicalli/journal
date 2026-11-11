@@ -42,3 +42,4 @@
 - build(zensical): 🔧 blog rss and social plugins configuration
 - build(make): 🔧 update latest practicalli tasks for zensical static site generator
 - ci(docs): ⬆️ update uv to 10.3.3 release
+- docs(frontmatter): ✏️ update all posts to use date: created: updated: structure

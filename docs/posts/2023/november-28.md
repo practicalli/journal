@@ -1,6 +1,8 @@
 ---
 title: Health and new chair
-date: 2023-11-28
+date:
+  created: 2023-11-28
+  updated: 2023-11-28
 authors:
   - practicalli
 categories:

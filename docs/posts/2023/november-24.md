@@ -1,6 +1,8 @@
 ---
 title: "Neovim search replace & Debian DRM"
-date: 2023-11-24
+date:
+  created: 2023-11-24
+  updated: 2023-11-24
 authors:
   - practicalli
 categories:

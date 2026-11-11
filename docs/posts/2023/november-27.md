@@ -1,6 +1,8 @@
 ---
 title: Discussing new role expectations
-date: 2023-11-27
+date:
+  created: 2023-11-27
+  updated: 2023-11-27
 authors:
   - practicalli
 categories:

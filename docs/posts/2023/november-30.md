@@ -1,6 +1,8 @@
 ---
 title: Updating my identity
-date: 2023-11-30
+date:
+  created: 2023-11-30
+  updated: 2023-11-30
 authors:
   - practicalli
 categories:

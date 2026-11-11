@@ -1,6 +1,8 @@
 ---
 title: Running walking coughing
-date: 2023-12-02
+date:
+  created: 2023-12-02
+  updated: 2023-12-02
 authors:
   - practicalli
 categories:

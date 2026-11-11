@@ -1,6 +1,8 @@
 ---
 title: How much root cause analysis to do?
-date: 2023-12-03
+date:
+  created: 2023-12-03
+  updated: 2023-12-03
 authors:
   - practicalli
 categories:

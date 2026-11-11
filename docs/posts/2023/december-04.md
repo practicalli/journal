@@ -1,6 +1,8 @@
 ---
 title: First day at the new company
-date: 2023-12-04
+date:
+  created: 2023-12-04
+  updated: 2023-12-04
 authors:
   - practicalli
 categories:

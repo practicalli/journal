@@ -1,6 +1,8 @@
 ---
 title: Planing Practicalli 2024
-date: 2023-11-19
+date:
+  created: 2023-11-19
+  updated: 2023-11-19
 authors:
   - practicalli
 categories:

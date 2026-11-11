@@ -1,6 +1,8 @@
 ---
 title: "Continuing the move to Debian Linux"
-date: 2023-11-21
+date:
+  created: 2023-11-21
+  updated: 2023-11-21
 authors:
   - practicalli
 categories:

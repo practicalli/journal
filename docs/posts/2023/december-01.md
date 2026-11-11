@@ -1,6 +1,8 @@
 ---
 title: Monthly library updates
-date: 2023-12-01
+date:
+  created: 2023-12-01
+  updated: 2023-12-01
 authors:
   - practicalli
 categories:

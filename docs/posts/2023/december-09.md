@@ -1,6 +1,8 @@
 ---
 title: Weekly journal & Neovide
-date: 2023-12-09
+date:
+  created: 2023-12-09
+  updated: 2023-12-09
 authors:
   - practicalli
 categories:
