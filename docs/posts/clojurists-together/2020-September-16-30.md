@@ -1,6 +1,8 @@
 ---
 title: Community Update September 2nd Half
-date: 2020-09-30
+date:
+  created: 2020-09-30
+  updated: 2020-09-30
 authors:
   - practicalli
 categories:
