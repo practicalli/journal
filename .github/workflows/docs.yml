@@ -36,7 +36,7 @@ jobs:
       - run: echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"
 
       - uses: actions/checkout@v7
-      - run: echo "🐙 ${{ github.repository }} repository sparse-checkout to the CI runner."
+      - run: echo "🐙 ${{ github.repository }} repository checkout to the CI runner, default depth=1"
 
       - name: Install UV Python Package Manager
         uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
